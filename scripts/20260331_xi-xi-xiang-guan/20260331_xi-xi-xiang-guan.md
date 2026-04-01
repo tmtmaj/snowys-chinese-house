@@ -262,7 +262,44 @@ Near-synonyms include: 息息相通 (deeply connected), 密切相关 (closely re
 ```
 
 ## ⑤ 成语来源
-> 📖 **延君寿**는 청나라(清代) 문인으로, 필기체 산문집 《老生常谈》을 저술했습니다. 책 제목은 「노련한 사람이 늘 하는 말」이라는 뜻으로, 글쓰기와 독서, 인품에 대한 저자의 견해와 감상을 담고 있습니다.
+**中文**
+```
+这个成语出自清代文人延君寿的《老生常谈》。
+```
+**拼音**
+```
+zhège chéngyǔ chūzì Qīngdài wénrén Yán Jūnshòu de 《Lǎoshēng Chángtán》.
+```
+**영어**
+```
+This idiom comes from 《Old Men's Common Talk》 by Yan Junshou, a writer of the Qing dynasty.
+```
+
+**中文**
+```
+《老生常谈》是一部笔记体散文集，书名的意思是「有经验的老者常说的话」。
+```
+**拼音**
+```
+《Lǎoshēng Chángtán》 shì yī bù bǐjìtǐ sǎnwénjí, shūmíng de yìsi shì 「yǒu jīngyàn de lǎozhě cháng shuō de huà」.
+```
+**영어**
+```
+《Old Men's Common Talk》 is a collection of essays — the title means 'the words that experienced elders often say'.
+```
+
+**中文**
+```
+书里记录了作者对写作、读书和做人的见解与感悟。
+```
+**拼音**
+```
+shū lǐ jìlù le zuòzhě duì xiězuò, dúshū hé zuòrén de jiànjiě yǔ gǎnwù.
+```
+**영어**
+```
+It records the author's thoughts and reflections on writing, reading, and how to live well.
+```
 
 > 📜 **清·延君寿 · 《老生常谈》**
 
