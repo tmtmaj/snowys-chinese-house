@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep19 · 恍然大悟 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>恍然大悟</h1>
+  <div class="pinyin">huǎng rán dà wù</div>
+  <div class="meta">ep19 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家有没有这样的经历——一件事情想了很久，怎么也想不通，突然有一天，有人说了一句话，或者你看到了什么，一瞬间，所有的迷惑全部消散，脑子里突然清醒了。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家有没有这样的经历——一件事情想了很久，怎么也想不通，突然有一天，有人说了一句话，或者你看到了什么，一瞬间，所有的迷惑全部消散，脑子里突然清醒了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā yǒu méiyǒu zhèyàng de jīnglì——yī jiàn shì xiǎng le hěn jiǔ, zěnme yě xiǎng bù tōng, tūrán yǒu yī tiān, yǒu rén shuō le yī jù huà, huòzhě nǐ kàn dào le shénme, yī shùnjiān, suǒyǒu de míhuò quánbù xiāosàn, nǎozi lǐ tūrán qīngxǐng le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā yǒu méiyǒu zhèyàng de jīnglì——yī jiàn shì xiǎng le hěn jiǔ, zěnme yě xiǎng bù tōng, tūrán yǒu yī tiān, yǒu rén shuō le yī jù huà, huòzhě nǐ kàn dào le shénme, yī shùnjiān, suǒyǒu de míhuò quánbù xiāosàn, nǎozi lǐ tūrán qīngxǐng le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Has everyone had this experience — you&#x27;ve been puzzling over something for a long time, couldn&#x27;t figure it out no matter what, and then one day someone says something or you see something, and in an instant all your confusion dissolves and your mind suddenly clears.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Has everyone had this experience — you&#x27;ve been puzzling over something for a long time, couldn&#x27;t figure it out no matter what, and then one day someone says something or you see something, and in an instant all your confusion dissolves and your mind suddenly clears.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这种「突然全部明白了」的感觉，中文里有一个非常传神的成语。</span>
+            <button class="copy-btn" onclick="copyText(this, '这种「突然全部明白了」的感觉，中文里有一个非常传神的成语。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè zhǒng 「tūrán quánbù míngbái le」 de gǎnjué, zhōngwén lǐ yǒu yī gè fēicháng chuánshén de chéngyǔ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè zhǒng 「tūrán quánbù míngbái le」 de gǎnjué, zhōngwén lǐ yǒu yī gè fēicháng chuánshén de chéngyǔ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Chinese has a wonderfully expressive idiom for this feeling of &#x27;suddenly understanding everything at once&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Chinese has a wonderfully expressive idiom for this feeling of &#x27;suddenly understanding everything at once&#x27;.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——恍然大悟。恍然大悟。恍然大悟。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——恍然大悟。恍然大悟。恍然大悟。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 恍然大悟.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 恍然大悟.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【恍 · huǎng】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">恍，表示模糊、不清晰，像是在梦里或迷雾中一样的感觉。它的核心是「不清楚，突然清醒」。</span>
+            <button class="copy-btn" onclick="copyText(this, '恍，表示模糊、不清晰，像是在梦里或迷雾中一样的感觉。它的核心是「不清楚，突然清醒」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">huǎng, biǎoshì móhu, bù qīngxī, xiàng shì zài mèng lǐ huò míwù zhōng yīyàng de gǎnjué. tā de héxīn shì 「bù qīngchǔ, tūrán qīngxǐng」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'huǎng, biǎoshì móhu, bù qīngxī, xiàng shì zài mèng lǐ huò míwù zhōng yīyàng de gǎnjué. tā de héxīn shì 「bù qīngchǔ, tūrán qīngxǐng」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Huang&#x27; conveys a blurry, unclear state — like being in a dream or fog. Its core idea is &#x27;unclear, then suddenly awake&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Huang&#x27; conveys a blurry, unclear state — like being in a dream or fog. Its core idea is &#x27;unclear, then suddenly awake&#x27;.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：恍惚——心神不定、注意力涣散的样子；恍然——突然清醒过来的样子。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：恍惚——心神不定、注意力涣散的样子；恍然——突然清醒过来的样子。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: huǎnghū——xīnshén bùdìng, zhùyìlì huànsàn de yàngzi; huǎngrán——tūrán qīngxǐng guòlái de yàngzi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: huǎnghū——xīnshén bùdìng, zhùyìlì huànsàn de yàngzi; huǎngrán——tūrán qīngxǐng guòlái de yàngzi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 恍惚 (dazed, absent-minded); 恍然 (suddenly becoming clear — the word in our idiom).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 恍惚 (dazed, absent-minded); 恍然 (suddenly becoming clear — the word in our idiom).')">복사</button>
+          </div>
+        </div><h3 class="char-label">【然 · rán】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">然，是一个状态词，表示「……的样子」。在成语里，它跟在恍后面，表示「突然清醒的状态」。</span>
+            <button class="copy-btn" onclick="copyText(this, '然，是一个状态词，表示「……的样子」。在成语里，它跟在恍后面，表示「突然清醒的状态」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rán, shì yīgè zhuàngtài cí, biǎoshì 「……de yàngzi」. zài chéngyǔ lǐ, tā gēn zài huǎng hòumiàn, biǎoshì 「tūrán qīngxǐng de zhuàngtài」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'rán, shì yīgè zhuàngtài cí, biǎoshì 「……de yàngzi」. zài chéngyǔ lǐ, tā gēn zài huǎng hòumiàn, biǎoshì 「tūrán qīngxǐng de zhuàngtài」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Ran&#x27; is a state word meaning &#x27;in the manner of&#x27; or &#x27;like that&#x27;. In our idiom it follows 恍 to mean &#x27;in a state of suddenly becoming clear&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Ran&#x27; is a state word meaning &#x27;in the manner of&#x27; or &#x27;like that&#x27;. In our idiom it follows 恍 to mean &#x27;in a state of suddenly becoming clear&#x27;.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：忽然——突然；当然——理所当然；虽然——尽管如此。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：忽然——突然；当然——理所当然；虽然——尽管如此。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: hūrán——tūrán; dāngrán——lǐsuǒdāngrán; suīrán——jǐnguǎn rúcǐ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: hūrán——tūrán; dāngrán——lǐsuǒdāngrán; suīrán——jǐnguǎn rúcǐ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 忽然 (suddenly), 当然 (of course), 虽然 (although).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 忽然 (suddenly), 当然 (of course), 虽然 (although).')">복사</button>
+          </div>
+        </div><h3 class="char-label">【大 · dà】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大，在这里不是指「大小」的大，而是强调程度——完全地、彻底地、深深地。</span>
+            <button class="copy-btn" onclick="copyText(this, '大，在这里不是指「大小」的大，而是强调程度——完全地、彻底地、深深地。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dà, zài zhèlǐ bù shì zhǐ 「dàxiǎo」 de dà, ér shì qiángdiào chéngdù——wánquán de, chèdǐ de, shēnshēn de.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dà, zài zhèlǐ bù shì zhǐ 「dàxiǎo」 de dà, ér shì qiángdiào chéngdù——wánquán de, chèdǐ de, shēnshēn de.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Da&#x27; here doesn&#x27;t mean &#x27;big&#x27; in a physical sense — it emphasises the depth and completeness of what follows.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Da&#x27; here doesn&#x27;t mean &#x27;big&#x27; in a physical sense — it emphasises the depth and completeness of what follows.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：大笑——放声大笑；大哭——号啕大哭；大叫——高声大叫。都是强调这个动作的程度很深。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：大笑——放声大笑；大哭——号啕大哭；大叫——高声大叫。都是强调这个动作的程度很深。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: dàxiào——fàngshēng dàxiào; dàkū——háotáo dàkū; dàjiào——gāoshēng dàjiào. dōu shì qiángdiào zhège dòngzuò de chéngdù hěn shēn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: dàxiào——fàngshēng dàxiào; dàkū——háotáo dàkū; dàjiào——gāoshēng dàjiào. dōu shì qiángdiào zhège dòngzuò de chéngdù hěn shēn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 大笑 (burst out laughing), 大哭 (burst into tears), 大叫 (cry out loudly). All emphasise the intensity of the action.</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 大笑 (burst out laughing), 大哭 (burst into tears), 大叫 (cry out loudly). All emphasise the intensity of the action.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【悟 · wù】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">悟，是「理解、明白」的意思，而且带有一种内心深处领会的感觉，不只是表面上懂了，而是真正想通了。</span>
+            <button class="copy-btn" onclick="copyText(this, '悟，是「理解、明白」的意思，而且带有一种内心深处领会的感觉，不只是表面上懂了，而是真正想通了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wù, shì 「lǐjiě, míngbái」 de yìsi, ér qiě dài yǒu yī zhǒng nèixīn shēnchù lǐnghuì de gǎnjué, bù zhǐ shì biǎomiàn shàng dǒng le, ér shì zhēnzhèng xiǎng tōng le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wù, shì 「lǐjiě, míngbái」 de yìsi, ér qiě dài yǒu yī zhǒng nèixīn shēnchù lǐnghuì de gǎnjué, bù zhǐ shì biǎomiàn shàng dǒng le, ér shì zhēnzhèng xiǎng tōng le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Wu&#x27; means &#x27;to realize, to understand&#x27; — with a sense of deep inner comprehension, not just surface-level understanding but truly grasping something.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Wu&#x27; means &#x27;to realize, to understand&#x27; — with a sense of deep inner comprehension, not just surface-level understanding but truly grasping something.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：领悟——深深理解；醒悟——从迷惑中清醒过来；觉悟——意识到真相。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：领悟——深深理解；醒悟——从迷惑中清醒过来；觉悟——意识到真相。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: lǐngwù——shēnshēn lǐjiě; xǐngwù——cóng míhuò zhōng qīngxǐng guòlái; juéwù——yìshídào zhēnxiàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: lǐngwù——shēnshēn lǐjiě; xǐngwù——cóng míhuò zhōng qīngxǐng guòlái; juéwù——yìshídào zhēnxiàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 领悟 (to deeply grasp), 醒悟 (to come to one&#x27;s senses), 觉悟 (to awaken to the truth).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 领悟 (to deeply grasp), 醒悟 (to come to one&#x27;s senses), 觉悟 (to awaken to the truth).')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">恍然大悟，字面意思是「像雾散了一样突然清醒，完全明白了」。恍然是迷雾散开的一瞬间，大悟是彻底想通了。</span>
+            <button class="copy-btn" onclick="copyText(this, '恍然大悟，字面意思是「像雾散了一样突然清醒，完全明白了」。恍然是迷雾散开的一瞬间，大悟是彻底想通了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">huǎng rán dà wù, zìmiàn yìsi shì 「xiàng wù sàn le yīyàng tūrán qīngxǐng, wánquán míngbái le」. huǎngrán shì míwù sànkāi de yī shùnjiān, dà wù shì chèdǐ xiǎng tōng le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'huǎng rán dà wù, zìmiàn yìsi shì 「xiàng wù sàn le yīyàng tūrán qīngxǐng, wánquán míngbái le」. huǎngrán shì míwù sànkāi de yī shùnjiān, dà wù shì chèdǐ xiǎng tōng le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Literally, 恍然大悟 means &#x27;like fog suddenly clearing — completely awake and understanding&#x27;. 恍然 is the instant the fog parts; 大悟 is the thorough comprehension that follows.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Literally, 恍然大悟 means &#x27;like fog suddenly clearing — completely awake and understanding&#x27;. 恍然 is the instant the fog parts; 大悟 is the thorough comprehension that follows.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">引申义是：对某件原来不明白的事情，忽然一下子全部明白了。强调的是突然性——之前不懂，现在全懂了。</span>
+            <button class="copy-btn" onclick="copyText(this, '引申义是：对某件原来不明白的事情，忽然一下子全部明白了。强调的是突然性——之前不懂，现在全懂了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǐnshēn yì shì: duì mǒu jiàn yuánlái bù míngbái de shìqing, hūrán yīxiàzi quánbù míngbái le. qiángdiào de shì tūrán xìng——zhīqián bù dǒng, xiànzài quán dǒng le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǐnshēn yì shì: duì mǒu jiàn yuánlái bù míngbái de shìqing, hūrán yīxiàzi quánbù míngbái le. qiángdiào de shì tūrán xìng——zhīqián bù dǒng, xiànzài quán dǒng le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Its extended meaning: you suddenly understand something completely that you didn&#x27;t understand before. The key is the suddenness — previously confused, now fully clear.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Its extended meaning: you suddenly understand something completely that you didn&#x27;t understand before. The key is the suddenness — previously confused, now fully clear.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">近义词有：茅塞顿开——比喻思路突然开通；如梦初醒——像从梦里醒来一样突然明白；豁然开朗——比喻突然领悟或开朗。</span>
+            <button class="copy-btn" onclick="copyText(this, '近义词有：茅塞顿开——比喻思路突然开通；如梦初醒——像从梦里醒来一样突然明白；豁然开朗——比喻突然领悟或开朗。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jìnyìcí yǒu: máosè dùn kāi——bǐyù sīlù tūrán kāitōng; rú mèng chū xǐng——xiàng cóng mèng lǐ xǐng lái yīyàng tūrán míngbái; huòrán kāilǎng——bǐyù tūrán lǐngwù huò kāilǎng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jìnyìcí yǒu: máosè dùn kāi——bǐyù sīlù tūrán kāitōng; rú mèng chū xǐng——xiàng cóng mèng lǐ xǐng lái yīyàng tūrán míngbái; huòrán kāilǎng——bǐyù tūrán lǐngwù huò kāilǎng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Near-synonyms include: 茅塞顿开 (a mental block suddenly opens), 如梦初醒 (like waking from a dream), 豁然开朗 (suddenly clear and bright — often for both understanding and mood).</span>
+            <button class="copy-btn" onclick="copyText(this, 'Near-synonyms include: 茅塞顿开 (a mental block suddenly opens), 如梦初醒 (like waking from a dream), 豁然开朗 (suddenly clear and bright — often for both understanding and mood).')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源 — 宋·释道原 · 《景德传灯录》卷五</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语的出处，来自宋朝一位佛教僧人释道原所写的《景德传灯录》。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语的出处，来自宋朝一位佛教僧人释道原所写的《景德传灯录》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ de chūchù, lái zì Sòng Cháo yī wèi Fójiào sēngrén Shì Dàoyuán suǒ xiě de 《Jǐngdé Chuándēng Lù》.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ de chūchù, lái zì Sòng Cháo yī wèi Fójiào sēngrén Shì Dàoyuán suǒ xiě de 《Jǐngdé Chuándēng Lù》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The origin of this idiom comes from 《Records of the Transmission of the Lamp》, written by Shi Daoyuan, a Buddhist monk of the Song dynasty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The origin of this idiom comes from 《Records of the Transmission of the Lamp》, written by Shi Daoyuan, a Buddhist monk of the Song dynasty.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">《景德传灯录》是一部记录禅宗历代祖师传法谱系的典籍，书名里的「传灯」，意思是把佛法的智慧一代一代地传递下去，就像把一盏灯的火焰传给另一盏灯。</span>
+            <button class="copy-btn" onclick="copyText(this, '《景德传灯录》是一部记录禅宗历代祖师传法谱系的典籍，书名里的「传灯」，意思是把佛法的智慧一代一代地传递下去，就像把一盏灯的火焰传给另一盏灯。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">《Jǐngdé Chuándēng Lù》 shì yī bù jìlù Chán Zōng lìdài zǔshī chuánfǎ pǔxì de diǎnjí, shūmíng lǐ de 「chuán dēng」, yìsi shì bǎ Fófǎ de zhìhuì yī dài yī dài de chuándì xiàqù, jiù xiàng bǎ yī zhǎn dēng de huǒyàn chuán gěi lìng yī zhǎn dēng.</span>
+            <button class="copy-btn" onclick="copyText(this, '《Jǐngdé Chuándēng Lù》 shì yī bù jìlù Chán Zōng lìdài zǔshī chuánfǎ pǔxì de diǎnjí, shūmíng lǐ de 「chuán dēng」, yìsi shì bǎ Fófǎ de zhìhuì yī dài yī dài de chuándì xiàqù, jiù xiàng bǎ yī zhǎn dēng de huǒyàn chuán gěi lìng yī zhǎn dēng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">《Records of the Transmission of the Lamp》 is a classic text recording the lineage of Chan (Zen) Buddhist masters. The title&#x27;s &#x27;transmitting the lamp&#x27; means passing down the wisdom of Buddhism from generation to generation — like passing a flame from one lamp to another.</span>
+            <button class="copy-btn" onclick="copyText(this, '《Records of the Transmission of the Lamp》 is a classic text recording the lineage of Chan (Zen) Buddhist masters. The title&#x27;s &#x27;transmitting the lamp&#x27; means passing down the wisdom of Buddhism from generation to generation — like passing a flame from one lamp to another.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">书中记载了一个故事：一位僧人通过师父的指点，突然完全明白了佛法的道理，原文写的是「简蒙指教，豁然大悟」。</span>
+            <button class="copy-btn" onclick="copyText(this, '书中记载了一个故事：一位僧人通过师父的指点，突然完全明白了佛法的道理，原文写的是「简蒙指教，豁然大悟」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shū zhōng jìzǎi le yīgè gùshi: yī wèi sēngrén tōngguò shīfu de zhǐdiǎn, tūrán wánquán míngbái le Fófǎ de dàolǐ, yuánwén xiě de shì 「jiǎn méng zhǐjiào, huòrán dà wù」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'shū zhōng jìzǎi le yīgè gùshi: yī wèi sēngrén tōngguò shīfu de zhǐdiǎn, tūrán wánquán míngbái le Fófǎ de dàolǐ, yuánwén xiě de shì 「jiǎn méng zhǐjiào, huòrán dà wù」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The text records a story: a monk, guided by his master, suddenly and completely understood the teachings of Buddhism. The original phrase is &#x27;简蒙指教，豁然大悟&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The text records a story: a monk, guided by his master, suddenly and completely understood the teachings of Buddhism. The original phrase is &#x27;简蒙指教，豁然大悟&#x27;.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">原文里用的是「豁然大悟」，豁然和恍然意思相近，都表示突然开朗、清醒。后来在流传的过程中，「豁然」逐渐被「恍然」代替，演变成了我们今天常用的「恍然大悟」。</span>
+            <button class="copy-btn" onclick="copyText(this, '原文里用的是「豁然大悟」，豁然和恍然意思相近，都表示突然开朗、清醒。后来在流传的过程中，「豁然」逐渐被「恍然」代替，演变成了我们今天常用的「恍然大悟」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yuánwén lǐ yòng de shì 「huòrán dà wù」, huòrán hé huǎngrán yìsi xiāngjìn, dōu biǎoshì tūrán kāilǎng, qīngxǐng. hòulái zài liúchuán de guòchéng zhōng, 「huòrán」 zhújiàn bèi 「huǎngrán」 dàitì, yǎnbiàn chéng le wǒmen jīntiān cháng yòng de 「huǎngrán dà wù」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yuánwén lǐ yòng de shì 「huòrán dà wù」, huòrán hé huǎngrán yìsi xiāngjìn, dōu biǎoshì tūrán kāilǎng, qīngxǐng. hòulái zài liúchuán de guòchéng zhōng, 「huòrán」 zhújiàn bèi 「huǎngrán」 dàitì, yǎnbiàn chéng le wǒmen jīntiān cháng yòng de 「huǎngrán dà wù」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The original text uses 豁然大悟. 豁然 and 恍然 have similar meanings — both describe a sudden clearing or awakening. Over time as the phrase spread, 豁然 was gradually replaced by 恍然, evolving into the 恍然大悟 we use today.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The original text uses 豁然大悟. 豁然 and 恍然 have similar meanings — both describe a sudden clearing or awakening. Over time as the phrase spread, 豁然 was gradually replaced by 恍然, evolving into the 恍然大悟 we use today.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">虽然它来自佛教经典，但现在早已不限于宗教场合，任何「突然明白了」的瞬间都可以用。</span>
+            <button class="copy-btn" onclick="copyText(this, '虽然它来自佛教经典，但现在早已不限于宗教场合，任何「突然明白了」的瞬间都可以用。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">suīrán tā lái zì Fójiào jīngdiǎn, dàn xiànzài zǎoyǐ bù xiàn yú zōngjiào chǎnghé, rènhé 「tūrán míngbái le」 de shùnjiān dōu kěyǐ yòng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'suīrán tā lái zì Fójiào jīngdiǎn, dàn xiànzài zǎoyǐ bù xiàn yú zōngjiào chǎnghé, rènhé 「tūrán míngbái le」 de shùnjiān dōu kěyǐ yòng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Though it comes from a Buddhist text, it long since outgrew its religious context — any moment of sudden understanding can be described with 恍然大悟.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Though it comes from a Buddhist text, it long since outgrew its religious context — any moment of sudden understanding can be described with 恍然大悟.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">听了他的解释，我终于恍然大悟，原来误会是从那里来的。</span>
+            <button class="copy-btn" onclick="copyText(this, '听了他的解释，我终于恍然大悟，原来误会是从那里来的。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tīng le tā de jiěshì, wǒ zhōngyú huǎng rán dà wù, yuánlái wùhuì shì cóng nàlǐ lái de.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tīng le tā de jiěshì, wǒ zhōngyú huǎng rán dà wù, yuánlái wùhuì shì cóng nàlǐ lái de.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After hearing his explanation, I finally had an &#x27;aha&#x27; moment — so that&#x27;s where the misunderstanding had come from.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After hearing his explanation, I finally had an &#x27;aha&#x27; moment — so that&#x27;s where the misunderstanding had come from.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这句话里，「恍然大悟」表达的是听完解释之后那种突然什么都清楚了的感觉——之前想不通，听完立刻就通了。</span>
+            <button class="copy-btn" onclick="copyText(this, '这句话里，「恍然大悟」表达的是听完解释之后那种突然什么都清楚了的感觉——之前想不通，听完立刻就通了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jù huà lǐ, 「huǎng rán dà wù」 biǎodá de shì tīng wán jiěshì zhīhòu nà zhǒng tūrán shénme dōu qīngchǔ le de gǎnjué——zhīqián xiǎng bù tōng, tīng wán lìkè jiù tōng le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jù huà lǐ, 「huǎng rán dà wù」 biǎodá de shì tīng wán jiěshì zhīhòu nà zhǒng tūrán shénme dōu qīngchǔ le de gǎnjué——zhīqián xiǎng bù tōng, tīng wán lìkè jiù tōng le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Here, 恍然大悟 captures that feeling of everything suddenly becoming clear after an explanation — confused before, immediately clear after.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Here, 恍然大悟 captures that feeling of everything suddenly becoming clear after an explanation — confused before, immediately clear after.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">直到多年后她再回想起那段话，才恍然大悟，当时他说的「再见」其实是真正的告别。</span>
+            <button class="copy-btn" onclick="copyText(this, '直到多年后她再回想起那段话，才恍然大悟，当时他说的「再见」其实是真正的告别。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhídào duō nián hòu tā zài huíxiǎng qǐ nà duàn huà, cái huǎng rán dà wù, dāngshí tā shuō de 「zàijiàn」 qíshí shì zhēnzhèng de gàobié.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhídào duō nián hòu tā zài huíxiǎng qǐ nà duàn huà, cái huǎng rán dà wù, dāngshí tā shuō de 「zàijiàn」 qíshí shì zhēnzhèng de gàobié.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">It wasn&#x27;t until years later, looking back on those words, that she finally understood — the &#x27;goodbye&#x27; he had said back then was a real farewell.</span>
+            <button class="copy-btn" onclick="copyText(this, 'It wasn&#x27;t until years later, looking back on those words, that she finally understood — the &#x27;goodbye&#x27; he had said back then was a real farewell.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个例子展示了恍然大悟的另一种用法：不一定是当场明白，可以是过了很久才突然想通。重要的是那个「突然」的瞬间。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个例子展示了恍然大悟的另一种用法：不一定是当场明白，可以是过了很久才突然想通。重要的是那个「突然」的瞬间。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège lìzi zhǎnshì le huǎng rán dà wù de lìng yī zhǒng yòngfǎ: bù yīdìng shì dāngchǎng míngbái, kěyǐ shì guò le hěn jiǔ cái tūrán xiǎng tōng. zhòngyào de shì nà gè 「tūrán」 de shùnjiān.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège lìzi zhǎnshì le huǎng rán dà wù de lìng yī zhǒng yòngfǎ: bù yīdìng shì dāngchǎng míngbái, kěyǐ shì guò le hěn jiǔ cái tūrán xiǎng tōng. zhòngyào de shì nà gè 「tūrán」 de shùnjiān.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This example shows another use: you don&#x27;t have to understand immediately in the moment — it can be a sudden realisation that comes much later. What matters is that sudden &#x27;click&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This example shows another use: you don&#x27;t have to understand immediately in the moment — it can be a sudden realisation that comes much later. What matters is that sudden &#x27;click&#x27;.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">恍然大悟，就是那个迷雾散开的瞬间——之前想不通的，听到某句话或者看到某件事，一下子全明白了。</span>
+            <button class="copy-btn" onclick="copyText(this, '恍然大悟，就是那个迷雾散开的瞬间——之前想不通的，听到某句话或者看到某件事，一下子全明白了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">huǎng rán dà wù, jiù shì nà gè míwù sànkāi de shùnjiān——zhīqián xiǎng bù tōng de, tīng dào mǒu jù huà huòzhě kàn dào mǒu jiàn shì, yīxiàzi quán míngbái le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'huǎng rán dà wù, jiù shì nà gè míwù sànkāi de shùnjiān——zhīqián xiǎng bù tōng de, tīng dào mǒu jù huà huòzhě kàn dào mǒu jiàn shì, yīxiàzi quán míngbái le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">恍然大悟 is that moment when the fog clears — something you couldn&#x27;t figure out, and then one word or one moment makes it all click into place.</span>
+            <button class="copy-btn" onclick="copyText(this, '恍然大悟 is that moment when the fog clears — something you couldn&#x27;t figure out, and then one word or one moment makes it all click into place.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 他看完那封信，________，终于知道朋友为什么突然消失了。</p><p class="quiz-hint">After reading the letter, he ________ — finally understanding why his friend had suddenly disappeared.</p><p class="quiz-a">✅ 他看完那封信，恍然大悟，终于知道朋友为什么突然消失了。</p><p class="quiz-hint">After reading the letter, he finally had an &#x27;aha&#x27; moment — finally understanding why his friend had suddenly disappeared.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 老师一句话，我就________，原来是这么回事。</p><p class="quiz-hint">One sentence from the teacher and I ________ — so that&#x27;s what it was all about.</p><p class="quiz-a">✅ 老师一句话，我就恍然大悟，原来是这么回事。</p><p class="quiz-hint">One sentence from the teacher and I suddenly understood everything — so that&#x27;s what it was all about.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q3.</span> 看到妈妈脸上的表情，孩子________，原来自己做错了。</p><p class="quiz-hint">Seeing the expression on Mum&#x27;s face, the child ________ — realising they had done something wrong.</p><p class="quiz-a">✅ 看到妈妈脸上的表情，孩子恍然大悟，原来自己做错了。</p><p class="quiz-hint">Seeing the expression on Mum&#x27;s face, the child suddenly understood — realising they had done something wrong.</p></div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">恍然大悟强调的是「突然明白」——用在之前有过迷惑、不理解的情况下，最后突然想通了。如果本来就知道、慢慢理解的，不适合用这个词。</span>
+            <button class="copy-btn" onclick="copyText(this, '恍然大悟强调的是「突然明白」——用在之前有过迷惑、不理解的情况下，最后突然想通了。如果本来就知道、慢慢理解的，不适合用这个词。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">huǎng rán dà wù qiángdiào de shì 「tūrán míngbái」——yòng zài zhīqián yǒuguò míhuò, bù lǐjiě de qíngkuàng xià, zuìhòu tūrán xiǎng tōng le. rúguǒ běnlái jiù zhīdào, mànmàn lǐjiě de, bù shìhé yòng zhège cí.</span>
+            <button class="copy-btn" onclick="copyText(this, 'huǎng rán dà wù qiángdiào de shì 「tūrán míngbái」——yòng zài zhīqián yǒuguò míhuò, bù lǐjiě de qíngkuàng xià, zuìhòu tūrán xiǎng tōng le. rúguǒ běnlái jiù zhīdào, mànmàn lǐjiě de, bù shìhé yòng zhège cí.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">恍然大悟 emphasises &#x27;suddenly understanding&#x27; — it&#x27;s used when there was previous confusion or misunderstanding that was finally resolved all at once. If you always knew, or understood gradually, this idiom doesn&#x27;t fit.</span>
+            <button class="copy-btn" onclick="copyText(this, '恍然大悟 emphasises &#x27;suddenly understanding&#x27; — it&#x27;s used when there was previous confusion or misunderstanding that was finally resolved all at once. If you always knew, or understood gradually, this idiom doesn&#x27;t fit.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">语法上，它通常用作谓语或补语：「我恍然大悟」「他恍然大悟地点头」「听完之后恍然大悟」都很自然。</span>
+            <button class="copy-btn" onclick="copyText(this, '语法上，它通常用作谓语或补语：「我恍然大悟」「他恍然大悟地点头」「听完之后恍然大悟」都很自然。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǔfǎ shàng, tā tōngcháng yòng zuò wèiyǔ huò bǔyǔ: 「wǒ huǎng rán dà wù」「tā huǎng rán dà wù de diǎntóu」「tīng wán zhīhòu huǎng rán dà wù」 dōu hěn zìrán.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǔfǎ shàng, tā tōngcháng yòng zuò wèiyǔ huò bǔyǔ: 「wǒ huǎng rán dà wù」「tā huǎng rán dà wù de diǎntóu」「tīng wán zhīhòu huǎng rán dà wù」 dōu hěn zìrán.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Grammatically it usually serves as a predicate or complement: 我恍然大悟 (I suddenly understood), 他恍然大悟地点头 (he nodded, suddenly understanding), 听完之后恍然大悟 (understood after hearing it out) — all natural.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Grammatically it usually serves as a predicate or complement: 我恍然大悟 (I suddenly understood), 他恍然大悟地点头 (he nodded, suddenly understanding), 听完之后恍然大悟 (understood after hearing it out) — all natural.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">语气上，恍然大悟是中性偏正面的，表示终于明白了，有一种轻松释怀的感觉。</span>
+            <button class="copy-btn" onclick="copyText(this, '语气上，恍然大悟是中性偏正面的，表示终于明白了，有一种轻松释怀的感觉。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǔqì shàng, huǎng rán dà wù shì zhōngxìng piān zhèngmiàn de, biǎoshì zhōngyú míngbái le, yǒu yī zhǒng qīngsōng shìhuái de gǎnjué.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǔqì shàng, huǎng rán dà wù shì zhōngxìng piān zhèngmiàn de, biǎoshì zhōngyú míngbái le, yǒu yī zhǒng qīngsōng shìhuái de gǎnjué.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In tone, 恍然大悟 is neutral to positive — it conveys finally understanding, with a sense of relief and lightness.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In tone, 恍然大悟 is neutral to positive — it conveys finally understanding, with a sense of relief and lightness.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次当你终于想通一件困扰你的事，可以说：「我恍然大悟了！」——感受一下那种豁然开朗的轻盈感。</span>
+            <button class="copy-btn" onclick="copyText(this, '下次当你终于想通一件困扰你的事，可以说：「我恍然大悟了！」——感受一下那种豁然开朗的轻盈感。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xià cì dāng nǐ zhōngyú xiǎng tōng yī jiàn kùnrǎo nǐ de shì, kěyǐ shuō: 「wǒ huǎng rán dà wù le!」——gǎnshòu yīxià nà zhǒng huòrán kāilǎng de qīngyíng gǎn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xià cì dāng nǐ zhōngyú xiǎng tōng yī jiàn kùnrǎo nǐ de shì, kěyǐ shuō: 「wǒ huǎng rán dà wù le!」——gǎnshòu yīxià nà zhǒng huòrán kāilǎng de qīngyíng gǎn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time you finally figure out something that&#x27;s been puzzling you, try saying: 我恍然大悟了! — and feel that sense of lightness when everything suddenly clicks.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time you finally figure out something that&#x27;s been puzzling you, try saying: 我恍然大悟了! — and feel that sense of lightness when everything suddenly clicks.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
