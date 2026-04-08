@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep19 · 惺惺相惜 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>惺惺相惜</h1>
+  <div class="pinyin">xīng xīng xiāng xī</div>
+  <div class="meta">ep19 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">你有没有遇到过这样的人——第一次见面，却感觉像认识了很久？</span>
+            <button class="copy-btn" onclick="copyText(this, '你有没有遇到过这样的人——第一次见面，却感觉像认识了很久？')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nǐ yǒu méiyǒu yù dào guò zhèyàng de rén——dì yī cì jiànmiàn, què gǎnjué xiàng rènshi le hěn jiǔ?</span>
+            <button class="copy-btn" onclick="copyText(this, 'nǐ yǒu méiyǒu yù dào guò zhèyàng de rén——dì yī cì jiànmiàn, què gǎnjué xiàng rènshi le hěn jiǔ?')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Have you ever met someone for the first time, yet felt like you&#x27;d known them for years?</span>
+            <button class="copy-btn" onclick="copyText(this, 'Have you ever met someone for the first time, yet felt like you&#x27;d known them for years?')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">说话不用解释太多，对方就能懂你的意思。今天我们要学的成语，说的就是这种感觉。</span>
+            <button class="copy-btn" onclick="copyText(this, '说话不用解释太多，对方就能懂你的意思。今天我们要学的成语，说的就是这种感觉。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shuōhuà bùyòng jiěshì tài duō, duìfāng jiù néng dǒng nǐ de yìsi. jīntiān wǒmen yào xué de chéngyǔ, shuō de jiù shì zhè zhǒng gǎnjué.</span>
+            <button class="copy-btn" onclick="copyText(this, 'shuōhuà bùyòng jiěshì tài duō, duìfāng jiù néng dǒng nǐ de yìsi. jīntiān wǒmen yào xué de chéngyǔ, shuō de jiù shì zhè zhǒng gǎnjué.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">You don&#x27;t need to explain much — the other person just gets you. Today&#x27;s idiom is about exactly that feeling.</span>
+            <button class="copy-btn" onclick="copyText(this, 'You don&#x27;t need to explain much — the other person just gets you. Today&#x27;s idiom is about exactly that feeling.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——惺惺相惜。惺惺相惜。惺惺相惜。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——惺惺相惜。惺惺相惜。惺惺相惜。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 惺惺相惜.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 惺惺相惜.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【惺 · xīng】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">&quot;惺&quot;，左边是心字旁，右边是&quot;星&quot;。心里像星星一样明亮，这个字的意思是聪明、清醒、明辨是非。</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;惺&quot;，左边是心字旁，右边是&quot;星&quot;。心里像星星一样明亮，这个字的意思是聪明、清醒、明辨是非。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">&quot;Xīng&quot;, zuǒbiān shì xīnzìpáng, yòubiān shì &quot;xīng&quot;. xīnlǐ xiàng xīngxīng yīyàng míngliàng, zhège zì de yìsi shì cōngmíng, qīngxǐng, míngbiàn shìfēi.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;Xīng&quot;, zuǒbiān shì xīnzìpáng, yòubiān shì &quot;xīng&quot;. xīnlǐ xiàng xīngxīng yīyàng míngliàng, zhège zì de yìsi shì cōngmíng, qīngxǐng, míngbiàn shìfēi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&quot;Xīng&quot; has the heart radical on the left and &quot;star&quot; (星) on the right — bright like a star in the mind. It means intelligent, clear-headed, and perceptive.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;Xīng&quot; has the heart radical on the left and &quot;star&quot; (星) on the right — bright like a star in the mind. It means intelligent, clear-headed, and perceptive.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如&quot;睡眼惺忪&quot;，形容刚睡醒、眼睛还没完全睁开的样子。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如&quot;睡眼惺忪&quot;，形容刚睡醒、眼睛还没完全睁开的样子。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú &quot;shuìyǎn xīng sōng&quot;, xíngróng gāng shuì xǐng, yǎnjīng hái méi wánquán zhēng kāi de yàngzi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú &quot;shuìyǎn xīng sōng&quot;, xíngróng gāng shuì xǐng, yǎnjīng hái méi wánquán zhēng kāi de yàngzi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example, 睡眼惺忪 describes the drowsy, half-open eyes of someone who has just woken up.</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example, 睡眼惺忪 describes the drowsy, half-open eyes of someone who has just woken up.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">&quot;惺惺&quot;两字叠用，则指聪明、有见识的人，或彼此心思相通的状态。</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;惺惺&quot;两字叠用，则指聪明、有见识的人，或彼此心思相通的状态。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">&quot;xīng xīng&quot; liǎng zì dié yòng, zé zhǐ cōngmíng, yǒu jiànshi de rén, huò bǐcǐ xīnsī xiāngtōng de zhuàngtài.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;xīng xīng&quot; liǎng zì dié yòng, zé zhǐ cōngmíng, yǒu jiànshi de rén, huò bǐcǐ xīnsī xiāngtōng de zhuàngtài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">When doubled as 惺惺, it refers to perceptive, insightful people — or a state of mutual understanding between them.</span>
+            <button class="copy-btn" onclick="copyText(this, 'When doubled as 惺惺, it refers to perceptive, insightful people — or a state of mutual understanding between them.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【相 · xiāng】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">&quot;相&quot;在这里读第一声，表示&quot;互相、彼此&quot;的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;相&quot;在这里读第一声，表示&quot;互相、彼此&quot;的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">&quot;Xiāng&quot; zài zhèlǐ dú dì yī shēng, biǎoshì &quot;hùxiāng, bǐcǐ&quot; de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;Xiāng&quot; zài zhèlǐ dú dì yī shēng, biǎoshì &quot;hùxiāng, bǐcǐ&quot; de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&quot;Xiāng&quot; is read in the first tone here, meaning &quot;mutually&quot; or &quot;each other&quot;.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;Xiāng&quot; is read in the first tone here, meaning &quot;mutually&quot; or &quot;each other&quot;.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">相关的词有&quot;相互&quot;、&quot;相信&quot;、&quot;相遇&quot;——都带有双方之间发生关系的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '相关的词有&quot;相互&quot;、&quot;相信&quot;、&quot;相遇&quot;——都带有双方之间发生关系的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xiāngguān de cí yǒu &quot;xiānghù&quot;, &quot;xiāngxìn&quot;, &quot;xiāngyù&quot;——dōu dài yǒu shuāngfāng zhījiān fāshēng guānxi de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xiāngguān de cí yǒu &quot;xiānghù&quot;, &quot;xiāngxìn&quot;, &quot;xiāngyù&quot;——dōu dài yǒu shuāngfāng zhījiān fāshēng guānxi de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Related words: 相互 (mutual), 相信 (to trust), 相遇 (to meet) — all involving a relationship between two parties.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Related words: 相互 (mutual), 相信 (to trust), 相遇 (to meet) — all involving a relationship between two parties.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【惜 · xī】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">&quot;惜&quot;的意思是珍视、爱惜，觉得某件事或某个人很宝贵、舍不得失去。</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;惜&quot;的意思是珍视、爱惜，觉得某件事或某个人很宝贵、舍不得失去。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">&quot;Xī&quot; de yìsi shì zhēnshì, àixī, juéde mǒu jiàn shì huò mǒu gè rén hěn bǎoguì, shě bu de shīqù.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;Xī&quot; de yìsi shì zhēnshì, àixī, juéde mǒu jiàn shì huò mǒu gè rén hěn bǎoguì, shě bu de shīqù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&quot;Xī&quot; means to cherish or treasure — to feel that something or someone is precious and not want to lose it.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;Xī&quot; means to cherish or treasure — to feel that something or someone is precious and not want to lose it.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如&quot;珍惜时间&quot;、&quot;爱惜生命&quot;，还有&quot;可惜&quot;，表示遗憾、感到惋惜。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如&quot;珍惜时间&quot;、&quot;爱惜生命&quot;，还有&quot;可惜&quot;，表示遗憾、感到惋惜。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú &quot;zhēnxī shíjiān&quot;, &quot;àixī shēngmìng&quot;, hái yǒu &quot;kěxī&quot;, biǎoshì yíhàn, gǎndào wǎnxī.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú &quot;zhēnxī shíjiān&quot;, &quot;àixī shēngmìng&quot;, hái yǒu &quot;kěxī&quot;, biǎoshì yíhàn, gǎndào wǎnxī.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Examples: 珍惜时间 (cherish time), 爱惜生命 (value life), and 可惜 (what a pity).</span>
+            <button class="copy-btn" onclick="copyText(this, 'Examples: 珍惜时间 (cherish time), 爱惜生命 (value life), and 可惜 (what a pity).')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">&quot;惺惺相惜&quot;，字面意思是：聪明的人互相珍视对方。</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;惺惺相惜&quot;，字面意思是：聪明的人互相珍视对方。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">&quot;Xīng xīng xiāng xī&quot;, zìmiàn yìsi shì: cōngmíng de rén hùxiāng zhēnshì duìfāng.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;Xīng xīng xiāng xī&quot;, zìmiàn yìsi shì: cōngmíng de rén hùxiāng zhēnshì duìfāng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The literal meaning of 惺惺相惜 is: intelligent people cherish and value each other.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The literal meaning of 惺惺相惜 is: intelligent people cherish and value each other.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">引申开来，是指性格、才华或经历相似的人，能够互相理解、彼此欣赏。</span>
+            <button class="copy-btn" onclick="copyText(this, '引申开来，是指性格、才华或经历相似的人，能够互相理解、彼此欣赏。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǐnshēn kāi lái, shì zhǐ xìnggé, cáihuá huò jīnglì xiāngsì de rén, nénggòu hùxiāng lǐjiě, bǐcǐ xīnshǎng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǐnshēn kāi lái, shì zhǐ xìnggé, cáihuá huò jīnglì xiāngsì de rén, nénggòu hùxiāng lǐjiě, bǐcǐ xīnshǎng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">More broadly, it describes people of similar character, talent, or experience who understand each other deeply and mutually appreciate one another.</span>
+            <button class="copy-btn" onclick="copyText(this, 'More broadly, it describes people of similar character, talent, or experience who understand each other deeply and mutually appreciate one another.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这种感觉不一定来自长久的认识，有时第一次见面就会有这种心灵相通的感受。</span>
+            <button class="copy-btn" onclick="copyText(this, '这种感觉不一定来自长久的认识，有时第一次见面就会有这种心灵相通的感受。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè zhǒng gǎnjué bù yīdìng lái zì chángjiǔ de rènshi, yǒushí dì yī cì jiànmiàn jiù huì yǒu zhè zhǒng xīnlíng xiāngtōng de gǎnshòu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè zhǒng gǎnjué bù yīdìng lái zì chángjiǔ de rènshi, yǒushí dì yī cì jiànmiàn jiù huì yǒu zhè zhǒng xīnlíng xiāngtōng de gǎnshòu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This feeling doesn&#x27;t require long acquaintance — sometimes you sense it the very first time you meet.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This feeling doesn&#x27;t require long acquaintance — sometimes you sense it the very first time you meet.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">近义词有&quot;志同道合&quot;，强调共同的目标和理念；还有&quot;一见如故&quot;，形容初次见面就像老朋友。</span>
+            <button class="copy-btn" onclick="copyText(this, '近义词有&quot;志同道合&quot;，强调共同的目标和理念；还有&quot;一见如故&quot;，形容初次见面就像老朋友。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jìnyìcí yǒu &quot;zhì tóng dào hé&quot;, qiángdiào gòngtóng de mùbiāo hé lǐniàn; hái yǒu &quot;yījiàn rúgù&quot;, xíngróng chūcì jiànmiàn jiù xiàng lǎo péngyou.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jìnyìcí yǒu &quot;zhì tóng dào hé&quot;, qiángdiào gòngtóng de mùbiāo hé lǐniàn; hái yǒu &quot;yījiàn rúgù&quot;, xíngróng chūcì jiànmiàn jiù xiàng lǎo péngyou.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Near-synonyms: 志同道合 (like-minded, sharing goals) and 一见如故 (feeling like old friends at first meeting).</span>
+            <button class="copy-btn" onclick="copyText(this, 'Near-synonyms: 志同道合 (like-minded, sharing goals) and 一见如故 (feeling like old friends at first meeting).')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源 — 源自古谚 · &quot;惺惺惜惺惺，好汉惜好汉&quot;</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">古语有云：&quot;惺惺惜惺惺，好汉惜好汉。&quot;</span>
+            <button class="copy-btn" onclick="copyText(this, '古语有云：&quot;惺惺惜惺惺，好汉惜好汉。&quot;')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">gǔyǔ yǒu yún: &quot;xīng xīng xī xīng xīng, hǎohàn xī hǎohàn.&quot;</span>
+            <button class="copy-btn" onclick="copyText(this, 'gǔyǔ yǒu yún: &quot;xīng xīng xī xīng xīng, hǎohàn xī hǎohàn.&quot;')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">An old saying goes: &quot;The perceptive cherish the perceptive; the bold cherish the bold.&quot;</span>
+            <button class="copy-btn" onclick="copyText(this, 'An old saying goes: &quot;The perceptive cherish the perceptive; the bold cherish the bold.&quot;')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这句话的意思是：聪明的人能看见另一个聪明人的价值，英雄能理解另一个英雄的不易。</span>
+            <button class="copy-btn" onclick="copyText(this, '这句话的意思是：聪明的人能看见另一个聪明人的价值，英雄能理解另一个英雄的不易。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jù huà de yìsi shì: cōngmíng de rén néng kànjiàn lìng yīgè cōngmíng rén de jiàzhí, yīngxióng néng lǐjiě lìng yīgè yīngxióng de bùyì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jù huà de yìsi shì: cōngmíng de rén néng kànjiàn lìng yīgè cōngmíng rén de jiàzhí, yīngxióng néng lǐjiě lìng yīgè yīngxióng de bùyì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Its meaning: an intelligent person can recognize the value in another intelligent person; a hero understands the hardships of another hero.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Its meaning: an intelligent person can recognize the value in another intelligent person; a hero understands the hardships of another hero.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">后来，&quot;惺惺惜惺惺&quot;简化为&quot;惺惺相惜&quot;，在文学作品中广泛流传，专门形容同类之间那种无需言说的默契与珍视。</span>
+            <button class="copy-btn" onclick="copyText(this, '后来，&quot;惺惺惜惺惺&quot;简化为&quot;惺惺相惜&quot;，在文学作品中广泛流传，专门形容同类之间那种无需言说的默契与珍视。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hòulái, &quot;xīng xīng xī xīng xīng&quot; jiǎnhuà wéi &quot;xīng xīng xiāng xī&quot;, zài wénxué zuòpǐn zhōng guǎngfàn liúchuán, zhuānmén xíngróng tónglèi zhījiān nà zhǒng wú xū yán shuō de mòqì yǔ zhēnshì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hòulái, &quot;xīng xīng xī xīng xīng&quot; jiǎnhuà wéi &quot;xīng xīng xiāng xī&quot;, zài wénxué zuòpǐn zhōng guǎngfàn liúchuán, zhuānmén xíngróng tónglèi zhījiān nà zhǒng wú xū yán shuō de mòqì yǔ zhēnshì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Over time, 惺惺惜惺惺 was condensed into 惺惺相惜, spreading widely in literature to describe the unspoken understanding and mutual appreciation between kindred spirits.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Over time, 惺惺惜惺惺 was condensed into 惺惺相惜, spreading widely in literature to describe the unspoken understanding and mutual appreciation between kindred spirits.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">两位作家第一次见面，就聊了整整一夜，果然是惺惺相惜。</span>
+            <button class="copy-btn" onclick="copyText(this, '两位作家第一次见面，就聊了整整一夜，果然是惺惺相惜。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">liǎng wèi zuòjiā dì yī cì jiànmiàn, jiù liáo le zhěngzhěng yī yè, guǒrán shì xīng xīng xiāng xī.</span>
+            <button class="copy-btn" onclick="copyText(this, 'liǎng wèi zuòjiā dì yī cì jiànmiàn, jiù liáo le zhěngzhěng yī yè, guǒrán shì xīng xīng xiāng xī.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The two writers met for the first time and ended up talking all night — true kindred spirits indeed.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The two writers met for the first time and ended up talking all night — true kindred spirits indeed.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这句话说的是：两个有才华的人相遇，不需要太多时间，就能感受到彼此的共鸣。</span>
+            <button class="copy-btn" onclick="copyText(this, '这句话说的是：两个有才华的人相遇，不需要太多时间，就能感受到彼此的共鸣。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jù huà shuō de shì: liǎng gè yǒu cáihuá de rén xiāngyù, bù xūyào tài duō shíjiān, jiù néng gǎnshòu dào bǐcǐ de gòngmíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jù huà shuō de shì: liǎng gè yǒu cáihuá de rén xiāngyù, bù xūyào tài duō shíjiān, jiù néng gǎnshòu dào bǐcǐ de gòngmíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This shows that two talented people, upon meeting, quickly feel a deep resonance with each other.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This shows that two talented people, upon meeting, quickly feel a deep resonance with each other.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">他们虽然是竞争对手，却惺惺相惜，彼此都十分欣赏对方的实力。</span>
+            <button class="copy-btn" onclick="copyText(this, '他们虽然是竞争对手，却惺惺相惜，彼此都十分欣赏对方的实力。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tāmen suīrán shì jìngzhēng duìshǒu, què xīng xīng xiāng xī, bǐcǐ dōu shífēn xīnshǎng duìfāng de shílì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tāmen suīrán shì jìngzhēng duìshǒu, què xīng xīng xiāng xī, bǐcǐ dōu shífēn xīnshǎng duìfāng de shílì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Even though they were rivals, they held a deep mutual admiration — each greatly respecting the other&#x27;s abilities.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Even though they were rivals, they held a deep mutual admiration — each greatly respecting the other&#x27;s abilities.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里很有意思——即使是竞争对手，也可以惺惺相惜。这个词强调的是欣赏，而不是亲密的友谊。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里很有意思——即使是竞争对手，也可以惺惺相惜。这个词强调的是欣赏，而不是亲密的友谊。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ hěn yǒuyìsi——jíshǐ shì jìngzhēng duìshǒu, yě kěyǐ xīng xīng xiāng xī. zhège cí qiángdiào de shì xīnshǎng, ér bùshì qīnmì de yǒuyì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ hěn yǒuyìsi——jíshǐ shì jìngzhēng duìshǒu, yě kěyǐ xīng xīng xiāng xī. zhège cí qiángdiào de shì xīnshǎng, ér bùshì qīnmì de yǒuyì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Notably, even rivals can 惺惺相惜. The phrase is about appreciation — not necessarily close friendship.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Notably, even rivals can 惺惺相惜. The phrase is about appreciation — not necessarily close friendship.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">现在再看这段片段，大家能感受到台词背后的意思了吗？</span>
+            <button class="copy-btn" onclick="copyText(this, '现在再看这段片段，大家能感受到台词背后的意思了吗？')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xiànzài zài kàn zhè duàn piànduàn, dàjiā néng gǎnshòu dào táicí bèihòu de yìsi le ma?</span>
+            <button class="copy-btn" onclick="copyText(this, 'xiànzài zài kàn zhè duàn piànduàn, dàjiā néng gǎnshòu dào táicí bèihòu de yìsi le ma?')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Watching the clip again now — can you feel the meaning behind those lines?</span>
+            <button class="copy-btn" onclick="copyText(this, 'Watching the clip again now — can you feel the meaning behind those lines?')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">当角色说出&quot;惺惺相惜&quot;，表达的是一种深深的理解与珍视——即使两人性格不同，在内心深处却是同一类人。</span>
+            <button class="copy-btn" onclick="copyText(this, '当角色说出&quot;惺惺相惜&quot;，表达的是一种深深的理解与珍视——即使两人性格不同，在内心深处却是同一类人。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dāng juésè shuō chū &quot;xīng xīng xiāng xī&quot;, biǎodá de shì yī zhǒng shēnshēn de lǐjiě yǔ zhēnshì——jíshǐ liǎng rén xìnggé bùtóng, zài nèixīn shēnchù què shì tóngyī lèi rén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dāng juésè shuō chū &quot;xīng xīng xiāng xī&quot;, biǎodá de shì yī zhǒng shēnshēn de lǐjiě yǔ zhēnshì——jíshǐ liǎng rén xìnggé bùtóng, zài nèixīn shēnchù què shì tóngyī lèi rén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">When the character says 惺惺相惜, they express deep understanding and regard — even if the two are different on the surface, at heart they are the same kind of person.</span>
+            <button class="copy-btn" onclick="copyText(this, 'When the character says 惺惺相惜, they express deep understanding and regard — even if the two are different on the surface, at heart they are the same kind of person.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">&quot;惺惺相惜&quot;用来形容两个或两个以上的人之间的关系，不能用来形容一个人。</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;惺惺相惜&quot;用来形容两个或两个以上的人之间的关系，不能用来形容一个人。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">&quot;xīng xīng xiāng xī&quot; yòng lái xíngróng liǎng gè huò liǎng gè yǐshàng de rén zhījiān de guānxi, bù néng yòng lái xíngróng yī gè rén.</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;xīng xīng xiāng xī&quot; yòng lái xíngróng liǎng gè huò liǎng gè yǐshàng de rén zhījiān de guānxi, bù néng yòng lái xíngróng yī gè rén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">惺惺相惜 describes a relationship between two or more people — it cannot describe a single person alone.</span>
+            <button class="copy-btn" onclick="copyText(this, '惺惺相惜 describes a relationship between two or more people — it cannot describe a single person alone.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个词带有正面、温暖的感情色彩，通常用于有才能、有品格、或经历相似的人之间。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个词带有正面、温暖的感情色彩，通常用于有才能、有品格、或经历相似的人之间。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège cí dài yǒu zhèngmiàn, wēnnuǎn de qínggǎn sècǎi, tōngcháng yòng yú yǒu cáinéng, yǒu pǐngé, huò jīnglì xiāngsì de rén zhījiān.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège cí dài yǒu zhèngmiàn, wēnnuǎn de qínggǎn sècǎi, tōngcháng yòng yú yǒu cáinéng, yǒu pǐngé, huò jīnglì xiāngsì de rén zhījiān.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">It carries a positive, warm emotional tone, typically used between people of talent, character, or similar life experience.</span>
+            <button class="copy-btn" onclick="copyText(this, 'It carries a positive, warm emotional tone, typically used between people of talent, character, or similar life experience.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">也可以用于对手之间——比如两位棋手或运动员，互相欣赏对方的实力，感情上不一定亲密。</span>
+            <button class="copy-btn" onclick="copyText(this, '也可以用于对手之间——比如两位棋手或运动员，互相欣赏对方的实力，感情上不一定亲密。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yě kěyǐ yòng yú duìshǒu zhījiān——bǐrú liǎng wèi qíshǒu huò yùndòngyuán, hùxiāng xīnshǎng duìfāng de shílì, qínggǎn shàng bù yīdìng qīnmì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yě kěyǐ yòng yú duìshǒu zhījiān——bǐrú liǎng wèi qíshǒu huò yùndòngyuán, hùxiāng xīnshǎng duìfāng de shílì, qínggǎn shàng bù yīdìng qīnmì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">It can also apply to rivals — for instance, two chess players or athletes who admire each other&#x27;s skill, even without being close friends.</span>
+            <button class="copy-btn" onclick="copyText(this, 'It can also apply to rivals — for instance, two chess players or athletes who admire each other&#x27;s skill, even without being close friends.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次，当你遇到一个让你觉得&quot;我们真的很像&quot;的人，可以试着说：</span>
+            <button class="copy-btn" onclick="copyText(this, '下次，当你遇到一个让你觉得&quot;我们真的很像&quot;的人，可以试着说：')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xià cì, dāng nǐ yù dào yīgè ràng nǐ juéde &quot;wǒmen zhēn de hěn xiàng&quot; de rén, kěyǐ shìzhe shuō:</span>
+            <button class="copy-btn" onclick="copyText(this, 'xià cì, dāng nǐ yù dào yīgè ràng nǐ juéde &quot;wǒmen zhēn de hěn xiàng&quot; de rén, kěyǐ shìzhe shuō:')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time you meet someone who makes you feel &quot;we are really alike,&quot; try saying:</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time you meet someone who makes you feel &quot;we are really alike,&quot; try saying:')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">&quot;我们两个，真是惺惺相惜啊！&quot;</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;我们两个，真是惺惺相惜啊！&quot;')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">&quot;wǒmen liǎng gè, zhēn shì xīng xīng xiāng xī a!&quot;</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;wǒmen liǎng gè, zhēn shì xīng xīng xiāng xī a!&quot;')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&quot;The two of us are truly kindred spirits!&quot;</span>
+            <button class="copy-btn" onclick="copyText(this, '&quot;The two of us are truly kindred spirits!&quot;')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
