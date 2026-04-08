@@ -193,30 +193,50 @@ python scripts/generate_html.py \
 ## Step 6 — Push to GitHub and deliver
 
 The user's GitHub repo is `https://github.com/tmtmaj/snowys-chinese-house`.
-Local clone is at `C:\Users\박정혁\github\snowys-chinese-house`.
+Local clone path is discovered at runtime — do NOT hardcode it. Detect it by running:
+
+```bash
+git -C "$(dirname "$(which claude)" 2>/dev/null || echo '.')" rev-parse --show-toplevel 2>/dev/null
+```
+
+Or more reliably, use the `gh` CLI to find the repo root:
+
+```bash
+gh repo clone tmtmaj/snowys-chinese-house --if-not-exists
+# Locate the clone by searching common locations:
+# $HOME/Documents/github/snowys-chinese-house
+# $HOME/github/snowys-chinese-house
+# $HOME/Documents/snowys-chinese-house
+# Use whichever exists, or prompt the user.
+```
 
 Copy output files to the repo and push:
 
 ```bash
-# Copy files to repo (paths are on the user's Windows machine)
-# scripts/markdown/ep{NN}_{IDIOM}.md
-# scripts/html/ep{NN}_{IDIOM}.html
-# images/{IDIOM}/  (the 7 PNGs)
-
-gh repo clone tmtmaj/snowys-chinese-house   # only needed first time
-git -C REPO_PATH add .
-git -C REPO_PATH commit -m "ep{NN}: add {IDIOM} ({PINYIN}) script and images"
-git -C REPO_PATH push
+git -C "$REPO_PATH" add .
+git -C "$REPO_PATH" commit -m "ep{NN}: add {IDIOM} ({PINYIN}) script and images"
+git -C "$REPO_PATH" push
 ```
 
 Since `gh` is only available on the user's local machine (not in the sandbox),
 generate a ready-to-run PowerShell push script and save it to Downloads alongside the output files.
-Name it `push_epNN_IDIOM.ps1`. The user can double-click or run it in PowerShell to push in one step.
+Name it `push_{YYYYMMDD}_{slug}.ps1`. The user can double-click or run it in PowerShell to push in one step.
 
 ### push script template
 
 ```powershell
-$repo = "$HOME\Documents\snowys-chinese-house"
+# Auto-detect repo location (works across different machines)
+$candidates = @(
+    "$HOME\Documents\github\snowys-chinese-house",
+    "$HOME\github\snowys-chinese-house",
+    "$HOME\Documents\snowys-chinese-house",
+    "$HOME\Desktop\snowys-chinese-house"
+)
+$repo = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+if (-not $repo) {
+    Write-Error "snowys-chinese-house repo not found. Please clone it first."
+    exit 1
+}
 $idiom = "IDIOM"
 $episode = NN
 
