@@ -371,6 +371,22 @@ dāng juésè shuō chū "xīng xīng xiāng xī", biǎodá de shì yī zhǒng s
 When the character says 惺惺相惜, they express deep understanding and regard — even if the two are different on the surface, at heart they are the same kind of person.
 ```
 
+## ⑥-B 填空练习
+**Q1.** 她和新认识的同事聊了几句，发现彼此想法极为相似，真是________。
+*After a short chat with her new colleague, she found they thought alike — they were truly ________.*
+✅ 她和新认识的同事聊了几句，发现彼此想法极为相似，真是惺惺相惜。
+*After a short chat with her new colleague, she found they thought alike — they were truly kindred spirits.*
+
+**Q2.** 两位老艺术家虽然初次见面，却________，相谈甚欢。
+*Though the two veteran artists met for the first time, they ________ and got along wonderfully.*
+✅ 两位老艺术家虽然初次见面，却惺惺相惜，相谈甚欢。
+*Though the two veteran artists met for the first time, they recognized each other as kindred spirits and got along wonderfully.*
+
+**Q3.** 他们是对手，但比赛结束后的那次握手，让人感受到了一种________。
+*They were rivals, but that handshake after the match gave everyone a sense of ________.*
+✅ 他们是对手，但比赛结束后的那次握手，让人感受到了一种惺惺相惜。
+*They were rivals, but that handshake after the match gave everyone a sense of deep mutual admiration.*
+
 ## ⑦ 使用注意
 **中文**
 ```
