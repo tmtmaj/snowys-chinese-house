@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep21 · 饮水思源 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>饮水思源</h1>
+  <div class="pinyin">yǐn shuǐ sī yuán</div>
+  <div class="meta">ep21 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家有没有想过——我们每天喝的水，是从哪里来的？</span>
+            <button class="copy-btn" onclick="copyText(this, '大家有没有想过——我们每天喝的水，是从哪里来的？')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā yǒu méi yǒu xiǎng guò —— wǒmen měi tiān hē de shuǐ, shì cóng nǎlǐ lái de？</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā yǒu méi yǒu xiǎng guò —— wǒmen měi tiān hē de shuǐ, shì cóng nǎlǐ lái de？')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Have you ever thought about where the water we drink every day comes from?</span>
+            <button class="copy-btn" onclick="copyText(this, 'Have you ever thought about where the water we drink every day comes from?')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">古人说：饮水要思源。喝水的时候，要想起水的源头。</span>
+            <button class="copy-btn" onclick="copyText(this, '古人说：饮水要思源。喝水的时候，要想起水的源头。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">gǔrén shuō: yǐn shuǐ yào sī yuán. Hē shuǐ de shíhou, yào xiǎng qǐ shuǐ de yuántóu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'gǔrén shuō: yǐn shuǐ yào sī yuán. Hē shuǐ de shíhou, yào xiǎng qǐ shuǐ de yuántóu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The ancients said: when you drink water, think of its source.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The ancients said: when you drink water, think of its source.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这句话说的不只是水，而是我们对一切帮助过自己的人和事，都应该怀有感恩之心。</span>
+            <button class="copy-btn" onclick="copyText(this, '这句话说的不只是水，而是我们对一切帮助过自己的人和事，都应该怀有感恩之心。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jù huà shuō de bù zhǐ shì shuǐ, ér shì wǒmen duì yīqiè bāngzhù guò zìjǐ de rén hé shì, dōu yīnggāi huáiyǒu gǎn&#x27;ēn zhī xīn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jù huà shuō de bù zhǐ shì shuǐ, ér shì wǒmen duì yīqiè bāngzhù guò zìjǐ de rén hé shì, dōu yīnggāi huáiyǒu gǎn&#x27;ēn zhī xīn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">But this isn&#x27;t just about water — it&#x27;s about holding gratitude in our hearts for everything and everyone that has helped us.</span>
+            <button class="copy-btn" onclick="copyText(this, 'But this isn&#x27;t just about water — it&#x27;s about holding gratitude in our hearts for everything and everyone that has helped us.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">今天的成语，就是这四个字——饮水思源。我们先来看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '今天的成语，就是这四个字——饮水思源。我们先来看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jīntiān de chéngyǔ, jiù shì zhè sì gè zì —— yǐn shuǐ sī yuán. Wǒmen xiān lái kàn yī duàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jīntiān de chéngyǔ, jiù shì zhè sì gè zì —— yǐn shuǐ sī yuán. Wǒmen xiān lái kàn yī duàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Today&#x27;s idiom is these four characters — 饮水思源. Let&#x27;s first watch a clip from a drama or film.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Today&#x27;s idiom is these four characters — 饮水思源. Let&#x27;s first watch a clip from a drama or film.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——饮水思源。饮水思源。饮水思源。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——饮水思源。饮水思源。饮水思源。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 饮水思源.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 饮水思源.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【饮 · yǐn】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「饮」，是喝的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '「饮」，是喝的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Yǐn」, shì hē de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Yǐn」, shì hē de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「饮」 means to drink.</span>
+            <button class="copy-btn" onclick="copyText(this, '「饮」 means to drink.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：饮料、饮食、饮水。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：饮料、饮食、饮水。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: yǐnliào, yǐnshí, yǐn shuǐ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: yǐnliào, yǐnshí, yǐn shuǐ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 饮料 (beverage), 饮食 (food and drink), 饮水 (drink water).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 饮料 (beverage), 饮食 (food and drink), 饮水 (drink water).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这是个比较文雅的说法，日常口语里我们通常说「喝」，但在成语和书面语中，会用「饮」。</span>
+            <button class="copy-btn" onclick="copyText(this, '这是个比较文雅的说法，日常口语里我们通常说「喝」，但在成语和书面语中，会用「饮」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè shì gè bǐjiào wényǎ de shuōfǎ, rìcháng kǒuyǔ lǐ wǒmen tōngcháng shuō「hē」, dàn zài chéngyǔ hé shūmiànyǔ zhōng, huì yòng「yǐn」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè shì gè bǐjiào wényǎ de shuōfǎ, rìcháng kǒuyǔ lǐ wǒmen tōngcháng shuō「hē」, dàn zài chéngyǔ hé shūmiànyǔ zhōng, huì yòng「yǐn」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This is a more literary word — in everyday speech we say 喝 (to drink), but in idioms and written language, 饮 is used.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This is a more literary word — in everyday speech we say 喝 (to drink), but in idioms and written language, 饮 is used.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【水 · shuǐ】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「水」，就是水，河流、井水、雨水都是水。</span>
+            <button class="copy-btn" onclick="copyText(this, '「水」，就是水，河流、井水、雨水都是水。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Shuǐ」, jiù shì shuǐ, héliú、jǐng shuǐ、yǔ shuǐ dōu shì shuǐ.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Shuǐ」, jiù shì shuǐ, héliú、jǐng shuǐ、yǔ shuǐ dōu shì shuǐ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「水」 is water — rivers, well water, rainwater are all 水.</span>
+            <button class="copy-btn" onclick="copyText(this, '「水」 is water — rivers, well water, rainwater are all 水.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：水源、河水、流水。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：水源、河水、流水。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: shuǐ yuán, hé shuǐ, liú shuǐ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: shuǐ yuán, hé shuǐ, liú shuǐ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 水源 (water source), 河水 (river water), 流水 (flowing water).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 水源 (water source), 河水 (river water), 流水 (flowing water).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">在这个成语里，水代表我们得到的一切滋养和帮助。</span>
+            <button class="copy-btn" onclick="copyText(this, '在这个成语里，水代表我们得到的一切滋养和帮助。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zài zhège chéngyǔ lǐ, shuǐ dàibiǎo wǒmen dédào de yīqiè zīyǎng hé bāngzhù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zài zhège chéngyǔ lǐ, shuǐ dàibiǎo wǒmen dédào de yīqiè zīyǎng hé bāngzhù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In this idiom, water represents all the nourishment and help we have received.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In this idiom, water represents all the nourishment and help we have received.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【思 · sī】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「思」，是思念、想念的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '「思」，是思念、想念的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Sī」, shì sīniàn、xiǎngniàn de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Sī」, shì sīniàn、xiǎngniàn de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「思」 means to think of, to miss, to remember.</span>
+            <button class="copy-btn" onclick="copyText(this, '「思」 means to think of, to miss, to remember.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：思念、思乡、思考。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：思念、思乡、思考。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: sīniàn, sī xiāng, sīkǎo.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: sīniàn, sī xiāng, sīkǎo.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 思念 (to miss someone), 思乡 (homesick), 思考 (to think deeply).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 思念 (to miss someone), 思乡 (homesick), 思考 (to think deeply).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里的「思」，带有一种深情的回忆，不是随便想一下，而是发自内心的感念。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里的「思」，带有一种深情的回忆，不是随便想一下，而是发自内心的感念。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ de「sī」, dài yǒu yī zhǒng shēnqíng de huíyì, bú shì suíbiàn xiǎng yīxià, ér shì fā zì nèixīn de gǎn niàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ de「sī」, dài yǒu yī zhǒng shēnqíng de huíyì, bú shì suíbiàn xiǎng yīxià, ér shì fā zì nèixīn de gǎn niàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The 「思」 here carries a deep, heartfelt remembrance — not a casual thought, but genuine appreciation from within.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The 「思」 here carries a deep, heartfelt remembrance — not a casual thought, but genuine appreciation from within.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【源 · yuán】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「源」，是源头、起点的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '「源」，是源头、起点的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Yuán」, shì yuántóu、qǐdiǎn de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Yuán」, shì yuántóu、qǐdiǎn de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「源」 means source or origin.</span>
+            <button class="copy-btn" onclick="copyText(this, '「源」 means source or origin.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：水源、来源、源头。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：水源、来源、源头。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: shuǐ yuán, láiyuán, yuántóu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: shuǐ yuán, láiyuán, yuántóu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 水源 (water source), 来源 (origin/source of something), 源头 (headwaters/beginning).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 水源 (water source), 来源 (origin/source of something), 源头 (headwaters/beginning).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">在这个成语里，源代表一切帮助和恩情的根本所在——那些曾经滋养过我们的人和事。</span>
+            <button class="copy-btn" onclick="copyText(this, '在这个成语里，源代表一切帮助和恩情的根本所在——那些曾经滋养过我们的人和事。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zài zhège chéngyǔ lǐ, yuán dàibiǎo yīqiè bāngzhù hé ēnqíng de gēnběn suǒzài —— nàxiē céng jīng zīyǎng guò wǒmen de rén hé shì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zài zhège chéngyǔ lǐ, yuán dàibiǎo yīqiè bāngzhù hé ēnqíng de gēnběn suǒzài —— nàxiē céng jīng zīyǎng guò wǒmen de rén hé shì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In this idiom, 源 represents the root of all help and kindness — the people and things that once nourished us.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In this idiom, 源 represents the root of all help and kindness — the people and things that once nourished us.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「饮水」——喝水；「思源」——想起源头。</span>
+            <button class="copy-btn" onclick="copyText(this, '「饮水」——喝水；「思源」——想起源头。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Yǐn shuǐ」—— hē shuǐ；「sī yuán」—— xiǎng qǐ yuántóu.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Yǐn shuǐ」—— hē shuǐ；「sī yuán」—— xiǎng qǐ yuántóu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「饮水」 — drinking water; 「思源」 — thinking of the source.</span>
+            <button class="copy-btn" onclick="copyText(this, '「饮水」 — drinking water; 「思源」 — thinking of the source.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">字面意思是：喝水的时候，要想起水是从哪里来的。</span>
+            <button class="copy-btn" onclick="copyText(this, '字面意思是：喝水的时候，要想起水是从哪里来的。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zìmiàn yìsi shì: hē shuǐ de shíhou, yào xiǎng qǐ shuǐ shì cóng nǎlǐ lái de.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zìmiàn yìsi shì: hē shuǐ de shíhou, yào xiǎng qǐ shuǐ shì cóng nǎlǐ lái de.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Literal meaning: when you drink water, remember where it comes from.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Literal meaning: when you drink water, remember where it comes from.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">引申义是：享受到好处、得到帮助的时候，不要忘记给予你帮助的人，要懂得感恩。</span>
+            <button class="copy-btn" onclick="copyText(this, '引申义是：享受到好处、得到帮助的时候，不要忘记给予你帮助的人，要懂得感恩。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǐnshēn yì shì: xiǎngshòu dào hǎochù、dédào bāngzhù de shíhou, bú yào wàngjì gěiyǔ nǐ bāngzhù de rén, yào dǒngde gǎn&#x27;ēn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǐnshēn yì shì: xiǎngshòu dào hǎochù、dédào bāngzhù de shíhou, bú yào wàngjì gěiyǔ nǐ bāngzhù de rén, yào dǒngde gǎn&#x27;ēn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Extended meaning: when you benefit or receive help, don&#x27;t forget those who helped you — know how to be grateful.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Extended meaning: when you benefit or receive help, don&#x27;t forget those who helped you — know how to be grateful.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">近义词有「知恩图报」——知道别人的恩情，想要回报；也和「落叶归根」有相近的「不忘本」之意。</span>
+            <button class="copy-btn" onclick="copyText(this, '近义词有「知恩图报」——知道别人的恩情，想要回报；也和「落叶归根」有相近的「不忘本」之意。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jìnyìcí yǒu「zhī ēn tú bào」—— zhīdào biérén de ēnqíng, xiǎngyào huíbào；yě hé「luò yè guī gēn」yǒu xiāngjìn de「bú wàng běn」zhī yì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jìnyìcí yǒu「zhī ēn tú bào」—— zhīdào biérén de ēnqíng, xiǎngyào huíbào；yě hé「luò yè guī gēn」yǒu xiāngjìn de「bú wàng běn」zhī yì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Near synonyms include 知恩图报 (knowing kindness and wishing to repay it) and 落叶归根 (fallen leaves return to the roots), both sharing the idea of not forgetting one&#x27;s origins.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Near synonyms include 知恩图报 (knowing kindness and wishing to repay it) and 落叶归根 (fallen leaves return to the roots), both sharing the idea of not forgetting one&#x27;s origins.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">近义词：知恩图报、落叶归根。</span>
+            <button class="copy-btn" onclick="copyText(this, '近义词：知恩图报、落叶归根。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jìnyìcí: zhī ēn tú bào, luò yè guī gēn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jìnyìcí: zhī ēn tú bào, luò yè guī gēn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Near synonyms: 知恩图报 (repay kindness), 落叶归根 (return to one&#x27;s roots).</span>
+            <button class="copy-btn" onclick="copyText(this, 'Near synonyms: 知恩图报 (repay kindness), 落叶归根 (return to one&#x27;s roots).')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源 — 北周·庾信 · 《征调曲》</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语出自北周诗人庾信的《征调曲》。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语出自北周诗人庾信的《征调曲》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ chūzì Běi Zhōu shīrén Yú Xìn de 《Zhēng Diào Qǔ》.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ chūzì Běi Zhōu shīrén Yú Xìn de 《Zhēng Diào Qǔ》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom comes from 《征调曲》 by Yu Xin, a poet of the Northern Zhou dynasty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom comes from 《征调曲》 by Yu Xin, a poet of the Northern Zhou dynasty.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">庾信是南北朝时期非常重要的诗人，他出生在南方，却被迫在北方客居了二十多年，一直思念故土。</span>
+            <button class="copy-btn" onclick="copyText(this, '庾信是南北朝时期非常重要的诗人，他出生在南方，却被迫在北方客居了二十多年，一直思念故土。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yú Xìn shì Nán Běi Cháo shíqī fēicháng zhòngyào de shīrén, tā chūshēng zài nánfāng, què bèi pò zài běifāng kèjū le èrshí duō nián, yīzhí sīniàn gùtǔ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yú Xìn shì Nán Běi Cháo shíqī fēicháng zhòngyào de shīrén, tā chūshēng zài nánfāng, què bèi pò zài běifāng kèjū le èrshí duō nián, yīzhí sīniàn gùtǔ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Yu Xin was a major poet of the Northern and Southern Dynasties period. Born in the south, he was forced to live in the north for over twenty years, always longing for his homeland.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Yu Xin was a major poet of the Northern and Southern Dynasties period. Born in the south, he was forced to live in the north for over twenty years, always longing for his homeland.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">《征调曲》是他在北方写的一首表达乡愁和感恩之情的诗，记录了他对故土和养育过他的一切的深深怀念。</span>
+            <button class="copy-btn" onclick="copyText(this, '《征调曲》是他在北方写的一首表达乡愁和感恩之情的诗，记录了他对故土和养育过他的一切的深深怀念。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">《Zhēng Diào Qǔ》 shì tā zài běifāng xiě de yī shǒu biǎodá xiāngchóu hé gǎn&#x27;ēn zhī qíng de shī, jìlù le tā duì gùtǔ hé yǎngyù guò tā de yīqiè de shēnshēn huáiniàn.</span>
+            <button class="copy-btn" onclick="copyText(this, '《Zhēng Diào Qǔ》 shì tā zài běifāng xiě de yī shǒu biǎodá xiāngchóu hé gǎn&#x27;ēn zhī qíng de shī, jìlù le tā duì gùtǔ hé yǎngyù guò tā de yīqiè de shēnshēn huáiniàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">《征调曲》 is a poem he wrote in the north expressing homesickness and gratitude, recording his deep longing for his homeland and all that had nurtured him.</span>
+            <button class="copy-btn" onclick="copyText(this, '《征调曲》 is a poem he wrote in the north expressing homesickness and gratitude, recording his deep longing for his homeland and all that had nurtured him.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">诗中有这样一句：</span>
+            <button class="copy-btn" onclick="copyText(this, '诗中有这样一句：')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shī zhōng yǒu zhèyàng yī jù:</span>
+            <button class="copy-btn" onclick="copyText(this, 'shī zhōng yǒu zhèyàng yī jù:')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The poem contains this line:</span>
+            <button class="copy-btn" onclick="copyText(this, 'The poem contains this line:')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「落其实者思其树，饮其流者怀其源。」</span>
+            <button class="copy-btn" onclick="copyText(this, '「落其实者思其树，饮其流者怀其源。」')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Luò qí shí zhě sī qí shù, yǐn qí liú zhě huái qí yuán.」</span>
+            <button class="copy-btn" onclick="copyText(this, '「Luò qí shí zhě sī qí shù, yǐn qí liú zhě huái qí yuán.」')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「Those who eat the fruit remember the tree; those who drink the water cherish its source.」</span>
+            <button class="copy-btn" onclick="copyText(this, '「Those who eat the fruit remember the tree; those who drink the water cherish its source.」')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">意思是：摘到果实的人，会想起结出这颗果实的树；喝到河水的人，会怀念水流的源头。</span>
+            <button class="copy-btn" onclick="copyText(this, '意思是：摘到果实的人，会想起结出这颗果实的树；喝到河水的人，会怀念水流的源头。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yìsi shì: zhāi dào guǒshí de rén, huì xiǎng qǐ jiē chū zhè kē guǒshí de shù；hē dào hé shuǐ de rén, huì huáiniàn shuǐ liú de yuántóu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yìsi shì: zhāi dào guǒshí de rén, huì xiǎng qǐ jiē chū zhè kē guǒshí de shù；hē dào hé shuǐ de rén, huì huáiniàn shuǐ liú de yuántóu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The meaning is: one who picks fruit remembers the tree that bore it; one who drinks river water cherishes the source it flows from.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The meaning is: one who picks fruit remembers the tree that bore it; one who drinks river water cherishes the source it flows from.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">后来，人们把这两句诗简化成了「饮水思源」，用来提醒自己和他人：无论走多远，都不能忘记曾经帮助过我们的人。</span>
+            <button class="copy-btn" onclick="copyText(this, '后来，人们把这两句诗简化成了「饮水思源」，用来提醒自己和他人：无论走多远，都不能忘记曾经帮助过我们的人。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hòulái, rénmen bǎ zhè liǎng jù shī jiǎnhuà chéng le「yǐn shuǐ sī yuán」, yòng lái tíxǐng zìjǐ hé tārén: wúlùn zǒu duō yuǎn, dōu bù néng wàngjì céng jīng bāngzhù guò wǒmen de rén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hòulái, rénmen bǎ zhè liǎng jù shī jiǎnhuà chéng le「yǐn shuǐ sī yuán」, yòng lái tíxǐng zìjǐ hé tārén: wúlùn zǒu duō yuǎn, dōu bù néng wàngjì céng jīng bāngzhù guò wǒmen de rén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Later, people condensed these two lines into 「饮水思源」, using it to remind themselves and others: no matter how far you go, never forget those who once helped you.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Later, people condensed these two lines into 「饮水思源」, using it to remind themselves and others: no matter how far you go, never forget those who once helped you.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">参考来源：zdic.net（汉典）</span>
+            <button class="copy-btn" onclick="copyText(this, '参考来源：zdic.net（汉典）')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">cānkǎo láiyuán: zdic.net（Hàn Diǎn）</span>
+            <button class="copy-btn" onclick="copyText(this, 'cānkǎo láiyuán: zdic.net（Hàn Diǎn）')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Source: zdic.net (Han Dictionary) — https://www.zdic.net/hans/饮水思源</span>
+            <button class="copy-btn" onclick="copyText(this, 'Source: zdic.net (Han Dictionary) — https://www.zdic.net/hans/饮水思源')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">【例句一】他功成名就之后，没有忘记当年帮助过他的老师，常常回去看望，真是饮水思源。</span>
+            <button class="copy-btn" onclick="copyText(this, '【例句一】他功成名就之后，没有忘记当年帮助过他的老师，常常回去看望，真是饮水思源。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">【Lì jù yī】Tā gōng chéng míng jiù zhī hòu, méiyǒu wàngjì dāngnián bāngzhù guò tā de lǎoshī, chángcháng huí qù kànwàng, zhēn shì yǐn shuǐ sī yuán.</span>
+            <button class="copy-btn" onclick="copyText(this, '【Lì jù yī】Tā gōng chéng míng jiù zhī hòu, méiyǒu wàngjì dāngnián bāngzhù guò tā de lǎoshī, chángcháng huí qù kànwàng, zhēn shì yǐn shuǐ sī yuán.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">[Example 1] After achieving success and fame, he didn&#x27;t forget the teacher who had helped him — he often went back to visit. That&#x27;s truly 饮水思源.</span>
+            <button class="copy-btn" onclick="copyText(this, '[Example 1] After achieving success and fame, he didn&#x27;t forget the teacher who had helped him — he often went back to visit. That&#x27;s truly 饮水思源.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">功成名就，就是事业成功、名声显赫。</span>
+            <button class="copy-btn" onclick="copyText(this, '功成名就，就是事业成功、名声显赫。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">gōng chéng míng jiù, jiù shì shìyè chénggōng、míngshēng xiǎnhè.</span>
+            <button class="copy-btn" onclick="copyText(this, 'gōng chéng míng jiù, jiù shì shìyè chénggōng、míngshēng xiǎnhè.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">功成名就 means achieving great success and reputation.</span>
+            <button class="copy-btn" onclick="copyText(this, '功成名就 means achieving great success and reputation.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">越是成功的时候，越要记住那些曾经支持过你的人，这就是饮水思源的精神。</span>
+            <button class="copy-btn" onclick="copyText(this, '越是成功的时候，越要记住那些曾经支持过你的人，这就是饮水思源的精神。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yuè shì chénggōng de shíhou, yuè yào jìzhù nàxiē céng jīng zhīchí guò nǐ de rén, zhè jiù shì yǐn shuǐ sī yuán de jīngshén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yuè shì chénggōng de shíhou, yuè yào jìzhù nàxiē céng jīng zhīchí guò nǐ de rén, zhè jiù shì yǐn shuǐ sī yuán de jīngshén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The more successful you become, the more you should remember those who supported you — that is the spirit of 饮水思源.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The more successful you become, the more you should remember those who supported you — that is the spirit of 饮水思源.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">【例句二】毕业典礼上，她说：「我能走到今天，离不开父母和老师的付出。饮水思源，这份恩情我永远不会忘。」</span>
+            <button class="copy-btn" onclick="copyText(this, '【例句二】毕业典礼上，她说：「我能走到今天，离不开父母和老师的付出。饮水思源，这份恩情我永远不会忘。」')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">【Lì jù èr】Bìyè diǎnlǐ shàng, tā shuō:「Wǒ néng zǒu dào jīntiān, lí bù kāi fùmǔ hé lǎoshī de fùchū. Yǐn shuǐ sī yuán, zhè fèn ēnqíng wǒ yǒngyuǎn bú huì wàng.」</span>
+            <button class="copy-btn" onclick="copyText(this, '【Lì jù èr】Bìyè diǎnlǐ shàng, tā shuō:「Wǒ néng zǒu dào jīntiān, lí bù kāi fùmǔ hé lǎoshī de fùchū. Yǐn shuǐ sī yuán, zhè fèn ēnqíng wǒ yǒngyuǎn bú huì wàng.」')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">[Example 2] At the graduation ceremony, she said: &#x27;I couldn&#x27;t have come this far without the efforts of my parents and teachers. 饮水思源 — I will never forget this kindness.&#x27;</span>
+            <button class="copy-btn" onclick="copyText(this, '[Example 2] At the graduation ceremony, she said: &#x27;I couldn&#x27;t have come this far without the efforts of my parents and teachers. 饮水思源 — I will never forget this kindness.&#x27;')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语特别适合用在感恩的场合，比如毕业典礼、退休晚宴、演讲致谢。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语特别适合用在感恩的场合，比如毕业典礼、退休晚宴、演讲致谢。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ tèbié shìhé yòng zài gǎn&#x27;ēn de chǎnghé, bǐrú bìyè diǎnlǐ、tuìxiū wǎnyàn、yǎnjiǎng zhì xiè.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ tèbié shìhé yòng zài gǎn&#x27;ēn de chǎnghé, bǐrú bìyè diǎnlǐ、tuìxiū wǎnyàn、yǎnjiǎng zhì xiè.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom is especially fitting for grateful occasions — graduation ceremonies, retirement dinners, speeches of thanks.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom is especially fitting for grateful occasions — graduation ceremonies, retirement dinners, speeches of thanks.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">说出「饮水思源」，比单纯说「谢谢」更有分量，也更能表达内心深处的感念之情。</span>
+            <button class="copy-btn" onclick="copyText(this, '说出「饮水思源」，比单纯说「谢谢」更有分量，也更能表达内心深处的感念之情。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shuō chū「yǐn shuǐ sī yuán」, bǐ dānchún shuō「xièxie」gèng yǒu fènliàng, yě gèng néng biǎodá nèixīn shēnchù de gǎn niàn zhī qíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'shuō chū「yǐn shuǐ sī yuán」, bǐ dānchún shuō「xièxie」gèng yǒu fènliàng, yě gèng néng biǎodá nèixīn shēnchù de gǎn niàn zhī qíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Saying 「饮水思源」 carries more weight than a simple &#x27;thank you&#x27; — it expresses the deep gratitude felt in one&#x27;s heart.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Saying 「饮水思源」 carries more weight than a simple &#x27;thank you&#x27; — it expresses the deep gratitude felt in one&#x27;s heart.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and watch the opening clip again —</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and watch the opening clip again —')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">现在大家应该明白了，片段里用「饮水思源」，是在表达对曾经帮助过自己的人的感恩之情。</span>
+            <button class="copy-btn" onclick="copyText(this, '现在大家应该明白了，片段里用「饮水思源」，是在表达对曾经帮助过自己的人的感恩之情。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xiànzài dàjiā yīnggāi míngbai le, piànduàn lǐ yòng「yǐn shuǐ sī yuán」, shì zài biǎodá duì céng jīng bāngzhù guò zìjǐ de rén de gǎn&#x27;ēn zhī qíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xiànzài dàjiā yīnggāi míngbai le, piànduàn lǐ yòng「yǐn shuǐ sī yuán」, shì zài biǎodá duì céng jīng bāngzhù guò zìjǐ de rén de gǎn&#x27;ēn zhī qíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now everyone should understand — using 「饮水思源」 in the clip expresses gratitude toward those who once helped you.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now everyone should understand — using 「饮水思源」 in the clip expresses gratitude toward those who once helped you.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 他每年都会回到母校捐款，真是________。</p><p class="quiz-hint">He donates to his alma mater every year — he truly ________.</p><p class="quiz-a">✅ 他每年都会回到母校捐款，真是饮水思源。</p><p class="quiz-hint">He donates to his alma mater every year — he truly embodies 饮水思源 (never forgetting his roots).</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 无论你走多远，都要________，不要忘了家人的恩情。</p><p class="quiz-hint">No matter how far you go, you must ________, and never forget the kindness of family.</p><p class="quiz-a">✅ 无论你走多远，都要饮水思源，不要忘了家人的恩情。</p><p class="quiz-hint">No matter how far you go, you must 饮水思源 (remember your roots), and never forget the kindness of family.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q3.</span> 她成名后第一件事，就是去感谢当年扶持她的人，这就叫________。</p><p class="quiz-hint">The first thing she did after becoming famous was to thank those who had supported her — that&#x27;s called ________.</p><p class="quiz-a">✅ 她成名后第一件事，就是去感谢当年扶持她的人，这就叫饮水思源。</p><p class="quiz-hint">The first thing she did after becoming famous was to thank those who had supported her — that&#x27;s called 饮水思源.</p></div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「饮水思源」是一个褒义词，表达不忘本、知感恩的美德。</span>
+            <button class="copy-btn" onclick="copyText(this, '「饮水思源」是一个褒义词，表达不忘本、知感恩的美德。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Yǐn shuǐ sī yuán」shì yī gè bāoyìcí, biǎodá bú wàng běn、zhī gǎn&#x27;ēn de měidé.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Yǐn shuǐ sī yuán」shì yī gè bāoyìcí, biǎodá bú wàng běn、zhī gǎn&#x27;ēn de měidé.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「饮水思源」 is a positive expression, representing the virtues of not forgetting one&#x27;s roots and knowing how to be grateful.</span>
+            <button class="copy-btn" onclick="copyText(this, '「饮水思源」 is a positive expression, representing the virtues of not forgetting one&#x27;s roots and knowing how to be grateful.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">它常用于感恩的场合：毕业典礼、节日祝词、演讲致谢，甚至是写给老师或父母的信中。</span>
+            <button class="copy-btn" onclick="copyText(this, '它常用于感恩的场合：毕业典礼、节日祝词、演讲致谢，甚至是写给老师或父母的信中。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā cháng yòng yú gǎn&#x27;ēn de chǎnghé: bìyè diǎnlǐ、jiérì zhùcí、yǎnjiǎng zhì xiè, shènzhì shì xiě gěi lǎoshī huò fùmǔ de xìn zhōng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā cháng yòng yú gǎn&#x27;ēn de chǎnghé: bìyè diǎnlǐ、jiérì zhùcí、yǎnjiǎng zhì xiè, shènzhì shì xiě gěi lǎoshī huò fùmǔ de xìn zhōng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">It&#x27;s commonly used in grateful contexts: graduation ceremonies, holiday greetings, speeches of thanks, and even letters to teachers or parents.</span>
+            <button class="copy-btn" onclick="copyText(this, 'It&#x27;s commonly used in grateful contexts: graduation ceremonies, holiday greetings, speeches of thanks, and even letters to teachers or parents.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">注意：这个成语强调的是「记住恩情」，不一定要求立刻回报；而「知恩图报」则更强调「想要回报」的行动意愿。</span>
+            <button class="copy-btn" onclick="copyText(this, '注意：这个成语强调的是「记住恩情」，不一定要求立刻回报；而「知恩图报」则更强调「想要回报」的行动意愿。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhùyì: zhège chéngyǔ qiángdiào de shì「jìzhù ēnqíng」, bù yīdìng yāoqiú lìkè huíbào；ér「zhī ēn tú bào」zé gèng qiángdiào「xiǎngyào huíbào」de xíngdòng yìyuàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhùyì: zhège chéngyǔ qiángdiào de shì「jìzhù ēnqíng」, bù yīdìng yāoqiú lìkè huíbào；ér「zhī ēn tú bào」zé gèng qiángdiào「xiǎngyào huíbào」de xíngdòng yìyuàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Note: this idiom emphasizes 「remembering kindness」 — it doesn&#x27;t necessarily require immediate repayment. 知恩图报, on the other hand, stresses the desire to actively repay that kindness.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Note: this idiom emphasizes 「remembering kindness」 — it doesn&#x27;t necessarily require immediate repayment. 知恩图报, on the other hand, stresses the desire to actively repay that kindness.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次遇到帮助过你的人——老师、朋友、父母——你可以真诚地说：「谢谢你，我一直饮水思源，从来没有忘记你。」</span>
+            <button class="copy-btn" onclick="copyText(this, '下次遇到帮助过你的人——老师、朋友、父母——你可以真诚地说：「谢谢你，我一直饮水思源，从来没有忘记你。」')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xià cì yùdào bāngzhù guò nǐ de rén —— lǎoshī、péngyou、fùmǔ —— nǐ kěyǐ zhēnchéng de shuō:「Xièxie nǐ, wǒ yīzhí yǐn shuǐ sī yuán, cónglái méiyǒu wàngjì nǐ.」</span>
+            <button class="copy-btn" onclick="copyText(this, 'xià cì yùdào bāngzhù guò nǐ de rén —— lǎoshī、péngyou、fùmǔ —— nǐ kěyǐ zhēnchéng de shuō:「Xièxie nǐ, wǒ yīzhí yǐn shuǐ sī yuán, cónglái méiyǒu wàngjì nǐ.」')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time you meet someone who once helped you — a teacher, friend, or parent — you can sincerely say: &#x27;Thank you. I have always 饮水思源 and never forgotten you.&#x27;</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time you meet someone who once helped you — a teacher, friend, or parent — you can sincerely say: &#x27;Thank you. I have always 饮水思源 and never forgotten you.&#x27;')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. Xīwàng nǐ xué dào le yīdiǎn xīn de Zhōngwén. Rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎn zàn jiā guānzhù 小雪的中文屋. Wǒmen xià cì zàijiàn！</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. Xīwàng nǐ xué dào le yīdiǎn xīn de Zhōngwén. Rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎn zàn jiā guānzhù 小雪的中文屋. Wǒmen xià cì zàijiàn！')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned a little new Chinese. If you like my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned a little new Chinese. If you like my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
