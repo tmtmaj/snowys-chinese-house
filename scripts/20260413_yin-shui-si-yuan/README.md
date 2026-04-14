@@ -26,3 +26,9 @@
 ## GitHub Pages
 
 [https://tmtmaj.github.io/snowys-chinese-house/scripts/20260413_yin-shui-si-yuan/20260413_yin-shui-si-yuan.html](https://tmtmaj.github.io/snowys-chinese-house/scripts/20260413_yin-shui-si-yuan/20260413_yin-shui-si-yuan.html)
+
+## 개인 터치 포인트
+
+- **오프닝 훅** — "물을 마실 때 그 근원을 생각한다"는 말을 들었을 때의 첫 인상을 직접 이야기하면 좋습니다. 처음 이 표현을 접한 순간이나, 누군가에게 감사하다고 문득 느꼈던 기억을 연결하세요.
+- **예시 문장 ②** — 졸업식 감사 발언 예시를 본인의 감사한 사람(선생님, 부모님, 친구)을 떠올리며 말하면 진심이 전달됩니다. 스크립트 그대로보다 "저도 이런 분이 있어요" 한 마디가 큰 차이를 만듭니다.
+- **클로징 힌트** — "谢谢你，我一直饮水思源" 대사를 실제로 감사한 분께 전하는 것처럼 카메라를 바라보며 말하면 영상의 마무리가 훨씬 따뜻해집니다.

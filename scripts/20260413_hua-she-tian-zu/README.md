@@ -28,3 +28,9 @@
 ## GitHub Pages
 
 [https://tmtmaj.github.io/snowys-chinese-house/scripts/20260413_hua-she-tian-zu/20260413_hua-she-tian-zu.html](https://tmtmaj.github.io/snowys-chinese-house/scripts/20260413_hua-she-tian-zu/20260413_hua-she-tian-zu.html)
+
+## 개인 터치 포인트
+
+- **오프닝 훅** — "잘 하고 있다가 한 마디 더 해서 망친" 본인의 실제 경험을 넣으면 공감이 폭발합니다. 발표, 글쓰기, 대화 등 어떤 상황이든 좋습니다.
+- **蛇자 분석 — 사족(蛇足) 연결** — 한국 시청자들이 가장 놀라는 순간입니다. "한국어에도 이 표현이 있어요!" 하고 리액션을 크게 하면 클립 포인트가 됩니다. 자연스러운 놀람 표정과 함께 강조하세요.
+- **예시 문장 ② "大家有没有类似的经历?"** — 스크립트의 이 질문을 본인 경험으로 직접 답하듯 이야기하면 훨씬 생동감이 살아납니다. 면접, 글쓰기, 요리 등 구체적 상황 한 가지를 골라두세요.

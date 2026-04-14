@@ -26,3 +26,9 @@
 ## GitHub Pages
 
 [https://tmtmaj.github.io/snowys-chinese-house/scripts/20260413_xue-zhong-song-tan/20260413_xue-zhong-song-tan.html](https://tmtmaj.github.io/snowys-chinese-house/scripts/20260413_xue-zhong-song-tan/20260413_xue-zhong-song-tan.html)
+
+## 개인 터치 포인트
+
+- **오프닝 훅** — "가장 힘들고 막막했던 순간에 누군가 나타나 도와줬다"는 경험을 직접 언급하면 시청자와의 거리가 확 좁혀집니다. 유학 초기나 낯선 환경에서 도움받은 에피소드 한 줄이면 충분합니다.
+- **예시 문장 ①** — 창업 실패 예시 대신 본인이 실제로 목격하거나 경험한 상황으로 바꾸면 더 생생해집니다.
+- **반의어 锦上添花 설명** — 카메라 앞에서 "앞으로 자주 나올 표현이에요" 하고 살짝 예고하는 식으로 톤을 조절하면 자연스럽습니다.
