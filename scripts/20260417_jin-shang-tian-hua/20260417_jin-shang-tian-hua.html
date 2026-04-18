@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep15 · 锦上添花 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>锦上添花</h1>
+  <div class="pinyin">jǐn shàng tiān huā</div>
+  <div class="meta">ep15 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào Xiǎoxuě de Zhōngwénwū. Wǒ shì Xiǎoxuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào Xiǎoxuě de Zhōngwénwū. Wǒ shì Xiǎoxuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Snowy.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家有没有这样的经历——一件事情本来已经很好了，结果又碰上了一件意想不到的好事，让你觉得太幸运了！</span>
+            <button class="copy-btn" onclick="copyText(this, '大家有没有这样的经历——一件事情本来已经很好了，结果又碰上了一件意想不到的好事，让你觉得太幸运了！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā yǒu méiyǒu zhèyàng de jīnglì — yī jiàn shìqing běnlái yǐjīng hěn hǎo le, jiéguǒ yòu pèngshang le yī jiàn yìxiǎngbùdào de hǎoshì, ràng nǐ juéde tài xìngyùn le!</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā yǒu méiyǒu zhèyàng de jīnglì — yī jiàn shìqing běnlái yǐjīng hěn hǎo le, jiéguǒ yòu pèngshang le yī jiàn yìxiǎngbùdào de hǎoshì, ràng nǐ juéde tài xìngyùn le!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Have you ever had this experience — something was already going really well, and then an unexpected good thing happened on top of it, making you feel so lucky!</span>
+            <button class="copy-btn" onclick="copyText(this, 'Have you ever had this experience — something was already going really well, and then an unexpected good thing happened on top of it, making you feel so lucky!')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如说，你刚刚收到了一份理想工作的录用通知，然后当天晚上还碰上了好朋友的惊喜派对——真是喜上加喜！</span>
+            <button class="copy-btn" onclick="copyText(this, '比如说，你刚刚收到了一份理想工作的录用通知，然后当天晚上还碰上了好朋友的惊喜派对——真是喜上加喜！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú shuō, nǐ gānggāng shōudào le yī fèn lǐxiǎng gōngzuò de lùyòng tōngzhī, rán hòu dāngtiān wǎnshang hái pèngshang le hǎo péngyou de jīngxǐ pàiduì — zhēnshi xǐ shàng jiā xǐ!</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú shuō, nǐ gānggāng shōudào le yī fèn lǐxiǎng gōngzuò de lùyòng tōngzhī, rán hòu dāngtiān wǎnshang hái pèngshang le hǎo péngyou de jīngxǐ pàiduì — zhēnshi xǐ shàng jiā xǐ!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example, you just received an offer for your dream job, and that same evening your best friends threw you a surprise party — joy upon joy!</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example, you just received an offer for your dream job, and that same evening your best friends threw you a surprise party — joy upon joy!')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">中文里有一个成语，专门用来形容这种好上加好的感觉——我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '中文里有一个成语，专门用来形容这种好上加好的感觉——我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhōngwén lǐ yǒu yī gè chéngyǔ, zhuānmén yòng lái xíngróng zhè zhǒng hǎo shàng jiā hǎo de gǎnjué — wǒmen háishi xiān kàn yī duàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhōngwén lǐ yǒu yī gè chéngyǔ, zhuānmén yòng lái xíngróng zhè zhǒng hǎo shàng jiā hǎo de gǎnjué — wǒmen háishi xiān kàn yī duàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">There&#x27;s a Chinese idiom that perfectly captures this feeling of good things getting even better — let&#x27;s first watch a short video clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'There&#x27;s a Chinese idiom that perfectly captures this feeling of good things getting even better — let&#x27;s first watch a short video clip.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——锦上添花。锦上添花。锦上添花。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——锦上添花。锦上添花。锦上添花。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 锦上添花.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 锦上添花.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【锦 · jǐn】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">锦，是一种华美精致的丝织品，上面通常绣有彩色的花纹。</span>
+            <button class="copy-btn" onclick="copyText(this, '锦，是一种华美精致的丝织品，上面通常绣有彩色的花纹。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jǐn, shì yī zhǒng huáměi jīngzhì de sīzhīpǐn, shàngmiàn tōngcháng xiù yǒu cǎisè de huāwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jǐn, shì yī zhǒng huáměi jīngzhì de sīzhīpǐn, shàngmiàn tōngcháng xiù yǒu cǎisè de huāwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Jǐn refers to a gorgeous, finely woven silk fabric, usually decorated with colorful patterns.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Jǐn refers to a gorgeous, finely woven silk fabric, usually decorated with colorful patterns.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们说一个人前途光明，会说——前程似锦。锦绣山河，形容大好河山，也用了这个字。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们说一个人前途光明，会说——前程似锦。锦绣山河，形容大好河山，也用了这个字。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen shuō yī gè rén qiántú guāngmíng, huì shuō — qiánchéng sì jǐn. Jǐnxiù shānhé, xíngróng dàhǎo héshān, yě yòng le zhège zì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen shuō yī gè rén qiántú guāngmíng, huì shuō — qiánchéng sì jǐn. Jǐnxiù shānhé, xíngróng dàhǎo héshān, yě yòng le zhège zì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">When we say someone has a bright future, we say 前程似锦 (a future as bright as brocade). 锦绣山河 (brocade-like rivers and mountains) uses this character to describe magnificent scenery.</span>
+            <button class="copy-btn" onclick="copyText(this, 'When we say someone has a bright future, we say 前程似锦 (a future as bright as brocade). 锦绣山河 (brocade-like rivers and mountains) uses this character to describe magnificent scenery.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">所以，锦这个字，代表的是最美好、最精彩的事物。</span>
+            <button class="copy-btn" onclick="copyText(this, '所以，锦这个字，代表的是最美好、最精彩的事物。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">suǒyǐ, jǐn zhège zì, dàibiǎo de shì zuì měihǎo, zuì jīngcǎi de shìwù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'suǒyǐ, jǐn zhège zì, dàibiǎo de shì zuì měihǎo, zuì jīngcǎi de shìwù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So the character 锦 represents things that are already the most beautiful and magnificent.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So the character 锦 represents things that are already the most beautiful and magnificent.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【上 · shàng】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">上，就是上面、之上的意思，表示位置。锦上，就是在锦缎上面。</span>
+            <button class="copy-btn" onclick="copyText(this, '上，就是上面、之上的意思，表示位置。锦上，就是在锦缎上面。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shàng, jiùshì shàngmiàn, zhī shàng de yìsi, biǎoshì wèizhì. Jǐn shàng, jiùshì zài jǐnduàn shàngmiàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'shàng, jiùshì shàngmiàn, zhī shàng de yìsi, biǎoshì wèizhì. Jǐn shàng, jiùshì zài jǐnduàn shàngmiàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Shàng means &#x27;on top of&#x27; or &#x27;above,&#x27; indicating position. 锦上 means on top of the brocade.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Shàng means &#x27;on top of&#x27; or &#x27;above,&#x27; indicating position. 锦上 means on top of the brocade.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们平时说桌上、墙上、屋顶上，都是用这个上字来表示位置。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们平时说桌上、墙上、屋顶上，都是用这个上字来表示位置。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen píngshí shuō zhuō shàng, qiáng shàng, wūdǐng shàng, dōu shì yòng zhège shàng zì lái biǎoshì wèizhì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen píngshí shuō zhuō shàng, qiáng shàng, wūdǐng shàng, dōu shì yòng zhège shàng zì lái biǎoshì wèizhì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In everyday speech we say 桌上 (on the table), 墙上 (on the wall), 屋顶上 (on the roof) — all using 上 to indicate a position.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In everyday speech we say 桌上 (on the table), 墙上 (on the wall), 屋顶上 (on the roof) — all using 上 to indicate a position.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【添 · tiān】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">添，是增加、加上的意思。添加、增添，都有这个字。</span>
+            <button class="copy-btn" onclick="copyText(this, '添，是增加、加上的意思。添加、增添，都有这个字。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tiān, shì zēngjiā, jiā shàng de yìsi. Tiānjiā, zēngtiān, dōu yǒu zhège zì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tiān, shì zēngjiā, jiā shàng de yìsi. Tiānjiā, zēngtiān, dōu yǒu zhège zì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Tiān means to add, to increase. 添加 (add) and 增添 (increase) both use this character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Tiān means to add, to increase. 添加 (add) and 增添 (increase) both use this character.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如说，给食物添味道，给生活添色彩——添这个字，带着主动去增加美好的意味。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如说，给食物添味道，给生活添色彩——添这个字，带着主动去增加美好的意味。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú shuō, gěi shíwù tiān wèidào, gěi shēnghuó tiān sècǎi — tiān zhège zì, dài zhe zhǔdòng qù zēngjiā měihǎo de yìwèi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú shuō, gěi shíwù tiān wèidào, gěi shēnghuó tiān sècǎi — tiān zhège zì, dài zhe zhǔdòng qù zēngjiā měihǎo de yìwèi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example, adding flavor to food, adding color to life — 添 carries the sense of actively adding something wonderful.</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example, adding flavor to food, adding color to life — 添 carries the sense of actively adding something wonderful.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【花 · huā】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">花，大家都知道是花朵的意思。但在这个成语里，花指的是绣在锦缎上的精美花纹。</span>
+            <button class="copy-btn" onclick="copyText(this, '花，大家都知道是花朵的意思。但在这个成语里，花指的是绣在锦缎上的精美花纹。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">huā, dàjiā dōu zhīdào shì huāduǒ de yìsi. Dàn zài zhège chéngyǔ lǐ, huā zhǐ de shì xiù zài jǐnduàn shàng de jīngměi huāwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'huā, dàjiā dōu zhīdào shì huāduǒ de yìsi. Dàn zài zhège chéngyǔ lǐ, huā zhǐ de shì xiù zài jǐnduàn shàng de jīngměi huāwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Huā means flower, as everyone knows. But in this idiom, 花 refers to the exquisite embroidered patterns on the brocade.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Huā means flower, as everyone knows. But in this idiom, 花 refers to the exquisite embroidered patterns on the brocade.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">绣花、花纹、百花盛开——这个字让人联想到精致和美丽。</span>
+            <button class="copy-btn" onclick="copyText(this, '绣花、花纹、百花盛开——这个字让人联想到精致和美丽。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xiùhuā, huāwén, bǎihuā shèngkāi — zhège zì ràng rén liánxiǎng dào jīngzhì hé měilì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xiùhuā, huāwén, bǎihuā shèngkāi — zhège zì ràng rén liánxiǎng dào jīngzhì hé měilì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Embroidery (绣花), patterns (花纹), flowers in full bloom (百花盛开) — this character evokes refinement and beauty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Embroidery (绣花), patterns (花纹), flowers in full bloom (百花盛开) — this character evokes refinement and beauty.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好，我们把四个字合起来看——锦上添花。</span>
+            <button class="copy-btn" onclick="copyText(this, '好，我们把四个字合起来看——锦上添花。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo, wǒmen bǎ sì gè zì hé qǐlái kàn — jǐn shàng tiān huā.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo, wǒmen bǎ sì gè zì hé qǐlái kàn — jǐn shàng tiān huā.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s put all four characters together — 锦上添花.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s put all four characters together — 锦上添花.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">字面意思，就是在已经很华美的锦缎上，再绣上花朵，让它更加精致好看。</span>
+            <button class="copy-btn" onclick="copyText(this, '字面意思，就是在已经很华美的锦缎上，再绣上花朵，让它更加精致好看。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zìmiàn yìsi, jiùshì zài yǐjīng hěn huáměi de jǐnduàn shàng, zài xiù shàng huāduǒ, ràng tā gèngjiā jīngzhì hǎokàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zìmiàn yìsi, jiùshì zài yǐjīng hěn huáměi de jǐnduàn shàng, zài xiù shàng huāduǒ, ràng tā gèngjiā jīngzhì hǎokàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The literal meaning is: embroidering flowers onto an already gorgeous piece of brocade, making it even more exquisite.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The literal meaning is: embroidering flowers onto an already gorgeous piece of brocade, making it even more exquisite.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">引申来说，锦上添花用来比喻在已经很好的事物上，再加上更好的东西，让它变得更加完美。</span>
+            <button class="copy-btn" onclick="copyText(this, '引申来说，锦上添花用来比喻在已经很好的事物上，再加上更好的东西，让它变得更加完美。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǐnshēn lái shuō, jǐn shàng tiān huā yòng lái bǐyù zài yǐjīng hěn hǎo de shìwù shàng, zài jiā shàng gèng hǎo de dōngxi, ràng tā biàn dé gèngjiā wánměi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǐnshēn lái shuō, jǐn shàng tiān huā yòng lái bǐyù zài yǐjīng hěn hǎo de shìwù shàng, zài jiā shàng gèng hǎo de dōngxi, ràng tā biàn dé gèngjiā wánměi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In its extended meaning, 锦上添花 describes adding something even better to something already great, making it perfect.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In its extended meaning, 锦上添花 describes adding something even better to something already great, making it perfect.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">简单来说，就是好上加好，美上加美。</span>
+            <button class="copy-btn" onclick="copyText(this, '简单来说，就是好上加好，美上加美。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jiǎndān lái shuō, jiùshì hǎo shàng jiā hǎo, měi shàng jiā měi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jiǎndān lái shuō, jiùshì hǎo shàng jiā hǎo, měi shàng jiā měi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Simply put: good on top of good, beauty on top of beauty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Simply put: good on top of good, beauty on top of beauty.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">和锦上添花意思相近的成语，有如虎添翼——意思是给老虎再加上翅膀，让它更加强大；还有美中不足的反面表达——完美无缺。</span>
+            <button class="copy-btn" onclick="copyText(this, '和锦上添花意思相近的成语，有如虎添翼——意思是给老虎再加上翅膀，让它更加强大；还有美中不足的反面表达——完美无缺。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hé jǐn shàng tiān huā yìsi xiāngjìn de chéngyǔ, yǒu rú hǔ tiān yì — yìsi shì gěi lǎohǔ zài jiā shàng chìbǎng, ràng tā gèngjiā qiángdà; hái yǒu měizhōng bùzú de fǎnmiàn biǎodá — wánměi wūquē.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hé jǐn shàng tiān huā yìsi xiāngjìn de chéngyǔ, yǒu rú hǔ tiān yì — yìsi shì gěi lǎohǔ zài jiā shàng chìbǎng, ràng tā gèngjiā qiángdà; hái yǒu měizhōng bùzú de fǎnmiàn biǎodá — wánměi wūquē.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">A similar idiom is 如虎添翼 (like adding wings to a tiger — making something powerful even stronger). The opposite feeling is 美中不足 (a flaw in an otherwise perfect thing) — or its ideal, 完美无缺 (flawless perfection).</span>
+            <button class="copy-btn" onclick="copyText(this, 'A similar idiom is 如虎添翼 (like adding wings to a tiger — making something powerful even stronger). The opposite feeling is 美中不足 (a flaw in an otherwise perfect thing) — or its ideal, 完美无缺 (flawless perfection).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">当然，锦上添花最有名的反义词，就是——雪中送炭。锦上添花是锦上再添美，雪中送炭是最困难的时候给予帮助。大家记住这一对就好了。</span>
+            <button class="copy-btn" onclick="copyText(this, '当然，锦上添花最有名的反义词，就是——雪中送炭。锦上添花是锦上再添美，雪中送炭是最困难的时候给予帮助。大家记住这一对就好了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dāngrán, jǐn shàng tiān huā zuì yǒumíng de fǎnyìcí, jiùshì — xuě zhōng sòng tàn. Jǐn shàng tiān huā shì jǐn shàng zài tiān měi, xuě zhōng sòng tàn shì zuì kùnnán de shíhòu gěiyǔ bāngzhù. Dàjiā jìzhù zhè yī duì jiù hǎo le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dāngrán, jǐn shàng tiān huā zuì yǒumíng de fǎnyìcí, jiùshì — xuě zhōng sòng tàn. Jǐn shàng tiān huā shì jǐn shàng zài tiān měi, xuě zhōng sòng tàn shì zuì kùnnán de shíhòu gěiyǔ bāngzhù. Dàjiā jìzhù zhè yī duì jiù hǎo le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Of course, the most famous antonym of 锦上添花 is 雪中送炭 (sending charcoal in the snow — helping someone in their greatest time of need). 锦上添花 adds beauty to what&#x27;s already good; 雪中送炭 offers help when things are at their worst. Just remember this pair!</span>
+            <button class="copy-btn" onclick="copyText(this, 'Of course, the most famous antonym of 锦上添花 is 雪中送炭 (sending charcoal in the snow — helping someone in their greatest time of need). 锦上添花 adds beauty to what&#x27;s already good; 雪中送炭 offers help when things are at their worst. Just remember this pair!')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源 — 北宋·黄庭坚 · 《了了庵颂》</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语出自北宋著名诗人、书法家黄庭坚的作品《了了庵颂》。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语出自北宋著名诗人、书法家黄庭坚的作品《了了庵颂》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ chū zì Běi Sòng zhùmíng shīrén, shūfǎjiā Huáng Tíngjian de zuòpǐn 《Liǎo liǎo ān sòng》.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ chū zì Běi Sòng zhùmíng shīrén, shūfǎjiā Huáng Tíngjian de zuòpǐn 《Liǎo liǎo ān sòng》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom comes from 《了了庵颂》, written by the famous Northern Song dynasty poet and calligrapher Huang Tingjian.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom comes from 《了了庵颂》, written by the famous Northern Song dynasty poet and calligrapher Huang Tingjian.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">了了庵是一座禅寺的名字，了了在佛教里有明白、彻悟的意思。这首诗是黄庭坚应寺院之请，为这座禅寺写的颂文。</span>
+            <button class="copy-btn" onclick="copyText(this, '了了庵是一座禅寺的名字，了了在佛教里有明白、彻悟的意思。这首诗是黄庭坚应寺院之请，为这座禅寺写的颂文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">liǎoliǎo ān shì yī zuò chánsì de míngzì, liǎoliǎo zài Fójiào lǐ yǒu míngbái, chèwù de yìsi. Zhè shǒu shī shì Huáng Tíngjian yīng sìyuàn zhī qǐng, wèi zhè zuò chánsì xiě de sòngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'liǎoliǎo ān shì yī zuò chánsì de míngzì, liǎoliǎo zài Fójiào lǐ yǒu míngbái, chèwù de yìsi. Zhè shǒu shī shì Huáng Tíngjian yīng sìyuàn zhī qǐng, wèi zhè zuò chánsì xiě de sòngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Liǎoliǎo&#x27;an is the name of a Chan Buddhist temple — liǎoliǎo meaning &#x27;enlightened&#x27; or &#x27;fully understood&#x27;. This poem was written by Huang Tingjian at the temple&#x27;s request.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Liǎoliǎo&#x27;an is the name of a Chan Buddhist temple — liǎoliǎo meaning &#x27;enlightened&#x27; or &#x27;fully understood&#x27;. This poem was written by Huang Tingjian at the temple&#x27;s request.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">诗中写道：又要涪翁作颂，且图锦上添花。</span>
+            <button class="copy-btn" onclick="copyText(this, '诗中写道：又要涪翁作颂，且图锦上添花。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shī zhōng xiě dào: yòu yào Fú wēng zuò sòng, qiě tú jǐn shàng tiān huā.</span>
+            <button class="copy-btn" onclick="copyText(this, 'shī zhōng xiě dào: yòu yào Fú wēng zuò sòng, qiě tú jǐn shàng tiān huā.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The poem reads: &#x27;Yet wishing Fuong to write this eulogy, just hoping to add flowers to brocade.&#x27;</span>
+            <button class="copy-btn" onclick="copyText(this, 'The poem reads: &#x27;Yet wishing Fuong to write this eulogy, just hoping to add flowers to brocade.&#x27;')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">涪翁，是黄庭坚的自称，他曾被贬谪到四川涪州，所以自号涪翁。这句话的意思是，寺院已经很美了，还要请我黄庭坚来写一篇颂文，就是想再锦上添花——让美好的事物更加完美。</span>
+            <button class="copy-btn" onclick="copyText(this, '涪翁，是黄庭坚的自称，他曾被贬谪到四川涪州，所以自号涪翁。这句话的意思是，寺院已经很美了，还要请我黄庭坚来写一篇颂文，就是想再锦上添花——让美好的事物更加完美。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">fú wēng, shì Huáng Tíngjian de zìchēng, tā céng bèi biǎnzhé dào Sìchuān Fú zhōu, suǒyǐ zì hào Fú wēng. Zhè jù huà de yìsi shì, sìyuàn yǐjīng hěn měi le, hái yào qǐng wǒ Huáng Tíngjian lái xiě yī piān sòngwén, jiùshì xiǎng zài jǐn shàng tiān huā — ràng měihǎo de shìwù gèngjiā wánměi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'fú wēng, shì Huáng Tíngjian de zìchēng, tā céng bèi biǎnzhé dào Sìchuān Fú zhōu, suǒyǐ zì hào Fú wēng. Zhè jù huà de yìsi shì, sìyuàn yǐjīng hěn měi le, hái yào qǐng wǒ Huáng Tíngjian lái xiě yī piān sòngwén, jiùshì xiǎng zài jǐn shàng tiān huā — ràng měihǎo de shìwù gèngjiā wánměi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Fuong&#x27; was Huang Tingjian&#x27;s self-given nickname, from his time exiled in Fuzhou, Sichuan. The line means: the temple is already so beautiful — asking me to write this eulogy is like adding flowers to brocade — making something already wonderful even more perfect.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Fuong&#x27; was Huang Tingjian&#x27;s self-given nickname, from his time exiled in Fuzhou, Sichuan. The line means: the temple is already so beautiful — asking me to write this eulogy is like adding flowers to brocade — making something already wonderful even more perfect.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">从此，锦上添花就成了一个固定的成语，流传至今。出处参考：zdic.net（汉典）</span>
+            <button class="copy-btn" onclick="copyText(this, '从此，锦上添花就成了一个固定的成语，流传至今。出处参考：zdic.net（汉典）')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">cóngcǐ, jǐn shàng tiān huā jiù chéng le yī gè gùdìng de chéngyǔ, liúchuán zhìjīn. Chūchù cānkǎo: zdic.net (Hàndiǎn)</span>
+            <button class="copy-btn" onclick="copyText(this, 'cóngcǐ, jǐn shàng tiān huā jiù chéng le yī gè gùdìng de chéngyǔ, liúchuán zhìjīn. Chūchù cānkǎo: zdic.net (Hàndiǎn)')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">From then on, 锦上添花 became a fixed idiom that has been passed down to the present day. Source reference: zdic.net (Hàndian Dictionary)</span>
+            <button class="copy-btn" onclick="copyText(this, 'From then on, 锦上添花 became a fixed idiom that has been passed down to the present day. Source reference: zdic.net (Hàndian Dictionary)')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这首歌已经很好听了，你弹的吉他伴奏真是锦上添花！</span>
+            <button class="copy-btn" onclick="copyText(this, '这首歌已经很好听了，你弹的吉他伴奏真是锦上添花！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè shǒu gē yǐjīng hěn hǎotīng le, nǐ tán de jítā bànzòu zhēnshi jǐn shàng tiān huā!</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè shǒu gē yǐjīng hěn hǎotīng le, nǐ tán de jítā bànzòu zhēnshi jǐn shàng tiān huā!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This song is already so beautiful — your guitar accompaniment is truly the icing on the cake!</span>
+            <button class="copy-btn" onclick="copyText(this, 'This song is already so beautiful — your guitar accompaniment is truly the icing on the cake!')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里，歌本来已经很好了，吉他伴奏让它更加完美。这就是锦上添花。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里，歌本来已经很好了，吉他伴奏让它更加完美。这就是锦上添花。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ, gē běnlái yǐjīng hěn hǎo le, jítā bànzòu ràng tā gèngjiā wánměi. Zhè jiùshì jǐn shàng tiān huā.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ, gē běnlái yǐjīng hěn hǎo le, jítā bànzòu ràng tā gèngjiā wánměi. Zhè jiùshì jǐn shàng tiān huā.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Here, the song was already great, and the guitar accompaniment made it even more perfect — that&#x27;s 锦上添花.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Here, the song was already great, and the guitar accompaniment made it even more perfect — that&#x27;s 锦上添花.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">他的演讲内容本来就很充实，精彩的幻灯片更是锦上添花，赢得了全场热烈的掌声。</span>
+            <button class="copy-btn" onclick="copyText(this, '他的演讲内容本来就很充实，精彩的幻灯片更是锦上添花，赢得了全场热烈的掌声。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā de yǎnjiǎng nèiróng běnlái jiù hěn chōngshí, jīngcǎi de huàndēngpiàn gèng shì jǐn shàng tiān huā, yíngdé le quánchǎng rèliè de zhǎngshēng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā de yǎnjiǎng nèiróng běnlái jiù hěn chōngshí, jīngcǎi de huàndēngpiàn gèng shì jǐn shàng tiān huā, yíngdé le quánchǎng rèliè de zhǎngshēng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">His speech content was already very rich — the impressive slides were an extra flourish that won him a warm round of applause from the whole audience.</span>
+            <button class="copy-btn" onclick="copyText(this, 'His speech content was already very rich — the impressive slides were an extra flourish that won him a warm round of applause from the whole audience.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">内容充实是基础，幻灯片是额外增添的美好——又是锦上添花的好例子。</span>
+            <button class="copy-btn" onclick="copyText(this, '内容充实是基础，幻灯片是额外增添的美好——又是锦上添花的好例子。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nèiróng chōngshí shì jīchǔ, huàndēngpiàn shì éwài zēngtiān de měihǎo — yòu shì jǐn shàng tiān huā de hǎo lìzi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nèiróng chōngshí shì jīchǔ, huàndēngpiàn shì éwài zēngtiān de měihǎo — yòu shì jǐn shàng tiān huā de hǎo lìzi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The rich content was the foundation; the slides were an added bonus — another great example of 锦上添花.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The rich content was the foundation; the slides were an added bonus — another great example of 锦上添花.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn —</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn —')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening video clip again —</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening video clip again —')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">现在大家应该能明白片段里的台词了。对，说的就是锦上添花——在原本已经很好的情况下，又添了一件好事。</span>
+            <button class="copy-btn" onclick="copyText(this, '现在大家应该能明白片段里的台词了。对，说的就是锦上添花——在原本已经很好的情况下，又添了一件好事。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xiànzài dàjiā yīnggāi néng míngbái piànduàn lǐ de táicí le. Duì, shuō de jiùshì jǐn shàng tiān huā — zài yuánběn yǐjīng hěn hǎo de qíngkuàng xià, yòu tiān le yī jiàn hǎoshì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xiànzài dàjiā yīnggāi néng míngbái piànduàn lǐ de táicí le. Duì, shuō de jiùshì jǐn shàng tiān huā — zài yuánběn yǐjīng hěn hǎo de qíngkuàng xià, yòu tiān le yī jiàn hǎoshì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now everyone should be able to understand the line from the clip. That&#x27;s right — it&#x27;s talking about 锦上添花 — adding another good thing on top of what was already great.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now everyone should be able to understand the line from the clip. That&#x27;s right — it&#x27;s talking about 锦上添花 — adding another good thing on top of what was already great.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 这件旗袍已经很漂亮了，你戴的珍珠项链真是________。</p><p class="quiz-hint">This qipao is already so beautiful; your pearl necklace is truly ________.</p><p class="quiz-a">✅ 这件旗袍已经很漂亮了，你戴的珍珠项链真是锦上添花。</p><p class="quiz-hint">This qipao is already so beautiful; your pearl necklace is truly the icing on the cake.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 婚礼现场本来已经很温馨，朋友们的合唱更是________，让新人感动得热泪盈眶。</p><p class="quiz-hint">The wedding venue was already so warm; the friends&#x27; chorus was ________, moving the newlyweds to tears.</p><p class="quiz-a">✅ 婚礼现场本来已经很温馨，朋友们的合唱更是锦上添花，让新人感动得热泪盈眶。</p><p class="quiz-hint">The wedding venue was already so warm; the friends&#x27; chorus was the icing on the cake, moving the newlyweds to tears.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q3.</span> 这家餐厅的菜已经很好吃了，免费的甜点真是________！</p><p class="quiz-hint">The food at this restaurant is already delicious; the free dessert is truly ________!</p><p class="quiz-a">✅ 这家餐厅的菜已经很好吃了，免费的甜点真是锦上添花！</p><p class="quiz-hint">The food at this restaurant is already delicious; the free dessert is truly the icing on the cake!</p></div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">使用锦上添花的时候，要注意几点。</span>
+            <button class="copy-btn" onclick="copyText(this, '使用锦上添花的时候，要注意几点。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shǐyòng jǐn shàng tiān huā de shíhòu, yào zhùyì jǐ diǎn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'shǐyòng jǐn shàng tiān huā de shíhòu, yào zhùyì jǐ diǎn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">When using 锦上添花, keep a few things in mind.</span>
+            <button class="copy-btn" onclick="copyText(this, 'When using 锦上添花, keep a few things in mind.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">第一，它是褒义词，用于好的事情上。不能用在负面的情况，比如不能说『这场灾难雪上加霜，真是锦上添花』——那是语义混乱。</span>
+            <button class="copy-btn" onclick="copyText(this, '第一，它是褒义词，用于好的事情上。不能用在负面的情况，比如不能说『这场灾难雪上加霜，真是锦上添花』——那是语义混乱。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dì yī, tā shì bāoyìcí, yòng yú hǎo de shìqing shàng. Bù néng yòng zài fùmiàn de qíngkuàng, bǐrú bù néng shuō &#x27;zhè chǎng zāinàn xuě shàng jiā shuāng, zhēnshi jǐn shàng tiān huā&#x27; — nà shì yǔyì hùnluàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dì yī, tā shì bāoyìcí, yòng yú hǎo de shìqing shàng. Bù néng yòng zài fùmiàn de qíngkuàng, bǐrú bù néng shuō &#x27;zhè chǎng zāinàn xuě shàng jiā shuāng, zhēnshi jǐn shàng tiān huā&#x27; — nà shì yǔyì hùnluàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">First, it&#x27;s a positive expression, used for good things. You can&#x27;t use it in negative situations — that would be a semantic contradiction.</span>
+            <button class="copy-btn" onclick="copyText(this, 'First, it&#x27;s a positive expression, used for good things. You can&#x27;t use it in negative situations — that would be a semantic contradiction.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">第二，锦上添花强调的是『本来已经很好了』——所以你要说的那件事，前提是已经是好事、好状态。</span>
+            <button class="copy-btn" onclick="copyText(this, '第二，锦上添花强调的是『本来已经很好了』——所以你要说的那件事，前提是已经是好事、好状态。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dì èr, jǐn shàng tiān huā qiángdiào de shì &#x27;běnlái yǐjīng hěn hǎo le&#x27; — suǒyǐ nǐ yào shuō de nà jiàn shì, qiántí shì yǐjīng shì hǎoshì, hǎo zhuàngtài.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dì èr, jǐn shàng tiān huā qiángdiào de shì &#x27;běnlái yǐjīng hěn hǎo le&#x27; — suǒyǐ nǐ yào shuō de nà jiàn shì, qiántí shì yǐjīng shì hǎoshì, hǎo zhuàngtài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Second, 锦上添花 emphasizes &#x27;something that was already great&#x27; — so the thing you&#x27;re describing must already be in a good state to begin with.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Second, 锦上添花 emphasizes &#x27;something that was already great&#x27; — so the thing you&#x27;re describing must already be in a good state to begin with.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">第三，有时候人们用锦上添花来对比雪中送炭——暗示锦上添花虽好，但雪中送炭更难得、更珍贵。大家要根据语境理解。</span>
+            <button class="copy-btn" onclick="copyText(this, '第三，有时候人们用锦上添花来对比雪中送炭——暗示锦上添花虽好，但雪中送炭更难得、更珍贵。大家要根据语境理解。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dì sān, yǒushíhòu rénmen yòng jǐn shàng tiān huā lái duìbǐ xuě zhōng sòng tàn — ànshì jǐn shàng tiān huā suī hǎo, dàn xuě zhōng sòng tàn gèng nándé, gèng zhēnguì. Dàjiā yào gēnjù yǔjìng lǐjiě.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dì sān, yǒushíhòu rénmen yòng jǐn shàng tiān huā lái duìbǐ xuě zhōng sòng tàn — ànshì jǐn shàng tiān huā suī hǎo, dàn xuě zhōng sòng tàn gèng nándé, gèng zhēnguì. Dàjiā yào gēnjù yǔjìng lǐjiě.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Third, people sometimes contrast 锦上添花 with 雪中送炭 — implying that while 锦上添花 is nice, 雪中送炭 is rarer and more precious. Understand this based on context.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Third, people sometimes contrast 锦上添花 with 雪中送炭 — implying that while 锦上添花 is nice, 雪中送炭 is rarer and more precious. Understand this based on context.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天我们学了锦上添花。下次你的朋友唱歌唱得特别好，你去伴舞；或者朋友的蛋糕已经很漂亮了，你又帮他插上了蜡烛——那就可以笑着说：这真是锦上添花！</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天我们学了锦上添花。下次你的朋友唱歌唱得特别好，你去伴舞；或者朋友的蛋糕已经很漂亮了，你又帮他插上了蜡烛——那就可以笑着说：这真是锦上添花！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān wǒmen xué le jǐn shàng tiān huā. Xià cì nǐ de péngyou chàng gē chàng de tèbié hǎo, nǐ qù bàn wǔ; huòzhě péngyou de dàngāo yǐjīng hěn piàoliang le, nǐ yòu bāng tā chā shàng le làzhú — nà jiù kěyǐ xiào zhe shuō: zhè zhēnshi jǐn shàng tiān huā!</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān wǒmen xué le jǐn shàng tiān huā. Xià cì nǐ de péngyou chàng gē chàng de tèbié hǎo, nǐ qù bàn wǔ; huòzhě péngyou de dàngāo yǐjīng hěn piàoliang le, nǐ yòu bāng tā chā shàng le làzhú — nà jiù kěyǐ xiào zhe shuō: zhè zhēnshi jǐn shàng tiān huā!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Today we learned 锦上添花. Next time your friend sings beautifully and you join in to dance; or your friend&#x27;s cake already looks gorgeous and you add the candles — just smile and say: This is truly 锦上添花!</span>
+            <button class="copy-btn" onclick="copyText(this, 'Today we learned 锦上添花. Next time your friend sings beautifully and you join in to dance; or your friend&#x27;s cake already looks gorgeous and you add the candles — just smile and say: This is truly 锦上添花!')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. Xīwàng nǐ xuédào le yīdiǎn xīn de Zhōngwén. Rúguǒ nǐ xǐhuan wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù Xiǎoxuě de Zhōngwénwū. Wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. Xīwàng nǐ xuédào le yīdiǎn xīn de Zhōngwén. Rúguǒ nǐ xǐhuan wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù Xiǎoxuě de Zhōngwénwū. Wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned a little new Chinese. If you enjoy my content, please like and follow Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned a little new Chinese. If you enjoy my content, please like and follow Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
