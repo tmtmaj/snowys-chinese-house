@@ -190,39 +190,73 @@ python scripts/generate_html.py \
 
 ---
 
+## Step 5-B — Opus Verification (REQUIRED)
+
+After all files are generated, spawn an **Opus agent** to review and fix the complete output before committing.
+
+```
+Agent({
+  subagent_type: "oh-my-claudecode:critic",
+  model: "opus",
+  prompt: "Review the Chinese idiom episode content for 小雪의중문屋 YouTube channel.
+  
+  Read these files:
+  - scripts/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}.md
+  - /tmp/sections_{slug}.json
+  
+  Check and fix ALL of the following:
+  
+  **Pinyin accuracy** — every tone mark correct? (ā á ǎ à, etc.)
+  **Chinese accuracy** — wrong homophones, typos, unnatural phrasing?
+  **Classical origin** — does the quoted text match authoritative sources?
+  **Character analysis** — are example compound words on-theme and relevant?
+  **Opening hook** — warm and relatable, not academic?
+  **Origin intro** — does it introduce author/work as trilingual spoken lines before quoting?
+  **Quiz sentences** — short, natural, daily-life situations?
+  **Usage notes** — correct contrast with near-synonyms?
+  **Completeness** — all trilingual (cn/py/en) fields present in every sentence?
+  
+  Fix issues directly in the .md and sections JSON.
+  Then regenerate the .html file using:
+    python3 .claude/skills/chinese-idiom-youtube/scripts/generate_html.py \\
+      --idiom '{IDIOM}' --pinyin '{PINYIN}' --episode {NN} \\
+      --sections /tmp/sections_{slug}.json \\
+      --output scripts/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}.html
+  And regenerate the .docx:
+    python3 .claude/skills/chinese-idiom-youtube/scripts/generate_script.py \\
+      --idiom '{IDIOM}' --pinyin '{PINYIN}' \\
+      --sections /tmp/sections_{slug}.json \\
+      --output scripts/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}_script.docx
+  
+  Report a bullet-point summary of every change made."
+})
+```
+
+Wait for the Opus agent to complete and apply all fixes before proceeding to Step 6.
+
+---
+
 ## Step 6 — Push to GitHub and deliver
 
 The user's GitHub repo is `https://github.com/tmtmaj/snowys-chinese-house`.
-Local clone path is discovered at runtime — do NOT hardcode it. Detect it by running:
+The working directory IS the repo root (`/home/xuefeng/snowys-chinese-house`). Push directly from here.
+
+### 6-A — Direct git push (WSL / Linux — primary method)
+
+After all files are written to `scripts/{YYYYMMDD}_{slug}/`, run:
 
 ```bash
-git -C "$(dirname "$(which claude)" 2>/dev/null || echo '.')" rev-parse --show-toplevel 2>/dev/null
+git add scripts/{YYYYMMDD}_{slug}/
+git commit -m "ep{NN}: add {IDIOM} ({PINYIN}) script"
+git push
 ```
 
-Or more reliably, use the `gh` CLI to find the repo root:
+Always ask the user before running `git push` — confirm the commit message looks right first.
+If `git push` fails (e.g. no upstream, auth error), report the exact error and suggest the PowerShell fallback below.
 
-```bash
-gh repo clone tmtmaj/snowys-chinese-house --if-not-exists
-# Locate the clone by searching common locations:
-# $HOME/Documents/github/snowys-chinese-house
-# $HOME/github/snowys-chinese-house
-# $HOME/Documents/snowys-chinese-house
-# Use whichever exists, or prompt the user.
-```
+### 6-B — PowerShell push script (Windows fallback)
 
-Copy output files to the repo and push:
-
-```bash
-git -C "$REPO_PATH" add .
-git -C "$REPO_PATH" commit -m "ep{NN}: add {IDIOM} ({PINYIN}) script and images"
-git -C "$REPO_PATH" push
-```
-
-Since `gh` is only available on the user's local machine (not in the sandbox),
-generate a ready-to-run PowerShell push script and save it to Downloads alongside the output files.
-Name it `push_{YYYYMMDD}_{slug}.ps1`. The user can double-click or run it in PowerShell to push in one step.
-
-### push script template
+Also generate `scripts/push_{YYYYMMDD}_{slug}.ps1` so the user can push from Windows if needed.
 
 ```powershell
 # Auto-detect repo location (works across different machines)
@@ -237,18 +271,23 @@ if (-not $repo) {
     Write-Error "snowys-chinese-house repo not found. Please clone it first."
     exit 1
 }
-$idiom = "IDIOM"
-$episode = NN
+$slug    = "{YYYYMMDD}_{slug}"
+$episode = {NN}
+$idiom   = "{IDIOM}"
 
-Copy-Item "ep{NN}_$idiom.md"   "$repo\scripts\markdown\" -Force
-Copy-Item "ep{NN}_$idiom.html" "$repo\scripts\html\"     -Force
-Copy-Item "${idiom}_Images"    "$repo\images\$idiom"     -Recurse -Force
+$destDir = "$repo\scripts\$slug"
+New-Item -ItemType Directory -Force -Path $destDir | Out-Null
+$srcDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+Copy-Item "$srcDir\$slug\$slug.md"            "$destDir\" -Force
+Copy-Item "$srcDir\$slug\$slug.html"          "$destDir\" -Force
+Copy-Item "$srcDir\$slug\README.md"           "$destDir\" -Force
+Copy-Item "$srcDir\$slug\${slug}_script.docx" "$destDir\" -Force -ErrorAction SilentlyContinue
 
 Set-Location $repo
-git add .
-git commit -m "ep${episode}: add $idiom script and images"
+git add "scripts/$slug"
+git commit -m "ep${episode}: add $idiom script"
 git push
-Write-Host "✅ Pushed to GitHub!"
+Write-Host "✅ ep${episode} $idiom pushed to GitHub!"
 ```
 
 ---
@@ -293,7 +332,10 @@ Present these files:
 - `{YYYYMMDD}_{slug}.md` — GitHub용 마크다운
 - `{YYYYMMDD}_{slug}.html` — 복사 버튼 HTML (브라우저에서 열기)
 - `README.md` — 에피소드 요약 및 GitHub Pages 링크 포함
-- `push_{YYYYMMDD}_{slug}.ps1` — 실행하면 GitHub에 자동 push
+- `push_{YYYYMMDD}_{slug}.ps1` — Windows PowerShell 백업 push 스크립트
+
+After generating files, run the Step 6-A git push (ask user to confirm commit message first).
+Report success or failure — if push fails, direct user to the `.ps1` script.
 
 Do NOT generate images unless the user explicitly asks for them.
 
