@@ -305,7 +305,7 @@ It is often used to describe the key detail in writing, speeches, or art that el
 ```
 **拼音**
 ```
-jìnyìcí yǒu: diǎn shí chéng jīn, yī yǔ zhōng dì.
+jìnyìcí yǒu: diǎn shí chéng jīn, yī yǔ zhòng dì.
 ```
 **영어**
 ```
@@ -314,15 +314,15 @@ Similar expressions: 点石成金 (to turn stone into gold — the Midas touch) 
 
 **中文**
 ```
-但要注意，画龙点睛强调那一笔的决定性；而锦上添花更侧重'在已经好的基础上再加分'。
+另外，还有一个常被拿来比较的成语——锦上添花。但要注意，画龙点睛强调那一笔的决定性；而锦上添花更侧重'在已经好的基础上再加分'。
 ```
 **拼音**
 ```
-dàn yào zhùyì, huà lóng diǎn jīng qiángdiào nà yī bǐ de juédìngxìng; ér jǐn shàng tiān huā gèng cèzhòng 'zài yǐjīng hǎo de jīchǔ shàng zài jiā fēn'.
+lìngwài, hái yǒu yī gè cháng bèi ná lái bǐjiào de chéngyǔ——jǐn shàng tiān huā. Dàn yào zhùyì, huà lóng diǎn jīng qiángdiào nà yī bǐ de juédìngxìng; ér jǐn shàng tiān huā gèng cèzhòng 'zài yǐjīng hǎo de jīchǔ shàng zài jiā fēn'.
 ```
 **영어**
 ```
-But note: 画龙点睛 emphasizes the decisive, transformative nature of that one touch; while 锦上添花 focuses more on 'adding more to something already good.'
+There is also a related idiom often compared with it — 锦上添花. But note: 画龙点睛 emphasizes the decisive, transformative nature of that one touch, while 锦上添花 focuses more on 'adding more to something already good.'
 ```
 
 ## ⑤ 成语来源
@@ -551,7 +551,7 @@ Common phrasing: 画龙点睛之笔 (the key finishing stroke). You can say '这
 ```
 **拼音**
 ```
-zhùyì: rúguǒ tiānjia de fǎnér shì duōyú de, nà jiù bú shì huà lóng diǎn jīng, ér shì 'huà shé tiān zú' le!
+zhùyì: rúguǒ tiānjiā de fǎnér shì duōyú de, nà jiù bú shì huà lóng diǎn jīng, ér shì 'huà shé tiān zú' le!
 ```
 **영어**
 ```
@@ -565,7 +565,7 @@ Note: if what you add turns out to be unnecessary instead, that's not 画龙点�
 ```
 **拼音**
 ```
-xià cì nǐ zài xiě wénzhāng, fā xìnxi, huòzhě zhǔnbèi fāyán de shíhou, bùfáng duō xiǎng yī xiǎng: yǒu méiyǒu yī jù huà, kěyǐ chéngwéi nǐ de huà lóng diǎn jīng zhī bǐ?
+xià cì nǐ zài xiě wénzhāng, fā xìnxī, huòzhě zhǔnbèi fāyán de shíhou, bùfáng duō xiǎng yī xiǎng: yǒu méiyǒu yī jù huà, kěyǐ chéngwéi nǐ de huà lóng diǎn jīng zhī bǐ?
 ```
 **영어**
 ```
