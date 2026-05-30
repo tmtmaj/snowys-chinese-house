@@ -43,7 +43,7 @@ Report a summary of what was changed.
 ### Step C — Commit & Push
 After Opus verification passes, run:
 ```bash
-git add scripts/{YYYYMMDD}_{slug}/
+git add contents/idiom/{YYYYMMDD}_{slug}/
 git commit -m "ep{NN}: add {IDIOM} ({PINYIN}) script"
 git push
 ```
@@ -51,8 +51,33 @@ Confirm commit message with user before pushing.
 
 ---
 
+## Repository Structure
+
+```
+snowys-chinese-house/
+  contents/
+    idiom/          ← 사자성어 에피소드 (구 scripts/)
+      {YYYYMMDD}_{slug}/
+        README.md   ← GitHub Pages 링크 포함
+        *.md        ← 스크립트
+        *.html      ← HTML 뷰어
+    word/           ← 단어 학습 카드 에피소드
+      card_generator.py
+      CLAUDE.md
+      ep{NNNN}_{word}/
+        README.md   ← GitHub Pages 링크 포함
+        index.html  ← 카드 뷰어
+        script.md   ← 선생님 스크립트
+        metadata.json
+        cards/      ← PNG 카드
+```
+
+GitHub Pages base: `https://tmtmaj.github.io/snowys-chinese-house/`
+
+---
+
 ## General Rules
 - Python scripts use `python3` (not `python`)
 - JSON with Chinese text: always generate via `json.dump()` in Python to avoid quote-escaping issues
-- Episode numbering: check last committed episode in `scripts/` folder, increment by 1
+- Episode numbering: check last committed episode in `contents/idiom/` folder, increment by 1
 - Never commit the sections.json temp file (lives in /tmp/)

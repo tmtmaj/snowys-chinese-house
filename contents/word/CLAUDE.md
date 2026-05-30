@@ -1,4 +1,4 @@
-# 小雪的中文屋 — Word Study Cards (`word/`)
+# 小雪的中文屋 — Word Study Cards (`contents/word/`)
 
 ## 개요
 
@@ -14,11 +14,13 @@
 ## 디렉토리 구조
 
 ```
-word/
+contents/word/
   card_generator.py
+  CLAUDE.md
   ep0001_网红/
+    README.md        ← GitHub Pages 링크 (에피소드별)
     cards/           ← PNG 카드 18장
-    index.html       ← GitHub Pages 스크립트 뷰어
+    index.html       ← GitHub Pages 카드 뷰어
     script.md        ← 선생님 낭독 스크립트
     metadata.json    ← 카드 시퀀스 + repeat 횟수
   ep0002_XXX/
@@ -26,6 +28,9 @@ word/
 ```
 
 에피소드 디렉토리명: `ep{num:04d}_{word}` (예: `ep0001_网红`)
+
+GitHub Pages URL 패턴:
+`https://tmtmaj.github.io/snowys-chinese-house/contents/word/ep{NNNN}_{URL인코딩된 단어}/index.html`
 
 ---
 
@@ -143,8 +148,40 @@ ACCENT  = (190,  80,  30)  # Terracotta (포인트)
 2. 3문단 × 3문장 = 9문장 작성 (유머러스하고 연결된 스토리)
 3. 끊어읽기 `∨` PSC 규칙에 맞게 삽입
 4. `script` 필드에 중국어 나레이션 작성
-5. `python3 card_generator.py` 실행
-6. `ep{num:04d}_{word}/` 폴더 자동 생성
+5. `cd contents/word && python3 card_generator.py` 실행
+6. `ep{num:04d}_{word}/` 폴더 자동 생성 (README.md는 수동 추가)
+
+### README.md 템플릿 (에피소드별)
+
+```markdown
+# ep{NNNN} · {단어} ({pinyin})
+
+**의미**: {한국어 의미} ({영어 의미})
+
+| | |
+|---|---|
+| **채널** | 小雪的中文屋 · Snowy's Chinese House |
+| **에피소드** | ep{NNNN} |
+| **단어** | {단어} |
+
+## 스크립트 보기
+
+🌐 **GitHub Pages**: https://tmtmaj.github.io/snowys-chinese-house/contents/word/ep{NNNN}_{URL인코딩}/index.html
+
+## 파일 목록
+
+- `script.md` — 선생님 낭독 스크립트 (중국어)
+- `index.html` — 카드 뷰어 (브라우저에서 열기)
+- `metadata.json` — 카드 시퀀스 및 repeat 횟수
+- `cards/` — PNG 카드 18장 (1920×1080)
+```
+
+### 커밋
+```bash
+git add contents/word/ep{NNNN}_{word}/
+git commit -m "word ep{NNNN}: add {단어} ({pinyin}) cards"
+git push
+```
 
 ---
 
