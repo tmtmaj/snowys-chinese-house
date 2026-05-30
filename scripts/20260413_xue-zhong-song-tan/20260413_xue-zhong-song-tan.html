@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep20 · 雪中送炭 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>雪中送炭</h1>
+  <div class="pinyin">xuě zhōng sòng tàn</div>
+  <div class="meta">ep20 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家有没有经历过——在最困难、最无助的时候，突然有人出现，帮了你一把？</span>
+            <button class="copy-btn" onclick="copyText(this, '大家有没有经历过——在最困难、最无助的时候，突然有人出现，帮了你一把？')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā yǒu méi yǒu jīnglì guò —— zài zuì kùnnán、zuì wúzhù de shíhou, tūrán yǒu rén chūxiàn, bāng le nǐ yī bǎ？</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā yǒu méi yǒu jīnglì guò —— zài zuì kùnnán、zuì wúzhù de shíhou, tūrán yǒu rén chūxiàn, bāng le nǐ yī bǎ？')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Has everyone had this experience — at your most difficult, helpless moment, someone suddenly appears and gives you a hand?</span>
+            <button class="copy-btn" onclick="copyText(this, 'Has everyone had this experience — at your most difficult, helpless moment, someone suddenly appears and gives you a hand?')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那种感觉，就像在寒冷的冬天里，突然有人给你送来了一盆炭火。</span>
+            <button class="copy-btn" onclick="copyText(this, '那种感觉，就像在寒冷的冬天里，突然有人给你送来了一盆炭火。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà zhǒng gǎnjué, jiù xiàng zài hánlěng de dōngtiān lǐ, tūrán yǒu rén gěi nǐ sòng lái le yī pén tàn huǒ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà zhǒng gǎnjué, jiù xiàng zài hánlěng de dōngtiān lǐ, tūrán yǒu rén gěi nǐ sòng lái le yī pén tàn huǒ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That feeling is like someone suddenly bringing you a basin of charcoal fire on a cold winter day.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That feeling is like someone suddenly bringing you a basin of charcoal fire on a cold winter day.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">今天我们要学的成语，说的就是这种感情。</span>
+            <button class="copy-btn" onclick="copyText(this, '今天我们要学的成语，说的就是这种感情。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jīntiān wǒmen yào xué de chéngyǔ, shuō de jiù shì zhè zhǒng gǎnqíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jīntiān wǒmen yào xué de chéngyǔ, shuō de jiù shì zhè zhǒng gǎnqíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The idiom we&#x27;re learning today is about exactly this feeling.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The idiom we&#x27;re learning today is about exactly this feeling.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān kàn yī duàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān kàn yī duàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s first watch a clip from a drama or film.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s first watch a clip from a drama or film.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——雪中送炭。雪中送炭。雪中送炭。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——雪中送炭。雪中送炭。雪中送炭。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 雪中送炭.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 雪中送炭.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【雪 · xuě】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「雪」，就是雪，下雪的雪。</span>
+            <button class="copy-btn" onclick="copyText(this, '「雪」，就是雪，下雪的雪。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Xuě」, jiù shì xuě, xià xuě de xuě.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Xuě」, jiù shì xuě, xià xuě de xuě.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「雪」 means snow.</span>
+            <button class="copy-btn" onclick="copyText(this, '「雪」 means snow.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：下雪、雪花、大雪。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：下雪、雪花、大雪。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: xià xuě, xuě huā, dà xuě.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: xià xuě, xuě huā, dà xuě.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 下雪 (to snow), 雪花 (snowflake), 大雪 (heavy snow).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 下雪 (to snow), 雪花 (snowflake), 大雪 (heavy snow).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">在这个成语里，雪代表一种寒冷的、困难的处境。</span>
+            <button class="copy-btn" onclick="copyText(this, '在这个成语里，雪代表一种寒冷的、困难的处境。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zài zhège chéngyǔ lǐ, xuě dàibiǎo yī zhǒng hánlěng de、kùnnán de chǔjìng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zài zhège chéngyǔ lǐ, xuě dàibiǎo yī zhǒng hánlěng de、kùnnán de chǔjìng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In this idiom, 雪 represents a cold, difficult situation.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In this idiom, 雪 represents a cold, difficult situation.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【中 · zhōng】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「中」，表示在某种状态或处境之中。</span>
+            <button class="copy-btn" onclick="copyText(this, '「中」，表示在某种状态或处境之中。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Zhōng」, biǎoshì zài mǒu zhǒng zhuàngtài huò chǔjìng zhī zhōng.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Zhōng」, biǎoshì zài mǒu zhǒng zhuàngtài huò chǔjìng zhī zhōng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「中」 means being in the middle of a certain state or situation.</span>
+            <button class="copy-btn" onclick="copyText(this, '「中」 means being in the middle of a certain state or situation.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：途中、困境中、黑暗中。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：途中、困境中、黑暗中。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: tú zhōng, kùnjìng zhōng, hēi&#x27;àn zhōng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: tú zhōng, kùnjìng zhōng, hēi&#x27;àn zhōng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 途中 (on the way), 困境中 (in difficulty), 黑暗中 (in the dark).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 途中 (on the way), 困境中 (in difficulty), 黑暗中 (in the dark).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">雪中，就是在大雪之中，也就是在最艰难的时候。</span>
+            <button class="copy-btn" onclick="copyText(this, '雪中，就是在大雪之中，也就是在最艰难的时候。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xuě zhōng, jiù shì zài dà xuě zhī zhōng, yě jiù shì zài zuì jiānnán de shíhou.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xuě zhōng, jiù shì zài dà xuě zhī zhōng, yě jiù shì zài zuì jiānnán de shíhou.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">雪中 means being in the snow — in other words, during the most difficult times.</span>
+            <button class="copy-btn" onclick="copyText(this, '雪中 means being in the snow — in other words, during the most difficult times.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【送 · sòng】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「送」，是给予、赠送的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '「送」，是给予、赠送的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Sòng」, shì jǐyǔ、zèngsòng de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Sòng」, shì jǐyǔ、zèngsòng de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「送」 means to give or deliver something.</span>
+            <button class="copy-btn" onclick="copyText(this, '「送」 means to give or deliver something.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：送礼、赠送、送行。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：送礼、赠送、送行。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: sòng lǐ, zèngsòng, sòng xíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: sòng lǐ, zèngsòng, sòng xíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 送礼 (give a gift), 赠送 (donate/give), 送行 (see someone off on a journey).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 送礼 (give a gift), 赠送 (donate/give), 送行 (see someone off on a journey).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里的送，带有主动帮助别人的温暖感。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里的送，带有主动帮助别人的温暖感。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ de sòng, dài yǒu zhǔdòng bāngzhù biérén de wēnnuǎn gǎn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ de sòng, dài yǒu zhǔdòng bāngzhù biérén de wēnnuǎn gǎn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The 送 here carries a warmth of actively reaching out to help someone.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The 送 here carries a warmth of actively reaching out to help someone.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【炭 · tàn】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「炭」，是炭火的炭，古代用来取暖的燃料。</span>
+            <button class="copy-btn" onclick="copyText(this, '「炭」，是炭火的炭，古代用来取暖的燃料。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Tàn」, shì tàn huǒ de tàn, gǔdài yòng lái qǔ nuǎn de ránliào.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Tàn」, shì tàn huǒ de tàn, gǔdài yòng lái qǔ nuǎn de ránliào.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「炭」 is charcoal — the fuel used for heating in ancient times.</span>
+            <button class="copy-btn" onclick="copyText(this, '「炭」 is charcoal — the fuel used for heating in ancient times.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：炭火、木炭、炭盆。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：炭火、木炭、炭盆。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: tàn huǒ, mùtàn, tàn pén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: tàn huǒ, mùtàn, tàn pén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 炭火 (charcoal fire), 木炭 (charcoal), 炭盆 (charcoal brazier).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 炭火 (charcoal fire), 木炭 (charcoal), 炭盆 (charcoal brazier).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">在这个成语里，炭代表温暖，代表你在最需要的时候得到的帮助。</span>
+            <button class="copy-btn" onclick="copyText(this, '在这个成语里，炭代表温暖，代表你在最需要的时候得到的帮助。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zài zhège chéngyǔ lǐ, tàn dàibiǎo wēnnuǎn, dàibiǎo nǐ zài zuì xūyào de shíhou dédào de bāngzhù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zài zhège chéngyǔ lǐ, tàn dàibiǎo wēnnuǎn, dàibiǎo nǐ zài zuì xūyào de shíhou dédào de bāngzhù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In this idiom, charcoal represents warmth — the help you receive when you need it most.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In this idiom, charcoal represents warmth — the help you receive when you need it most.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「雪中」——在大雪之中，代表最困难的处境；「送炭」——送去炭火，代表给予温暖和帮助。</span>
+            <button class="copy-btn" onclick="copyText(this, '「雪中」——在大雪之中，代表最困难的处境；「送炭」——送去炭火，代表给予温暖和帮助。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Xuě zhōng」—— zài dà xuě zhī zhōng, dàibiǎo zuì kùnnán de chǔjìng；「sòng tàn」—— sòng qù tàn huǒ, dàibiǎo jǐyǔ wēnnuǎn hé bāngzhù.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Xuě zhōng」—— zài dà xuě zhī zhōng, dàibiǎo zuì kùnnán de chǔjìng；「sòng tàn」—— sòng qù tàn huǒ, dàibiǎo jǐyǔ wēnnuǎn hé bāngzhù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「雪中」 — being in heavy snow, representing the most difficult situation; 「送炭」 — sending charcoal, representing giving warmth and help.</span>
+            <button class="copy-btn" onclick="copyText(this, '「雪中」 — being in heavy snow, representing the most difficult situation; 「送炭」 — sending charcoal, representing giving warmth and help.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">字面意思是：在下雪天给人送来炭火取暖。</span>
+            <button class="copy-btn" onclick="copyText(this, '字面意思是：在下雪天给人送来炭火取暖。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zìmiàn yìsi shì: zài xià xuě tiān gěi rén sòng lái tàn huǒ qǔ nuǎn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zìmiàn yìsi shì: zài xià xuě tiān gěi rén sòng lái tàn huǒ qǔ nuǎn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Literal meaning: sending charcoal to keep someone warm on a snowy day.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Literal meaning: sending charcoal to keep someone warm on a snowy day.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">引申义是：在别人最困难、最需要帮助的时候，给予及时的帮助。</span>
+            <button class="copy-btn" onclick="copyText(this, '引申义是：在别人最困难、最需要帮助的时候，给予及时的帮助。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǐnshēn yì shì: zài biérén zuì kùnnán、zuì xūyào bāngzhù de shíhou, jǐyǔ jíshí de bāngzhù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǐnshēn yì shì: zài biérén zuì kùnnán、zuì xūyào bāngzhù de shíhou, jǐyǔ jíshí de bāngzhù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Extended meaning: giving timely help when someone is at their most difficult moment and most in need.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Extended meaning: giving timely help when someone is at their most difficult moment and most in need.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">它的反义词是「锦上添花」——在本来就很好的情况下再添一分美好，而不是在困难中给予帮助。</span>
+            <button class="copy-btn" onclick="copyText(this, '它的反义词是「锦上添花」——在本来就很好的情况下再添一分美好，而不是在困难中给予帮助。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā de fǎnyìcí shì「jǐn shàng tiān huā」—— zài běnlái jiù hěn hǎo de qíngkuàng xià zài tiān yī fēn měihǎo, ér bú shì zài kùnnán zhōng jǐyǔ bāngzhù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā de fǎnyìcí shì「jǐn shàng tiān huā」—— zài běnlái jiù hěn hǎo de qíngkuàng xià zài tiān yī fēn měihǎo, ér bú shì zài kùnnán zhōng jǐyǔ bāngzhù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Its antonym is 「锦上添花」 — adding flowers to brocade, meaning to enhance something already good, not helping someone in need.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Its antonym is 「锦上添花」 — adding flowers to brocade, meaning to enhance something already good, not helping someone in need.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">近义词有：急人之难、及时雨。</span>
+            <button class="copy-btn" onclick="copyText(this, '近义词有：急人之难、及时雨。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jìnyìcí yǒu: jí rén zhī nán, jíshí yǔ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jìnyìcí yǒu: jí rén zhī nán, jíshí yǔ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Near synonyms include: 急人之难 (rushing to help in times of need) and 及时雨 (timely rain — a person who helps just in time).</span>
+            <button class="copy-btn" onclick="copyText(this, 'Near synonyms include: 急人之难 (rushing to help in times of need) and 及时雨 (timely rain — a person who helps just in time).')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源 — 南宋·范成大 · 《大雪送炭与芥隐》</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语出自南宋著名诗人范成大的诗《大雪送炭与芥隐》。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语出自南宋著名诗人范成大的诗《大雪送炭与芥隐》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ chūzì Nán Sòng zhùmíng shīrén Fàn Chéngdà de shī 《Dà Xuě Sòng Tàn yǔ Jiè Yǐn》.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ chūzì Nán Sòng zhùmíng shīrén Fàn Chéngdà de shī 《Dà Xuě Sòng Tàn yǔ Jiè Yǐn》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom comes from the poem 《大雪送炭与芥隐》 by Fan Chengda, a famous poet of the Southern Song dynasty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom comes from the poem 《大雪送炭与芥隐》 by Fan Chengda, a famous poet of the Southern Song dynasty.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">范成大是南宋时期的大诗人，晚年隐居在苏州石湖，因此自称石湖居士。</span>
+            <button class="copy-btn" onclick="copyText(this, '范成大是南宋时期的大诗人，晚年隐居在苏州石湖，因此自称石湖居士。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">fàn Chéngdà shì Nán Sòng shíqī de dà shīrén, wǎnnián yǐnjū zài Sūzhōu Shí Hú, yīncǐ zìchēng Shí Hú Jūshì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'fàn Chéngdà shì Nán Sòng shíqī de dà shīrén, wǎnnián yǐnjū zài Sūzhōu Shí Hú, yīncǐ zìchēng Shí Hú Jūshì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Fan Chengda was a great poet of the Southern Song period who retired to Stone Lake in Suzhou, calling himself the Hermit of Stone Lake.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Fan Chengda was a great poet of the Southern Song period who retired to Stone Lake in Suzhou, calling himself the Hermit of Stone Lake.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">《大雪送炭与芥隐》是他在大雪天给隐居的朋友送炭时所写的诗，记录了他对友情与慷慨的感受。</span>
+            <button class="copy-btn" onclick="copyText(this, '《大雪送炭与芥隐》是他在大雪天给隐居的朋友送炭时所写的诗，记录了他对友情与慷慨的感受。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">《Dà Xuě Sòng Tàn yǔ Jiè Yǐn》 shì tā zài dà xuě tiān gěi yǐnjū de péngyou sòng tàn shí suǒ xiě de shī, jìlù le tā duì yǒuqíng yǔ kāngkǎi de gǎnshòu.</span>
+            <button class="copy-btn" onclick="copyText(this, '《Dà Xuě Sòng Tàn yǔ Jiè Yǐn》 shì tā zài dà xuě tiān gěi yǐnjū de péngyou sòng tàn shí suǒ xiě de shī, jìlù le tā duì yǒuqíng yǔ kāngkǎi de gǎnshòu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The poem was written when he sent charcoal to a hermit friend during a snowstorm, capturing his feelings about friendship and generosity.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The poem was written when he sent charcoal to a hermit friend during a snowstorm, capturing his feelings about friendship and generosity.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">诗中有这样一句：</span>
+            <button class="copy-btn" onclick="copyText(this, '诗中有这样一句：')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shī zhōng yǒu zhèyàng yī jù:</span>
+            <button class="copy-btn" onclick="copyText(this, 'shī zhōng yǒu zhèyàng yī jù:')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The poem contains this line:</span>
+            <button class="copy-btn" onclick="copyText(this, 'The poem contains this line:')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「不是雪中须送炭，聊装风景要诗来。」</span>
+            <button class="copy-btn" onclick="copyText(this, '「不是雪中须送炭，聊装风景要诗来。」')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Bú shì xuě zhōng xū sòng tàn, liáo zhuāng fēngjǐng yào shī lái.」</span>
+            <button class="copy-btn" onclick="copyText(this, '「Bú shì xuě zhōng xū sòng tàn, liáo zhuāng fēngjǐng yào shī lái.」')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「It&#x27;s not that the snow demands I send charcoal — I just want to dress up the scenery and ask for a poem in return.」</span>
+            <button class="copy-btn" onclick="copyText(this, '「It&#x27;s not that the snow demands I send charcoal — I just want to dress up the scenery and ask for a poem in return.」')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里范成大用了一种谦虚的说法：不是因为你需要炭，只是借着这场雪景来向你讨一首诗。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里范成大用了一种谦虚的说法：不是因为你需要炭，只是借着这场雪景来向你讨一首诗。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ Fàn Chéngdà yòng le yī zhǒng qiānxū de shuōfǎ: bú shì yīnwèi nǐ xūyào tàn, zhǐshì jiè zhe zhè chǎng xuě jǐng lái xiàng nǐ tǎo yī shǒu shī.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ Fàn Chéngdà yòng le yī zhǒng qiānxū de shuōfǎ: bú shì yīnwèi nǐ xūyào tàn, zhǐshì jiè zhe zhè chǎng xuě jǐng lái xiàng nǐ tǎo yī shǒu shī.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Fan Chengda uses a modest tone: it&#x27;s not that you need the charcoal — I&#x27;m just using the snowy scenery as an excuse to ask you for a poem.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Fan Chengda uses a modest tone: it&#x27;s not that you need the charcoal — I&#x27;m just using the snowy scenery as an excuse to ask you for a poem.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">后来，人们从这首诗里提炼出了「雪中送炭」这个成语，用来形容在别人困难的时候及时给予帮助。</span>
+            <button class="copy-btn" onclick="copyText(this, '后来，人们从这首诗里提炼出了「雪中送炭」这个成语，用来形容在别人困难的时候及时给予帮助。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hòulái, rénmen cóng zhè shǒu shī lǐ tíliàn chū le「xuě zhōng sòng tàn」zhège chéngyǔ, yòng lái xíngróng zài biérén kùnnán de shíhou jíshí jǐyǔ bāngzhù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hòulái, rénmen cóng zhè shǒu shī lǐ tíliàn chū le「xuě zhōng sòng tàn」zhège chéngyǔ, yòng lái xíngróng zài biérén kùnnán de shíhou jíshí jǐyǔ bāngzhù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Later, people distilled the idiom 「雪中送炭」 from this poem, using it to describe giving timely help when someone is in difficulty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Later, people distilled the idiom 「雪中送炭」 from this poem, using it to describe giving timely help when someone is in difficulty.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">参考来源：zdic.net（汉典）</span>
+            <button class="copy-btn" onclick="copyText(this, '参考来源：zdic.net（汉典）')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">cānkǎo láiyuán: zdic.net（Hàn Diǎn）</span>
+            <button class="copy-btn" onclick="copyText(this, 'cānkǎo láiyuán: zdic.net（Hàn Diǎn）')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Source: zdic.net (Han Dictionary) — https://www.zdic.net/hans/雪中送炭</span>
+            <button class="copy-btn" onclick="copyText(this, 'Source: zdic.net (Han Dictionary) — https://www.zdic.net/hans/雪中送炭')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">【例句一】他创业失败，正走投无路，朋友这时候借给他钱，真是雪中送炭。</span>
+            <button class="copy-btn" onclick="copyText(this, '【例句一】他创业失败，正走投无路，朋友这时候借给他钱，真是雪中送炭。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">【Lì jù yī】Tā chuàngyè shībài, zhèng zǒutóu wú lù, péngyou zhè shíhou jiè gěi tā qián, zhēn shì xuě zhōng sòng tàn.</span>
+            <button class="copy-btn" onclick="copyText(this, '【Lì jù yī】Tā chuàngyè shībài, zhèng zǒutóu wú lù, péngyou zhè shíhou jiè gěi tā qián, zhēn shì xuě zhōng sòng tàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">[Example 1] His business failed and he was at a dead end. A friend lending him money at that moment was truly 雪中送炭.</span>
+            <button class="copy-btn" onclick="copyText(this, '[Example 1] His business failed and he was at a dead end. A friend lending him money at that moment was truly 雪中送炭.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">走投无路，就是无路可走，形容处境极其困难。</span>
+            <button class="copy-btn" onclick="copyText(this, '走投无路，就是无路可走，形容处境极其困难。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zǒutóu wú lù, jiù shì wú lù kě zǒu, xíngróng chǔjìng jíqí kùnnán.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zǒutóu wú lù, jiù shì wú lù kě zǒu, xíngróng chǔjìng jíqí kùnnán.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">走投无路 means having nowhere to turn — describing an extremely difficult situation.</span>
+            <button class="copy-btn" onclick="copyText(this, '走投无路 means having nowhere to turn — describing an extremely difficult situation.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">朋友在他最低谷的时候出现，这才叫雪中送炭。</span>
+            <button class="copy-btn" onclick="copyText(this, '朋友在他最低谷的时候出现，这才叫雪中送炭。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">péngyou zài tā zuì dīgǔ de shíhou chūxiàn, zhè cái jiào xuě zhōng sòng tàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'péngyou zài tā zuì dīgǔ de shíhou chūxiàn, zhè cái jiào xuě zhōng sòng tàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">A friend appearing at his lowest point — that&#x27;s what 雪中送炭 truly means.</span>
+            <button class="copy-btn" onclick="copyText(this, 'A friend appearing at his lowest point — that&#x27;s what 雪中送炭 truly means.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">【例句二】这笔捐款在灾区最艰难的时期到来，对当地居民来说真是雪中送炭。</span>
+            <button class="copy-btn" onclick="copyText(this, '【例句二】这笔捐款在灾区最艰难的时期到来，对当地居民来说真是雪中送炭。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">【Lì jù èr】Zhè bǐ juānkuǎn zài zāiqū zuì jiānnán de shíqī dào lái, duì dāngdì jūmín lái shuō zhēn shì xuě zhōng sòng tàn.</span>
+            <button class="copy-btn" onclick="copyText(this, '【Lì jù èr】Zhè bǐ juānkuǎn zài zāiqū zuì jiānnán de shíqī dào lái, duì dāngdì jūmín lái shuō zhēn shì xuě zhōng sòng tàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">[Example 2] This donation arrived at the most difficult time in the disaster area — for the local residents, it was truly 雪中送炭.</span>
+            <button class="copy-btn" onclick="copyText(this, '[Example 2] This donation arrived at the most difficult time in the disaster area — for the local residents, it was truly 雪中送炭.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语不光用于个人，也可以用在集体或社会层面。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语不光用于个人，也可以用在集体或社会层面。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ bù guāng yòng yú gèrén, yě kěyǐ yòng zài jítǐ huò shèhuì céngmiàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ bù guāng yòng yú gèrén, yě kěyǐ yòng zài jítǐ huò shèhuì céngmiàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom isn&#x27;t just for individuals — it can also be used at the group or societal level.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom isn&#x27;t just for individuals — it can also be used at the group or societal level.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">只要是在困难时刻给予了关键帮助，都可以用「雪中送炭」来形容。</span>
+            <button class="copy-btn" onclick="copyText(this, '只要是在困难时刻给予了关键帮助，都可以用「雪中送炭」来形容。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhǐyào shì zài kùnnán shíkè jǐyǔ le guānjiàn bāngzhù, dōu kěyǐ yòng「xuě zhōng sòng tàn」lái xíngróng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhǐyào shì zài kùnnán shíkè jǐyǔ le guānjiàn bāngzhù, dōu kěyǐ yòng「xuě zhōng sòng tàn」lái xíngróng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Whenever someone provides crucial help in a moment of difficulty, 「雪中送炭」 can be used.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Whenever someone provides crucial help in a moment of difficulty, 「雪中送炭」 can be used.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and watch the opening clip again —</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and watch the opening clip again —')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家现在应该听懂了，片段里说的雪中送炭，就是在说某人在最需要帮助的时候及时出现。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家现在应该听懂了，片段里说的雪中送炭，就是在说某人在最需要帮助的时候及时出现。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā xiànzài yīnggāi tīng dǒng le, piànduàn lǐ shuō de xuě zhōng sòng tàn, jiù shì zài shuō mǒu rén zài zuì xūyào bāngzhù de shíhou jíshí chūxiàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā xiànzài yīnggāi tīng dǒng le, piànduàn lǐ shuō de xuě zhōng sòng tàn, jiù shì zài shuō mǒu rén zài zuì xūyào bāngzhù de shíhou jíshí chūxiàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Everyone should understand it now — the 雪中送炭 in the clip refers to someone appearing right when help was most needed.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Everyone should understand it now — the 雪中送炭 in the clip refers to someone appearing right when help was most needed.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 我失业的时候，他帮我介绍了一份工作，真是________。</p><p class="quiz-hint">When I lost my job, he helped me find work — it was truly ________.</p><p class="quiz-a">✅ 我失业的时候，他帮我介绍了一份工作，真是雪中送炭。</p><p class="quiz-hint">When I lost my job, he helped me find work — it was truly 雪中送炭 (help in the hour of need).</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 生病住院最难熬的时候，她每天来陪我，简直是________。</p><p class="quiz-hint">During the hardest days in hospital, she came to keep me company every day — it was simply ________.</p><p class="quiz-a">✅ 生病住院最难熬的时候，她每天来陪我，简直是雪中送炭。</p><p class="quiz-hint">During the hardest days in hospital, she came to keep me company every day — it was simply 雪中送炭 (a lifeline of warmth).</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q3.</span> 公司快撑不下去的时候，投资人出现了，这真是________。</p><p class="quiz-hint">Just when the company was about to collapse, an investor appeared — that was truly ________.</p><p class="quiz-a">✅ 公司快撑不下去的时候，投资人出现了，这真是雪中送炭。</p><p class="quiz-hint">Just when the company was about to collapse, an investor appeared — that was truly 雪中送炭 (help at the critical moment).</p></div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「雪中送炭」是一个褒义词，用来称赞别人在困难时刻给予帮助。</span>
+            <button class="copy-btn" onclick="copyText(this, '「雪中送炭」是一个褒义词，用来称赞别人在困难时刻给予帮助。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「Xuě zhōng sòng tàn」shì yī gè bāoyìcí, yòng lái chēngzàn biérén zài kùnnán shíkè jǐyǔ bāngzhù.</span>
+            <button class="copy-btn" onclick="copyText(this, '「Xuě zhōng sòng tàn」shì yī gè bāoyìcí, yòng lái chēngzàn biérén zài kùnnán shíkè jǐyǔ bāngzhù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「雪中送炭」 is a positive expression used to praise someone for helping in difficult moments.</span>
+            <button class="copy-btn" onclick="copyText(this, '「雪中送炭」 is a positive expression used to praise someone for helping in difficult moments.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">注意：这个成语强调「时机」——只有在别人真正困难的时候才能用，如果对方本来就过得不错，这个成语就用不上了。</span>
+            <button class="copy-btn" onclick="copyText(this, '注意：这个成语强调「时机」——只有在别人真正困难的时候才能用，如果对方本来就过得不错，这个成语就用不上了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhùyì: zhège chéngyǔ qiángdiào「shíjī」—— zhǐyǒu zài biérén zhēnzhèng kùnnán de shíhou cái néng yòng, rúguǒ duìfāng běnlái jiù guò de búcuò, zhège chéngyǔ jiù yòng bu shàng le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhùyì: zhège chéngyǔ qiángdiào「shíjī」—— zhǐyǒu zài biérén zhēnzhèng kùnnán de shíhou cái néng yòng, rúguǒ duìfāng běnlái jiù guò de búcuò, zhège chéngyǔ jiù yòng bu shàng le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Note: this idiom emphasizes 「timing」— it can only be used when someone is truly in difficulty. If the person is already doing well, this idiom doesn&#x27;t apply.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Note: this idiom emphasizes 「timing」— it can only be used when someone is truly in difficulty. If the person is already doing well, this idiom doesn&#x27;t apply.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">还有一点：「雪中送炭」和「锦上添花」是反义词，大家要区分清楚。前者是困难中的帮助，后者是顺境中的额外美好。</span>
+            <button class="copy-btn" onclick="copyText(this, '还有一点：「雪中送炭」和「锦上添花」是反义词，大家要区分清楚。前者是困难中的帮助，后者是顺境中的额外美好。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hái yǒu yīdiǎn:「xuě zhōng sòng tàn」hé「jǐn shàng tiān huā」shì fǎnyìcí, dàjiā yào qūfēn qīngchǔ. Qiánzhě shì kùnnán zhōng de bāngzhù, hòuzhě shì shùnjìng zhōng de éwài měihǎo.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hái yǒu yīdiǎn:「xuě zhōng sòng tàn」hé「jǐn shàng tiān huā」shì fǎnyìcí, dàjiā yào qūfēn qīngchǔ. Qiánzhě shì kùnnán zhōng de bāngzhù, hòuzhě shì shùnjìng zhōng de éwài měihǎo.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">One more thing: 「雪中送炭」 and 「锦上添花」 are antonyms — make sure to distinguish them. The former is help in hardship; the latter is an extra blessing in good times.</span>
+            <button class="copy-btn" onclick="copyText(this, 'One more thing: 「雪中送炭」 and 「锦上添花」 are antonyms — make sure to distinguish them. The former is help in hardship; the latter is an extra blessing in good times.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次当你的朋友正在经历困难，而你刚好出手帮了他，你就可以对他说：「这次真是雪中送炭啊！」</span>
+            <button class="copy-btn" onclick="copyText(this, '下次当你的朋友正在经历困难，而你刚好出手帮了他，你就可以对他说：「这次真是雪中送炭啊！」')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xià cì dāng nǐ de péngyou zhèngzài jīnglì kùnnán, ér nǐ gānghǎo chūshǒu bāng le tā, nǐ jiù kěyǐ duì tā shuō:「zhè cì zhēn shì xuě zhōng sòng tàn a！」</span>
+            <button class="copy-btn" onclick="copyText(this, 'xià cì dāng nǐ de péngyou zhèngzài jīnglì kùnnán, ér nǐ gānghǎo chūshǒu bāng le tā, nǐ jiù kěyǐ duì tā shuō:「zhè cì zhēn shì xuě zhōng sòng tàn a！」')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time a friend is going through a hard time and you happen to lend them a hand, you can say: 「This is truly 雪中送炭！」</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time a friend is going through a hard time and you happen to lend them a hand, you can say: 「This is truly 雪中送炭！」')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. Xīwàng nǐ xué dào le yīdiǎn xīn de Zhōngwén. Rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎn zàn jiā guānzhù 小雪的中文屋. Wǒmen xià cì zàijiàn！</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. Xīwàng nǐ xué dào le yīdiǎn xīn de Zhōngwén. Rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎn zàn jiā guānzhù 小雪的中文屋. Wǒmen xià cì zàijiàn！')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned a little new Chinese. If you like my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned a little new Chinese. If you like my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>

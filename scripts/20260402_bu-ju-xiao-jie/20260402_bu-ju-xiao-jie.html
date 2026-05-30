@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep17 · 不拘小节 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>不拘小节</h1>
+  <div class="pinyin">bù jū xiǎo jié</div>
+  <div class="meta">ep17 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家有没有认识这样一种人——跟他们在一起很轻松，不用太注意礼仪，也不用担心说错话，因为他们根本不在意这些小事。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家有没有认识这样一种人——跟他们在一起很轻松，不用太注意礼仪，也不用担心说错话，因为他们根本不在意这些小事。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā yǒu méiyǒu rènshí zhèyàng yī zhǒng rén——gēn tāmen zài yīqǐ hěn qīngsōng, bù yòng tài zhùyì lǐyí, yě bù yòng dānxīn shuō cuò huà, yīnwèi tāmen gēnběn bù zàiyì zhèxiē xiǎoshì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā yǒu méiyǒu rènshí zhèyàng yī zhǒng rén——gēn tāmen zài yīqǐ hěn qīngsōng, bù yòng tài zhùyì lǐyí, yě bù yòng dānxīn shuō cuò huà, yīnwèi tāmen gēnběn bù zàiyì zhèxiē xiǎoshì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Have you ever known someone like this — someone who makes you feel completely at ease, where you don&#x27;t need to worry about etiquette or saying the wrong thing, because they simply don&#x27;t care about such small matters?</span>
+            <button class="copy-btn" onclick="copyText(this, 'Have you ever known someone like this — someone who makes you feel completely at ease, where you don&#x27;t need to worry about etiquette or saying the wrong thing, because they simply don&#x27;t care about such small matters?')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">今天我们要学的成语，说的就是这种人。</span>
+            <button class="copy-btn" onclick="copyText(this, '今天我们要学的成语，说的就是这种人。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jīntiān wǒmen yào xué de chéngyǔ, shuō de jiùshì zhè zhǒng rén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jīntiān wǒmen yào xué de chéngyǔ, shuō de jiùshì zhè zhǒng rén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The idiom we&#x27;re learning today describes exactly this kind of person.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The idiom we&#x27;re learning today describes exactly this kind of person.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——不拘小节。不拘小节。不拘小节。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——不拘小节。不拘小节。不拘小节。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——bù jū xiǎo jié. bù jū xiǎo jié. bù jū xiǎo jié.</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——bù jū xiǎo jié. bù jū xiǎo jié. bù jū xiǎo jié.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 不拘小节.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 不拘小节.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【不 · bù】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">不，是否定词，表示「不是」「没有」「不做某件事」。</span>
+            <button class="copy-btn" onclick="copyText(this, '不，是否定词，表示「不是」「没有」「不做某件事」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bù, shì fǒudìngcí, biǎoshì 「bùshì」「méiyǒu」「bù zuò mǒu jiàn shì」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bù, shì fǒudìngcí, biǎoshì 「bùshì」「méiyǒu」「bù zuò mǒu jiàn shì」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Bu&#x27; is a negation word meaning &#x27;not&#x27;, &#x27;no&#x27;, or &#x27;not doing something&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Bu&#x27; is a negation word meaning &#x27;not&#x27;, &#x27;no&#x27;, or &#x27;not doing something&#x27;.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：不必、不顾、不屑。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：不必、不顾、不屑。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: bùbì, bùgù, bùxiè.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: bùbì, bùgù, bùxiè.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 不必 (no need to), 不顾 (disregard), 不屑 (disdain).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 不必 (no need to), 不顾 (disregard), 不屑 (disdain).')">복사</button>
+          </div>
+        </div><h3 class="char-label">【拘 · jū】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">拘，表示拘束、限制，或者很在意、很执着于某件事，不肯变通。</span>
+            <button class="copy-btn" onclick="copyText(this, '拘，表示拘束、限制，或者很在意、很执着于某件事，不肯变通。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jū, biǎoshì jūshù, xiànzhì, huòzhě hěn zàiyì, hěn zhízhuó yú mǒu jiàn shì, bù kěn biàntōng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jū, biǎoshì jūshù, xiànzhì, huòzhě hěn zàiyì, hěn zhízhuó yú mǒu jiàn shì, bù kěn biàntōng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Ju&#x27; means to be restrained or limited, or to be overly fixated on something without flexibility.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Ju&#x27; means to be restrained or limited, or to be overly fixated on something without flexibility.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：拘束、拘谨、拘泥。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：拘束、拘谨、拘泥。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: jūshù, jūjǐn, jūnì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: jūshù, jūjǐn, jūnì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 拘束 (restraint/stiffness), 拘谨 (overcautious), 拘泥 (pedantic/rigid).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 拘束 (restraint/stiffness), 拘谨 (overcautious), 拘泥 (pedantic/rigid).')">복사</button>
+          </div>
+        </div><h3 class="char-label">【小 · xiǎo】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">小，表示细小、微小，指不重要、不关键的事情。</span>
+            <button class="copy-btn" onclick="copyText(this, '小，表示细小、微小，指不重要、不关键的事情。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xiǎo, biǎoshì xìxiǎo, wēixiǎo, zhǐ bù zhòngyào, bù guānjian de shìqíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xiǎo, biǎoshì xìxiǎo, wēixiǎo, zhǐ bù zhòngyào, bù guānjian de shìqíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Xiao&#x27; means small or minor — things that are unimportant or not critical.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Xiao&#x27; means small or minor — things that are unimportant or not critical.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：小事、细小、小节。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：小事、细小、小节。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: xiǎoshì, xìxiǎo, xiǎojié.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: xiǎoshì, xìxiǎo, xiǎojié.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 小事 (minor matter), 细小 (trivial), 小节 (minor formalities).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 小事 (minor matter), 细小 (trivial), 小节 (minor formalities).')">복사</button>
+          </div>
+        </div><h3 class="char-label">【节 · jié】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">节，在这里表示礼节、规矩，是行为举止上的细节和规范。</span>
+            <button class="copy-btn" onclick="copyText(this, '节，在这里表示礼节、规矩，是行为举止上的细节和规范。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jié, zài zhèlǐ biǎoshì lǐjié, guīju, shì xíngwéi jǔzhǐ shàng de xìjié hé guīfàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jié, zài zhèlǐ biǎoshì lǐjié, guīju, shì xíngwéi jǔzhǐ shàng de xìjié hé guīfàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">&#x27;Jie&#x27; here means etiquette and rules — the details and norms of proper behaviour.</span>
+            <button class="copy-btn" onclick="copyText(this, '&#x27;Jie&#x27; here means etiquette and rules — the details and norms of proper behaviour.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：礼节、节操、气节。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：礼节、节操、气节。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: lǐjié, jiécāo, qìjié.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: lǐjié, jiécāo, qìjié.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 礼节 (etiquette/manners), 节操 (moral integrity), 气节 (moral fortitude).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 礼节 (etiquette/manners), 节操 (moral integrity), 气节 (moral fortitude).')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③-B 词组拆分：不拘 ＋ 小节</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">不拘小节可以分成两个部分来理解：「不拘」和「小节」。</span>
+            <button class="copy-btn" onclick="copyText(this, '不拘小节可以分成两个部分来理解：「不拘」和「小节」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bù jū xiǎo jié kěyǐ fēnchéng liǎng gè bùfen lái lǐjiě: 「bù jū」 hé 「xiǎo jié」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bù jū xiǎo jié kěyǐ fēnchéng liǎng gè bùfen lái lǐjiě: 「bù jū」 hé 「xiǎo jié」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">不拘小节 can be understood in two parts: 「不拘」 and 「小节」.</span>
+            <button class="copy-btn" onclick="copyText(this, '不拘小节 can be understood in two parts: 「不拘」 and 「小节」.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「不拘」是「不受拘束」的意思，表示不被某种规则或标准所限制，自由自在。</span>
+            <button class="copy-btn" onclick="copyText(this, '「不拘」是「不受拘束」的意思，表示不被某种规则或标准所限制，自由自在。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「bù jū」 shì 「bù shòu jūshù」 de yìsi, biǎoshì bù bèi mǒu zhǒng guīzé huò biāozhǔn suǒ xiànzhì, zìyóu zìzài.</span>
+            <button class="copy-btn" onclick="copyText(this, '「bù jū」 shì 「bù shòu jūshù」 de yìsi, biǎoshì bù bèi mǒu zhǒng guīzé huò biāozhǔn suǒ xiànzhì, zìyóu zìzài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「不拘」 means &#x27;not bound by restraint&#x27; — free from rules or external standards.</span>
+            <button class="copy-btn" onclick="copyText(this, '「不拘」 means &#x27;not bound by restraint&#x27; — free from rules or external standards.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「小节」指的是细小的礼节、规矩，特别是日常生活中不重要的小规定。</span>
+            <button class="copy-btn" onclick="copyText(this, '「小节」指的是细小的礼节、规矩，特别是日常生活中不重要的小规定。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「xiǎo jié」 zhǐ de shì xìxiǎo de lǐjié, guīju, tèbié shì rìcháng shēnghuó zhōng bù zhòngyào de xiǎo guīdìng.</span>
+            <button class="copy-btn" onclick="copyText(this, '「xiǎo jié」 zhǐ de shì xìxiǎo de lǐjié, guīju, tèbié shì rìcháng shēnghuó zhōng bù zhòngyào de xiǎo guīdìng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「小节」 refers to minor formalities and trivial rules — the small etiquettes of daily life that are not particularly important.</span>
+            <button class="copy-btn" onclick="copyText(this, '「小节」 refers to minor formalities and trivial rules — the small etiquettes of daily life that are not particularly important.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">不拘小节，字面意思是「不被细小的礼节所束缚」。</span>
+            <button class="copy-btn" onclick="copyText(this, '不拘小节，字面意思是「不被细小的礼节所束缚」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bù jū xiǎo jié, zìmiàn yìsi shì 「bù bèi xìxiǎo de lǐjié suǒ shùfù」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bù jū xiǎo jié, zìmiàn yìsi shì 「bù bèi xìxiǎo de lǐjié suǒ shùfù」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Literally, 不拘小节 means &#x27;not bound by minor formalities&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Literally, 不拘小节 means &#x27;not bound by minor formalities&#x27;.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">引申义是指一个人不太注重日常生活中的细节和小礼数，待人处事比较随和、豁达。</span>
+            <button class="copy-btn" onclick="copyText(this, '引申义是指一个人不太注重日常生活中的细节和小礼数，待人处事比较随和、豁达。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǐnshēn yì shì zhǐ yīgè rén bù tài zhùzhòng rìcháng shēnghuó zhōng de xìjié hé xiǎo lǐshù, dàirén chǔshì bǐjiào suíhé, huòdá.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǐnshēn yì shì zhǐ yīgè rén bù tài zhùzhòng rìcháng shēnghuó zhōng de xìjié hé xiǎo lǐshù, dàirén chǔshì bǐjiào suíhé, huòdá.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Its extended meaning describes someone who doesn&#x27;t dwell on minor details or small etiquettes — they deal with people in a casual, easygoing way.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Its extended meaning describes someone who doesn&#x27;t dwell on minor details or small etiquettes — they deal with people in a casual, easygoing way.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个词可以是褒义，表示为人豁达；也可以略带批评，表示不够正式、不够严谨。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个词可以是褒义，表示为人豁达；也可以略带批评，表示不够正式、不够严谨。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège cí kěyǐ shì bāoyì, biǎoshì wéirén huòdá; yě kěyǐ lüè dài pīpíng, biǎoshì bùgòu zhèngshì, bùgòu yánjǐn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège cí kěyǐ shì bāoyì, biǎoshì wéirén huòdá; yě kěyǐ lüè dài pīpíng, biǎoshì bùgòu zhèngshì, bùgòu yánjǐn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The word can be positive — meaning easygoing and open-minded — or slightly critical, meaning not formal or careful enough.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The word can be positive — meaning easygoing and open-minded — or slightly critical, meaning not formal or careful enough.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">近义词有：随意自在、不拘形迹。</span>
+            <button class="copy-btn" onclick="copyText(this, '近义词有：随意自在、不拘形迹。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jìnyìcí yǒu: suíyì zìzài, bù jū xíngjì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jìnyìcí yǒu: suíyì zìzài, bù jū xíngjì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Near-synonyms include: 随意自在 (free and easy), 不拘形迹 (unconstrained in manner).</span>
+            <button class="copy-btn" onclick="copyText(this, 'Near-synonyms include: 随意自在 (free and easy), 不拘形迹 (unconstrained in manner).')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语出自南朝宋代史学家范晔所著的《后汉书》。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语出自南朝宋代史学家范晔所著的《后汉书》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ chūzì Nán Cháo Sòng dài shǐxuéjiā Fàn Yè suǒ zhù de 《Hòu Hàn Shū》.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ chūzì Nán Cháo Sòng dài shǐxuéjiā Fàn Yè suǒ zhù de 《Hòu Hàn Shū》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom comes from 《Book of Later Han》, written by Fan Ye, a historian of the Liu Song dynasty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom comes from 《Book of Later Han》, written by Fan Ye, a historian of the Liu Song dynasty.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">《后汉书》是一部记录东汉历史的纪传体史书，详细描述了东汉近两百年间的人物与事件。</span>
+            <button class="copy-btn" onclick="copyText(this, '《后汉书》是一部记录东汉历史的纪传体史书，详细描述了东汉近两百年间的人物与事件。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">《Hòu Hàn Shū》 shì yī bù jìlù Dōng Hàn lìshǐ de jìzhuàntǐ shǐshū, xiángxì miáoshù le Dōng Hàn jìn liǎng bǎi nián jiān de rénwù yǔ shìjiàn.</span>
+            <button class="copy-btn" onclick="copyText(this, '《Hòu Hàn Shū》 shì yī bù jìlù Dōng Hàn lìshǐ de jìzhuàntǐ shǐshū, xiángxì miáoshù le Dōng Hàn jìn liǎng bǎi nián jiān de rénwù yǔ shìjiàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">《Book of Later Han》 is a biographical history of the Eastern Han dynasty, recording its people and events over nearly two hundred years.</span>
+            <button class="copy-btn" onclick="copyText(this, '《Book of Later Han》 is a biographical history of the Eastern Han dynasty, recording its people and events over nearly two hundred years.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">书里记载了东汉官员虞延的性格，说他「性敦朴，不拘小节」，意思是他为人诚实朴素，不在意小事上的繁文缛节。</span>
+            <button class="copy-btn" onclick="copyText(this, '书里记载了东汉官员虞延的性格，说他「性敦朴，不拘小节」，意思是他为人诚实朴素，不在意小事上的繁文缛节。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shū lǐ jìzǎi le Dōng Hàn guānyuán Yú Yán de xìnggé, shuō tā 「xìng dūn pǔ, bù jū xiǎo jié」, yìsi shì tā wéirén chéngshí pǔsù, bù zàiyì xiǎoshì shàng de fánwén rùjié.</span>
+            <button class="copy-btn" onclick="copyText(this, 'shū lǐ jìzǎi le Dōng Hàn guānyuán Yú Yán de xìnggé, shuō tā 「xìng dūn pǔ, bù jū xiǎo jié」, yìsi shì tā wéirén chéngshí pǔsù, bù zàiyì xiǎoshì shàng de fánwén rùjié.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The book describes the character of Eastern Han official Yu Yan, saying he was &#x27;sincere and simple in nature, and not bound by minor formalities&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The book describes the character of Eastern Han official Yu Yan, saying he was &#x27;sincere and simple in nature, and not bound by minor formalities&#x27;.')">복사</button>
+          </div>
+        </div>
+
+    <p style="font-weight:600;color:#555;margin-bottom:12px;">📜 <strong>南朝·宋·范晔 · 《后汉书·虞延传》</strong></p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">性敦朴，不拘小节。</span>
+            <button class="copy-btn" onclick="copyText(this, '性敦朴，不拘小节。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xìng dūn pǔ, bù jū xiǎo jié.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xìng dūn pǔ, bù jū xiǎo jié.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">He was sincere and simple in nature, and not bound by minor formalities.</span>
+            <button class="copy-btn" onclick="copyText(this, 'He was sincere and simple in nature, and not bound by minor formalities.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这句话描述的是虞延的性格特点——他是个实在人，做事不拘谨，不被繁琐的小礼节束缚。</span>
+            <button class="copy-btn" onclick="copyText(this, '这句话描述的是虞延的性格特点——他是个实在人，做事不拘谨，不被繁琐的小礼节束缚。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jù huà miáoshù de shì Yú Yán de xìnggé tèdiǎn——tā shì gè shízai rén, zuòshì bù jūjǐn, bù bèi fánsuǒ de xiǎo lǐjié shùfù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jù huà miáoshù de shì Yú Yán de xìnggé tèdiǎn——tā shì gè shízai rén, zuòshì bù jūjǐn, bù bèi fánsuǒ de xiǎo lǐjié shùfù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This sentence describes Yu Yan&#x27;s character — he was a straightforward, down-to-earth man, not rigid in his ways, and not tied down by petty formalities.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This sentence describes Yu Yan&#x27;s character — he was a straightforward, down-to-earth man, not rigid in his ways, and not tied down by petty formalities.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">后来「不拘小节」被广泛使用，用来形容任何不太在意细节和小礼数的人。</span>
+            <button class="copy-btn" onclick="copyText(this, '后来「不拘小节」被广泛使用，用来形容任何不太在意细节和小礼数的人。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hòulái 「bù jū xiǎo jié」 bèi guǎngfàn shǐyòng, yòng lái xíngróng rènhé bù tài zàiyì xìjié hé xiǎo lǐshù de rén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hòulái 「bù jū xiǎo jié」 bèi guǎngfàn shǐyòng, yòng lái xíngróng rènhé bù tài zàiyì xìjié hé xiǎo lǐshù de rén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Over time, 不拘小节 came to describe anyone who doesn&#x27;t sweat the small stuff.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Over time, 不拘小节 came to describe anyone who doesn&#x27;t sweat the small stuff.')">복사</button>
+          </div>
+        </div>
+    <p style="margin-top:14px;font-size:.85rem;">🔗 <strong>출처</strong>: <a href="https://www.zdic.net/hans/%E4%B8%8D%E6%8B%98%E5%B0%8F%E8%8A%82" target="_blank" style="color:#2e86c1;">汉典 — 不拘小节</a></p>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">他平时不拘小节，但每件大事都处理得非常认真。</span>
+            <button class="copy-btn" onclick="copyText(this, '他平时不拘小节，但每件大事都处理得非常认真。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā píngshí bù jū xiǎo jié, dàn měi jiàn dàshì dōu chǔlǐ de fēicháng rènzhēn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā píngshí bù jū xiǎo jié, dàn měi jiàn dàshì dōu chǔlǐ de fēicháng rènzhēn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">He&#x27;s pretty casual about minor things in daily life, but he handles every important matter with great seriousness.</span>
+            <button class="copy-btn" onclick="copyText(this, 'He&#x27;s pretty casual about minor things in daily life, but he handles every important matter with great seriousness.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里「不拘小节」表示他在日常小事上很随意，但这并不影响他对重要事情的认真态度。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里「不拘小节」表示他在日常小事上很随意，但这并不影响他对重要事情的认真态度。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ 「bù jū xiǎo jié」 biǎoshì tā zài rìcháng xiǎoshì shàng hěn suíyì, dàn zhè bìng bù yǐngxiǎng tā duì zhòngyào shìqíng de rènzhēn tàidù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ 「bù jū xiǎo jié」 biǎoshì tā zài rìcháng xiǎoshì shàng hěn suíyì, dàn zhè bìng bù yǐngxiǎng tā duì zhòngyào shìqíng de rènzhēn tàidù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span name="text" class="text">Here 不拘小节 shows he&#x27;s relaxed about small things in life — but that doesn&#x27;t stop him from being serious when it really counts.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Here 不拘小节 shows he&#x27;s relaxed about small things in life — but that doesn&#x27;t stop him from being serious when it really counts.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">有人觉得他不拘小节，不够正式；但他的朋友都说，跟他在一起特别轻松。</span>
+            <button class="copy-btn" onclick="copyText(this, '有人觉得他不拘小节，不够正式；但他的朋友都说，跟他在一起特别轻松。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǒu rén juéde tā bù jū xiǎo jié, bùgòu zhèngshì; dàn tā de péngyou dōu shuō, gēn tā zài yīqǐ tèbié qīngsōng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǒu rén juéde tā bù jū xiǎo jié, bùgòu zhèngshì; dàn tā de péngyou dōu shuō, gēn tā zài yīqǐ tèbié qīngsōng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Some people think he&#x27;s too casual and not formal enough; but his friends all say it feels completely relaxed to be around him.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Some people think he&#x27;s too casual and not formal enough; but his friends all say it feels completely relaxed to be around him.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这句话展示了「不拘小节」的两面性——用法不同，评价就不同，有时是夸人，有时是批评。</span>
+            <button class="copy-btn" onclick="copyText(this, '这句话展示了「不拘小节」的两面性——用法不同，评价就不同，有时是夸人，有时是批评。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jù huà zhǎnshì le 「bù jū xiǎo jié」 de liǎng miànxìng——yòngfǎ bùtóng, píngjià jiù bùtóng, yǒushí shì kuā rén, yǒushí shì pīpíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jù huà zhǎnshì le 「bù jū xiǎo jié」 de liǎng miànxìng——yòngfǎ bùtóng, píngjià jiù bùtóng, yǒushí shì kuā rén, yǒushí shì pīpíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This sentence shows the dual nature of 不拘小节 — depending on context, it can be a compliment or a mild criticism.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This sentence shows the dual nature of 不拘小节 — depending on context, it can be a compliment or a mild criticism.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">不拘小节，就是不被细小的规矩所束缚，表现出来的是一种随和、豁达的生活态度。</span>
+            <button class="copy-btn" onclick="copyText(this, '不拘小节，就是不被细小的规矩所束缚，表现出来的是一种随和、豁达的生活态度。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bù jū xiǎo jié, jiù shì bù bèi xìxiǎo de guīju suǒ shùfù, biǎoxiàn chūlái de shì yī zhǒng suíhé, huòdá de shēnghuó tàidù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bù jū xiǎo jié, jiù shì bù bèi xìxiǎo de guīju suǒ shùfù, biǎoxiàn chūlái de shì yī zhǒng suíhé, huòdá de shēnghuó tàidù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">不拘小节 means not being tied down by trivial rules — it expresses a relaxed, open-minded attitude toward life.</span>
+            <button class="copy-btn" onclick="copyText(this, '不拘小节 means not being tied down by trivial rules — it expresses a relaxed, open-minded attitude toward life.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 他是个________的人，从来不在乎别人怎么看他的穿着。</p><p class="quiz-hint">He&#x27;s someone who ________ — he never cares what others think about how he dresses.</p><p class="quiz-a">✅ 他是个不拘小节的人，从来不在乎别人怎么看他的穿着。</p><p class="quiz-hint">He&#x27;s someone who doesn&#x27;t sweat the small stuff — he never cares what others think about how he dresses.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 虽然她________，但做事非常认真负责。</p><p class="quiz-hint">Although she ________, she is very serious and responsible when it matters.</p><p class="quiz-a">✅ 虽然她不拘小节，但做事非常认真负责。</p><p class="quiz-hint">Although she doesn&#x27;t sweat the small stuff, she is very serious and responsible when it matters.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q3.</span> 朋友聚会嘛，大家________，不用太在意礼仪。</p><p class="quiz-hint">It&#x27;s a gathering with friends — we can all ________, no need to worry about etiquette.</p><p class="quiz-a">✅ 朋友聚会嘛，大家不拘小节，不用太在意礼仪。</p><p class="quiz-hint">It&#x27;s a gathering with friends — we can all be casual, no need to worry about etiquette.</p></div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">不拘小节通常用来形容人的性格或行为方式，语气中性，根据语境可以是褒义，也可以略带批评。</span>
+            <button class="copy-btn" onclick="copyText(this, '不拘小节通常用来形容人的性格或行为方式，语气中性，根据语境可以是褒义，也可以略带批评。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bù jū xiǎo jié tōngcháng yòng lái xíngróng rén de xìnggé huò xíngwéi fāngshì, yǔqì zhōngxìng, gēnjù yǔjìng kěyǐ shì bāoyì, yě kěyǐ lüèdài pīpíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bù jū xiǎo jié tōngcháng yòng lái xíngróng rén de xìnggé huò xíngwéi fāngshì, yǔqì zhōngxìng, gēnjù yǔjìng kěyǐ shì bāoyì, yě kěyǐ lüèdài pīpíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">不拘小节 is typically used to describe a person&#x27;s character or way of behaving. The tone is neutral — it can be positive or mildly critical depending on context.</span>
+            <button class="copy-btn" onclick="copyText(this, '不拘小节 is typically used to describe a person&#x27;s character or way of behaving. The tone is neutral — it can be positive or mildly critical depending on context.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">注意：它一般用来形容人，不太用来形容事物。比如说「这件事不拘小节」不自然，更适合说「这件事不用太在意细节」。</span>
+            <button class="copy-btn" onclick="copyText(this, '注意：它一般用来形容人，不太用来形容事物。比如说「这件事不拘小节」不自然，更适合说「这件事不用太在意细节」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhùyì: tā yībān yòng lái xíngróng rén, bù tài yòng lái xíngróng shìwù. Bǐrú shuō 「zhè jiàn shì bù jū xiǎo jié」 bù zìrán, gèng shìhé shuō 「zhè jiàn shì bù yòng tài zàiyì xìjié」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhùyì: tā yībān yòng lái xíngróng rén, bù tài yòng lái xíngróng shìwù. Bǐrú shuō 「zhè jiàn shì bù jū xiǎo jié」 bù zìrán, gèng shìhé shuō 「zhè jiàn shì bù yòng tài zàiyì xìjié」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Note: it generally describes people, not things or events. &#x27;This matter 不拘小节&#x27; sounds unnatural — it&#x27;s better to say &#x27;no need to stress over the details of this matter&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Note: it generally describes people, not things or events. &#x27;This matter 不拘小节&#x27; sounds unnatural — it&#x27;s better to say &#x27;no need to stress over the details of this matter&#x27;.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次你遇到一个随和、不太注重礼节的朋友，可以试着说「他这个人不拘小节」，感受一下这个词的语感。</span>
+            <button class="copy-btn" onclick="copyText(this, '下次你遇到一个随和、不太注重礼节的朋友，可以试着说「他这个人不拘小节」，感受一下这个词的语感。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xià cì nǐ yùdào yīgè suíhé, bù tài zhùzhòng lǐjié de péngyou, kěyǐ shìzhe shuō 「tā zhège rén bù jū xiǎo jié」, gǎnshòu yīxià zhège cí de yǔgǎn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xià cì nǐ yùdào yīgè suíhé, bù tài zhùzhòng lǐjié de péngyou, kěyǐ shìzhe shuō 「tā zhège rén bù jū xiǎo jié」, gǎnshòu yīxià zhège cí de yǔgǎn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time you meet a friend who&#x27;s easygoing and not too worried about formalities, try saying &#x27;他不拘小节&#x27; — and feel the difference.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time you meet a friend who&#x27;s easygoing and not too worried about formalities, try saying &#x27;他不拘小节&#x27; — and feel the difference.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>

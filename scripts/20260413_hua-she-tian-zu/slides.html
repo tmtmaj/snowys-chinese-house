@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>画蛇添足 · ep22 · 小雪的中文屋</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #3a3a3a;
+      font-family: 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
+      padding: 24px 0 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Slide ── */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      overflow: hidden;
+      background: #c9a86c;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px 100px;
+      flex-shrink: 0;
+    }
+    .slide.active { display: flex; }
+
+    /* Kraft paper grain */
+    .slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='512' height='512' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+    }
+
+    /* ── Tokens ── */
+    :root {
+      --ink:   #1a0d00;
+      --ink-m: #3d2800;
+      --red:   #8B1500;
+      --label: #4a3010;
+    }
+
+    /* ── Shared ── */
+    .section-label {
+      font-size: 22px;
+      color: var(--label);
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+    ruby rt {
+      font-size: 13px;
+      color: var(--red);
+      font-weight: 400;
+    }
+    .divider {
+      width: 48px; height: 2px;
+      background: var(--red);
+      margin: 20px 0;
+    }
+
+    /* ════════════════ Slide 1 · Title ════════════════ */
+    .s-title { align-items: center; text-align: center; }
+    .s-title .pinyin-hdr {
+      font-size: 24px; color: var(--red);
+      letter-spacing: 12px; margin-bottom: 20px;
+    }
+    .s-title .chars {
+      font-size: 100px; color: var(--ink);
+      font-weight: 700; letter-spacing: 16px; line-height: 1;
+    }
+
+    /* ════════════════ Slide 2 · 成语意思 ════════════════ */
+    .char-table { display: flex; flex-direction: column; }
+    .char-row {
+      display: flex; align-items: center; gap: 36px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(90,50,0,0.18);
+    }
+    .char-row:last-child { border-bottom: none; }
+    .char-block { display: flex; flex-direction: column; align-items: center; min-width: 72px; }
+    .char-py { font-size: 13px; color: var(--red); margin-bottom: 4px; }
+    .char-hanzi { font-size: 50px; font-weight: 700; color: var(--ink); line-height: 1; }
+    .char-defs { flex: 1; }
+    .def-line { font-size: 19px; color: var(--ink); line-height: 1.65; }
+    .def-en { font-size: 16px; color: var(--ink-m); font-style: italic; }
+    .def-n { color: var(--red); font-weight: 700; }
+
+    /* ════════════════ Slide 3 · Meaning ════════════════ */
+    .meaning-block { margin-bottom: 24px; }
+    .mtag { font-size: 20px; color: var(--ink-m); margin-bottom: 10px; font-weight: 500; }
+    .mzh  { font-size: 26px; color: var(--ink); line-height: 1.85; font-weight: 500; }
+    .men  { font-size: 18px; color: var(--ink-m); font-style: italic; line-height: 1.6; margin-top: 6px; }
+
+    /* ════════════════ Slide 4 · Origin ════════════════ */
+    .s-origin { align-items: center; text-align: center; }
+    .origin-label { font-size: 22px; color: var(--label); margin-bottom: 14px; }
+    .origin-book  { font-size: 52px; color: var(--ink); font-weight: 700; margin-bottom: 16px; }
+    .origin-auth  { font-size: 20px; color: var(--ink-m); margin-bottom: 30px; }
+    .origin-desc  { font-size: 22px; color: var(--ink); line-height: 1.8; }
+    .origin-en    { font-size: 17px; color: var(--ink-m); font-style: italic; line-height: 1.6; margin-top: 10px; }
+
+    /* ════════════════ Slides 5–6 · Story ════════════════ */
+    .story-zh { font-size: 24px; color: var(--ink); line-height: 2; font-weight: 500; }
+    .story-en { font-size: 17px; color: var(--ink-m); font-style: italic; line-height: 1.65; margin-top: 16px; }
+
+    /* ════════════════ Slide 7 · Synonyms ════════════════ */
+    .syn-grid { display: flex; gap: 64px; margin-top: 4px; }
+    .syn-col  { flex: 1; }
+    .syn-tag  { font-size: 19px; color: var(--ink-m); margin-bottom: 16px; }
+    .syn-item { margin-bottom: 18px; }
+    .syn-h    { font-size: 30px; color: var(--ink); font-weight: 600; }
+    .syn-py   { font-size: 14px; color: var(--red); margin: 2px 0 4px; }
+    .syn-def  { font-size: 16px; color: var(--ink-m); font-style: italic; }
+
+    /* ════════════════ Slides 8–9 · Examples ════════════════ */
+    .ex-zh  { font-size: 28px; color: var(--ink); line-height: 2; font-weight: 500; }
+    .ex-en  { font-size: 19px; color: var(--ink-m); font-style: italic; line-height: 1.65; margin-top: 16px; }
+    .ex-cmt { font-size: 22px; color: var(--ink); line-height: 1.7; margin-top: 22px; }
+
+    /* ════════════════ Slides 10–11 · Quiz ════════════════ */
+    .quiz-item { margin-bottom: 26px; }
+    .quiz-zh   { font-size: 23px; color: var(--ink); line-height: 1.85; font-weight: 500; }
+    .quiz-blank {
+      display: inline-block; min-width: 136px;
+      border-bottom: 2px solid var(--ink);
+      vertical-align: bottom;
+    }
+    .quiz-en  { font-size: 16px; color: var(--ink-m); font-style: italic; line-height: 1.5; margin-top: 4px; }
+    .quiz-ans { color: var(--red); font-weight: 700; }
+
+    /* ════════════════ Slide 12 · Usage ════════════════ */
+    .usage-item { display: flex; gap: 14px; margin-bottom: 24px; align-items: flex-start; }
+    .usage-mark { font-size: 18px; color: var(--red); min-width: 18px; padding-top: 3px; }
+    .usage-zh   { font-size: 21px; color: var(--ink); line-height: 1.75; }
+    .usage-en   { font-size: 16px; color: var(--ink-m); font-style: italic; margin-top: 4px; line-height: 1.5; }
+
+    /* ════════════════ Slide 13 · Outro ════════════════ */
+    .s-outro    { align-items: center; text-align: center; }
+    .outro-main { font-size: 36px; color: var(--ink); font-weight: 500; margin-bottom: 30px; }
+    .outro-acts { display: flex; gap: 48px; justify-content: center; margin-bottom: 36px; }
+    .outro-btn  { font-size: 26px; color: var(--ink); font-weight: 600; }
+    .outro-brand{ font-size: 18px; color: var(--ink-m); line-height: 2.3; }
+
+    /* ════════════════ Navigation ════════════════ */
+    #nav {
+      position: fixed; bottom: 16px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(0,0,0,0.75);
+      padding: 9px 22px; border-radius: 28px;
+      color: #fff; font-family: sans-serif; font-size: 14px;
+      z-index: 999; user-select: none;
+    }
+    #nav button {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff; padding: 4px 18px;
+      border-radius: 16px; cursor: pointer; font-size: 13px;
+    }
+    #nav button:hover { background: rgba(255,255,255,0.15); }
+    #ctr { min-width: 60px; text-align: center; opacity: .7; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 1 · Title
+══════════════════════════════════════════════════════ -->
+<div class="slide s-title active" id="s1">
+  <div class="pinyin-hdr">huà &nbsp;&nbsp; shé &nbsp;&nbsp; tiān &nbsp;&nbsp; zú</div>
+  <div class="chars">画蛇添足</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 2 · 成语意思
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s2">
+  <div class="section-label">成语意思：</div>
+  <div class="char-table">
+
+    <div class="char-row">
+      <div class="char-block">
+        <div class="char-py">huà</div>
+        <div class="char-hanzi">画</div>
+      </div>
+      <div class="char-defs">
+        <div class="def-line"><span class="def-n">①</span> 画画、绘画 &nbsp;<span class="def-en">to draw / paint</span></div>
+        <div class="def-line"><span class="def-n">②</span> 用笔描绘图形 &nbsp;<span class="def-en">to depict with a brush or pen</span></div>
+      </div>
+    </div>
+
+    <div class="char-row">
+      <div class="char-block">
+        <div class="char-py">shé</div>
+        <div class="char-hanzi">蛇</div>
+      </div>
+      <div class="char-defs">
+        <div class="def-line">蛇，没有脚的爬行动物 &nbsp;<span class="def-en">a snake — a reptile with no legs</span></div>
+      </div>
+    </div>
+
+    <div class="char-row">
+      <div class="char-block">
+        <div class="char-py">tiān</div>
+        <div class="char-hanzi">添</div>
+      </div>
+      <div class="char-defs">
+        <div class="def-line"><span class="def-n">①</span> 增加、加上 &nbsp;<span class="def-en">to add / increase</span></div>
+        <div class="def-line"><span class="def-n">②</span> 本身中性，在此为多余之举 &nbsp;<span class="def-en">neutral in itself, but here an unnecessary extra</span></div>
+      </div>
+    </div>
+
+    <div class="char-row">
+      <div class="char-block">
+        <div class="char-py">zú</div>
+        <div class="char-hanzi">足</div>
+      </div>
+      <div class="char-defs">
+        <div class="def-line"><span class="def-n">①</span> 脚、腿 &nbsp;<span class="def-en">foot / leg</span></div>
+        <div class="def-line"><span class="def-n">②</span> 足够 &nbsp;<span class="def-en">sufficient / enough</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 3 · 字面意思 & 引申义
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s3">
+  <div class="section-label">成语意思：</div>
+
+  <div class="meaning-block">
+    <div class="mtag">字面意思</div>
+    <div class="mzh">画完了蛇，还要多此一举地给蛇加上脚。</div>
+    <div class="men">After finishing a drawing of a snake, unnecessarily adding feet to it.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="meaning-block">
+    <div class="mtag">引申义</div>
+    <div class="mzh">事情已经做好了，却多此一举地加上没有必要的东西，<br>反而坏了事。</div>
+    <div class="men">Something is already done well, but you add unnecessary extras that end up ruining it.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 4 · 成语由来
+══════════════════════════════════════════════════════ -->
+<div class="slide s-origin" id="s4">
+  <div class="origin-label">成语由来：</div>
+  <div class="origin-book">《战国策·齐策二》</div>
+  <div class="origin-auth">作者：西汉 · 刘向 &nbsp;·&nbsp; 著名学者、文献学家</div>
+  <div class="origin-desc">记录战国时期各国谋臣策士的言行与政治活动的史书</div>
+  <div class="origin-en">
+    A historical work recording the words and political activities<br>
+    of advisors and strategists during the Warring States period
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 5 · 故事 ①
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s5">
+  <div class="section-label">成语故事：</div>
+  <div class="story-zh">
+    楚国有人祭祀完祖先，把一壶酒赏给了几个家仆。<br>
+    家仆们商量：这酒几个人喝不够，一个人喝刚刚好。<br>
+    不如比赛<ruby>画蛇<rt>huà shé</rt></ruby>，谁先画完，谁就喝这壶酒。
+  </div>
+  <div class="story-en">
+    In Chu, someone finished ancestral offerings and gave a jug of wine to several servants.<br>
+    They discussed: not enough for all, but just right for one person.<br>
+    Let's race to draw a snake — whoever finishes first gets to drink the wine.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 6 · 故事 ②
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s6">
+  <div class="section-label">成语故事：</div>
+  <div class="story-zh">
+    一人很快画完，正要喝酒，却说：「我还能给蛇<ruby>添足<rt>tiān zú</rt></ruby>！」<br>
+    就在他画脚时，另一人也画完，夺过酒壶说：<br>
+    「蛇本来就没有脚，你画的脚算什么？」——把酒喝了个精光。
+  </div>
+  <div class="story-en">
+    One person quickly finished and was about to drink, but said: "I can even add feet!"<br>
+    While he drew feet, another finished and snatched the jug:<br>
+    "Snakes have no feet — what do your feet count for?" And drank every last drop.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 7 · 近义词 & 反义词
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s7">
+  <div class="section-label">近义词 &amp; 反义词：</div>
+  <div class="syn-grid">
+
+    <div class="syn-col">
+      <div class="syn-tag">近义词</div>
+      <div class="syn-item">
+        <div class="syn-h">多此一举</div>
+        <div class="syn-py">duō cǐ yī jǔ</div>
+        <div class="syn-def">doing something completely unnecessary</div>
+      </div>
+      <div class="syn-item">
+        <div class="syn-h">弄巧成拙</div>
+        <div class="syn-py">nòng qiǎo chéng zhuō</div>
+        <div class="syn-def">trying to be clever but making things worse</div>
+      </div>
+    </div>
+
+    <div class="syn-col">
+      <div class="syn-tag">反义词</div>
+      <div class="syn-item">
+        <div class="syn-h">恰到好处</div>
+        <div class="syn-py">qià dào hǎo chù</div>
+        <div class="syn-def">just right — not too much, not too little</div>
+      </div>
+      <div class="syn-item">
+        <div class="syn-h">锦上添花</div>
+        <div class="syn-py">jǐn shàng tiān huā</div>
+        <div class="syn-def">a welcome addition that makes something even better</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 8 · 例句一
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s8">
+  <div class="section-label">例句：</div>
+  <div class="ex-zh">
+    这篇文章结尾已经很有力了，<br>
+    你再加那段话，简直是<ruby>画蛇添足<rt>huà shé tiān zú</rt></ruby>。
+  </div>
+  <div class="ex-en">
+    The ending of this essay was already powerful —<br>
+    adding that extra paragraph is simply 画蛇添足.
+  </div>
+  <div class="ex-cmt">好的表达就是「刚刚好」。多说一句，反而削弱了原本的力量。</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 9 · 例句二
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s9">
+  <div class="section-label">例句：</div>
+  <div class="ex-zh">
+    面试表现得很好，最后却忍不住多说了几句，<br>
+    结果<ruby>画蛇添足<rt>huà shé tiān zú</rt></ruby>，给面试官留下了不好的印象。
+  </div>
+  <div class="ex-en">
+    The interview was going really well, but he couldn't help adding a few more sentences —<br>
+    画蛇添足, and it left the interviewer with a bad impression instead.
+  </div>
+  <div class="ex-cmt">记住：画蛇添足不是不够努力，而是努力过了头。</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 10 · 填空练习（空白）
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s10">
+  <div class="section-label">填空练习：</div>
+
+  <div class="quiz-item">
+    <div class="quiz-zh">① 这个设计已经很简洁了，再加花纹就是<span class="quiz-blank">&emsp;&emsp;&emsp;</span>了。</div>
+    <div class="quiz-en">This design is already clean and minimal — adding patterns would be ________.</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-zh">② 道歉的话已经说清楚了，你再解释一堆，反而<span class="quiz-blank">&emsp;&emsp;&emsp;</span>。</div>
+    <div class="quiz-en">Your apology was already clear — explaining further would be ________.</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-zh">③ 这道菜味道刚好，你再加调料，不就是<span class="quiz-blank">&emsp;&emsp;&emsp;</span>吗？</div>
+    <div class="quiz-en">The dish tastes just right — adding more seasoning would be ________, wouldn't it?</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 11 · 填空练习（答案）
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s11">
+  <div class="section-label">填空练习：</div>
+
+  <div class="quiz-item">
+    <div class="quiz-zh">① 这个设计已经很简洁了，再加花纹就是<span class="quiz-ans">画蛇添足</span>了。</div>
+    <div class="quiz-en">This design is already minimal — adding patterns would be 画蛇添足.</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-zh">② 道歉的话已经说清楚了，你再解释一堆，反而<span class="quiz-ans">画蛇添足</span>。</div>
+    <div class="quiz-en">Your apology was already clear — explaining further is 画蛇添足.</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-zh">③ 这道菜味道刚好，你再加调料，不就是<span class="quiz-ans">画蛇添足</span>吗？</div>
+    <div class="quiz-en">The dish tastes just right — adding more seasoning is 画蛇添足.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 12 · 使用注意
+══════════════════════════════════════════════════════ -->
+<div class="slide" id="s12">
+  <div class="section-label">使用注意：</div>
+
+  <div class="usage-item">
+    <div class="usage-mark">✓</div>
+    <div>
+      <div class="usage-zh">贬义词，用来批评做了多余的事情，反而坏了事</div>
+      <div class="usage-en">A negative expression — criticizing an unnecessary act that ruins what was already good</div>
+    </div>
+  </div>
+
+  <div class="usage-item">
+    <div class="usage-mark">✓</div>
+    <div>
+      <div class="usage-zh">重点不只是「多余」，而是「因为多余而弄坏了原本好的结果」<br>如果多做一步没有影响，就不一定要用这个成语</div>
+      <div class="usage-en">Key: not just 'unnecessary' — but 'unnecessary AND it ruins what was already good'.<br>If the extra step causes no harm, this idiom may not fit.</div>
+    </div>
+  </div>
+
+  <div class="usage-item">
+    <div class="usage-mark">✓</div>
+    <div>
+      <div class="usage-zh">常用来提醒别人或自己：适可而止，不要过度</div>
+      <div class="usage-en">Often used to remind others or oneself: know when to stop — don't overdo it</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Slide 13 · Outro
+══════════════════════════════════════════════════════ -->
+<div class="slide s-outro" id="s13">
+  <div class="outro-main">感谢您收看到这里</div>
+  <div class="outro-acts">
+    <div class="outro-btn">👍&nbsp; 点赞</div>
+    <div class="outro-btn">🔔&nbsp; 关注</div>
+  </div>
+  <div class="outro-brand">
+    小雪的中文屋（Snowy's Chinese House）<br>
+    @SnowysChineseHouse
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     Navigation
+══════════════════════════════════════════════════════ -->
+<div id="nav">
+  <button onclick="go(-1)">◀ Prev</button>
+  <span id="ctr">1 / 13</span>
+  <button onclick="go(1)">Next ▶</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let cur = 0;
+
+  function show(n) {
+    slides[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    document.getElementById('ctr').textContent = (cur + 1) + ' / ' + slides.length;
+  }
+
+  function go(dir) { show(cur + dir); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   go(-1);
+  });
+</script>
+</body>
+</html>

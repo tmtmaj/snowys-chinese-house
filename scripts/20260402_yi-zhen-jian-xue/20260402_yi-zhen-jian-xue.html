@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep18 · 一针见血 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>一针见血</h1>
+  <div class="pinyin">yī zhēn jiàn xuè</div>
+  <div class="meta">ep18 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家有没有这样的经历——听到某个人说了一句话，一下子就说到了问题的核心，让你觉得：对，就是这样！</span>
+            <button class="copy-btn" onclick="copyText(this, '大家有没有这样的经历——听到某个人说了一句话，一下子就说到了问题的核心，让你觉得：对，就是这样！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā yǒu méiyǒu zhèyàng de jīnglì——tīng dào mǒu gè rén shuō le yī jù huà, yīxiàzi jiù shuō dào le wèntí de héxīn, ràng nǐ juéde: duì, jiùshì zhèyàng!</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā yǒu méiyǒu zhèyàng de jīnglì——tīng dào mǒu gè rén shuō le yī jù huà, yīxiàzi jiù shuō dào le wèntí de héxīn, ràng nǐ juéde: duì, jiùshì zhèyàng!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Have you ever had this experience — someone says just one sentence, and it cuts straight to the heart of the matter, and you think: yes, exactly right!</span>
+            <button class="copy-btn" onclick="copyText(this, 'Have you ever had this experience — someone says just one sentence, and it cuts straight to the heart of the matter, and you think: yes, exactly right!')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">不绕弯子，不废话，直接点出问题所在——这种说话方式，中文里有一个非常形象的成语来形容它。</span>
+            <button class="copy-btn" onclick="copyText(this, '不绕弯子，不废话，直接点出问题所在——这种说话方式，中文里有一个非常形象的成语来形容它。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bù rào wānzi, bù fèihuà, zhíjiē diǎn chū wèntí suǒzài——zhè zhǒng shuōhuà fāngshì, zhōngwén lǐ yǒu yī gè fēicháng xíngxiàng de chéngyǔ lái xíngróng tā.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bù rào wānzi, bù fèihuà, zhíjiē diǎn chū wèntí suǒzài——zhè zhǒng shuōhuà fāngshì, zhōngwén lǐ yǒu yī gè fēicháng xíngxiàng de chéngyǔ lái xíngróng tā.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">No beating around the bush, no wasted words — just pointing straight at the problem. Chinese has a vivid idiom to describe exactly this way of speaking.</span>
+            <button class="copy-btn" onclick="copyText(this, 'No beating around the bush, no wasted words — just pointing straight at the problem. Chinese has a vivid idiom to describe exactly this way of speaking.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div>
+    <div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+
+  <section>
+    <h2>② 成语引出</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——一针见血。一针见血。一针见血。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——一针见血。一针见血。一针见血。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——yī zhēn jiàn xuè. yī zhēn jiàn xuè. yī zhēn jiàn xuè.</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——yī zhēn jiàn xuè. yī zhēn jiàn xuè. yī zhēn jiàn xuè.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 一针见血.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 一针见血.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【一 · yī】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">一，就是「一个」「一次」，强调数量是最少的，单独一次。</span>
+            <button class="copy-btn" onclick="copyText(this, '一，就是「一个」「一次」，强调数量是最少的，单独一次。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yī, jiù shì 「yīgè」「yīcì」, qiángdiào shùliàng shì zuì shǎo de, dāndú yīcì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yī, jiù shì 「yīgè」「yīcì」, qiángdiào shùliàng shì zuì shǎo de, dāndú yīcì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">'Yi' means 'one' or 'a single time' — emphasising the smallest quantity, just once.</span>
+            <button class="copy-btn" onclick="copyText(this, '\'Yi\' means \'one\' or \'a single time\' — emphasising the smallest quantity, just once.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：一次、一下、统一。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：一次、一下、统一。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: yīcì, yīxià, tǒngyī.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: yīcì, yīxià, tǒngyī.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 一次 (one time), 一下 (just like that/once), 统一 (to unify).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 一次 (one time), 一下 (just like that/once), 统一 (to unify).')">복사</button>
+          </div>
+        </div>
+
+    <h3 class="char-label">【针 · zhēn】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">针，指针线活儿用的针，或者中医针灸里扎穴位的那种细针。这个字的核心是「尖细、精准」。</span>
+            <button class="copy-btn" onclick="copyText(this, '针，指针线活儿用的针，或者中医针灸里扎穴位的那种细针。这个字的核心是「尖细、精准」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhēn, zhǐ zhēnxiàn huór yòng de zhēn, huòzhě zhōngyī zhēnjiǔ lǐ zhā xuéwèi de nà zhǒng xì zhēn. zhège zì de héxīn shì 「jiān xì, jīngzhǔn」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhēn, zhǐ zhēnxiàn huór yòng de zhēn, huòzhě zhōngyī zhēnjiǔ lǐ zhā xuéwèi de nà zhǒng xì zhēn. zhège zì de héxīn shì 「jiān xì, jīngzhǔn」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">'Zhen' refers to a sewing needle or the fine needle used in traditional Chinese acupuncture. The core idea is precision and sharpness.</span>
+            <button class="copy-btn" onclick="copyText(this, '\'Zhen\' refers to a sewing needle or the fine needle used in traditional Chinese acupuncture. The core idea is precision and sharpness.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：针灸、针对、指针。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：针灸、针对、指针。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: zhēnjiǔ, zhēnduì, zhǐzhēn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: zhēnjiǔ, zhēnduì, zhǐzhēn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 针灸 (acupuncture), 针对 (targeted at), 指针 (pointer/compass needle).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 针灸 (acupuncture), 针对 (targeted at), 指针 (pointer/compass needle).')">복사</button>
+          </div>
+        </div>
+
+    <h3 class="char-label">【见 · jiàn】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">见，通常是「看见」的意思。但在「见血」这个搭配里，「见」是「出现、显现」的意思——血出现了，见到了血。</span>
+            <button class="copy-btn" onclick="copyText(this, '见，通常是「看见」的意思。但在「见血」这个搭配里，「见」是「出现、显现」的意思——血出现了，见到了血。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jiàn, tōngcháng shì 「kànjiàn」 de yìsi. dàn zài 「jiàn xuè」 zhège dāpèi lǐ, 「jiàn」 shì 「chūxiàn, xiǎnxiàn」 de yìsi——xuè chūxiàn le, jiàn dào le xuè.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jiàn, tōngcháng shì 「kànjiàn」 de yìsi. dàn zài 「jiàn xuè」 zhège dāpèi lǐ, 「jiàn」 shì 「chūxiàn, xiǎnxiàn」 de yìsi——xuè chūxiàn le, jiàn dào le xuè.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">'Jian' usually means 'to see'. But in the phrase 见血, it means 'to appear' — blood appears, blood is drawn.</span>
+            <button class="copy-btn" onclick="copyText(this, '\'Jian\' usually means \'to see\'. But in the phrase 见血, it means \'to appear\' — blood appears, blood is drawn.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：见面、见效、见识。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：见面、见效、见识。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: jiànmiàn, jiànxiào, jiànshi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: jiànmiàn, jiànxiào, jiànshi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 见面 (to meet), 见效 (to take effect), 见识 (knowledge/experience).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 见面 (to meet), 见效 (to take effect), 见识 (knowledge/experience).')">복사</button>
+          </div>
+        </div>
+
+    <h3 class="char-label">【血 · xuè】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">血，就是血液。在这里，针扎下去，血就流出来了——说明针法精准，位置正确，一下就到位了。</span>
+            <button class="copy-btn" onclick="copyText(this, '血，就是血液。在这里，针扎下去，血就流出来了——说明针法精准，位置正确，一下就到位了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xuè, jiù shì xuèyè. zài zhèlǐ, zhēn zhā xiàqù, xuè jiù liú chūlái le——shuōmíng zhēnfǎ jīngzhǔn, wèizhì zhèngquè, yīxià jiù dào wèi le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xuè, jiù shì xuèyè. zài zhèlǐ, zhēn zhā xiàqù, xuè jiù liú chūlái le——shuōmíng zhēnfǎ jīngzhǔn, wèizhì zhèngquè, yīxià jiù dào wèi le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">'Xue' means blood. Here, the needle goes in and blood flows immediately — showing the technique is perfectly placed and effective right away.</span>
+            <button class="copy-btn" onclick="copyText(this, '\'Xue\' means blood. Here, the needle goes in and blood flows immediately — showing the technique is perfectly placed and effective right away.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如：血液、流血、心血。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如：血液、流血、心血。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú: xuèyè, liúxuè, xīnxuè.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú: xuèyè, liúxuè, xīnxuè.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example: 血液 (blood/bloodstream), 流血 (to bleed), 心血 (painstaking effort).</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example: 血液 (blood/bloodstream), 流血 (to bleed), 心血 (painstaking effort).')">복사</button>
+          </div>
+        </div>
+  </section>
+
+  <section>
+    <h2>③-B 词组拆分：一针 ＋ 见血</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">一针见血可以分成两个部分来理解：「一针」和「见血」。</span>
+            <button class="copy-btn" onclick="copyText(this, '一针见血可以分成两个部分来理解：「一针」和「见血」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yī zhēn jiàn xuè kěyǐ fēnchéng liǎng gè bùfen lái lǐjiě: 「yī zhēn」 hé 「jiàn xuè」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yī zhēn jiàn xuè kěyǐ fēnchéng liǎng gè bùfen lái lǐjiě: 「yī zhēn」 hé 「jiàn xuè」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">一针见血 can be understood in two parts: 「一针」 and 「见血」.</span>
+            <button class="copy-btn" onclick="copyText(this, '一针见血 can be understood in two parts: 「一针」 and 「见血」.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「一针」强调只用一根针，一次就够了，不需要反复——体现的是高度的精准和效率。</span>
+            <button class="copy-btn" onclick="copyText(this, '「一针」强调只用一根针，一次就够了，不需要反复——体现的是高度的精准和效率。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「yī zhēn」 qiángdiào zhǐ yòng yī gēn zhēn, yīcì jiù gòu le, bù xūyào fǎnfù——tǐxiàn de shì gāodù de jīngzhǔn hé xiàolǜ.</span>
+            <button class="copy-btn" onclick="copyText(this, '「yī zhēn」 qiángdiào zhǐ yòng yī gēn zhēn, yīcì jiù gòu le, bù xūyào fǎnfù——tǐxiàn de shì gāodù de jīngzhǔn hé xiàolǜ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「一针」 emphasises that only one needle is needed, one try is enough — it reflects high precision and efficiency.</span>
+            <button class="copy-btn" onclick="copyText(this, '「一针」 emphasises that only one needle is needed, one try is enough — it reflects high precision and efficiency.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「见血」说明效果立刻出来了，针到位就见到了血，没有多余的动作，没有浪费。</span>
+            <button class="copy-btn" onclick="copyText(this, '「见血」说明效果立刻出来了，针到位就见到了血，没有多余的动作，没有浪费。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「jiàn xuè」 shuōmíng xiàoguǒ lìkè chūlái le, zhēn dào wèi jiù jiàn dào le xuè, méiyǒu duōyú de dòngzuò, méiyǒu làngfèi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「jiàn xuè」 shuōmíng xiàoguǒ lìkè chūlái le, zhēn dào wèi jiù jiàn dào le xuè, méiyǒu duōyú de dòngzuò, méiyǒu làngfèi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「见血」 shows the result is immediate — the needle reaches the right spot and blood appears at once, no wasted movement.</span>
+            <button class="copy-btn" onclick="copyText(this, '「见血」 shows the result is immediate — the needle reaches the right spot and blood appears at once, no wasted movement.')">복사</button>
+          </div>
+        </div>
+  </section>
+
+  <section>
+    <h2>④ 成语整体含义</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">一针见血，字面意思是「一根针扎下去，马上就见到了血」，形容针法极其精准，一下到位。</span>
+            <button class="copy-btn" onclick="copyText(this, '一针见血，字面意思是「一根针扎下去，马上就见到了血」，形容针法极其精准，一下到位。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yī zhēn jiàn xuè, zìmiàn yìsi shì 「yī gēn zhēn zhā xiàqù, mǎshàng jiù jiàn dào le xuè」, xíngróng zhēnfǎ jíqí jīngzhǔn, yīxià dào wèi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yī zhēn jiàn xuè, zìmiàn yìsi shì 「yī gēn zhēn zhā xiàqù, mǎshàng jiù jiàn dào le xuè」, xíngróng zhēnfǎ jíqí jīngzhǔn, yīxià dào wèi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Literally, 一针见血 means 'one needle goes in and blood is immediately drawn' — describing acupuncture so perfectly precise it works in a single try.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Literally, 一针见血 means \'one needle goes in and blood is immediately drawn\' — describing acupuncture so perfectly precise it works in a single try.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">引申义是比喻说话或写文章直接切中要害，一语道出问题的本质，不绕弯子，不废话。</span>
+            <button class="copy-btn" onclick="copyText(this, '引申义是比喻说话或写文章直接切中要害，一语道出问题的本质，不绕弯子，不废话。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǐnshēn yì shì bǐyù shuōhuà huò xiě wénzhāng zhíjiē qiē zhōng yàohài, yī yǔ dào chū wèntí de běnzhì, bù rào wānzi, bù fèihuà.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǐnshēn yì shì bǐyù shuōhuà huò xiě wénzhāng zhíjiē qiē zhōng yàohài, yī yǔ dào chū wèntí de běnzhì, bù rào wānzi, bù fèihuà.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Its extended meaning describes speech or writing that cuts straight to the core of a problem — stating the essence in one go, without detours or wasted words.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Its extended meaning describes speech or writing that cuts straight to the core of a problem — stating the essence in one go, without detours or wasted words.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">近义词有：一语道破、一语中的。</span>
+            <button class="copy-btn" onclick="copyText(this, '近义词有：一语道破、一语中的。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jìnyìcí yǒu: yī yǔ dào pò, yī yǔ zhòng dì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jìnyìcí yǒu: yī yǔ dào pò, yī yǔ zhòng dì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Near-synonyms include: 一语道破 (to expose with one remark), 一语中的 (to hit the target with one word).</span>
+            <button class="copy-btn" onclick="copyText(this, 'Near-synonyms include: 一语道破 (to expose with one remark), 一语中的 (to hit the target with one word).')">복사</button>
+          </div>
+        </div>
+  </section>
+
+  <section>
+    <h2>⑤ 成语来源</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语的出处，要追溯到南朝·宋代史学家范晔所著的《后汉书》。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语的出处，要追溯到南朝·宋代史学家范晔所著的《后汉书》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ de chūchù, yào zhuīsù dào Nán Cháo Sòngdài shǐxuéjiā Fàn Yè suǒ zhù de 《Hòu Hàn Shū》.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ de chūchù, yào zhuīsù dào Nán Cháo Sòngdài shǐxuéjiā Fàn Yè suǒ zhù de 《Hòu Hàn Shū》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The origin of this idiom goes back to 《Book of Later Han》, written by Fan Ye, a historian of the Liu Song dynasty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The origin of this idiom goes back to 《Book of Later Han》, written by Fan Ye, a historian of the Liu Song dynasty.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">《后汉书》是一部记录东汉历史的纪传体史书，里面有一篇专门介绍东汉名医郭玉的传记，叫做《郭玉传》。</span>
+            <button class="copy-btn" onclick="copyText(this, '《后汉书》是一部记录东汉历史的纪传体史书，里面有一篇专门介绍东汉名医郭玉的传记，叫做《郭玉传》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">《Hòu Hàn Shū》 shì yī bù jìlù Dōng Hàn lìshǐ de jìzhuàntǐ shǐshū, lǐmiàn yǒu yī piān zhuānmén jièshào Dōng Hàn míng yī Guō Yù de zhuànjì, jiàozuò 《Guō Yù Zhuàn》.</span>
+            <button class="copy-btn" onclick="copyText(this, '《Hòu Hàn Shū》 shì yī bù jìlù Dōng Hàn lìshǐ de jìzhuàntǐ shǐshū, lǐmiàn yǒu yī piān zhuānmén jièshào Dōng Hàn míng yī Guō Yù de zhuànjì, jiàozuò 《Guō Yù Zhuàn》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">《Book of Later Han》 is a biographical history of the Eastern Han dynasty. It contains a biography of Guo Yu, one of the most celebrated physicians of the time.</span>
+            <button class="copy-btn" onclick="copyText(this, '《Book of Later Han》 is a biographical history of the Eastern Han dynasty. It contains a biography of Guo Yu, one of the most celebrated physicians of the time.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">郭玉是东汉时期最出色的针灸医生，他扎针的技术精妙到了极点——据记载，他「一针即瘥」，意思是扎一针，病人就好了。</span>
+            <button class="copy-btn" onclick="copyText(this, '郭玉是东汉时期最出色的针灸医生，他扎针的技术精妙到了极点——据记载，他「一针即瘥」，意思是扎一针，病人就好了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">Guō Yù shì Dōng Hàn shíqī zuì chūsè de zhēnjiǔ yīshēng, tā zhā zhēn de jìshù jīngmiào dào le jídiǎn——jù jìzǎi, tā 「yī zhēn jí chài」, yìsi shì zhā yī zhēn, bìngrén jiù hǎo le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Guō Yù shì Dōng Hàn shíqī zuì chūsè de zhēnjiǔ yīshēng, tā zhā zhēn de jìshù jīngmiào dào le jídiǎn——jù jìzǎi, tā 「yī zhēn jí chài」, yìsi shì zhā yī zhēn, bìngrén jiù hǎo le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Guo Yu was the most accomplished acupuncturist of the Eastern Han. His technique was so refined that records describe him as '一针即瘥' — one needle, and the patient was cured.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Guo Yu was the most accomplished acupuncturist of the Eastern Han. His technique was so refined that records describe him as \'一针即瘥\' — one needle, and the patient was cured.')">복사</button>
+          </div>
+        </div>
+
+    <p style="font-weight:600;color:#555;margin-bottom:12px;">📜 <strong>南朝·宋·范晔 · 《后汉书·郭玉传》</strong></p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">一针即瘥。</span>
+            <button class="copy-btn" onclick="copyText(this, '一针即瘥。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yī zhēn jí chài.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yī zhēn jí chài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">One needle, and immediately cured.</span>
+            <button class="copy-btn" onclick="copyText(this, 'One needle, and immediately cured.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这句话描述的是郭玉针法的精准：只需一针，病就好了，不需要反复施针，不需要多余的步骤。</span>
+            <button class="copy-btn" onclick="copyText(this, '这句话描述的是郭玉针法的精准：只需一针，病就好了，不需要反复施针，不需要多余的步骤。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jù huà miáoshù de shì Guō Yù zhēnfǎ de jīngzhǔn: zhǐ xū yī zhēn, bìng jiù hǎo le, bù xūyào fǎnfù shī zhēn, bù xūyào duōyú de bùzhòu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jù huà miáoshù de shì Guō Yù zhēnfǎ de jīngzhǔn: zhǐ xū yī zhēn, bìng jiù hǎo le, bù xūyào fǎnfù shī zhēn, bù xūyào duōyú de bùzhòu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This phrase captures the precision of Guo Yu&#x27;s needlework: one needle was all it took — no repeated tries, no unnecessary steps.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This phrase captures the precision of Guo Yu&#x27;s needlework: one needle was all it took — no repeated tries, no unnecessary steps.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">后来，人们把这种「一针到位，立刻见效」的形象，引申为形容说话的方式——说一句话就能直接点出问题的核心，不绕弯子，这就叫「一针见血」。</span>
+            <button class="copy-btn" onclick="copyText(this, '后来，人们把这种「一针到位，立刻见效」的形象，引申为形容说话的方式——说一句话就能直接点出问题的核心，不绕弯子，这就叫「一针见血」。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hòulái, rénmen bǎ zhè zhǒng 「yī zhēn dào wèi, lìkè jiànxiào」 de xíngxiàng, yǐnshēn wéi xíngróng shuōhuà de fāngshì——shuō yī jù huà jiù néng zhíjiē diǎn chū wèntí de héxīn, bù rào wānzi, zhè jiùshì 「yī zhēn jiàn xuè」.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hòulái, rénmen bǎ zhè zhǒng 「yī zhēn dào wèi, lìkè jiànxiào」 de xíngxiàng, yǐnshēn wéi xíngróng shuōhuà de fāngshì——shuō yī jù huà jiù néng zhíjiē diǎn chū wèntí de héxīn, bù rào wānzi, zhè jiùshì 「yī zhēn jiàn xuè」.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Over time, this image of 'one needle, immediate effect' was applied to speech — saying one thing that strikes straight at the heart of a problem, without going in circles. That is 一针见血.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Over time, this image of \'one needle, immediate effect\' was applied to speech — saying one thing that strikes straight at the heart of a problem, without going in circles. That is 一针见血.')">복사</button>
+          </div>
+        </div>
+    <p style="margin-top:14px;font-size:.85rem;">🔗 <strong>출처</strong>: <a href="https://www.zdic.net/hans/%E4%B8%80%E9%92%88%E8%A7%81%E8%A1%80" target="_blank" style="color:#2e86c1;">汉典 — 一针见血</a></p>
+  </section>
+
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">他一针见血地指出了这份方案的根本问题，大家都沉默了。</span>
+            <button class="copy-btn" onclick="copyText(this, '他一针见血地指出了这份方案的根本问题，大家都沉默了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā yī zhēn jiàn xuè de zhǐ chū le zhè fèn fāngàn de gēnběn wèntí, dàjiā dōu chénmò le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā yī zhēn jiàn xuè de zhǐ chū le zhè fèn fāngàn de gēnběn wèntí, dàjiā dōu chénmò le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">He pointed out the fundamental flaw in the proposal with one sharp remark, and everyone fell silent.</span>
+            <button class="copy-btn" onclick="copyText(this, 'He pointed out the fundamental flaw in the proposal with one sharp remark, and everyone fell silent.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里「一针见血」形容他的发言简洁而精准，直接说到了核心，让人无法反驳。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里「一针见血」形容他的发言简洁而精准，直接说到了核心，让人无法反驳。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ 「yī zhēn jiàn xuè」 xíngróng tā de fāyán jiǎnjié ér jīngzhǔn, zhíjiē shuō dào le héxīn, ràng rén wúfǎ fǎnbó.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ 「yī zhēn jiàn xuè」 xíngróng tā de fāyán jiǎnjié ér jīngzhǔn, zhíjiē shuō dào le héxīn, ràng rén wúfǎ fǎnbó.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Here, 一针见血 describes his comment as concise and precise — hitting the core directly in a way that left no room for argument.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Here, 一针见血 describes his comment as concise and precise — hitting the core directly in a way that left no room for argument.')">복사</button>
+          </div>
+        </div>
+
+    <p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">老师的评语只有一句话，却一针见血，让她立刻明白了自己哪里写得不对。</span>
+            <button class="copy-btn" onclick="copyText(this, '老师的评语只有一句话，却一针见血，让她立刻明白了自己哪里写得不对。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">lǎoshī de píngyǔ zhǐyǒu yī jù huà, què yī zhēn jiàn xuè, ràng tā lìkè míngbái le zìjǐ nǎlǐ xiě de bùduì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'lǎoshī de píngyǔ zhǐyǒu yī jù huà, què yī zhēn jiàn xuè, ràng tā lìkè míngbái le zìjǐ nǎlǐ xiě de bùduì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The teacher&#x27;s comment was just one sentence, but it was so incisive that she immediately understood where she had gone wrong.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The teacher&#x27;s comment was just one sentence, but it was so incisive that she immediately understood where she had gone wrong.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这句话展示了「一针见血」的力量——即使只有短短一句，也能让对方一下子醒悟。短，但有力。</span>
+            <button class="copy-btn" onclick="copyText(this, '这句话展示了「一针见血」的力量——即使只有短短一句，也能让对方一下子醒悟。短，但有力。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jù huà zhǎnshì le 「yī zhēn jiàn xuè」 de lìliàng——jíshǐ zhǐyǒu duǎnduǎn yī jù, yě néng ràng duìfāng yīxiàzi xǐngwù. duǎn, dàn yǒulì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jù huà zhǎnshì le 「yī zhēn jiàn xuè」 de lìliàng——jíshǐ zhǐyǒu duǎnduǎn yī jù, yě néng ràng duìfāng yīxiàzi xǐngwù. duǎn, dàn yǒulì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This sentence shows the power of 一针见血 — even a single short remark can make someone immediately see the light. Brief, but powerful.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This sentence shows the power of 一针见血 — even a single short remark can make someone immediately see the light. Brief, but powerful.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">一针见血，就是用最少的语言，说出最关键的道理——像一根针一样，直接刺中要害。</span>
+            <button class="copy-btn" onclick="copyText(this, '一针见血，就是用最少的语言，说出最关键的道理——像一根针一样，直接刺中要害。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yī zhēn jiàn xuè, jiù shì yòng zuì shǎo de yǔyán, shuō chū zuì guānjiàn de dàolǐ——xiàng yī gēn zhēn yīyàng, zhíjiē cì zhōng yàohài.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yī zhēn jiàn xuè, jiù shì yòng zuì shǎo de yǔyán, shuō chū zuì guānjiàn de dàolǐ——xiàng yī gēn zhēn yīyàng, zhíjiē cì zhōng yàohài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">一针见血 means using the fewest words to say the most essential thing — like a needle that goes straight to the vital point.</span>
+            <button class="copy-btn" onclick="copyText(this, '一针见血 means using the fewest words to say the most essential thing — like a needle that goes straight to the vital point.')">복사</button>
+          </div>
+        </div>
+  </section>
+
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 她的分析太________了，一句话就说到了问题的本质。</p><p class="quiz-hint">Her analysis was so ________ — one sentence and she&#x27;d got to the root of the problem.</p><p class="quiz-a">✅ 她的分析太一针见血了，一句话就说到了问题的本质。</p><p class="quiz-hint">Her analysis was so incisive — one sentence and she&#x27;d got to the root of the problem.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 这篇文章________，让很多人都认识到了这个社会问题的真相。</p><p class="quiz-hint">This article was ________, helping many people see the truth behind this social issue.</p><p class="quiz-a">✅ 这篇文章一针见血，让很多人都认识到了这个社会问题的真相。</p><p class="quiz-hint">This article was incisive, helping many people see the truth behind this social issue.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q3.</span> 他的批评虽然直接，但确实________，我没办法反驳。</p><p class="quiz-hint">His criticism was blunt, but it really ________ — I couldn&#x27;t argue back.</p><p class="quiz-a">✅ 他的批评虽然直接，但确实一针见血，我没办法反驳。</p><p class="quiz-hint">His criticism was blunt, but it really hit the nail on the head — I couldn&#x27;t argue back.</p></div>
+  </section>
+
+  <section>
+    <h2>⑦ 使用注意</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">一针见血是褒义词，用来称赞别人的语言或文章精准有力，直击要害。</span>
+            <button class="copy-btn" onclick="copyText(this, '一针见血是褒义词，用来称赞别人的语言或文章精准有力，直击要害。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yī zhēn jiàn xuè shì bāoyìcí, yòng lái chēngzàn biérén de yǔyán huò wénzhāng jīngzhǔn yǒulì, zhí jī yàohài.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yī zhēn jiàn xuè shì bāoyìcí, yòng lái chēngzàn biérén de yǔyán huò wénzhāng jīngzhǔn yǒulì, zhí jī yàohài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">一针见血 is a complimentary term, used to praise someone&#x27;s speech or writing as precise, powerful, and hitting the essential point.</span>
+            <button class="copy-btn" onclick="copyText(this, '一针见血 is a complimentary term, used to praise someone&#x27;s speech or writing as precise, powerful, and hitting the essential point.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">注意：它主要用来形容别人说的话或写的文章，用来夸自己会显得有些自吹自擂，语感不太自然。比如「我刚才说得一针见血」就有点奇怪。</span>
+            <button class="copy-btn" onclick="copyText(this, '注意：它主要用来形容别人说的话或写的文章，用来夸自己会显得有些自吹自擂，语感不太自然。比如「我刚才说得一针见血」就有点奇怪。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhùyì: tā zhǔyào yòng lái xíngróng biérén shuō de huà huò xiě de wénzhāng, yòng lái kuā zìjǐ huì xiǎndé yǒuxiē zì chuī zì léi, yǔgǎn bù tài zìrán. bǐrú 「wǒ gāngcái shuō de yī zhēn jiàn xuè」 jiù yǒudiǎn qíguài.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhùyì: tā zhǔyào yòng lái xíngróng biérén shuō de huà huò xiě de wénzhāng, yòng lái kuā zìjǐ huì xiǎndé yǒuxiē zì chuī zì léi, yǔgǎn bù tài zìrán. bǐrú 「wǒ gāngcái shuō de yī zhēn jiàn xuè」 jiù yǒudiǎn qíguài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Note: it&#x27;s mainly used about someone else&#x27;s words or writing. Applying it to yourself can sound boastful and unnatural — saying &#x27;I just said something 一针见血&#x27; feels a bit off.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Note: it&#x27;s mainly used about someone else&#x27;s words or writing. Applying it to yourself can sound boastful and unnatural — saying \'I just said something 一针见血\' feels a bit off.')">복사</button>
+          </div>
+        </div>
+  </section>
+
+  <section>
+    <h2>⑧ 结尾</h2>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次听到有人说了一句话，一下子就说到了问题的核心，可以试着说「他说得真一针见血」——感受一下这个词的力量。</span>
+            <button class="copy-btn" onclick="copyText(this, '下次听到有人说了一句话，一下子就说到了问题的核心，可以试着说「他说得真一针见血」——感受一下这个词的力量。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xià cì tīng dào yǒu rén shuō le yī jù huà, yīxiàzi jiù shuō dào le wèntí de héxīn, kěyǐ shìzhe shuō 「tā shuō de zhēn yī zhēn jiàn xuè」——gǎnshòu yīxià zhège cí de lìliàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xià cì tīng dào yǒu rén shuō le yī jù huà, yīxiàzi jiù shuō dào le wèntí de héxīn, kěyǐ shìzhe shuō 「tā shuō de zhēn yī zhēn jiàn xuè」——gǎnshòu yīxià zhège cí de lìliàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time you hear someone say something that cuts straight to the heart of a problem, try saying '他说得真一针见血' — and feel the power of this idiom.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time you hear someone say something that cuts straight to the heart of a problem, try saying \'他说得真一针见血\' — and feel the power of this idiom.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>

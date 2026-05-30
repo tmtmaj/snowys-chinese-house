@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep23 · 青梅竹马 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>青梅竹马</h1>
+  <div class="pinyin">qīng méi zhú mǎ</div>
+  <div class="meta">ep23 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家有没有这样的经历——小时候，有一个一起长大的玩伴，后来发现，自己一直喜欢着对方？</span>
+            <button class="copy-btn" onclick="copyText(this, '大家有没有这样的经历——小时候，有一个一起长大的玩伴，后来发现，自己一直喜欢着对方？')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā yǒu méi yǒu zhèyàng de jīnglì —— xiǎoshíhou, yǒu yī gè yīqǐ zhǎngdà de wánbàn, hòulái fāxiàn, zìjǐ yīzhí xǐhuān zhe duìfāng？</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā yǒu méi yǒu zhèyàng de jīnglì —— xiǎoshíhou, yǒu yī gè yīqǐ zhǎngdà de wánbàn, hòulái fāxiàn, zìjǐ yīzhí xǐhuān zhe duìfāng？')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Has anyone had this experience — as a child, you had a playmate you grew up with, and later realized you&#x27;d always had feelings for them?</span>
+            <button class="copy-btn" onclick="copyText(this, 'Has anyone had this experience — as a child, you had a playmate you grew up with, and later realized you&#x27;d always had feelings for them?')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这种感情，没有距离，没有陌生，只有从小积累的信任和温柔。</span>
+            <button class="copy-btn" onclick="copyText(this, '这种感情，没有距离，没有陌生，只有从小积累的信任和温柔。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè zhǒng gǎnqíng, méi yǒu jùlí, méi yǒu mòshēng, zhǐyǒu cóng xiǎo jīlěi de xìnrèn hé wēnróu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè zhǒng gǎnqíng, méi yǒu jùlí, méi yǒu mòshēng, zhǐyǒu cóng xiǎo jīlěi de xìnrèn hé wēnróu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This kind of feeling has no distance, no awkwardness — only the trust and tenderness built up since childhood.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This kind of feeling has no distance, no awkwardness — only the trust and tenderness built up since childhood.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">中文里有一个成语，完美地描述了这种感情——青梅竹马。</span>
+            <button class="copy-btn" onclick="copyText(this, '中文里有一个成语，完美地描述了这种感情——青梅竹马。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhōngwén lǐ yǒu yī gè chéngyǔ, wánměi de miáoshù le zhè zhǒng gǎnqíng —— qīng méi zhú mǎ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhōngwén lǐ yǒu yī gè chéngyǔ, wánměi de miáoshù le zhè zhǒng gǎnqíng —— qīng méi zhú mǎ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">There is a Chinese idiom that perfectly captures this feeling — 青梅竹马.</span>
+            <button class="copy-btn" onclick="copyText(this, 'There is a Chinese idiom that perfectly captures this feeling — 青梅竹马.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——青梅竹马。青梅竹马。青梅竹马。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——青梅竹马。青梅竹马。青梅竹马。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 青梅竹马.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 青梅竹马.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【青 · qīng】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「青」，本来的意思是绿色，也有年轻、未成熟的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '「青」，本来的意思是绿色，也有年轻、未成熟的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「qīng」, běnlái de yìsi shì lǜsè, yě yǒu niánqīng、wèi chéngshú de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「qīng」, běnlái de yìsi shì lǜsè, yě yǒu niánqīng、wèi chéngshú de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「青」 originally means green, but also carries the meaning of youthful or unripe.</span>
+            <button class="copy-btn" onclick="copyText(this, '「青」 originally means green, but also carries the meaning of youthful or unripe.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「青春」——人生中最年轻的时光，充满活力和希望。</span>
+            <button class="copy-btn" onclick="copyText(this, '「青春」——人生中最年轻的时光，充满活力和希望。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「qīngchūn」—— rénshēng zhōng zuì niánqīng de shíguāng, chōngmǎn huólì hé xīwàng.</span>
+            <button class="copy-btn" onclick="copyText(this, '「qīngchūn」—— rénshēng zhōng zuì niánqīng de shíguāng, chōngmǎn huólì hé xīwàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「青春」 — the youngest, most vibrant season of life, full of energy and hope.</span>
+            <button class="copy-btn" onclick="copyText(this, '「青春」 — the youngest, most vibrant season of life, full of energy and hope.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「青年」，年轻人的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '「青年」，年轻人的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「qīngnián」, niánqīngrén de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「qīngnián」, niánqīngrén de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「青年」 means a young person.</span>
+            <button class="copy-btn" onclick="copyText(this, '「青年」 means a young person.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「青涩」，形容人还不成熟，有点害羞、紧张的样子——就像没有熟透的青梅，有点酸。</span>
+            <button class="copy-btn" onclick="copyText(this, '「青涩」，形容人还不成熟，有点害羞、紧张的样子——就像没有熟透的青梅，有点酸。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「qīngsè」, xíngróng rén hái bù chéngshú, yǒudiǎn hàixiū、jǐnzhāng de yàngzi —— jiù xiàng méi yǒu shú tòu de qīngméi, yǒudiǎn suān.</span>
+            <button class="copy-btn" onclick="copyText(this, '「qīngsè」, xíngróng rén hái bù chéngshú, yǒudiǎn hàixiū、jǐnzhāng de yàngzi —— jiù xiàng méi yǒu shú tòu de qīngméi, yǒudiǎn suān.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「青涩」 describes someone still immature, a little shy and nervous — like an unripe plum that&#x27;s still a bit sour.</span>
+            <button class="copy-btn" onclick="copyText(this, '「青涩」 describes someone still immature, a little shy and nervous — like an unripe plum that&#x27;s still a bit sour.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【梅 · méi】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「梅」，是梅子，梅树结的果实。</span>
+            <button class="copy-btn" onclick="copyText(this, '「梅」，是梅子，梅树结的果实。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「méi」, shì méizi, méishù jié de guǒshí.</span>
+            <button class="copy-btn" onclick="copyText(this, '「méi」, shì méizi, méishù jié de guǒshí.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「梅」 refers to the plum — the fruit of the plum tree.</span>
+            <button class="copy-btn" onclick="copyText(this, '「梅」 refers to the plum — the fruit of the plum tree.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「梅花」，冬天开放的花，在中国文化里象征坚韧和高洁。</span>
+            <button class="copy-btn" onclick="copyText(this, '「梅花」，冬天开放的花，在中国文化里象征坚韧和高洁。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「méihuā」, dōngtiān kāifàng de huā, zài zhōngguó wénhuà lǐ xiàngzhēng jiānrèn hé gāojié.</span>
+            <button class="copy-btn" onclick="copyText(this, '「méihuā」, dōngtiān kāifàng de huā, zài zhōngguó wénhuà lǐ xiàngzhēng jiānrèn hé gāojié.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「梅花」, the plum blossom, blooms in winter and symbolizes resilience and purity in Chinese culture.</span>
+            <button class="copy-btn" onclick="copyText(this, '「梅花」, the plum blossom, blooms in winter and symbolizes resilience and purity in Chinese culture.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「梅雨」，每年夏初多雨的季节——因为那时候梅子正好成熟，所以叫梅雨。</span>
+            <button class="copy-btn" onclick="copyText(this, '「梅雨」，每年夏初多雨的季节——因为那时候梅子正好成熟，所以叫梅雨。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「méiyǔ」, měi nián xià chū duō yǔ de jìjié —— yīnwèi nà shíhou méizi zhènghǎo chéngshú, suǒyǐ jiào méiyǔ.</span>
+            <button class="copy-btn" onclick="copyText(this, '「méiyǔ」, měi nián xià chū duō yǔ de jìjié —— yīnwèi nà shíhou méizi zhènghǎo chéngshú, suǒyǐ jiào méiyǔ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「梅雨」 is the rainy season in early summer — called plum rain because that&#x27;s when plums ripen.</span>
+            <button class="copy-btn" onclick="copyText(this, '「梅雨」 is the rainy season in early summer — called plum rain because that&#x27;s when plums ripen.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">在这个成语里，「青梅」是还没有熟透的梅子——象征着孩子天真无邪的童年时光。</span>
+            <button class="copy-btn" onclick="copyText(this, '在这个成语里，「青梅」是还没有熟透的梅子——象征着孩子天真无邪的童年时光。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zài zhège chéngyǔ lǐ, 「qīngméi」 shì hái méi yǒu shú tòu de méizi —— xiàngzhēng zhe háizi tiānzhēn wúxié de tóngnián shíguāng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zài zhège chéngyǔ lǐ, 「qīngméi」 shì hái méi yǒu shú tòu de méizi —— xiàngzhēng zhe háizi tiānzhēn wúxié de tóngnián shíguāng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In this idiom, 「青梅」 — green unripe plums — symbolize the innocent, carefree childhood of a little girl.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In this idiom, 「青梅」 — green unripe plums — symbolize the innocent, carefree childhood of a little girl.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【竹 · zhú】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「竹」，是竹子，中国最常见的植物之一。</span>
+            <button class="copy-btn" onclick="copyText(this, '「竹」，是竹子，中国最常见的植物之一。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「zhú」, shì zhúzi, zhōngguó zuì chángjiàn de zhíwù zhī yī.</span>
+            <button class="copy-btn" onclick="copyText(this, '「zhú」, shì zhúzi, zhōngguó zuì chángjiàn de zhíwù zhī yī.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「竹」 is bamboo — one of the most common plants in China.</span>
+            <button class="copy-btn" onclick="copyText(this, '「竹」 is bamboo — one of the most common plants in China.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「竹林」，竹子组成的树林，安静又清幽。</span>
+            <button class="copy-btn" onclick="copyText(this, '「竹林」，竹子组成的树林，安静又清幽。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「zhúlín」, zhúzi zǔchéng de shùlín, ānjìng yòu qīngyōu.</span>
+            <button class="copy-btn" onclick="copyText(this, '「zhúlín」, zhúzi zǔchéng de shùlín, ānjìng yòu qīngyōu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「竹林」 is a bamboo grove — quiet and serene.</span>
+            <button class="copy-btn" onclick="copyText(this, '「竹林」 is a bamboo grove — quiet and serene.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「竹马」，就是用竹竿做成的玩具马——孩子把竹竿夹在腿之间，像骑马一样跑来跑去。</span>
+            <button class="copy-btn" onclick="copyText(this, '「竹马」，就是用竹竿做成的玩具马——孩子把竹竿夹在腿之间，像骑马一样跑来跑去。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「zhúmǎ」, jiù shì yòng zhúgān zuòchéng de wánjù mǎ —— háizi bǎ zhúgān jiā zài tuǐ zhī jiān, xiàng qí mǎ yīyàng pǎo lái pǎo qù.</span>
+            <button class="copy-btn" onclick="copyText(this, '「zhúmǎ」, jiù shì yòng zhúgān zuòchéng de wánjù mǎ —— háizi bǎ zhúgān jiā zài tuǐ zhī jiān, xiàng qí mǎ yīyàng pǎo lái pǎo qù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「竹马」 is a toy horse made from a bamboo pole — children would tuck it between their legs and run around as if riding a real horse.</span>
+            <button class="copy-btn" onclick="copyText(this, '「竹马」 is a toy horse made from a bamboo pole — children would tuck it between their legs and run around as if riding a real horse.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【马 · mǎ】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「马」，就是马，古代最重要的交通工具。</span>
+            <button class="copy-btn" onclick="copyText(this, '「马」，就是马，古代最重要的交通工具。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「mǎ」, jiù shì mǎ, gǔdài zuì zhòngyào de jiāotōng gōngjù.</span>
+            <button class="copy-btn" onclick="copyText(this, '「mǎ」, jiù shì mǎ, gǔdài zuì zhòngyào de jiāotōng gōngjù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「马」 is a horse — the most important means of transportation in ancient times.</span>
+            <button class="copy-btn" onclick="copyText(this, '「马」 is a horse — the most important means of transportation in ancient times.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「骑马」，就是骑着马走。</span>
+            <button class="copy-btn" onclick="copyText(this, '「骑马」，就是骑着马走。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「qí mǎ」, jiù shì qí zhe mǎ zǒu.</span>
+            <button class="copy-btn" onclick="copyText(this, '「qí mǎ」, jiù shì qí zhe mǎ zǒu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「骑马」 means to ride a horse.</span>
+            <button class="copy-btn" onclick="copyText(this, '「骑马」 means to ride a horse.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「马上」，字面意思是在马背上，引申为立刻——因为骑着马随时可以出发。</span>
+            <button class="copy-btn" onclick="copyText(this, '「马上」，字面意思是在马背上，引申为立刻——因为骑着马随时可以出发。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「mǎshàng」, zìmiàn yìsi shì zài mǎ bèi shàng, yǐnshēn wèi lìkè —— yīnwèi qí zhe mǎ suíshí kěyǐ chūfā.</span>
+            <button class="copy-btn" onclick="copyText(this, '「mǎshàng」, zìmiàn yìsi shì zài mǎ bèi shàng, yǐnshēn wèi lìkè —— yīnwèi qí zhe mǎ suíshí kěyǐ chūfā.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「马上」 literally means &#x27;on horseback,&#x27; extended to mean &#x27;immediately&#x27; — because a rider on horseback can set off at any moment.</span>
+            <button class="copy-btn" onclick="copyText(this, '「马上」 literally means &#x27;on horseback,&#x27; extended to mean &#x27;immediately&#x27; — because a rider on horseback can set off at any moment.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们先来看「青梅」和「竹马」各自的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们先来看「青梅」和「竹马」各自的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen xiān lái kàn 「qīngméi」 hé 「zhúmǎ」 gège de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen xiān lái kàn 「qīngméi」 hé 「zhúmǎ」 gège de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s look at what 「青梅」 and 「竹马」 each mean on their own.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s look at what 「青梅」 and 「竹马」 each mean on their own.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「青梅」，是女孩子玩的青色梅子；「竹马」，是男孩子骑的竹竿马。</span>
+            <button class="copy-btn" onclick="copyText(this, '「青梅」，是女孩子玩的青色梅子；「竹马」，是男孩子骑的竹竿马。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「qīngméi」, shì nǚháizi wán de qīngsè méizi; 「zhúmǎ」, shì nánháizi qí de zhúgān mǎ.</span>
+            <button class="copy-btn" onclick="copyText(this, '「qīngméi」, shì nǚháizi wán de qīngsè méizi; 「zhúmǎ」, shì nánháizi qí de zhúgān mǎ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「青梅」 is the green plum a little girl plays with; 「竹马」 is the bamboo horse a little boy rides.</span>
+            <button class="copy-btn" onclick="copyText(this, '「青梅」 is the green plum a little girl plays with; 「竹马」 is the bamboo horse a little boy rides.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">合在一起，「青梅竹马」字面上描述的是：一个小女孩摘着青梅，一个小男孩骑着竹马，在一起无忧无虑地玩耍。</span>
+            <button class="copy-btn" onclick="copyText(this, '合在一起，「青梅竹马」字面上描述的是：一个小女孩摘着青梅，一个小男孩骑着竹马，在一起无忧无虑地玩耍。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hé zài yīqǐ, 「qīng méi zhú mǎ」 zìmiàn shàng miáoshù de shì: yī gè xiǎo nǚhái zhāi zhe qīngméi, yī gè xiǎo nánhái qí zhe zhúmǎ, zài yīqǐ wúyōu wúlǜ de wánshuǎ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hé zài yīqǐ, 「qīng méi zhú mǎ」 zìmiàn shàng miáoshù de shì: yī gè xiǎo nǚhái zhāi zhe qīngméi, yī gè xiǎo nánhái qí zhe zhúmǎ, zài yīqǐ wúyōu wúlǜ de wánshuǎ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Together, 「青梅竹马」 literally pictures a little girl picking green plums while a little boy rides his bamboo horse — two children playing together without a care in the world.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Together, 「青梅竹马」 literally pictures a little girl picking green plums while a little boy rides his bamboo horse — two children playing together without a care in the world.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">引申出来，「青梅竹马」形容从小一起长大的男女，两人之间有一种特别深厚、纯粹的感情。</span>
+            <button class="copy-btn" onclick="copyText(this, '引申出来，「青梅竹马」形容从小一起长大的男女，两人之间有一种特别深厚、纯粹的感情。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǐnshēn chūlái, 「qīng méi zhú mǎ」 xíngróng cóng xiǎo yīqǐ zhǎngdà de nánnǚ, liǎng rén zhī jiān yǒu yī zhǒng tèbié shēnhòu、chúncuì de gǎnqíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǐnshēn chūlái, 「qīng méi zhú mǎ」 xíngróng cóng xiǎo yīqǐ zhǎngdà de nánnǚ, liǎng rén zhī jiān yǒu yī zhǒng tèbié shēnhòu、chúncuì de gǎnqíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Figuratively, 「青梅竹马」 describes a boy and girl who grew up together, sharing a bond that is especially deep and pure.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Figuratively, 「青梅竹马」 describes a boy and girl who grew up together, sharing a bond that is especially deep and pure.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语通常带着温暖、怀念的感情色彩。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语通常带着温暖、怀念的感情色彩。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ tōngcháng dài zhe wēnnuǎn、huáiniàn de gǎnqíng sècǎi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ tōngcháng dài zhe wēnnuǎn、huáiniàn de gǎnqíng sècǎi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom usually carries a warm, nostalgic emotional tone.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom usually carries a warm, nostalgic emotional tone.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">和「青梅竹马」意思很近的，还有「两小无猜」——这其实来自同一首诗，意思是两个孩子之间天真无邪、没有任何猜忌。</span>
+            <button class="copy-btn" onclick="copyText(this, '和「青梅竹马」意思很近的，还有「两小无猜」——这其实来自同一首诗，意思是两个孩子之间天真无邪、没有任何猜忌。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hé 「qīng méi zhú mǎ」 yìsi hěn jìn de, hái yǒu 「liǎng xiǎo wú cāi」 —— zhè qíshí lái zì tóngyī shǒu shī, yìsi shì liǎng gè háizi zhī jiān tiānzhēn wúxié、méi yǒu rènhé cāijì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hé 「qīng méi zhú mǎ」 yìsi hěn jìn de, hái yǒu 「liǎng xiǎo wú cāi」 —— zhè qíshí lái zì tóngyī shǒu shī, yìsi shì liǎng gè háizi zhī jiān tiānzhēn wúxié、méi yǒu rènhé cāijì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">A closely related phrase is 「两小无猜」— which comes from the same poem. It means two children who are innocent and free of any suspicion toward each other.</span>
+            <button class="copy-btn" onclick="copyText(this, 'A closely related phrase is 「两小无猜」— which comes from the same poem. It means two children who are innocent and free of any suspicion toward each other.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源 — 唐·李白 · 《长干行》</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语出自唐代大诗人李白的《长干行》。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语出自唐代大诗人李白的《长干行》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ chūzì táng dài dà shīrén lǐ bái de 《cháng gān xíng》.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ chūzì táng dài dà shīrén lǐ bái de 《cháng gān xíng》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom comes from 《长干行》 by Li Bai, one of the greatest poets of the Tang Dynasty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom comes from 《长干行》 by Li Bai, one of the greatest poets of the Tang Dynasty.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">《长干行》是一首叙事诗，用一位女子的口吻，讲述她和丈夫从小相识、相爱的故事。</span>
+            <button class="copy-btn" onclick="copyText(this, '《长干行》是一首叙事诗，用一位女子的口吻，讲述她和丈夫从小相识、相爱的故事。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">《cháng gān xíng》 shì yī shǒu xùshì shī, yòng yī wèi nǚzǐ de kǒuwěn, jiǎngshù tā hé zhàngfu cóng xiǎo xiāngshí、xiāng&#x27;ài de gùshi.</span>
+            <button class="copy-btn" onclick="copyText(this, '《cháng gān xíng》 shì yī shǒu xùshì shī, yòng yī wèi nǚzǐ de kǒuwěn, jiǎngshù tā hé zhàngfu cóng xiǎo xiāngshí、xiāng&#x27;ài de gùshi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">《长干行》 is a narrative poem written in the voice of a woman, telling the story of how she and her husband knew each other and fell in love since childhood.</span>
+            <button class="copy-btn" onclick="copyText(this, '《长干行》 is a narrative poem written in the voice of a woman, telling the story of how she and her husband knew each other and fell in love since childhood.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「长干」是古代金陵的一个地名，也就是今天南京的一处街区。</span>
+            <button class="copy-btn" onclick="copyText(this, '「长干」是古代金陵的一个地名，也就是今天南京的一处街区。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「cháng gān」 shì gǔdài jīnlíng de yī gè dìmíng, yě jiù shì jīntiān nán jīng de yī chù jiēqū.</span>
+            <button class="copy-btn" onclick="copyText(this, '「cháng gān」 shì gǔdài jīnlíng de yī gè dìmíng, yě jiù shì jīntiān nán jīng de yī chù jiēqū.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「长干」 is the name of a neighborhood in ancient Jinling — what is today the city of Nanjing.</span>
+            <button class="copy-btn" onclick="copyText(this, '「长干」 is the name of a neighborhood in ancient Jinling — what is today the city of Nanjing.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">诗里有这两句：「郎骑竹马来，绕床弄青梅。」</span>
+            <button class="copy-btn" onclick="copyText(this, '诗里有这两句：「郎骑竹马来，绕床弄青梅。」')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">shī lǐ yǒu zhè liǎng jù: 「láng qí zhúmǎ lái, rào chuáng nòng qīngméi.」</span>
+            <button class="copy-btn" onclick="copyText(this, 'shī lǐ yǒu zhè liǎng jù: 「láng qí zhúmǎ lái, rào chuáng nòng qīngméi.」')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The poem contains these lines: 「The boy comes riding his bamboo horse, circling the bed playing with green plums.」</span>
+            <button class="copy-btn" onclick="copyText(this, 'The poem contains these lines: 「The boy comes riding his bamboo horse, circling the bed playing with green plums.」')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">还有：「同居长干里，两小无嫌猜。」</span>
+            <button class="copy-btn" onclick="copyText(this, '还有：「同居长干里，两小无嫌猜。」')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hái yǒu: 「tóng jū cháng gān lǐ, liǎng xiǎo wú xián cāi.」</span>
+            <button class="copy-btn" onclick="copyText(this, 'hái yǒu: 「tóng jū cháng gān lǐ, liǎng xiǎo wú xián cāi.」')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">And: 「Living together in Chang Gan Lane, two small children with no suspicion between them.」</span>
+            <button class="copy-btn" onclick="copyText(this, 'And: 「Living together in Chang Gan Lane, two small children with no suspicion between them.」')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这四句诗描述的是：一个小男孩骑着竹竿做的「马」跑来，绕着女孩的床玩耍，女孩在摘青梅——两个孩子住在同一条街，天天在一起，纯真无邪。</span>
+            <button class="copy-btn" onclick="copyText(this, '这四句诗描述的是：一个小男孩骑着竹竿做的「马」跑来，绕着女孩的床玩耍，女孩在摘青梅——两个孩子住在同一条街，天天在一起，纯真无邪。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè sì jù shī miáoshù de shì: yī gè xiǎo nánhái qí zhe zhúgān zuò de 「mǎ」 pǎo lái, rào zhe nǚhái de chuáng wánshuǎ, nǚhái zài zhāi qīngméi —— liǎng gè háizi zhù zài tóngyī tiáo jiē, tiāntiān zài yīqǐ, chúnzhēn wúxié.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè sì jù shī miáoshù de shì: yī gè xiǎo nánhái qí zhe zhúgān zuò de 「mǎ」 pǎo lái, rào zhe nǚhái de chuáng wánshuǎ, nǚhái zài zhāi qīngméi —— liǎng gè háizi zhù zài tóngyī tiáo jiē, tiāntiān zài yīqǐ, chúnzhēn wúxié.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">These lines picture a little boy galloping over on his bamboo horse, circling the girl&#x27;s bed while she plays with green plums — two children on the same lane, together every day, innocent and pure.</span>
+            <button class="copy-btn" onclick="copyText(this, 'These lines picture a little boy galloping over on his bamboo horse, circling the girl&#x27;s bed while she plays with green plums — two children on the same lane, together every day, innocent and pure.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">后来，人们就用「青梅竹马」来形容从小一起长大、感情深厚的男女。</span>
+            <button class="copy-btn" onclick="copyText(this, '后来，人们就用「青梅竹马」来形容从小一起长大、感情深厚的男女。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hòulái, rénmen jiù yòng 「qīng méi zhú mǎ」 lái xíngróng cóng xiǎo yīqǐ zhǎngdà、gǎnqíng shēnhòu de nánnǚ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hòulái, rénmen jiù yòng 「qīng méi zhú mǎ」 lái xíngróng cóng xiǎo yīqǐ zhǎngdà、gǎnqíng shēnhòu de nánnǚ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Over time, people began using 「青梅竹马」 to describe a boy and girl who grew up together with a deep, lasting bond.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Over time, people began using 「青梅竹马」 to describe a boy and girl who grew up together with a deep, lasting bond.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">出处参考：zdic.net（汉典）</span>
+            <button class="copy-btn" onclick="copyText(this, '出处参考：zdic.net（汉典）')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">chūchù cānkǎo: zdic.net (hàn diǎn)</span>
+            <button class="copy-btn" onclick="copyText(this, 'chūchù cānkǎo: zdic.net (hàn diǎn)')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Source reference: zdic.net (Chinese dictionary)</span>
+            <button class="copy-btn" onclick="copyText(this, 'Source reference: zdic.net (Chinese dictionary)')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">他们是青梅竹马，从小住在同一个小区，后来成了恋人。</span>
+            <button class="copy-btn" onclick="copyText(this, '他们是青梅竹马，从小住在同一个小区，后来成了恋人。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tāmen shì qīng méi zhú mǎ, cóng xiǎo zhù zài tóngyī gè xiǎoqū, hòulái chéng le liànrén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tāmen shì qīng méi zhú mǎ, cóng xiǎo zhù zài tóngyī gè xiǎoqū, hòulái chéng le liànrén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">They are childhood sweethearts — they grew up in the same neighborhood and eventually became a couple.</span>
+            <button class="copy-btn" onclick="copyText(this, 'They are childhood sweethearts — they grew up in the same neighborhood and eventually became a couple.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「青梅竹马」在这里，强调两个人从小就认识，感情有着很深的时间积累。</span>
+            <button class="copy-btn" onclick="copyText(this, '「青梅竹马」在这里，强调两个人从小就认识，感情有着很深的时间积累。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「qīng méi zhú mǎ」 zài zhèlǐ, qiángdiào liǎng gè rén cóng xiǎo jiù rènshi, gǎnqíng yǒuzhe hěn shēn de shíjiān jīlěi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「qīng méi zhú mǎ」 zài zhèlǐ, qiángdiào liǎng gè rén cóng xiǎo jiù rènshi, gǎnqíng yǒuzhe hěn shēn de shíjiān jīlěi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Here, 「青梅竹马」 emphasizes that the two have known each other since childhood, with a bond built over many years.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Here, 「青梅竹马」 emphasizes that the two have known each other since childhood, with a bond built over many years.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">她一直喜欢那个青梅竹马的男孩，只是从来没有说出口。</span>
+            <button class="copy-btn" onclick="copyText(this, '她一直喜欢那个青梅竹马的男孩，只是从来没有说出口。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā yīzhí xǐhuān nà gè qīng méi zhú mǎ de nánhái, zhǐshì cónglái méi yǒu shuō chū kǒu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā yīzhí xǐhuān nà gè qīng méi zhú mǎ de nánhái, zhǐshì cónglái méi yǒu shuō chū kǒu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">She has always had feelings for the boy she grew up with, but has never once said it out loud.</span>
+            <button class="copy-btn" onclick="copyText(this, 'She has always had feelings for the boy she grew up with, but has never once said it out loud.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个例子里，「青梅竹马」作为定语修饰「男孩」，意思是这个男孩是她从小认识的伙伴。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个例子里，「青梅竹马」作为定语修饰「男孩」，意思是这个男孩是她从小认识的伙伴。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège lìzi lǐ, 「qīng méi zhú mǎ」 zuòwéi dìngyǔ xiūshì 「nánhái」, yìsi shì zhège nánhái shì tā cóng xiǎo rènshi de huǒbàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège lìzi lǐ, 「qīng méi zhú mǎ」 zuòwéi dìngyǔ xiūshì 「nánhái」, yìsi shì zhège nánhái shì tā cóng xiǎo rènshi de huǒbàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In this example, 「青梅竹马」 acts as a modifier for 「男孩」, meaning this boy is a companion she has known since childhood.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In this example, 「青梅竹马」 acts as a modifier for 「男孩」, meaning this boy is a companion she has known since childhood.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好，现在大家再来回想一下刚才的影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '好，现在大家再来回想一下刚才的影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo, xiànzài dàjiā zài lái huíxiǎng yīxià gāngcái de yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo, xiànzài dàjiā zài lái huíxiǎng yīxià gāngcái de yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now, let&#x27;s think back to the drama clip we watched earlier.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now, let&#x27;s think back to the drama clip we watched earlier.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">片段里的两个人，是不是有一种从小就认识的那种默契和温暖？</span>
+            <button class="copy-btn" onclick="copyText(this, '片段里的两个人，是不是有一种从小就认识的那种默契和温暖？')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">piànduàn lǐ de liǎng gè rén, shì bu shì yǒu yī zhǒng cóng xiǎo jiù rènshi de nà zhǒng mòqì hé wēnnuǎn？</span>
+            <button class="copy-btn" onclick="copyText(this, 'piànduàn lǐ de liǎng gè rén, shì bu shì yǒu yī zhǒng cóng xiǎo jiù rènshi de nà zhǒng mòqì hé wēnnuǎn？')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Didn&#x27;t the two people in the clip have that unspoken understanding and warmth that only comes from knowing each other since childhood?</span>
+            <button class="copy-btn" onclick="copyText(this, 'Didn&#x27;t the two people in the clip have that unspoken understanding and warmth that only comes from knowing each other since childhood?')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这就是「青梅竹马」——不需要解释，不需要磨合，两个人早就懂得彼此。</span>
+            <button class="copy-btn" onclick="copyText(this, '这就是「青梅竹马」——不需要解释，不需要磨合，两个人早就懂得彼此。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè jiù shì 「qīng méi zhú mǎ」 —— bù xūyào jiěshì, bù xūyào móhé, liǎng gè rén zǎo jiù dǒngdé bǐcǐ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè jiù shì 「qīng méi zhú mǎ」 —— bù xūyào jiěshì, bù xūyào móhé, liǎng gè rén zǎo jiù dǒngdé bǐcǐ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This is 「青梅竹马」 — no explanations needed, no adjustment period, the two already understand each other completely.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This is 「青梅竹马」 — no explanations needed, no adjustment period, the two already understand each other completely.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 他们俩从小住在同一条街，是真正的________。</p><p class="quiz-hint">They&#x27;ve lived on the same street since they were little — they&#x27;re true ________.</p><p class="quiz-a">✅ 他们俩从小住在同一条街，是真正的青梅竹马。</p><p class="quiz-hint">They&#x27;ve lived on the same street since they were little — they&#x27;re true childhood sweethearts.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 她心里一直有那个________的男孩，只是不知道怎么开口。</p><p class="quiz-hint">She&#x27;s always had feelings for that ________ boy, but doesn&#x27;t know how to say it.</p><p class="quiz-a">✅ 她心里一直有那个青梅竹马的男孩，只是不知道怎么开口。</p><p class="quiz-hint">She&#x27;s always had feelings for that childhood sweetheart, but doesn&#x27;t know how to say it.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q3.</span> 很多人都梦想能和________的人，走到最后。</p><p class="quiz-hint">Many people dream of ending up with someone who was their ________ from childhood.</p><p class="quiz-a">✅ 很多人都梦想能和青梅竹马的人，走到最后。</p><p class="quiz-hint">Many people dream of ending up with their childhood sweetheart.</p></div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">「青梅竹马」通常用来描述男女之间从小就有的感情，带有浪漫或怀念的意味。</span>
+            <button class="copy-btn" onclick="copyText(this, '「青梅竹马」通常用来描述男女之间从小就有的感情，带有浪漫或怀念的意味。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">「qīng méi zhú mǎ」 tōngcháng yòng lái miáoshù nánnǚ zhī jiān cóng xiǎo jiù yǒu de gǎnqíng, dài yǒu làngmàn huò huáiniàn de yìwèi.</span>
+            <button class="copy-btn" onclick="copyText(this, '「qīng méi zhú mǎ」 tōngcháng yòng lái miáoshù nánnǚ zhī jiān cóng xiǎo jiù yǒu de gǎnqíng, dài yǒu làngmàn huò huáiniàn de yìwèi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">「青梅竹马」 is typically used to describe a romantic or nostalgic bond between a man and woman that dates back to childhood.</span>
+            <button class="copy-btn" onclick="copyText(this, '「青梅竹马」 is typically used to describe a romantic or nostalgic bond between a man and woman that dates back to childhood.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">它不适合用来形容成年后才认识的朋友，也不太用于同性之间的友谊。</span>
+            <button class="copy-btn" onclick="copyText(this, '它不适合用来形容成年后才认识的朋友，也不太用于同性之间的友谊。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā bù shìhé yòng lái xíngróng chéngnián hòu cái rènshi de péngyou, yě bù tài yòng yú tóngxìng zhī jiān de yǒuyì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā bù shìhé yòng lái xíngróng chéngnián hòu cái rènshi de péngyou, yě bù tài yòng yú tóngxìng zhī jiān de yǒuyì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">It is not suitable for describing friends who only met in adulthood, nor is it typically used for same-gender friendships.</span>
+            <button class="copy-btn" onclick="copyText(this, 'It is not suitable for describing friends who only met in adulthood, nor is it typically used for same-gender friendships.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">另外，「青梅竹马」一般用于回顾，语气里带着温柔的怀念，不太用来描述正在发生的事情。</span>
+            <button class="copy-btn" onclick="copyText(this, '另外，「青梅竹马」一般用于回顾，语气里带着温柔的怀念，不太用来描述正在发生的事情。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">lìngwài, 「qīng méi zhú mǎ」 yībān yòng yú huígù, yǔqì lǐ dài zhe wēnróu de huáiniàn, bù tài yòng lái miáoshù zhèngzài fāshēng de shìqíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'lìngwài, 「qīng méi zhú mǎ」 yībān yòng yú huígù, yǔqì lǐ dài zhe wēnróu de huáiniàn, bù tài yòng lái miáoshù zhèngzài fāshēng de shìqíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Also, 「青梅竹马」 is generally used in retrospect, with a tone of tender nostalgia — it&#x27;s less commonly used to describe something currently unfolding.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Also, 「青梅竹马」 is generally used in retrospect, with a tone of tender nostalgia — it&#x27;s less commonly used to describe something currently unfolding.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次，如果有人问你「你们是怎么认识的」，而你们真的是从小就认识的——</span>
+            <button class="copy-btn" onclick="copyText(this, '下次，如果有人问你「你们是怎么认识的」，而你们真的是从小就认识的——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xià cì, rúguǒ yǒu rén wèn nǐ 「nǐmen shì zěnme rènshi de」, ér nǐmen zhēn de shì cóng xiǎo jiù rènshi de ——</span>
+            <button class="copy-btn" onclick="copyText(this, 'xià cì, rúguǒ yǒu rén wèn nǐ 「nǐmen shì zěnme rènshi de」, ér nǐmen zhēn de shì cóng xiǎo jiù rènshi de ——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time someone asks you 「How did you two meet?」 and the answer is that you&#x27;ve known each other since you were children —</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time someone asks you 「How did you two meet?」 and the answer is that you&#x27;ve known each other since you were children —')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">你就可以微笑着说：「我们啊，是青梅竹马。」</span>
+            <button class="copy-btn" onclick="copyText(this, '你就可以微笑着说：「我们啊，是青梅竹马。」')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nǐ jiù kěyǐ wēixiào zhe shuō: 「wǒmen a, shì qīng méi zhú mǎ.」</span>
+            <button class="copy-btn" onclick="copyText(this, 'nǐ jiù kěyǐ wēixiào zhe shuō: 「wǒmen a, shì qīng méi zhú mǎ.」')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">You can smile and say: 「Oh, we&#x27;re childhood sweethearts — 青梅竹马.」</span>
+            <button class="copy-btn" onclick="copyText(this, 'You can smile and say: 「Oh, we&#x27;re childhood sweethearts — 青梅竹马.」')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
