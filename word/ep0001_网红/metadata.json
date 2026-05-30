@@ -1,0 +1,151 @@
+{
+  "episode": 1,
+  "id": "ep0001_网红",
+  "word": "网红",
+  "pinyin": "wǎng hóng",
+  "desc_en": "internet celebrity",
+  "total_cards": 18,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "网红是什么？",
+      "py": "Wǎng hóng shì shénme?",
+      "en": "What is a 网红?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "简单来说，就是\"靠脸、靠才艺、靠搞笑吃饭的人\"。",
+      "py": "Jiǎndān lái shuō, jiùshì \"kào liǎn, kào cáiyì, kào gǎoxiào chīfàn de rén\".",
+      "en": "Simply put, it's someone who makes a living through looks, talent, or humor."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "不过现在连猫和狗都能当网红，所以……你还有什么借口？",
+      "py": "Búguò xiànzài lián māo hé gǒu dōu néng dāng wǎng hóng, suǒyǐ…… nǐ hái yǒu shénme jièkǒu?",
+      "en": "But these days even cats and dogs can become 网红, so… what's your excuse?"
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "小李就是这样想的。",
+      "py": "Xiǎo Lǐ jiùshì zhèyàng xiǎng de.",
+      "en": "Xiao Li thought exactly this way."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "有一天他突然宣布：\"我要当网红！\"",
+      "py": "Yǒu yītiān tā tūrán xuānbù: \"Wǒ yào dāng wǎng hóng!\"",
+      "en": "One day he suddenly announced: \"I want to be a 网红!\""
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "朋友问他打算做什么内容，他想了三秒说：\"还没想好，但我已经买了三个补光灯。\"",
+      "py": "Péngyou wèn tā dǎsuàn zuò shénme nèiróng, tā xiǎngle sān miǎo shuō: \"Hái méi xiǎng hǎo, dàn wǒ yǐjīng mǎile sān gè bǔguāng dēng.\"",
+      "en": "His friend asked what content he planned. He thought 3 seconds: \"Haven't decided, but I already bought three ring lights.\""
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "结果……他的猫因为坐在补光灯前睡觉，意外走红，现在有五十万粉丝。",
+      "py": "Jiéguǒ…… tā de māo yīnwèi zuò zài bǔguāng dēng qián shuìjiào, yìwài zǒu hóng, xiànzài yǒu wǔshí wàn fěnsī.",
+      "en": "The result: his cat went viral from sleeping in front of the ring lights, now with 500K followers."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "小李每天帮猫拍视频、剪视频，成了全职猫奴。",
+      "py": "Xiǎo Lǐ měitiān bāng māo pāi shìpín, jiǎn shìpín, chéngle quánzhí māonú.",
+      "en": "Xiao Li films and edits for the cat every day — he became a full-time cat servant."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "所以说，成为网红的秘诀到底是颜值还是努力？都不是——是你家有没有一只有缘分的猫。",
+      "py": "Suǒyǐ shuō, chénwéi wǎng hóng de mìjué dàodǐ shì yánzhí háishi nǔlì? Dōu bùshì—— shì nǐ jiā yǒu méiyǒu yī zhī yǒu yuánfèn de māo.",
+      "en": "So, the real secret to becoming a 网红 — looks or hard work? Neither. It's whether your cat has destiny."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_full.png",
+      "type": "review_full",
+      "repeat": 1
+    }
+  ]
+}

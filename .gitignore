@@ -1,0 +1,6 @@
+.omc/
+__pycache__/
+*.pyc
+test
+font_samples.png
+font_compare/
