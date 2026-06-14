@@ -32,6 +32,9 @@ DARK    = (42,  26,  10)   # Dark ink (main text)
 MID     = (98,  68,  38)   # Warm brown (pinyin)
 LIGHT   = (142, 105,  68)  # Muted brown (english / label)
 ACCENT  = (190,  80,  30)  # Terracotta (accent)
+RED     = (210,  35,  35)  # Pure red (keyword highlight)
+
+BG_IMAGE = "/mnt/c/Users/USER/Desktop/sucai/ce9e0254-6850-41b2-9946-163c8f9ee9ae.png"
 
 # ── Font helpers ───────────────────────────────────────────────────────────
 _cn_cache: dict[tuple, ImageFont.FreeTypeFont] = {}
@@ -131,27 +134,54 @@ def parse_v(text: str, cn_size: int, v_size: int) -> list[Segment]:
     v_shift = (th(cn_size) - th(v_size)) // 2
     stroke = max(1, cn_size // 60)
     segs: list[Segment] = []
-    parts = text.split("∨")
-    for i, part in enumerate(parts):
-        if part:
-            segs.append((part, cf, DARK, 0, stroke))
-        if i < len(parts) - 1:
-            segs.append(("v", vf, ACCENT, v_shift, 0))
+    # Split by ★ first (odd-index parts are red-highlighted)
+    star_parts = text.split("★")
+    for si, star_part in enumerate(star_parts):
+        is_red = (si % 2 == 1)
+        if is_red:
+            if star_part:
+                segs.append((star_part, cf, RED, 0, stroke))
+        else:
+            # Process ∨ markers within non-highlighted parts
+            parts = star_part.split("∨")
+            for i, part in enumerate(parts):
+                if part:
+                    segs.append((part, cf, DARK, 0, stroke))
+                if i < len(parts) - 1:
+                    segs.append(("v", vf, ACCENT, v_shift, 0))
     return segs
 
 def wrap_segs(segs: list[Segment], max_w: int) -> list[list[Segment]]:
     lines: list[list[Segment]] = []
     line: list[Segment] = []
     cur_w = 0
+
     for seg in segs:
-        seg_w = tw(seg[0], seg[1])
-        if cur_w + seg_w > max_w and line:
-            lines.append(line)
-            line = [seg]
-            cur_w = seg_w
-        else:
+        text, f, color, y_shift, stroke = seg
+        seg_w = tw(text, f)
+
+        if cur_w + seg_w <= max_w:
             line.append(seg)
             cur_w += seg_w
+            continue
+
+        # Segment doesn't fit — split character by character
+        buf = ""
+        for ch in text:
+            new_w = tw(buf + ch, f)
+            if cur_w + new_w <= max_w:
+                buf += ch
+            else:
+                if buf:
+                    line.append((buf, f, color, y_shift, stroke))
+                lines.append(line)
+                line = []
+                cur_w = 0
+                buf = ch
+        if buf:
+            line.append((buf, f, color, y_shift, stroke))
+            cur_w += tw(buf, f)
+
     if line:
         lines.append(line)
     return lines
@@ -206,11 +236,15 @@ def wrap_plain(text: str, size: int, max_w: int) -> list[str]:
 # ── Base card ──────────────────────────────────────────────────────────────
 
 def _make_walnut() -> Image.Image:
-    rng = np.random.default_rng(42)
-    noise = rng.normal(0, 5, (H, W, 3))
-    base = np.array(BG_BASE, dtype=np.float32)
-    arr = np.clip(base + noise, 0, 255).astype(np.uint8)
-    return Image.fromarray(arr).filter(ImageFilter.GaussianBlur(radius=0.5))
+    try:
+        img = Image.open(BG_IMAGE).convert("RGB").resize((W, H), Image.LANCZOS)
+        return img
+    except Exception:
+        rng = np.random.default_rng(42)
+        noise = rng.normal(0, 5, (H, W, 3))
+        base_arr = np.array(BG_BASE, dtype=np.float32)
+        arr = np.clip(base_arr + noise, 0, 255).astype(np.uint8)
+        return Image.fromarray(arr).filter(ImageFilter.GaussianBlur(radius=0.5))
 
 _BG: Image.Image | None = None
 
@@ -317,10 +351,10 @@ def make_review_sep() -> Image.Image:
     cy = H // 2 - th(140) - 20
     mf = fnt_cn(140, bold=True)
     mw = tw(main, mf)
-    draw.text(((W - mw) // 2, cy), main, font=mf, fill=ACCENT)
+    draw.text(((W - mw) // 2, cy), main, font=mf, fill=DARK)
 
     enw = mixed_width(en_text, 48, bold=True)
-    draw_mixed(draw, en_text, (W - enw) // 2, cy + th(140) + 28, 48, MID, bold=True)
+    draw_mixed(draw, en_text, (W - enw) // 2, cy + th(140) + 28, 48, DARK, bold=True)
 
     draw.line([(W // 2 - 80, cy - 28), (W // 2 + 80, cy - 28)], fill=ACCENT, width=3)
 
@@ -341,11 +375,23 @@ def _fit_review_sizes(all_cn: list[str], usable: int, avail_h: int):
     return s(BASE_CN), s(BASE_V), 8
 
 
-def make_review(paragraphs_cn: list[list[str]]) -> Image.Image:
+def make_review(paragraphs_cn: list[list[str]], label: str = "") -> Image.Image:
     """Full review card: all sentences in Chinese only, grouped by paragraph."""
     img, draw = base()
 
-    TOP = 100
+    LABEL_H = 0
+    TOP = 72
+    if label:
+        lf = fnt_cn(64, bold=True)
+        lw = tw(label, lf)
+        lx = (W - lw) // 2
+        draw.text((lx, TOP), label, font=lf, fill=DARK)
+        LABEL_H = th(64) + 18
+        line_y = TOP + LABEL_H - 4
+        draw.line([(lx, line_y), (lx + lw, line_y)], fill=ACCENT, width=3)
+        LABEL_H += 20
+
+    TOP = TOP + LABEL_H
     usable = W - 2 * MARGIN
     avail_h = H - TOP - MARGIN
 
@@ -361,7 +407,7 @@ def make_review(paragraphs_cn: list[list[str]]) -> Image.Image:
             y = draw_v_text(draw, cn, MARGIN, y, cn_size=cn_s, v_size=v_s, max_w=usable)
             y += gap
         if p_i < len(paragraphs_cn) - 1:
-            y += gap  # extra space between paragraphs
+            y += gap
 
     return img
 
@@ -432,9 +478,15 @@ def make_paragraph(sentences_cn: list[str], sentences_py: list[str], label: str)
 EPISODES = [
     {
         "word":    "网红",
+        "slug":    "wang-hong",
         "pinyin":  "wǎng hóng",
         "desc_en": "internet celebrity",
         "emoji":   "📱",
+        "para_labels": [
+            "What is a 网红?",
+            "Xiao Li makes his move",
+            "The cat takes over",
+        ],
         "script": {
             "opening":
                 "大家好！今天我们来学一个超级流行的词——网红！\n"
@@ -511,7 +563,7 @@ EPISODES = [
         "paragraphs": [
             [
                 {
-                    "cn": "网红∨是什么？",
+                    "cn": "★网红★∨是什么？",
                     "py": "Wǎng hóng shì shénme?",
                     "en": "What is a 网红?",
                 },
@@ -521,7 +573,7 @@ EPISODES = [
                     "en": "Simply put, it's someone who makes a living through looks, talent, or humor.",
                 },
                 {
-                    "cn": "不过现在∨连猫和狗∨都能当网红，所以……你还有什么借口？",
+                    "cn": "不过现在∨连猫和狗∨都能当★网红★，所以……你还有什么借口？",
                     "py": "Búguò xiànzài lián māo hé gǒu dōu néng dāng wǎng hóng, suǒyǐ…… nǐ hái yǒu shénme jièkǒu?",
                     "en": "But these days even cats and dogs can become 网红, so… what's your excuse?",
                 },
@@ -533,7 +585,7 @@ EPISODES = [
                     "en": "Xiao Li thought exactly this way.",
                 },
                 {
-                    "cn": '有一天∨他突然宣布："我要当网红！"',
+                    "cn": '有一天∨他突然宣布："我要当★网红★！"',
                     "py": 'Yǒu yītiān tā tūrán xuānbù: "Wǒ yào dāng wǎng hóng!"',
                     "en": 'One day he suddenly announced: "I want to be a 网红!"',
                 },
@@ -555,7 +607,7 @@ EPISODES = [
                     "en": "Xiao Li films and edits for the cat every day — he became a full-time cat servant.",
                 },
                 {
-                    "cn": "所以说，∨成为网红的秘诀∨到底是颜值还是努力？都不是——是你家∨有没有一只有缘分的猫。",
+                    "cn": "所以说，∨成为★网红★的秘诀∨到底是颜值还是努力？都不是——是你家∨有没有一只有缘分的猫。",
                     "py": "Suǒyǐ shuō, chénwéi wǎng hóng de mìjué dàodǐ shì yánzhí háishi nǔlì? Dōu bùshì—— shì nǐ jiā yǒu méiyǒu yī zhī yǒu yuánfèn de māo.",
                     "en": "So, the real secret to becoming a 网红 — looks or hard work? Neither. It's whether your cat has destiny.",
                 },
@@ -570,7 +622,7 @@ EPISODES = [
 _CN_NUMS = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"]
 
 def _cn_clean(text: str) -> str:
-    return text.replace("∨", "")
+    return text.replace("∨", "").replace("★", "")
 
 def generate_script(ep_num: int, ep: dict) -> str:
     word, pinyin, desc_en = ep["word"], ep["pinyin"], ep["desc_en"]
@@ -736,11 +788,103 @@ def generate_html(ep_num: int, ep: dict) -> str:
 </html>"""
 
 
+def generate_script_html(ep_num: int, ep: dict) -> str:
+    word, pinyin, desc_en = ep["word"], ep["pinyin"], ep["desc_en"]
+    sc = ep.get("script", {})
+
+    def block(badge: str, badge_cls: str, card_ref: str, narration: str, note: str = "") -> str:
+        note_html = f'<div class="note">{note.replace(chr(10), "<br>")}</div>' if note else ""
+        nar_html = narration.replace("\n", "<br>")
+        return f"""<div class="block">
+  <div class="meta"><span class="badge {badge_cls}">{badge}</span><span class="card-ref">📌 {card_ref}</span></div>
+  <div class="narration">{nar_html}{note_html}</div>
+  <button class="copy-btn" onclick="copyText(this)">복사</button>
+</div>"""
+
+    blocks = [block("Opening", "b-open", "00_title.png",
+        sc.get("opening", f"大家好！今天我们来学一个词——{word}！"))]
+
+    n = 1
+    for p_i, para in enumerate(ep["paragraphs"], 1):
+        cn_num = _CN_NUMS[p_i - 1]
+        blocks.append(f'<h2 class="sec">第{cn_num}段</h2>')
+        blocks.append(block(f"第{cn_num}段", "b-sec", f"{n:02d}_p{p_i}_sep.png",
+            sc.get(f"p{p_i}_intro", f"好，我们来看第{cn_num}段。")))
+        n += 1
+        for s_i, s in enumerate(para, 1):
+            clean = _cn_clean(s["cn"])
+            note = sc.get(f"p{p_i}_s{s_i}_note", "")
+            blocks.append(block("第一遍", "b-first", f"{n:02d}_p{p_i}_s{s_i}.png",
+                clean, note))
+            blocks.append(block("第二遍", "b-second", f"{n:02d}_p{p_i}_s{s_i}.png",
+                f"好，我们再来一遍——{clean}"))
+            n += 1
+        blocks.append(block("全文", "b-full", f"{n:02d}_p{p_i}_full.png",
+            sc.get(f"p{p_i}_wrap", f"好，我们把第{cn_num}段完整地读一遍。")))
+        n += 1
+
+    blocks.append('<h2 class="sec">复习</h2>')
+    blocks.append(block("复习", "b-review", f"{n:02d}_review_sep.png",
+        "好，现在我们来复习一下今天学的内容。"))
+    n += 1
+    for p_i in range(1, len(ep["paragraphs"]) + 1):
+        blocks.append(block(f"复习 {p_i}", "b-review", f"{n:02d}_review_p{p_i}.png",
+            sc.get("closing", f"今天我们学了{word}。大家都记住了吗？我们下次见！再见！") if p_i == len(ep["paragraphs"]) else ""))
+        n += 1
+
+    body = "\n".join(blocks)
+    return f"""<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP{ep_num:04d} {word} Script</title>
+<style>
+:root{{--bg:#f0e4cc;--bg2:#e8d8b8;--ink:#2a1a0a;--mid:#6e4a26;--acc:#be501e}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{background:var(--bg);color:var(--ink);font-family:'Noto Serif SC',serif;max-width:860px;margin:0 auto;padding:24px 16px 64px}}
+header{{text-align:center;padding:36px 0 28px;border-bottom:2px solid var(--acc);margin-bottom:28px}}
+header .word{{font-size:3rem;font-weight:700;color:var(--acc)}}
+header .pinyin{{font-size:1.3rem;color:var(--mid);margin-top:6px}}
+header .desc{{font-size:.95rem;color:var(--mid);opacity:.8;margin-top:4px}}
+.sec{{font-size:1.5rem;color:var(--acc);margin:36px 0 14px;padding-bottom:4px;border-bottom:1px solid #c8a878}}
+.block{{background:var(--bg2);border-radius:10px;padding:14px 16px;margin-bottom:12px;position:relative}}
+.meta{{display:flex;align-items:center;gap:10px;margin-bottom:8px}}
+.badge{{font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:20px;color:#fff}}
+.b-open{{background:#5a7a3a}}.b-sec{{background:#4a6090}}
+.b-first{{background:var(--acc)}}.b-second{{background:#7a5030}}
+.b-full{{background:#4a6090}}.b-review{{background:#3a6060}}
+.card-ref{{font-size:.8rem;color:var(--mid);opacity:.7}}
+.narration{{font-size:1.05rem;line-height:1.85;white-space:pre-wrap}}
+.note{{margin-top:10px;padding:8px 12px;background:rgba(0,0,0,.06);border-left:3px solid var(--acc);border-radius:4px;font-size:.9rem;color:var(--mid);white-space:pre-wrap}}
+.copy-btn{{position:absolute;top:10px;right:12px;font-size:.75rem;padding:3px 10px;border:1px solid var(--acc);border-radius:6px;background:transparent;color:var(--acc);cursor:pointer}}
+.copy-btn:active{{background:var(--acc);color:#fff}}
+</style>
+</head>
+<body>
+<header>
+  <div class="word">{word}</div>
+  <div class="pinyin">{pinyin}</div>
+  <div class="desc">{desc_en}</div>
+</header>
+{body}
+<script>
+function copyText(btn){{
+  const block=btn.closest('.block');
+  const text=[...block.querySelectorAll('.narration,.note')].map(e=>e.innerText).join('\\n');
+  navigator.clipboard.writeText(text).then(()=>{{btn.textContent='✓';setTimeout(()=>btn.textContent='복사',1500)}});
+}}
+</script>
+</body>
+</html>"""
+
+
 # ── Main ───────────────────────────────────────────────────────────────────
 
 def generate_episode(ep_num: int, ep: dict) -> None:
     word = ep["word"]
-    ep_id  = f"ep{ep_num:04d}_{word}"
+    slug = ep.get("slug", word)
+    ep_id  = f"ep{ep_num:04d}_{slug}"
     ep_dir = os.path.join(OUT_DIR, ep_id)
     cards_dir = os.path.join(ep_dir, "cards")
     os.makedirs(cards_dir, exist_ok=True)
@@ -774,9 +918,11 @@ def generate_episode(ep_num: int, ep: dict) -> None:
     add(f"{n:02d}_review_sep", make_review_sep(),
         {"type": "review_sep", "repeat": 1})
     n += 1
-    add(f"{n:02d}_review_full",
-        make_review([[s["cn"] for s in para] for para in ep["paragraphs"]]),
-        {"type": "review_full", "repeat": 1})
+    for p_i, para in enumerate(ep["paragraphs"], 1):
+        add(f"{n:02d}_review_p{p_i}",
+            make_review([[s["cn"] for s in para]]),
+            {"type": "review_full", "para": p_i, "repeat": 1})
+        n += 1
 
     for name, img in cards:
         path = os.path.join(cards_dir, f"{name}.png")
@@ -802,7 +948,12 @@ def generate_episode(ep_num: int, ep: dict) -> None:
     html_path = os.path.join(ep_dir, "index.html")
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(generate_html(ep_num, ep))
-    print(f"  → {html_path}\n")
+    print(f"  → {html_path}")
+
+    script_html_path = os.path.join(ep_dir, "script.html")
+    with open(script_html_path, "w", encoding="utf-8") as f:
+        f.write(generate_script_html(ep_num, ep))
+    print(f"  → {script_html_path}\n")
 
 
 def main() -> None:

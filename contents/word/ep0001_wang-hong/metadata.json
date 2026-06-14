@@ -1,10 +1,10 @@
 {
   "episode": 1,
-  "id": "ep0001_网红",
+  "id": "ep0001_wang-hong",
   "word": "网红",
   "pinyin": "wǎng hóng",
   "desc_en": "internet celebrity",
-  "total_cards": 18,
+  "total_cards": 20,
   "sequence": [
     {
       "file": "cards/00_title.png",
@@ -143,8 +143,21 @@
       "repeat": 1
     },
     {
-      "file": "cards/17_review_full.png",
+      "file": "cards/17_review_p1.png",
       "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
       "repeat": 1
     }
   ]
