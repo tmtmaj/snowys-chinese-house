@@ -20,178 +20,70 @@ header .desc{font-size:.95rem;color:var(--mid);opacity:.8;margin-top:4px}
 .b-first{background:var(--acc)}.b-second{background:#7a5030}
 .b-full{background:#4a6090}.b-review{background:#3a6060}
 .card-ref{font-size:.8rem;color:var(--mid);opacity:.7}
-.narration{font-size:1.05rem;line-height:1.85;white-space:pre-wrap}
-.note{margin-top:10px;padding:8px 12px;background:rgba(0,0,0,.06);border-left:3px solid var(--acc);border-radius:4px;font-size:.9rem;color:var(--mid);white-space:pre-wrap}
+.narration{font-size:1.05rem;line-height:1.85}
+.note{margin-top:10px;padding:8px 12px;background:rgba(0,0,0,.06);border-left:3px solid var(--acc);border-radius:4px;font-size:.9rem;color:var(--mid)}
 .copy-btn{position:absolute;top:10px;right:12px;font-size:.75rem;padding:3px 10px;border:1px solid var(--acc);border-radius:6px;background:transparent;color:var(--acc);cursor:pointer}
 .copy-btn:active{background:var(--acc);color:#fff}
+.tabs{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:6px;background:rgba(240,228,204,.92);padding:6px;border-radius:24px;box-shadow:0 2px 10px rgba(0,0,0,.15);backdrop-filter:blur(4px)}
+.tab{font-family:inherit;font-size:.85rem;font-weight:700;cursor:pointer;border:1px solid var(--acc);background:transparent;color:var(--acc);padding:6px 14px;border-radius:20px;transition:all .15s}
+.tab.active{background:var(--acc);color:#fff}
+@media (max-width:600px){.tabs{top:8px;right:8px;padding:4px;gap:4px}.tab{font-size:.75rem;padding:5px 10px}}
 </style>
 </head>
 <body>
+<nav class="tabs" id="tabs"></nav>
 <header>
   <div class="word">网红</div>
   <div class="pinyin">wǎng hóng</div>
   <div class="desc">internet celebrity</div>
 </header>
-<div class="block">
-  <div class="meta"><span class="badge b-open">Opening</span><span class="card-ref">📌 00_title.png</span></div>
-  <div class="narration">大家好！今天我们来学一个超级流行的词——网红！<br>网，就是网络、互联网；红，就是出名、有名气。<br>合在一起，网红，就是在网上很有名的人，也就是网络红人！<br>现在中国到处都是网红，连猫和狗都能当网红……<br>到底是怎么回事？我们一起来看看吧！</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-open">Photo</span><span class="card-ref">📌 00b_collage.png</span></div>
-  <div class="narration">大家看看这些照片——<br>有人在直播，有人在拍视频，有人在网上卖东西……<br>这些人呢，都有一个共同点——他们都是网红！<br>各种各样的网红，对吧？接下来我们来看看，这些网红都在做什么。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<h2 class="sec">第一段</h2>
-<div class="block">
-  <div class="meta"><span class="badge b-sec">第一段</span><span class="card-ref">📌 01_p1_sep.png</span></div>
-  <div class="narration">好，我们先来看第一段，了解一下网红到底是什么。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 02_p1_s1.png</span></div>
-  <div class="narration">网红是什么？<div class="note">注意这个句型——是什么？<br>"A是什么" 就是问 "A是什么意思" 或者 "A是怎样的东西"。<br>这个句型很常用，大家一定要记住！</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 02_p1_s1.png</span></div>
-  <div class="narration">好，我们再来一遍——网红是什么？</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 03_p1_s2.png</span></div>
-  <div class="narration">简单来说，就是"靠脸、靠才艺、靠搞笑吃饭的人"。<div class="note">这里有一个很好用的结构——靠X吃饭。<br>靠，就是依靠；吃饭，就是谋生。<br>靠脸吃饭，靠才艺吃饭，靠搞笑吃饭……<br>大家想靠什么吃饭呢？哈哈！<br>还有，简单来说，这个表达很实用，意思是"简单地说"。</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 03_p1_s2.png</span></div>
-  <div class="narration">好，我们再来一遍——简单来说，就是"靠脸、靠才艺、靠搞笑吃饭的人"。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 04_p1_s3.png</span></div>
-  <div class="narration">不过现在连猫和狗都能当网红，所以……你还有什么借口？<div class="note">注意这个强调句型——连……都……<br>连猫和狗都能当网红，意思是：就连猫和狗这样的动物也能当网红！<br>还有一个词——借口，就是理由、托词。<br>你还有什么借口？哈哈，是不是压力很大？</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 04_p1_s3.png</span></div>
-  <div class="narration">好，我们再来一遍——不过现在连猫和狗都能当网红，所以……你还有什么借口？</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-full">全文</span><span class="card-ref">📌 05_p1_full.png</span></div>
-  <div class="narration">好，第一段结束！<br>我们知道了网红就是靠脸、靠才艺、靠搞笑吃饭的人，<br>甚至连猫和狗都能当网红。<br>接下来，我们来认识一下主人公小李！</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<h2 class="sec">第二段</h2>
-<div class="block">
-  <div class="meta"><span class="badge b-sec">第二段</span><span class="card-ref">📌 06_p2_sep.png</span></div>
-  <div class="narration">第二段，我们来看看小李是怎么决定当网红的。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 07_p2_s1.png</span></div>
-  <div class="narration">小李就是这样想的。<div class="note">就是这样——这个表达表示"正是如此"或者"就是这种感觉"。<br>很口语化，日常生活中经常用到。</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 07_p2_s1.png</span></div>
-  <div class="narration">好，我们再来一遍——小李就是这样想的。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 08_p2_s2.png</span></div>
-  <div class="narration">有一天他突然宣布："我要当网红！"<div class="note">突然，表示出乎意料、没有预兆。<br>宣布，是一个比较正式的词，表示公开宣告。<br>小李突然宣布——这个组合是不是很有戏剧感？哈哈！</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 08_p2_s2.png</span></div>
-  <div class="narration">好，我们再来一遍——有一天他突然宣布："我要当网红！"</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 09_p2_s3.png</span></div>
-  <div class="narration">朋友问他打算做什么内容，他想了三秒说："还没想好，但我已经买了三个补光灯。"<div class="note">打算，表示计划、想要做某件事。<br>比如：你打算做什么？我打算去旅游。<br>补光灯，就是拍照拍视频用的灯，ring light。<br>内容还没想好，但已经买了三个补光灯……这个操作，大家熟不熟悉？哈哈！</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 09_p2_s3.png</span></div>
-  <div class="narration">好，我们再来一遍——朋友问他打算做什么内容，他想了三秒说："还没想好，但我已经买了三个补光灯。"</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-full">全文</span><span class="card-ref">📌 10_p2_full.png</span></div>
-  <div class="narration">第二段结束！<br>小李下定决心当网红，虽然不知道拍什么，但补光灯已经准备好了。<br>那么结果怎么样呢？我们来看第三段！</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<h2 class="sec">第三段</h2>
-<div class="block">
-  <div class="meta"><span class="badge b-sec">第三段</span><span class="card-ref">📌 11_p3_sep.png</span></div>
-  <div class="narration">第三段，见证奇迹的时刻到了！</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 12_p3_s1.png</span></div>
-  <div class="narration">结果……他的猫因为坐在补光灯前睡觉，意外走红，现在有五十万粉丝。<div class="note">意外，表示出乎意料。<br>走红，就是变得有名、爆红。<br>粉丝，就是fans，支持者。<br>五十万粉丝——五十万！这可不是一个小数字！</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 12_p3_s1.png</span></div>
-  <div class="narration">好，我们再来一遍——结果……他的猫因为坐在补光灯前睡觉，意外走红，现在有五十万粉丝。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 13_p3_s2.png</span></div>
-  <div class="narration">小李每天帮猫拍视频、剪视频，成了全职猫奴。<div class="note">猫奴——这个词太有意思了！<br>奴，就是奴隶；猫奴，就是猫的奴隶，形容特别宠猫、为猫服务的人。<br>全职猫奴，就是全职为猫打工……哈哈，小李的梦想和现实差距有点大！</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 13_p3_s2.png</span></div>
-  <div class="narration">好，我们再来一遍——小李每天帮猫拍视频、剪视频，成了全职猫奴。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-first">第一遍</span><span class="card-ref">📌 14_p3_s3.png</span></div>
-  <div class="narration">所以说，成为网红的秘诀到底是颜值还是努力？都不是——是你家有没有一只有缘分的猫。<div class="note">秘诀，就是秘密的方法、诀窍。<br>颜值，就是外貌的分数，颜值高就是长得好看。<br>有缘分，表示命中注定的缘分。<br>所以，成为网红的秘诀不是颜值，不是努力，而是……你家有没有一只有缘分的猫！哈哈！</div></div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-second">第二遍</span><span class="card-ref">📌 14_p3_s3.png</span></div>
-  <div class="narration">好，我们再来一遍——所以说，成为网红的秘诀到底是颜值还是努力？都不是——是你家有没有一只有缘分的猫。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-full">全文</span><span class="card-ref">📌 15_p3_full.png</span></div>
-  <div class="narration">第三段结束！<br>最后当上网红的，不是小李，而是他的猫。<br>这就是生活！好，接下来我们来复习一下今天学的内容吧！</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<h2 class="sec">复习</h2>
-<div class="block">
-  <div class="meta"><span class="badge b-review">复习</span><span class="card-ref">📌 16_review_sep.png</span></div>
-  <div class="narration">好，现在我们来复习一下今天学的内容。</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-review">复习 1</span><span class="card-ref">📌 17_review_p1.png</span></div>
-  <div class="narration">好，第一段复习。跟我一起读——<br>网红是什么？<br>简单来说，就是"靠脸、靠才艺、靠搞笑吃饭的人"。<br>不过现在连猫和狗都能当网红，所以……你还有什么借口？</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-review">复习 2</span><span class="card-ref">📌 18_review_p2.png</span></div>
-  <div class="narration">好，第二段。继续！<br>小李就是这样想的。<br>有一天他突然宣布："我要当网红！"<br>朋友问他打算做什么内容，他想了三秒说："还没想好，但我已经买了三个补光灯。"</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
-<div class="block">
-  <div class="meta"><span class="badge b-review">复习 3</span><span class="card-ref">📌 19_review_p3.png</span></div>
-  <div class="narration">好，今天我们学了网红这个词，还学了很多实用的表达：<br>靠X吃饭、连……都……、打算、走红、颜值……<br>大家都记住了吗？<br>如果觉得有帮助，请点赞订阅，我们下次见！再见！</div>
-  <button class="copy-btn" onclick="copyText(this)">복사</button>
-</div>
+
+<div id="cards"></div>
+
+<script src="scripts.js"></script>
 <script>
-function copyText(btn){
-  const block=btn.closest('.block');
-  const text=[...block.querySelectorAll('.narration,.note')].map(e=>e.innerText).join('\n');
-  navigator.clipboard.writeText(text).then(()=>{btn.textContent='✓';setTimeout(()=>btn.textContent='복사',1500)});
+let curStyle = 'A';
+const SEC_BADGE = { 'badge-open':'b-open','badge-sec':'b-sec','badge-first':'b-first','badge-second':'b-second','badge-full':'b-full','badge-review':'b-review' };
+
+function render() {
+  const root = document.getElementById('cards');
+  let html = '';
+  for (const c of CARDS) {
+    if (c.section) html += '<h2 class="sec">' + c.section + '</h2>';
+    html += '<div class="block">'
+          +   '<div class="meta"><span class="badge ' + SEC_BADGE[c.cls] + '">' + c.badge + '</span>'
+          +     '<span class="card-ref">📌 ' + c.img + '</span></div>'
+          +   '<div class="narration">' + narrHtml(c.id, curStyle) + '</div>'
+          +   '<button class="copy-btn" data-id="' + c.id + '" onclick="copyCard(this)">복사</button>'
+          + '</div>';
+  }
+  root.innerHTML = html;
 }
+
+function copyCard(btn) {
+  const text = narrText(btn.dataset.id, curStyle);
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓';
+    setTimeout(() => btn.textContent = '복사', 1500);
+  });
+}
+
+function buildTabs() {
+  const nav = document.getElementById('tabs');
+  nav.innerHTML = STYLES.map(s =>
+    '<button class="tab' + (s.id === curStyle ? ' active' : '') + '" data-s="' + s.id + '">' + s.label + '</button>'
+  ).join('');
+  nav.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      curStyle = btn.dataset.s;
+      nav.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.s === curStyle));
+      render();
+    });
+  });
+}
+
+buildTabs();
+render();
 </script>
 </body>
 </html>

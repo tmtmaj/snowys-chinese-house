@@ -32,265 +32,71 @@
   .badge-review { background: #3a6060; }
   .narration { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 8px;
                font-size: 1.25rem; line-height: 1.9; font-weight: 700; }
-  .narration p { margin: 0; }
   .note { margin-top: 12px; padding: 10px 14px; background: rgba(0,0,0,.06);
            border-left: 3px solid var(--accent); border-radius: 4px;
            font-size: 1.05rem; color: var(--mid); font-weight: 600; }
+  /* style switch tabs (top-right, sticky) */
+  .tabs { position: fixed; top: 14px; right: 14px; z-index: 50; display: flex; gap: 6px;
+          background: rgba(240,228,204,.92); padding: 6px; border-radius: 24px;
+          box-shadow: 0 2px 10px var(--card-shadow); backdrop-filter: blur(4px); }
+  .tab { font-family: inherit; font-size: .85rem; font-weight: 700; cursor: pointer;
+         border: 1px solid var(--accent); background: transparent; color: var(--accent);
+         padding: 6px 14px; border-radius: 20px; transition: all .15s; }
+  .tab.active { background: var(--accent); color: #fff; }
   @media (max-width: 600px) {
     .card-block { flex-direction: column; }
     .card-img-wrap { width: 100%; }
+    .tabs { top: 8px; right: 8px; padding: 4px; gap: 4px; }
+    .tab { font-size: .75rem; padding: 5px 10px; }
   }
 </style>
 </head>
 <body>
+<nav class="tabs" id="tabs"></nav>
 <header>
   <div class="word">网红</div>
   <div class="pinyin">wǎng hóng</div>
   <div class="desc">internet celebrity</div>
 </header>
 
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/00_title.png" alt="00_title.png">
-    <span class="badge badge-open">Opening</span>
-  </div>
-  <div class="narration"><p>大家好！今天我们来学一个超级流行的词——网红！</p><p>网，就是网络、互联网；红，就是出名、有名气。</p><p>合在一起，网红，就是在网上很有名的人，也就是网络红人！</p><p>现在中国到处都是网红，连猫和狗都能当网红……</p><p>到底是怎么回事？我们一起来看看吧！</p></div>
-</div>
+<div id="cards"></div>
 
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/00b_collage.png" alt="00b_collage.png">
-    <span class="badge badge-open">Photo</span>
-  </div>
-  <div class="narration"><p>大家看看这些照片——</p><p>有人在直播，有人在拍视频，有人在网上卖东西……</p><p>这些人呢，都有一个共同点——他们都是网红！</p><p>各种各样的网红，对吧？接下来我们来看看，这些网红都在做什么。</p></div>
-</div>
-<h2 class="section-title">第一段</h2>
+<script src="scripts.js"></script>
+<script>
+let curStyle = 'A';
 
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/01_p1_sep.png" alt="01_p1_sep.png">
-    <span class="badge badge-sec">第一段</span>
-  </div>
-  <div class="narration"><p>好，我们先来看第一段，了解一下网红到底是什么。</p></div>
-</div>
+function render() {
+  const root = document.getElementById('cards');
+  let html = '';
+  for (const c of CARDS) {
+    if (c.section) html += '<h2 class="section-title">' + c.section + '</h2>';
+    html += '<div class="card-block">'
+          +   '<div class="card-img-wrap">'
+          +     '<img src="cards/' + c.img + '" alt="' + c.img + '">'
+          +     '<span class="badge ' + c.cls + '">' + c.badge + '</span>'
+          +   '</div>'
+          +   '<div class="narration">' + narrHtml(c.id, curStyle) + '</div>'
+          + '</div>';
+  }
+  root.innerHTML = html;
+}
 
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/02_p1_s1.png" alt="02_p1_s1.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>网红是什么？</strong></p><div class="note"><p>注意这个句型——是什么？</p><p>"A是什么" 就是问 "A是什么意思" 或者 "A是怎样的东西"。</p><p>这个句型很常用，大家一定要记住！</p></div></div>
-</div>
+function buildTabs() {
+  const nav = document.getElementById('tabs');
+  nav.innerHTML = STYLES.map(s =>
+    '<button class="tab' + (s.id === curStyle ? ' active' : '') + '" data-s="' + s.id + '">' + s.label + '</button>'
+  ).join('');
+  nav.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      curStyle = btn.dataset.s;
+      nav.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.s === curStyle));
+      render();
+    });
+  });
+}
 
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/02_p1_s1.png" alt="02_p1_s1.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——网红是什么？</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/03_p1_s2.png" alt="03_p1_s2.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>简单来说，就是"靠脸、靠才艺、靠搞笑吃饭的人"。</strong></p><div class="note"><p>这里有一个很好用的结构——靠X吃饭。</p><p>靠，就是依靠；吃饭，就是谋生。</p><p>靠脸吃饭，靠才艺吃饭，靠搞笑吃饭……</p><p>大家想靠什么吃饭呢？哈哈！</p><p>还有，简单来说，这个表达很实用，意思是"简单地说"。</p></div></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/03_p1_s2.png" alt="03_p1_s2.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——简单来说，就是"靠脸、靠才艺、靠搞笑吃饭的人"。</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/04_p1_s3.png" alt="04_p1_s3.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>不过现在连猫和狗都能当网红，所以……你还有什么借口？</strong></p><div class="note"><p>注意这个强调句型——连……都……</p><p>连猫和狗都能当网红，意思是：就连猫和狗这样的动物也能当网红！</p><p>还有一个词——借口，就是理由、托词。</p><p>你还有什么借口？哈哈，是不是压力很大？</p></div></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/04_p1_s3.png" alt="04_p1_s3.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——不过现在连猫和狗都能当网红，所以……你还有什么借口？</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/05_p1_full.png" alt="05_p1_full.png">
-    <span class="badge badge-full">全文</span>
-  </div>
-  <div class="narration"><p>好，第一段结束！</p><p>我们知道了网红就是靠脸、靠才艺、靠搞笑吃饭的人，</p><p>甚至连猫和狗都能当网红。</p><p>接下来，我们来认识一下主人公小李！</p></div>
-</div>
-<h2 class="section-title">第二段</h2>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/06_p2_sep.png" alt="06_p2_sep.png">
-    <span class="badge badge-sec">第二段</span>
-  </div>
-  <div class="narration"><p>第二段，我们来看看小李是怎么决定当网红的。</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/07_p2_s1.png" alt="07_p2_s1.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>小李就是这样想的。</strong></p><div class="note"><p>就是这样——这个表达表示"正是如此"或者"就是这种感觉"。</p><p>很口语化，日常生活中经常用到。</p></div></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/07_p2_s1.png" alt="07_p2_s1.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——小李就是这样想的。</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/08_p2_s2.png" alt="08_p2_s2.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>有一天他突然宣布："我要当网红！"</strong></p><div class="note"><p>突然，表示出乎意料、没有预兆。</p><p>宣布，是一个比较正式的词，表示公开宣告。</p><p>小李突然宣布——这个组合是不是很有戏剧感？哈哈！</p></div></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/08_p2_s2.png" alt="08_p2_s2.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——有一天他突然宣布："我要当网红！"</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/09_p2_s3.png" alt="09_p2_s3.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>朋友问他打算做什么内容，他想了三秒说："还没想好，但我已经买了三个补光灯。"</strong></p><div class="note"><p>打算，表示计划、想要做某件事。</p><p>比如：你打算做什么？我打算去旅游。</p><p>补光灯，就是拍照拍视频用的灯，ring light。</p><p>内容还没想好，但已经买了三个补光灯……这个操作，大家熟不熟悉？哈哈！</p></div></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/09_p2_s3.png" alt="09_p2_s3.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——朋友问他打算做什么内容，他想了三秒说："还没想好，但我已经买了三个补光灯。"</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/10_p2_full.png" alt="10_p2_full.png">
-    <span class="badge badge-full">全文</span>
-  </div>
-  <div class="narration"><p>第二段结束！</p><p>小李下定决心当网红，虽然不知道拍什么，但补光灯已经准备好了。</p><p>那么结果怎么样呢？我们来看第三段！</p></div>
-</div>
-<h2 class="section-title">第三段</h2>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/11_p3_sep.png" alt="11_p3_sep.png">
-    <span class="badge badge-sec">第三段</span>
-  </div>
-  <div class="narration"><p>第三段，见证奇迹的时刻到了！</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/12_p3_s1.png" alt="12_p3_s1.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>结果……他的猫因为坐在补光灯前睡觉，意外走红，现在有五十万粉丝。</strong></p><div class="note"><p>意外，表示出乎意料。</p><p>走红，就是变得有名、爆红。</p><p>粉丝，就是fans，支持者。</p><p>五十万粉丝——五十万！这可不是一个小数字！</p></div></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/12_p3_s1.png" alt="12_p3_s1.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——结果……他的猫因为坐在补光灯前睡觉，意外走红，现在有五十万粉丝。</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/13_p3_s2.png" alt="13_p3_s2.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>小李每天帮猫拍视频、剪视频，成了全职猫奴。</strong></p><div class="note"><p>猫奴——这个词太有意思了！</p><p>奴，就是奴隶；猫奴，就是猫的奴隶，形容特别宠猫、为猫服务的人。</p><p>全职猫奴，就是全职为猫打工……哈哈，小李的梦想和现实差距有点大！</p></div></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/13_p3_s2.png" alt="13_p3_s2.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——小李每天帮猫拍视频、剪视频，成了全职猫奴。</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/14_p3_s3.png" alt="14_p3_s3.png">
-    <span class="badge badge-first">第一遍</span>
-  </div>
-  <div class="narration"><p><strong>所以说，成为网红的秘诀到底是颜值还是努力？都不是——是你家有没有一只有缘分的猫。</strong></p><div class="note"><p>秘诀，就是秘密的方法、诀窍。</p><p>颜值，就是外貌的分数，颜值高就是长得好看。</p><p>有缘分，表示命中注定的缘分。</p><p>所以，成为网红的秘诀不是颜值，不是努力，而是……你家有没有一只有缘分的猫！哈哈！</p></div></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/14_p3_s3.png" alt="14_p3_s3.png">
-    <span class="badge badge-second">第二遍</span>
-  </div>
-  <div class="narration"><p>好，我们再来一遍——所以说，成为网红的秘诀到底是颜值还是努力？都不是——是你家有没有一只有缘分的猫。</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/15_p3_full.png" alt="15_p3_full.png">
-    <span class="badge badge-full">全文</span>
-  </div>
-  <div class="narration"><p>第三段结束！</p><p>最后当上网红的，不是小李，而是他的猫。</p><p>这就是生活！好，接下来我们来复习一下今天学的内容吧！</p></div>
-</div>
-<h2 class="section-title">复习</h2>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/16_review_sep.png" alt="16_review_sep.png">
-    <span class="badge badge-review">复习</span>
-  </div>
-  <div class="narration"><p>好，现在我们来复习一下今天学的内容。</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/17_review_p1.png" alt="17_review_p1.png">
-    <span class="badge badge-review">复习 1</span>
-  </div>
-  <div class="narration"><p>好，第一段复习。跟我一起读——</p><p>网红是什么？</p><p>简单来说，就是"靠脸、靠才艺、靠搞笑吃饭的人"。</p><p>不过现在连猫和狗都能当网红，所以……你还有什么借口？</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/18_review_p2.png" alt="18_review_p2.png">
-    <span class="badge badge-review">复习 2</span>
-  </div>
-  <div class="narration"><p>好，第二段。继续！</p><p>小李就是这样想的。</p><p>有一天他突然宣布："我要当网红！"</p><p>朋友问他打算做什么内容，他想了三秒说："还没想好，但我已经买了三个补光灯。"</p></div>
-</div>
-
-<div class="card-block">
-  <div class="card-img-wrap">
-    <img src="cards/19_review_p3.png" alt="19_review_p3.png">
-    <span class="badge badge-review">复习 3</span>
-  </div>
-  <div class="narration"><p>好，今天我们学了网红这个词，还学了很多实用的表达：</p><p>靠X吃饭、连……都……、打算、走红、颜值……</p><p>大家都记住了吗？</p><p>如果觉得有帮助，请点赞订阅，我们下次见！再见！</p></div>
-</div>
+buildTabs();
+render();
+</script>
 </body>
 </html>
