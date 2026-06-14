@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep27 · 振聋发聩 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>振聋发聩</h1>
+  <div class="pinyin">zhèn lóng fā kuì</div>
+  <div class="meta">ep27 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào Xiǎo Xuě de Zhōngwén Wū. Wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào Xiǎo Xuě de Zhōngwén Wū. Wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Snowy.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">你有没有过这样的感觉——读一本书，或者听一场演讲，突然觉得有什么东西在心里一下子打开了？</span>
+            <button class="copy-btn" onclick="copyText(this, '你有没有过这样的感觉——读一本书，或者听一场演讲，突然觉得有什么东西在心里一下子打开了？')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nǐ yǒu méiyǒu guò zhèyàng de gǎnjué — dú yī běn shū, huòzhě tīng yī chǎng yǎnjiǎng, tūrán juéde yǒu shénme dōngxi zài xīnlǐ yīxiàzi dǎkāi le?</span>
+            <button class="copy-btn" onclick="copyText(this, 'nǐ yǒu méiyǒu guò zhèyàng de gǎnjué — dú yī běn shū, huòzhě tīng yī chǎng yǎnjiǎng, tūrán juéde yǒu shénme dōngxi zài xīnlǐ yīxiàzi dǎkāi le?')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Have you ever had this feeling — reading a book or listening to a speech, and suddenly something clicks inside you?</span>
+            <button class="copy-btn" onclick="copyText(this, 'Have you ever had this feeling — reading a book or listening to a speech, and suddenly something clicks inside you?')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">就好像以前一直看不见的东西，忽然变得清清楚楚了。</span>
+            <button class="copy-btn" onclick="copyText(this, '就好像以前一直看不见的东西，忽然变得清清楚楚了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jiù hǎoxiàng yǐqián yīzhí kàn bu jiàn de dōngxi, hūrán biàn de qīng qīng chǔ chǔ le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jiù hǎoxiàng yǐqián yīzhí kàn bu jiàn de dōngxi, hūrán biàn de qīng qīng chǔ chǔ le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">As if something you couldn&#x27;t see before suddenly became crystal clear.</span>
+            <button class="copy-btn" onclick="copyText(this, 'As if something you couldn&#x27;t see before suddenly became crystal clear.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">今天我们要学的成语，就是用来形容这种震撼人心、唤醒人心的力量——振聋发聩。</span>
+            <button class="copy-btn" onclick="copyText(this, '今天我们要学的成语，就是用来形容这种震撼人心、唤醒人心的力量——振聋发聩。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jīntiān wǒmen yào xué de chéngyǔ, jiù shì yòng lái xíngróng zhè zhǒng zhènhàn rén xīn, huànxǐng rén xīn de lìliàng — zhèn lóng fā kuì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jīntiān wǒmen yào xué de chéngyǔ, jiù shì yòng lái xíngróng zhè zhǒng zhènhàn rén xīn, huànxǐng rén xīn de lìliàng — zhèn lóng fā kuì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The idiom we&#x27;re learning today describes exactly that kind of mind-shaking, heart-awakening power — 振聋发聩.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The idiom we&#x27;re learning today describes exactly that kind of mind-shaking, heart-awakening power — 振聋发聩.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——振聋发聩。振聋发聩。振聋发聩。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——振聋发聩。振聋发聩。振聋发聩。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 振聋发聩.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 振聋发聩.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【振 · zhèn】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">振，是振动、振奋的振，有震荡、唤起的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '振，是振动、振奋的振，有震荡、唤起的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèn, shì zhèndòng, zhènfèn de zhèn, yǒu zhèndàng, huànqǐ de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèn, shì zhèndòng, zhènfèn de zhèn, yǒu zhèndàng, huànqǐ de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">振 is the character in 振动 (vibration) and 振奋 (to inspire) — it means to shake, to stir, to rouse.</span>
+            <button class="copy-btn" onclick="copyText(this, '振 is the character in 振动 (vibration) and 振奋 (to inspire) — it means to shake, to stir, to rouse.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">振奋人心——让人充满力量和希望。</span>
+            <button class="copy-btn" onclick="copyText(this, '振奋人心——让人充满力量和希望。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhènfèn rén xīn — ràng rén chōngmǎn lìliàng hé xīwàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhènfèn rén xīn — ràng rén chōngmǎn lìliàng hé xīwàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">振奋人心 — to inspire people and fill them with energy and hope.</span>
+            <button class="copy-btn" onclick="copyText(this, '振奋人心 — to inspire people and fill them with energy and hope.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">振作起来——提起精神，重新出发。</span>
+            <button class="copy-btn" onclick="copyText(this, '振作起来——提起精神，重新出发。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhènzuò qǐlái — tíqǐ jīngshén, chóngxīn chūfā.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhènzuò qǐlái — tíqǐ jīngshén, chóngxīn chūfā.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">振作起来 — to pull oneself together and start fresh.</span>
+            <button class="copy-btn" onclick="copyText(this, '振作起来 — to pull oneself together and start fresh.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个字本身就带着一种力量——让沉睡或麻木的东西重新活跃起来。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个字本身就带着一种力量——让沉睡或麻木的东西重新活跃起来。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège zì běnshēn jiù dài zhe yī zhǒng lìliàng — ràng chénshuì huò mámù de dōngxi chóngxīn huóyuè qǐlái.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège zì běnshēn jiù dài zhe yī zhǒng lìliàng — ràng chénshuì huò mámù de dōngxi chóngxīn huóyuè qǐlái.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This character itself carries energy — waking up what has gone to sleep or grown numb.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This character itself carries energy — waking up what has gone to sleep or grown numb.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【聋 · lóng】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">聋，就是听不见声音，耳聋。</span>
+            <button class="copy-btn" onclick="copyText(this, '聋，就是听不见声音，耳聋。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">lóng, jiù shì tīng bu jiàn shēngyīn, ěrlóng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'lóng, jiù shì tīng bu jiàn shēngyīn, ěrlóng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">聋 means unable to hear — deaf.</span>
+            <button class="copy-btn" onclick="copyText(this, '聋 means unable to hear — deaf.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">耳聋——听不见声音，指身体上的失聪。</span>
+            <button class="copy-btn" onclick="copyText(this, '耳聋——听不见声音，指身体上的失聪。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">ěrlóng — tīng bu jiàn shēngyīn, zhǐ shēntǐ shàng de shīcōng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'ěrlóng — tīng bu jiàn shēngyīn, zhǐ shēntǐ shàng de shīcōng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">耳聋 — unable to hear; physical deafness.</span>
+            <button class="copy-btn" onclick="copyText(this, '耳聋 — unable to hear; physical deafness.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">装聋作哑——假装听不见、不明白，故意不回应。</span>
+            <button class="copy-btn" onclick="copyText(this, '装聋作哑——假装听不见、不明白，故意不回应。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhuāng lóng zuò yǎ — jiǎzhuāng tīng bu jiàn, bù míngbai, gùyì bù huíyìng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhuāng lóng zuò yǎ — jiǎzhuāng tīng bu jiàn, bù míngbai, gùyì bù huíyìng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">装聋作哑 — to pretend to be deaf and mute, to play dumb on purpose.</span>
+            <button class="copy-btn" onclick="copyText(this, '装聋作哑 — to pretend to be deaf and mute, to play dumb on purpose.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">在这个成语里，聋不只是耳朵的问题，更比喻思想麻木、意识不到重要事物的状态。</span>
+            <button class="copy-btn" onclick="copyText(this, '在这个成语里，聋不只是耳朵的问题，更比喻思想麻木、意识不到重要事物的状态。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zài zhège chéngyǔ lǐ, lóng bù zhǐ shì ěrduǒ de wèntí, gèng bǐyù sīxiǎng mámù, yìshí bu dào zhòngyào shìwù de zhuàngtài.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zài zhège chéngyǔ lǐ, lóng bù zhǐ shì ěrduǒ de wèntí, gèng bǐyù sīxiǎng mámù, yìshí bu dào zhòngyào shìwù de zhuàngtài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In this idiom, 聋 isn&#x27;t just about physical hearing — it metaphorically means being numb in thought, unaware of what truly matters.</span>
+            <button class="copy-btn" onclick="copyText(this, 'In this idiom, 聋 isn&#x27;t just about physical hearing — it metaphorically means being numb in thought, unaware of what truly matters.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【发 · fā】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">发，这里读第一声fā，是发出、引发的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '发，这里读第一声fā，是发出、引发的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">fā, zhèlǐ dú dì yī shēng fā, shì fāchū, yǐnfā de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'fā, zhèlǐ dú dì yī shēng fā, shì fāchū, yǐnfā de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">发 here is read in the first tone — fā — meaning to emit, to trigger, to set off.</span>
+            <button class="copy-btn" onclick="copyText(this, '发 here is read in the first tone — fā — meaning to emit, to trigger, to set off.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">发声——发出声音，也指勇敢地说出自己的想法。</span>
+            <button class="copy-btn" onclick="copyText(this, '发声——发出声音，也指勇敢地说出自己的想法。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">fāshēng — fāchū shēngyīn, yě zhǐ yǒnggǎn de shuō chū zìjǐ de xiǎngfǎ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'fāshēng — fāchū shēngyīn, yě zhǐ yǒnggǎn de shuō chū zìjǐ de xiǎngfǎ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">发声 — to make a sound; also means to speak up bravely.</span>
+            <button class="copy-btn" onclick="copyText(this, '发声 — to make a sound; also means to speak up bravely.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">发人深省——引发人们深刻的反思和觉悟。</span>
+            <button class="copy-btn" onclick="copyText(this, '发人深省——引发人们深刻的反思和觉悟。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">fā rén shēn xǐng — yǐnfā rénmen shēnkè de fǎnsī hé juéwù.</span>
+            <button class="copy-btn" onclick="copyText(this, 'fā rén shēn xǐng — yǐnfā rénmen shēnkè de fǎnsī hé juéwù.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">发人深省 — to prompt people into deep reflection and self-awareness.</span>
+            <button class="copy-btn" onclick="copyText(this, '发人深省 — to prompt people into deep reflection and self-awareness.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">发这个字，用在这里就是触发——让原本沉寂的意识开始活动起来。</span>
+            <button class="copy-btn" onclick="copyText(this, '发这个字，用在这里就是触发——让原本沉寂的意识开始活动起来。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">fā zhège zì, yòng zài zhèlǐ jiù shì chùfā — ràng yuánběn chénjì de yìshí kāishǐ huódòng qǐlái.</span>
+            <button class="copy-btn" onclick="copyText(this, 'fā zhège zì, yòng zài zhèlǐ jiù shì chùfā — ràng yuánběn chénjì de yìshí kāishǐ huódòng qǐlái.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">发 here means to trigger — setting the once-dormant mind into motion.</span>
+            <button class="copy-btn" onclick="copyText(this, '发 here means to trigger — setting the once-dormant mind into motion.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【聩 · kuì】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">聩，是一个比较少见的字，原指天生耳聋，引申为思想糊涂、麻木不仁。</span>
+            <button class="copy-btn" onclick="copyText(this, '聩，是一个比较少见的字，原指天生耳聋，引申为思想糊涂、麻木不仁。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kuì, shì yī gè bǐjiào shǎojiàn de zì, yuán zhǐ tiānshēng ěrlóng, yǐnshēn wéi sīxiǎng hútu, mámù bù rén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'kuì, shì yī gè bǐjiào shǎojiàn de zì, yuán zhǐ tiānshēng ěrlóng, yǐnshēn wéi sīxiǎng hútu, mámù bù rén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">聩 is a less common character, originally meaning born deaf, extended to mean confused in thought or mentally numb.</span>
+            <button class="copy-btn" onclick="copyText(this, '聩 is a less common character, originally meaning born deaf, extended to mean confused in thought or mentally numb.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">昏聩——形容领导者糊涂昏庸，分不清是非对错。</span>
+            <button class="copy-btn" onclick="copyText(this, '昏聩——形容领导者糊涂昏庸，分不清是非对错。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hūnkuì — xíngróng lǐngdǎozhě hútu hūnyōng, fēn bu qīng shìfēi duìcuò.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hūnkuì — xíngróng lǐngdǎozhě hútu hūnyōng, fēn bu qīng shìfēi duìcuò.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">昏聩 — describes a leader who is muddled and incompetent, unable to tell right from wrong.</span>
+            <button class="copy-btn" onclick="copyText(this, '昏聩 — describes a leader who is muddled and incompetent, unable to tell right from wrong.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">聋和聩放在一起，一个是后天失聪，一个是先天失聪，合起来象征那些对真理视而不见、听而不闻的人。</span>
+            <button class="copy-btn" onclick="copyText(this, '聋和聩放在一起，一个是后天失聪，一个是先天失聪，合起来象征那些对真理视而不见、听而不闻的人。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">lóng hé kuì fàng zài yīqǐ, yī gè shì hòutiān shīcōng, yī gè shì xiāntiān shīcōng, hé qǐlái xiàngzhēng nàxiē duì zhēnlǐ shì ér bù jiàn, tīng ér bù wén de rén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'lóng hé kuì fàng zài yīqǐ, yī gè shì hòutiān shīcōng, yī gè shì xiāntiān shīcōng, hé qǐlái xiàngzhēng nàxiē duì zhēnlǐ shì ér bù jiàn, tīng ér bù wén de rén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Together, 聋 (acquired deafness) and 聩 (born deaf) symbolize those who are blind and deaf to truth and reason.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Together, 聋 (acquired deafness) and 聩 (born deaf) symbolize those who are blind and deaf to truth and reason.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">振聋发聩，字面意思是——发出极大的声音，连耳聋的人都能听见。</span>
+            <button class="copy-btn" onclick="copyText(this, '振聋发聩，字面意思是——发出极大的声音，连耳聋的人都能听见。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèn lóng fā kuì, zìmiàn yìsi shì — fāchū jí dà de shēngyīn, lián ěrlóng de rén dōu néng tīngjiàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèn lóng fā kuì, zìmiàn yìsi shì — fāchū jí dà de shēngyīn, lián ěrlóng de rén dōu néng tīngjiàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Literally, 振聋发聩 means: to make a sound so powerful that even the deaf can hear it.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Literally, 振聋发聩 means: to make a sound so powerful that even the deaf can hear it.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">但它真正的含义是比喻性的——形容一句话、一篇文章或一种思想，有极大的启发力量，能唤醒麻木糊涂的人，让他们清醒过来。</span>
+            <button class="copy-btn" onclick="copyText(this, '但它真正的含义是比喻性的——形容一句话、一篇文章或一种思想，有极大的启发力量，能唤醒麻木糊涂的人，让他们清醒过来。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàn tā zhēnzhèng de hányì shì bǐyù xìng de — xíngróng yī jù huà, yī piān wénzhāng huò yī zhǒng sīxiǎng, yǒu jí dà de qǐfā lìliàng, néng huànxǐng mámù hútu de rén, ràng tāmen qīngxǐng guòlái.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàn tā zhēnzhèng de hányì shì bǐyù xìng de — xíngróng yī jù huà, yī piān wénzhāng huò yī zhǒng sīxiǎng, yǒu jí dà de qǐfā lìliàng, néng huànxǐng mámù hútu de rén, ràng tāmen qīngxǐng guòlái.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">But its true meaning is figurative — describing a statement, writing, or idea with tremendous power to enlighten, waking up those who are numb or confused.</span>
+            <button class="copy-btn" onclick="copyText(this, 'But its true meaning is figurative — describing a statement, writing, or idea with tremendous power to enlighten, waking up those who are numb or confused.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">简单说：就是那种让人茅塞顿开的话语或思想。</span>
+            <button class="copy-btn" onclick="copyText(this, '简单说：就是那种让人茅塞顿开的话语或思想。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jiǎndān shuō: jiù shì nà zhǒng ràng rén máo sè dùn kāi de huàyǔ huò sīxiǎng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jiǎndān shuō: jiù shì nà zhǒng ràng rén máo sè dùn kāi de huàyǔ huò sīxiǎng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Simply put: it describes the kind of words or ideas that make you suddenly see the light.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Simply put: it describes the kind of words or ideas that make you suddenly see the light.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">近义词：醍醐灌顶（tí hú guàn dǐng）——比喻听了高明的意见，忽然感到清醒开朗，就像把最纯的酥油浇在头顶上。</span>
+            <button class="copy-btn" onclick="copyText(this, '近义词：醍醐灌顶（tí hú guàn dǐng）——比喻听了高明的意见，忽然感到清醒开朗，就像把最纯的酥油浇在头顶上。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jìn yìcí: tí hú guàn dǐng — bǐyù tīng le gāomíng de yìjiàn, hūrán gǎndào qīngxǐng kāilǎng, jiù xiàng bǎ zuì chún de sūyóu jiāo zài tóudǐng shàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jìn yìcí: tí hú guàn dǐng — bǐyù tīng le gāomíng de yìjiàn, hūrán gǎndào qīngxǐng kāilǎng, jiù xiàng bǎ zuì chún de sūyóu jiāo zài tóudǐng shàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Near-synonym: 醍醐灌顶 — like having the purest ghee poured over your head; a metaphor for sudden clarity after hearing wise counsel.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Near-synonym: 醍醐灌顶 — like having the purest ghee poured over your head; a metaphor for sudden clarity after hearing wise counsel.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">两者都表示顿悟，但振聋发聩更强调那句话本身的震撼力，醍醐灌顶更强调听者内心突然的清醒感。</span>
+            <button class="copy-btn" onclick="copyText(this, '两者都表示顿悟，但振聋发聩更强调那句话本身的震撼力，醍醐灌顶更强调听者内心突然的清醒感。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">liǎng zhě dōu biǎoshì dùnwù, dàn zhèn lóng fā kuì gèng qiángdiào nà jù huà běnshēn de zhènhàn lì, tí hú guàn dǐng gèng qiángdiào tīng zhě nèixīn tūrán de qīngxǐng gǎn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'liǎng zhě dōu biǎoshì dùnwù, dàn zhèn lóng fā kuì gèng qiángdiào nà jù huà běnshēn de zhènhàn lì, tí hú guàn dǐng gèng qiángdiào tīng zhě nèixīn tūrán de qīngxǐng gǎn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Both describe a moment of awakening, but 振聋发聩 emphasizes the power of the words themselves, while 醍醐灌顶 focuses on the listener&#x27;s inner feeling of sudden clarity.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Both describe a moment of awakening, but 振聋发聩 emphasizes the power of the words themselves, while 醍醐灌顶 focuses on the listener&#x27;s inner feeling of sudden clarity.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源 — 清·袁枚 · 《随园诗话补遗》</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这个成语出自清代著名诗人、文学家袁枚的著作《随园诗话补遗》。</span>
+            <button class="copy-btn" onclick="copyText(this, '这个成语出自清代著名诗人、文学家袁枚的著作《随园诗话补遗》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhège chéngyǔ chūzì Qīng dài zhùmíng shīrén, wénxuéjiā Yuán Méi de zhùzuò Suíyuán Shīhuà Bǔyí.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhège chéngyǔ chūzì Qīng dài zhùmíng shīrén, wénxuéjiā Yuán Méi de zhùzuò Suíyuán Shīhuà Bǔyí.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">This idiom comes from Suiyuan Shihua Buyi, a work by Yuan Mei — a celebrated poet and literary critic of the Qing dynasty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'This idiom comes from Suiyuan Shihua Buyi, a work by Yuan Mei — a celebrated poet and literary critic of the Qing dynasty.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">袁枚是清代中期最重要的文学家之一，他主张诗歌要表达真实的情感，不应受到僵化规矩的束缚，这种主张在当时非常大胆。</span>
+            <button class="copy-btn" onclick="copyText(this, '袁枚是清代中期最重要的文学家之一，他主张诗歌要表达真实的情感，不应受到僵化规矩的束缚，这种主张在当时非常大胆。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yuán Méi shì Qīng dài zhōngqī zuì zhòngyào de wénxuéjiā zhī yī, tā zhǔzhāng shīgē yào biǎodá zhēnshí de qínggǎn, bù yīng shòudào jiānhuà guīju de shùfù, zhè zhǒng zhǔzhāng zài dāngshí fēicháng dǎdǎn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yuán Méi shì Qīng dài zhōngqī zuì zhòngyào de wénxuéjiā zhī yī, tā zhǔzhāng shīgē yào biǎodá zhēnshí de qínggǎn, bù yīng shòudào jiānhuà guīju de shùfù, zhè zhǒng zhǔzhāng zài dāngshí fēicháng dǎdǎn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Yuan Mei was one of the most important literary figures of the mid-Qing period. He believed poetry should express genuine emotion, free from rigid rules — a bold stance for his time.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Yuan Mei was one of the most important literary figures of the mid-Qing period. He believed poetry should express genuine emotion, free from rigid rules — a bold stance for his time.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">《随园诗话》是他最著名的作品，收录了他对历代诗歌的品评和见解，随园是他在南京的私家花园的名字。</span>
+            <button class="copy-btn" onclick="copyText(this, '《随园诗话》是他最著名的作品，收录了他对历代诗歌的品评和见解，随园是他在南京的私家花园的名字。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">suíyuán Shīhuà shì tā zuì zhùmíng de zuòpǐn, shōulù le tā duì lìdài shīgē de pǐnpíng hé jiànjiě, Suíyuán shì tā zài Nánjīng de sījiā huāyuán de míngzì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'suíyuán Shīhuà shì tā zuì zhùmíng de zuòpǐn, shōulù le tā duì lìdài shīgē de pǐnpíng hé jiànjiě, Suíyuán shì tā zài Nánjīng de sījiā huāyuán de míngzì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Suiyuan Shihua is his most famous work, collecting his commentary and insights on poetry through the ages. Suiyuan was the name of his private garden in Nanjing.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Suiyuan Shihua is his most famous work, collecting his commentary and insights on poetry through the ages. Suiyuan was the name of his private garden in Nanjing.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">在《随园诗话补遗》卷一中，袁枚引用了南朝梁昭明太子写给湘东王的一封信，评价说：</span>
+            <button class="copy-btn" onclick="copyText(this, '在《随园诗话补遗》卷一中，袁枚引用了南朝梁昭明太子写给湘东王的一封信，评价说：')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zài Suíyuán Shīhuà Bǔyí juǎn yī zhōng, Yuán Méi yǐnyòng le Nán Cháo Liáng Zhāomíng Tàizǐ xiě gěi Xiāngdōng Wáng de yī fēng xìn, píngjià shuō:</span>
+            <button class="copy-btn" onclick="copyText(this, 'zài Suíyuán Shīhuà Bǔyí juǎn yī zhōng, Yuán Méi yǐnyòng le Nán Cháo Liáng Zhāomíng Tàizǐ xiě gěi Xiāngdōng Wáng de yī fēng xìn, píngjià shuō:')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">In Volume One, Yuan Mei quoted a letter written by Crown Prince Zhaoming of the Liang dynasty to the Prince of Xiangdong, commenting:</span>
+            <button class="copy-btn" onclick="copyText(this, 'In Volume One, Yuan Mei quoted a letter written by Crown Prince Zhaoming of the Liang dynasty to the Prince of Xiangdong, commenting:')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">此数言，振聋发聩，想当时必有迂儒曲士以经学谈诗者。</span>
+            <button class="copy-btn" onclick="copyText(this, '此数言，振聋发聩，想当时必有迂儒曲士以经学谈诗者。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">cǐ shù yán, zhèn lóng fā kuì, xiǎng dāngshí bì yǒu yū rú qū shì yǐ jīng xué tán shī zhě.</span>
+            <button class="copy-btn" onclick="copyText(this, 'cǐ shù yán, zhèn lóng fā kuì, xiǎng dāngshí bì yǒu yū rú qū shì yǐ jīng xué tán shī zhě.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">These few words shake even the deaf awake — there must have been pedantic scholars at the time who insisted on discussing poetry through the lens of classical studies.</span>
+            <button class="copy-btn" onclick="copyText(this, 'These few words shake even the deaf awake — there must have been pedantic scholars at the time who insisted on discussing poetry through the lens of classical studies.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">袁枚用振聋发聩来赞美这段话见解深刻，能打破那些迂腐文人用经学来谈诗的错误观念，从此这个成语就用来形容言论或文章具有极大的启发和震撼力量。</span>
+            <button class="copy-btn" onclick="copyText(this, '袁枚用振聋发聩来赞美这段话见解深刻，能打破那些迂腐文人用经学来谈诗的错误观念，从此这个成语就用来形容言论或文章具有极大的启发和震撼力量。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yuán Méi yòng zhèn lóng fā kuì lái zànměi zhè duàn huà jiànjiě shēnkè, néng dǎpò nàxiē yūfǔ wénrén yòng jīng xué lái tán shī de cuòwù guānniàn, cóng cǐ zhège chéngyǔ jiù yòng lái xíngróng yánlùn huò wénzhāng jùyǒu jí dà de qǐfā hé zhènhàn lìliàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yuán Méi yòng zhèn lóng fā kuì lái zànměi zhè duàn huà jiànjiě shēnkè, néng dǎpò nàxiē yūfǔ wénrén yòng jīng xué lái tán shī de cuòwù guānniàn, cóng cǐ zhège chéngyǔ jiù yòng lái xíngróng yánlùn huò wénzhāng jùyǒu jí dà de qǐfā hé zhènhàn lìliàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Yuan Mei used 振聋发聩 to praise those words for their depth and power to shatter the mistaken views of pedantic scholars. From then on, the idiom came to describe speech and writing with tremendous power to enlighten and shake people&#x27;s thinking.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Yuan Mei used 振聋发聩 to praise those words for their depth and power to shatter the mistaken views of pedantic scholars. From then on, the idiom came to describe speech and writing with tremendous power to enlighten and shake people&#x27;s thinking.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">鲁迅的文章振聋发聩，唤醒了无数沉睡的国人。</span>
+            <button class="copy-btn" onclick="copyText(this, '鲁迅的文章振聋发聩，唤醒了无数沉睡的国人。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">lǔ Xùn de wénzhāng zhèn lóng fā kuì, huànxǐng le wúshù chénshuì de guórén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'lǔ Xùn de wénzhāng zhèn lóng fā kuì, huànxǐng le wúshù chénshuì de guórén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Lu Xun&#x27;s essays were profoundly awakening, rousing countless countrymen who had been asleep.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Lu Xun&#x27;s essays were profoundly awakening, rousing countless countrymen who had been asleep.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">鲁迅是中国现代文学的代表作家，他的文章辛辣犀利，直指社会的弊病，让当时的中国人重新思考自己的处境和命运。</span>
+            <button class="copy-btn" onclick="copyText(this, '鲁迅是中国现代文学的代表作家，他的文章辛辣犀利，直指社会的弊病，让当时的中国人重新思考自己的处境和命运。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">lǔ Xùn shì Zhōngguó xiàndài wénxué de dàibiǎo zuòjiā, tā de wénzhāng xīnlà xīlì, zhí zhǐ shèhuì de bìbìng, ràng dāngshí de Zhōngguó rén chóngxīn sīkǎo zìjǐ de chǔjìng hé mìngyùn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'lǔ Xùn shì Zhōngguó xiàndài wénxué de dàibiǎo zuòjiā, tā de wénzhāng xīnlà xīlì, zhí zhǐ shèhuì de bìbìng, ràng dāngshí de Zhōngguó rén chóngxīn sīkǎo zìjǐ de chǔjìng hé mìngyùn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Lu Xun is a defining writer of modern Chinese literature. His sharp, biting prose pointed directly at society&#x27;s ills, making people rethink their circumstances and fate.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Lu Xun is a defining writer of modern Chinese literature. His sharp, biting prose pointed directly at society&#x27;s ills, making people rethink their circumstances and fate.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里用振聋发聩，是说他的文章具有震撼人心、唤醒民众意识的强大力量。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里用振聋发聩，是说他的文章具有震撼人心、唤醒民众意识的强大力量。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ yòng zhèn lóng fā kuì, shì shuō tā de wénzhāng jùyǒu zhènhàn rén xīn, huànxǐng mínzhòng yìshí de qiángdà lìliàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ yòng zhèn lóng fā kuì, shì shuō tā de wénzhāng jùyǒu zhènhàn rén xīn, huànxǐng mínzhòng yìshí de qiángdà lìliàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Using 振聋发聩 here means his writing had the power to shake hearts and awaken public consciousness.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Using 振聋发聩 here means his writing had the power to shake hearts and awaken public consciousness.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">老师说的那句话振聋发聩，让我重新思考了自己的人生方向。</span>
+            <button class="copy-btn" onclick="copyText(this, '老师说的那句话振聋发聩，让我重新思考了自己的人生方向。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">lǎoshī shuō de nà jù huà zhèn lóng fā kuì, ràng wǒ chóngxīn sīkǎo le zìjǐ de rénshēng fāngxiàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'lǎoshī shuō de nà jù huà zhèn lóng fā kuì, ràng wǒ chóngxīn sīkǎo le zìjǐ de rénshēng fāngxiàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">My teacher&#x27;s words were like a profound wake-up call, making me reconsider the direction of my life.</span>
+            <button class="copy-btn" onclick="copyText(this, 'My teacher&#x27;s words were like a profound wake-up call, making me reconsider the direction of my life.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">有时候，一句看似简单的话，却能改变一个人的一生。</span>
+            <button class="copy-btn" onclick="copyText(this, '有时候，一句看似简单的话，却能改变一个人的一生。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yǒu shíhòu, yī jù kàn sì jiǎndān de huà, què néng gǎibiàn yī gè rén de yīshēng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yǒu shíhòu, yī jù kàn sì jiǎndān de huà, què néng gǎibiàn yī gè rén de yīshēng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Sometimes, a seemingly simple sentence can change the course of a person&#x27;s entire life.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Sometimes, a seemingly simple sentence can change the course of a person&#x27;s entire life.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这里的振聋发聩是说那句话有强大的启发力，不是字面上的声音大，而是思想上的冲击和触动。</span>
+            <button class="copy-btn" onclick="copyText(this, '这里的振聋发聩是说那句话有强大的启发力，不是字面上的声音大，而是思想上的冲击和触动。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèlǐ de zhèn lóng fā kuì shì shuō nà jù huà yǒu qiángdà de qǐfā lì, bù shì zìmiàn shàng de shēngyīn dà, ér shì sīxiǎng shàng de chōngjī hé chùdòng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèlǐ de zhèn lóng fā kuì shì shuō nà jù huà yǒu qiángdà de qǐfā lì, bù shì zìmiàn shàng de shēngyīn dà, ér shì sīxiǎng shàng de chōngjī hé chùdòng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Here, 振聋发聩 describes the great inspirational force of those words — not literal loudness, but a shock and a stirring of the mind.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Here, 振聋发聩 describes the great inspirational force of those words — not literal loudness, but a shock and a stirring of the mind.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好，现在让我们来回顾一下今天学到的成语：振聋发聩，zhèn lóng fā kuì。</span>
+            <button class="copy-btn" onclick="copyText(this, '好，现在让我们来回顾一下今天学到的成语：振聋发聩，zhèn lóng fā kuì。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo, xiànzài ràng wǒmen lái huígù yīxià jīntiān xué dào de chéngyǔ: zhèn lóng fā kuì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo, xiànzài ràng wǒmen lái huígù yīxià jīntiān xué dào de chéngyǔ: zhèn lóng fā kuì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Alright, let&#x27;s now review the idiom we&#x27;ve learned today: 振聋发聩, zhèn lóng fā kuì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Alright, let&#x27;s now review the idiom we&#x27;ve learned today: 振聋发聩, zhèn lóng fā kuì.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">振聋发聩，形容语言、文章或思想具有强大的启发力量，能唤醒麻木糊涂的人，让人茅塞顿开。</span>
+            <button class="copy-btn" onclick="copyText(this, '振聋发聩，形容语言、文章或思想具有强大的启发力量，能唤醒麻木糊涂的人，让人茅塞顿开。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèn lóng fā kuì, xíngróng yǔyán, wénzhāng huò sīxiǎng jùyǒu qiángdà de qǐfā lìliàng, néng huànxǐng mámù hútu de rén, ràng rén máo sè dùn kāi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèn lóng fā kuì, xíngróng yǔyán, wénzhāng huò sīxiǎng jùyǒu qiángdà de qǐfā lìliàng, néng huànxǐng mámù hútu de rén, ràng rén máo sè dùn kāi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">振聋发聩 describes language, writing, or ideas with immense power to enlighten — waking up those who are numb or confused, making people suddenly see the light.</span>
+            <button class="copy-btn" onclick="copyText(this, '振聋发聩 describes language, writing, or ideas with immense power to enlighten — waking up those who are numb or confused, making people suddenly see the light.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这是一个褒义词，语气正式，通常用来称赞别人的话语或文章很有力量。大家学会了吗？</span>
+            <button class="copy-btn" onclick="copyText(this, '这是一个褒义词，语气正式，通常用来称赞别人的话语或文章很有力量。大家学会了吗？')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè shì yī gè bāoyì cí, yǔqì zhèngshì, tōngcháng yòng lái chēngzàn biéren de huàyǔ huò wénzhāng hěn yǒu lìliàng. Dàjiā xué huì le ma?</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè shì yī gè bāoyì cí, yǔqì zhèngshì, tōngcháng yòng lái chēngzàn biéren de huàyǔ huò wénzhāng hěn yǒu lìliàng. Dàjiā xué huì le ma?')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">It&#x27;s a positive term, formal in register, usually used to praise someone&#x27;s words or writing for their powerful impact. Did everyone get it?</span>
+            <button class="copy-btn" onclick="copyText(this, 'It&#x27;s a positive term, formal in register, usually used to praise someone&#x27;s words or writing for their powerful impact. Did everyone get it?')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 这本书的观点________，让很多人重新看待历史。</p><p class="quiz-hint">The views in this book ________, making many people reconsider history.</p><p class="quiz-a">✅ 这本书的观点振聋发聩，让很多人重新看待历史。</p><p class="quiz-hint">The views in this book were profoundly awakening, making many people reconsider history.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 他的演讲________，台下的听众都陷入了深思。</p><p class="quiz-hint">His speech ________, leaving the audience deep in thought.</p><p class="quiz-a">✅ 他的演讲振聋发聩，台下的听众都陷入了深思。</p><p class="quiz-hint">His speech was deeply enlightening, leaving the entire audience in profound reflection.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q3.</span> 那篇文章________，改变了我对这件事的看法。</p><p class="quiz-hint">That article ________, changing my view on the matter.</p><p class="quiz-a">✅ 那篇文章振聋发聩，改变了我对这件事的看法。</p><p class="quiz-hint">That article was like a wake-up call, completely changing the way I see the matter.</p></div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">振聋发聩通常用来形容话语、文章、思想，不用来形容字面上的声音大。</span>
+            <button class="copy-btn" onclick="copyText(this, '振聋发聩通常用来形容话语、文章、思想，不用来形容字面上的声音大。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèn lóng fā kuì tōngcháng yòng lái xíngróng huàyǔ, wénzhāng, sīxiǎng, bù yòng lái xíngróng zìmiàn shàng de shēngyīn dà.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèn lóng fā kuì tōngcháng yòng lái xíngróng huàyǔ, wénzhāng, sīxiǎng, bù yòng lái xíngróng zìmiàn shàng de shēngyīn dà.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">振聋发聩 is used to describe words, writing, or ideas — not literal loudness of sound.</span>
+            <button class="copy-btn" onclick="copyText(this, '振聋发聩 is used to describe words, writing, or ideas — not literal loudness of sound.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">注意区分：震耳欲聋（zhèn ěr yù lóng）是形容声音非常大，几乎要把耳朵震聋，这是字面意思；而振聋发聩是比喻性的，指思想上的震撼和启迪。</span>
+            <button class="copy-btn" onclick="copyText(this, '注意区分：震耳欲聋（zhèn ěr yù lóng）是形容声音非常大，几乎要把耳朵震聋，这是字面意思；而振聋发聩是比喻性的，指思想上的震撼和启迪。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhùyì qūfēn: zhèn ěr yù lóng shì xíngróng shēngyīn fēicháng dà, jīhū yào bǎ ěrduǒ zhèn lóng, zhè shì zìmiàn yìsi; ér zhèn lóng fā kuì shì bǐyù xìng de, zhǐ sīxiǎng shàng de zhènhàn hé qǐdí.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhùyì qūfēn: zhèn ěr yù lóng shì xíngróng shēngyīn fēicháng dà, jīhū yào bǎ ěrduǒ zhèn lóng, zhè shì zìmiàn yìsi; ér zhèn lóng fā kuì shì bǐyù xìng de, zhǐ sīxiǎng shàng de zhènhàn hé qǐdí.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Note the contrast: 震耳欲聋 (ep26!) literally means deafeningly loud — a sound so loud it nearly deafens you; 振聋发聩 is figurative — a shock and awakening to the mind.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Note the contrast: 震耳欲聋 (ep26!) literally means deafeningly loud — a sound so loud it nearly deafens you; 振聋发聩 is figurative — a shock and awakening to the mind.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">振聋发聩是褒义词，语气正式，多用于书面语或正式演讲中，日常口语较少用。</span>
+            <button class="copy-btn" onclick="copyText(this, '振聋发聩是褒义词，语气正式，多用于书面语或正式演讲中，日常口语较少用。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhèn lóng fā kuì shì bāoyì cí, yǔqì zhèngshì, duō yòng yú shūmiàn yǔ huò zhèngshì yǎnjiǎng zhōng, rìcháng kǒuyǔ jiào shǎo yòng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhèn lóng fā kuì shì bāoyì cí, yǔqì zhèngshì, duō yòng yú shūmiàn yǔ huò zhèngshì yǎnjiǎng zhōng, rìcháng kǒuyǔ jiào shǎo yòng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">振聋发聩 is a positive term, formal in register — most at home in written prose or formal speech, less common in everyday conversation.</span>
+            <button class="copy-btn" onclick="copyText(this, '振聋发聩 is a positive term, formal in register — most at home in written prose or formal speech, less common in everyday conversation.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次当你读到一段话、或者听到一个演讲，感觉突然开窍了、看清楚了什么，就可以说：这段话真的振聋发聩！</span>
+            <button class="copy-btn" onclick="copyText(this, '下次当你读到一段话、或者听到一个演讲，感觉突然开窍了、看清楚了什么，就可以说：这段话真的振聋发聩！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xià cì dāng nǐ dú dào yī duàn huà, huòzhě tīng dào yī gè yǎnjiǎng, gǎnjué tūrán kāiqiào le, kàn qīngchǔ le shénme, jiù kěyǐ shuō: Zhè duàn huà zhēn de zhèn lóng fā kuì!</span>
+            <button class="copy-btn" onclick="copyText(this, 'xià cì dāng nǐ dú dào yī duàn huà, huòzhě tīng dào yī gè yǎnjiǎng, gǎnjué tūrán kāiqiào le, kàn qīngchǔ le shénme, jiù kěyǐ shuō: Zhè duàn huà zhēn de zhèn lóng fā kuì!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time you read something or hear a speech that gives you that sudden aha moment — where everything becomes clear — try saying: 这段话真的振聋发聩!</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time you read something or hear a speech that gives you that sudden aha moment — where everything becomes clear — try saying: 这段话真的振聋发聩!')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. Xīwàng nǐ xué dào le yīdiǎn xīn de Zhōngwén. Rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù Xiǎo Xuě de Zhōngwén Wū. Wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. Xīwàng nǐ xué dào le yīdiǎn xīn de Zhōngwén. Rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù Xiǎo Xuě de Zhōngwén Wū. Wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Alright, that&#x27;s all for today. I hope you picked up a little new Chinese. If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'Alright, that&#x27;s all for today. I hope you picked up a little new Chinese. If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
