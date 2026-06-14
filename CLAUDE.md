@@ -112,6 +112,43 @@ cp -r /tmp/word_cards/ep{NNNN}_{slug}/. "$DEST/"
 
 ---
 
+## Word Episode Script Styles
+
+단어 에피소드 스크립트는 **반드시 3가지 스타일로** 생성한다.
+각 스타일 파일은 `contents/word/ep{NNNN}_{slug}/scripts/` 폴더에 저장.
+
+### 3가지 스타일
+
+| 파일명 | 스타일 | 특징 |
+|--------|--------|------|
+| `A_friendly-sibling.md` | 친근한 언니/오빠 | 따뜻한 공감, 개인 경험 공유, 격려하는 톤 |
+| `B_comedian.md` | 유머러스한 개그맨 | 자기 비하 유머, 농담이 학습 포인트와 자연스럽게 연결 |
+| `F_influencer.md` | SNS 인플루언서 | 빠른 템포, 중국 인터넷 슬랭(yyds/三连 등), 숏폼 에너지 |
+
+### ⚠️ 자연스러움 최우선 원칙
+
+**가장 중요한 기준은 자연스러움이다.** 스크립트는 실제 사람이 말하는 것처럼 들려야 한다.
+
+절대 금지:
+- 교과서 같은 딱딱한 문장 ("이 단어는 X를 의미합니다")
+- 억지로 재미있어 보이려는 개그
+- 억지로 힙해 보이려는 슬랭 남용
+- 문법 설명이 강의처럼 느껴지는 구조
+
+각 스타일별 자연스러움 기준:
+- **A**: 친구가 옆에서 알려주는 느낌. "저도 처음엔 몰랐어요" 같은 공감.
+- **B**: 웃음 타이밍이 자연스러워야 함. 억지 개그보다 상황 자체가 웃겨야 함.
+- **F**: 진짜 인플루언서가 말하는 것처럼. 슬랭은 맥락에 맞게만 사용.
+
+### 스크립트 구조
+
+모든 3가지 스타일은 동일한 카드 시퀀스를 따르되 톤과 내용이 달라야 한다:
+- Opening (00_title.png) → Photo (00b_collage.png)
+- 각 단락: 구분카드 → 문장별 1遍+2遍 → 全文 마무리
+- 复习: 16~19 카드
+
+---
+
 ## General Rules
 - Python scripts use `python3` (not `python`)
 - JSON with Chinese text: always generate via `json.dump()` in Python to avoid quote-escaping issues
