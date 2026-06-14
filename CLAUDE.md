@@ -64,20 +64,59 @@ snowys-chinese-house/
     word/           ← 단어 학습 카드 에피소드
       card_generator.py
       CLAUDE.md
-      ep{NNNN}_{word}/
+      ep{NNNN}_{slug}/  ← slug는 영어 하이픈 표기 (예: wang-hong, NOT 网红)
         README.md   ← GitHub Pages 링크 포함
-        index.html  ← 카드 뷰어
-        script.md   ← 선생님 스크립트
+        index.html  ← 카드 뷰어 (이미지 + 나레이션)
+        script.html ← 나레이션 스크립트 HTML (복사 버튼 포함)
+        script.md   ← 선생님 스크립트 마크다운
         metadata.json
-        cards/      ← PNG 카드
+        cards/      ← PNG 카드 (1920×1080)
 ```
 
 GitHub Pages base: `https://tmtmaj.github.io/snowys-chinese-house/`
 
 ---
 
+## Word Episode Generation Workflow
+
+`contents/word/card_generator.py` 로 카드 PNG + HTML 생성.
+
+### 카드 생성 (WSL → Windows 경로 문제 우회)
+```bash
+# 1. Linux 임시 경로에서 생성
+cd /mnt/c/Users/USER/Documents/github/snowys-chinese-house/contents/word
+python3 -c "
+import sys; sys.path.insert(0, '.')
+import card_generator as cg
+cg.OUT_DIR = '/tmp/word_cards'
+cg.main()
+"
+
+# 2. Windows 경로로 복사
+DEST="/mnt/c/Users/USER/Documents/github/snowys-chinese-house/contents/word/ep{NNNN}_{slug}"
+cp -r /tmp/word_cards/ep{NNNN}_{slug}/. "$DEST/"
+```
+
+**주의**: 한자 경로(`ep0001_网红`)에 직접 쓰면 WSL에서 `OSError` 발생 → 반드시 `/tmp/`에서 생성 후 복사.
+
+### 에피소드 데이터 필드
+- `slug`: 영어 하이픈 표기 필수 (URL 안전) — 예: `"slug": "wang-hong"`
+- `para_labels`: 복습 카드용 단락 설명 (선택)
+- `★word★`: 빨간 하이라이트 마커 (학습 단어에만 사용)
+- `∨`: 보조 v 마크 (강세/끊기 표시)
+
+### GitHub Pages
+- 배포: `.github/workflows/pages.yml` (main 브랜치 push 시 자동)
+- 카드 뷰어: `https://tmtmaj.github.io/snowys-chinese-house/contents/word/ep{NNNN}_{slug}/index.html`
+- 스크립트: `https://tmtmaj.github.io/snowys-chinese-house/contents/word/ep{NNNN}_{slug}/script.html`
+
+---
+
 ## General Rules
 - Python scripts use `python3` (not `python`)
 - JSON with Chinese text: always generate via `json.dump()` in Python to avoid quote-escaping issues
-- Episode numbering: check last committed episode in `contents/idiom/` folder, increment by 1
+- Idiom episode numbering: check last committed episode in `contents/idiom/` folder, increment by 1
+- Word episode numbering: check last committed episode in `contents/word/` folder, increment by 1
 - Never commit the sections.json temp file (lives in /tmp/)
+- Working directory: `/mnt/c/Users/USER/Documents/github/snowys-chinese-house` (Windows clone via WSL)
+- Branch: `main` (master 삭제됨)
