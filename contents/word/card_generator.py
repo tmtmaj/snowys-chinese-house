@@ -16,6 +16,10 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import numpy as np
 import os
 import json
+import requests
+
+# ── API Keys ───────────────────────────────────────────────────────────────
+PIXABAY_API_KEY = "56303475-f2d30f64ac678915a05b68238"
 
 # ── Paths ──────────────────────────────────────────────────────────────────
 FONT_CN      = "/mnt/c/Windows/Fonts/NotoSansSC-VF.ttf"   # pinyin / english
@@ -131,7 +135,7 @@ Segment = tuple[str, ImageFont.FreeTypeFont, tuple, int, int]
 def parse_v(text: str, cn_size: int, v_size: int) -> list[Segment]:
     cf = fnt_cn_main(cn_size)
     vf = fnt_cn(v_size, bold=True)
-    v_shift = (th(cn_size) - th(v_size)) // 2
+    v_shift = -(th(v_size) // 3)
     stroke = max(1, cn_size // 60)
     segs: list[Segment] = []
     # Split by ★ first (odd-index parts are red-highlighted)
@@ -481,6 +485,8 @@ EPISODES = [
         "slug":    "wang-hong",
         "pinyin":  "wǎng hóng",
         "desc_en": "internet celebrity",
+        "search_query": "social media influencer live streaming vlogger",
+        "collage_images": [11, 12],
         "emoji":   "📱",
         "para_labels": [
             "What is a 网红?",
@@ -679,7 +685,7 @@ def generate_script(ep_num: int, ep: dict) -> str:
     return "\n".join(lines)
 
 
-def generate_html(ep_num: int, ep: dict) -> str:
+def generate_html(ep_num: int, ep: dict, has_collage: bool = False) -> str:
     word, pinyin, desc_en = ep["word"], ep["pinyin"], ep["desc_en"]
     sc = ep.get("script", {})
 
@@ -698,6 +704,8 @@ def generate_html(ep_num: int, ep: dict) -> str:
 </div>"""
 
     blocks = []
+    if has_collage:
+        blocks.append(card_block("00b_collage.png", "Preview", "badge-open", ""))
     blocks.append(card_block("00_title.png", "Opening", "badge-open",
         sc.get("opening", f"大家好！今天我们来学一个词——{word}！")))
 
@@ -768,11 +776,11 @@ def generate_html(ep_num: int, ep: dict) -> str:
   .badge-full   {{ background: #4a6090; }}
   .badge-review {{ background: #3a6060; }}
   .narration {{ flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 8px;
-               font-size: 1rem; line-height: 1.8; }}
+               font-size: 1.25rem; line-height: 1.9; font-weight: 700; }}
   .narration p {{ margin: 0; }}
   .note {{ margin-top: 12px; padding: 10px 14px; background: rgba(0,0,0,.06);
            border-left: 3px solid var(--accent); border-radius: 4px;
-           font-size: .9rem; color: var(--mid); }}
+           font-size: 1.05rem; color: var(--mid); font-weight: 600; }}
   @media (max-width: 600px) {{
     .card-block {{ flex-direction: column; }}
     .card-img-wrap {{ width: 100%; }}
@@ -790,7 +798,7 @@ def generate_html(ep_num: int, ep: dict) -> str:
 </html>"""
 
 
-def generate_script_html(ep_num: int, ep: dict) -> str:
+def generate_script_html(ep_num: int, ep: dict, has_collage: bool = False) -> str:
     word, pinyin, desc_en = ep["word"], ep["pinyin"], ep["desc_en"]
     sc = ep.get("script", {})
 
@@ -803,8 +811,11 @@ def generate_script_html(ep_num: int, ep: dict) -> str:
   <button class="copy-btn" onclick="copyText(this)">복사</button>
 </div>"""
 
-    blocks = [block("Opening", "b-open", "00_title.png",
-        sc.get("opening", f"大家好！今天我们来学一个词——{word}！"))]
+    blocks = []
+    if has_collage:
+        blocks.append(block("Preview", "b-open", "00b_collage.png", ""))
+    blocks.append(block("Opening", "b-open", "00_title.png",
+        sc.get("opening", f"大家好！今天我们来学一个词——{word}！")))
 
     n = 1
     for p_i, para in enumerate(ep["paragraphs"], 1):
@@ -881,6 +892,177 @@ function copyText(btn){{
 </html>"""
 
 
+# ── Reference image downloader ────────────────────────────────────────────
+
+_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    )
+}
+
+def download_ref_images(word: str, desc_en: str, ep_dir: str, count: int = 10, search_query: str = "") -> None:
+    """Search Pixabay for copyright-free images and download to ep_dir/ref/."""
+    import io
+
+    ref_dir = os.path.join(ep_dir, "ref")
+    os.makedirs(ref_dir, exist_ok=True)
+
+    query = search_query if search_query else desc_en
+    print(f"  Searching Pixabay: '{query}'")
+
+    try:
+        api_url = (
+            f"https://pixabay.com/api/"
+            f"?key={PIXABAY_API_KEY}"
+            f"&q={requests.utils.quote(query)}"
+            f"&image_type=photo"
+            f"&per_page={min(count + 5, 50)}"
+            f"&safesearch=true"
+        )
+        resp = requests.get(api_url, timeout=10, headers=_HEADERS)
+        resp.raise_for_status()
+        hits = resp.json().get("hits", [])
+    except Exception as e:
+        print(f"  [검색 실패] {e}")
+        return
+
+    downloaded = 0
+    for hit in hits:
+        if downloaded >= count:
+            break
+        url = hit.get("webformatURL", "")
+        if not url:
+            continue
+        try:
+            img_resp = requests.get(url, timeout=8, headers=_HEADERS)
+            if img_resp.status_code != 200:
+                continue
+            data = img_resp.content
+            Image.open(io.BytesIO(data)).verify()  # validate image
+            fname = f"{downloaded + 1:02d}.jpg"
+            fpath = os.path.join(ref_dir, fname)
+            with open(fpath, "wb") as f:
+                f.write(data)
+            downloaded += 1
+            tags = hit.get("tags", "")[:50]
+            print(f"  ref/{fname}  [{tags}]")
+        except Exception:
+            continue
+
+    print(f"  → ref/ : {downloaded}장 다운로드 완료 (Pixabay CC0)\n")
+
+
+def _rounded_border(img: Image.Image, radius: int = 28, border: int = 10) -> Image.Image:
+    """Apply rounded corners and a white border to an RGBA image."""
+    w, h = img.size
+    bw, bh = w + 2 * border, h + 2 * border
+
+    bg = Image.new("RGBA", (bw, bh), (0, 0, 0, 0))
+    bd = ImageDraw.Draw(bg)
+    bd.rounded_rectangle([0, 0, bw - 1, bh - 1], radius=radius + border,
+                         fill=(255, 255, 255, 255))
+
+    mask = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, w - 1, h - 1], radius=radius, fill=255)
+
+    rgba = img.convert("RGBA")
+    rgba.putalpha(mask)
+    bg.paste(rgba, (border, border), rgba)
+    return bg
+
+
+def _crop_to_ratio(img: Image.Image, target_w: int, target_h: int) -> Image.Image:
+    iw, ih = img.size
+    tr = target_w / target_h
+    cr = iw / ih
+    if cr > tr:
+        nw = int(ih * tr)
+        img = img.crop(((iw - nw) // 2, 0, (iw + nw) // 2, ih))
+    else:
+        nh = int(iw / tr)
+        img = img.crop((0, (ih - nh) // 2, iw, (ih + nh) // 2))
+    return img.resize((target_w, target_h), Image.LANCZOS)
+
+
+def make_collage(image_paths: list[str], word: str, pinyin: str) -> Image.Image:
+    """Make a collage card supporting 2–4 images with slight overlap and tilt."""
+    canvas, _ = base()
+    canvas = canvas.convert("RGBA")
+
+    PAD     = 70
+    LABEL_H = 100
+    aw = W - 2 * PAD   # available width
+    ah = H - 2 * PAD - LABEL_H  # available height
+    n = min(len(image_paths), 4)
+
+    # (center_x, center_y, cell_w, cell_h, angle_deg)
+    if n == 2:
+        cw = int(aw * 0.46); ch = int(ah * 0.82)
+        offset_y = int(ah * 0.08)
+        specs = [
+            (W // 2 - int(cw * 0.47), PAD + ah // 2 - offset_y, cw, ch, -3),
+            (W // 2 + int(cw * 0.47), PAD + ah // 2 + offset_y, cw, ch,  3),
+        ]
+    elif n == 3:
+        cw_c = int(aw * 0.52); ch_c = int(ah * 0.88)
+        cw_s = int(aw * 0.44); ch_s = int(ah * 0.78)
+        specs = [
+            (W // 2 - int(aw * 0.28), PAD + ah // 2, cw_s, ch_s, -7),
+            (W // 2,                   PAD + ah // 2, cw_c, ch_c,  0),
+            (W // 2 + int(aw * 0.28), PAD + ah // 2, cw_s, ch_s,  7),
+        ]
+    else:  # 4
+        cw = int(aw * 0.52); ch = int(ah * 0.52)
+        specs = [
+            (W // 2 - int(cw * 0.30), PAD + int(ah * 0.28), cw, ch, -3),
+            (W // 2 + int(cw * 0.30), PAD + int(ah * 0.28), cw, ch,  3),
+            (W // 2 - int(cw * 0.30), PAD + int(ah * 0.72), cw, ch,  3),
+            (W // 2 + int(cw * 0.30), PAD + int(ah * 0.72), cw, ch, -3),
+        ]
+
+    safe_top    = PAD // 2
+    safe_bottom = H - PAD - LABEL_H - 15  # never let photo touch the label
+
+    for path, (cx, cy, cw, ch, angle) in zip(image_paths[:n], specs):
+        try:
+            cell = Image.open(path).convert("RGBA")
+            cell = _crop_to_ratio(cell, cw, ch)
+            cell = _rounded_border(cell, radius=28, border=10)
+            if angle:
+                cell = cell.rotate(angle, expand=True, resample=Image.BICUBIC,
+                                   fillcolor=(0, 0, 0, 0))
+            lw, lh = cell.size
+            px = cx - lw // 2
+            py = cy - lh // 2
+            # clamp: never below safe_bottom, never above safe_top
+            py = max(safe_top, min(py, safe_bottom - lh))
+            px = max(0, min(px, W - lw))
+            # safe composite (handles edge pixels near boundary)
+            sx0 = max(0, -px); sy0 = max(0, -py)
+            sx1 = min(lw, W - px); sy1 = min(lh, H - py)
+            if sx1 > sx0 and sy1 > sy0:
+                canvas.alpha_composite(cell.crop((sx0, sy0, sx1, sy1)),
+                                       (max(0, px), max(0, py)))
+        except Exception:
+            continue
+
+    img = canvas.convert("RGB")
+    draw = ImageDraw.Draw(img)
+
+    # bottom word label with semi-transparent backing
+    label_y = H - PAD - LABEL_H + 18
+    wf = fnt_cn(52, bold=True)
+    pf = fnt_cn(34, bold=True)
+    total_w = tw(word, wf) + 20 + tw(pinyin, pf)
+    lx = (W - total_w) // 2
+    draw.text((lx, label_y), word, font=wf, fill=ACCENT)
+    draw.text((lx + tw(word, wf) + 20, label_y + 10), pinyin, font=pf, fill=MID)
+
+    return img
+
+
 # ── Main ───────────────────────────────────────────────────────────────────
 
 def generate_episode(ep_num: int, ep: dict) -> None:
@@ -890,6 +1072,9 @@ def generate_episode(ep_num: int, ep: dict) -> None:
     ep_dir = os.path.join(OUT_DIR, ep_id)
     cards_dir = os.path.join(ep_dir, "cards")
     os.makedirs(cards_dir, exist_ok=True)
+
+    download_ref_images(ep["word"], ep["desc_en"], ep_dir,
+                        search_query=ep.get("search_query", ""))
 
     cards: list[tuple[str, Image.Image]] = []
     meta_seq: list[dict] = []
@@ -931,6 +1116,26 @@ def generate_episode(ep_num: int, ep: dict) -> None:
         img.save(path, "PNG")
         print(f"  {name}.png")
 
+    # collage card from selected ref images
+    has_collage = False
+    collage_sel = ep.get("collage_images", [])
+    if collage_sel:
+        ref_dir = os.path.join(ep_dir, "ref")
+        try:
+            all_ref = sorted(f for f in os.listdir(ref_dir) if not f.startswith("."))
+            paths = []
+            for idx_1 in collage_sel:
+                idx = idx_1 - 1
+                if 0 <= idx < len(all_ref):
+                    paths.append(os.path.join(ref_dir, all_ref[idx]))
+            if paths:
+                collage_img = make_collage(paths, ep["word"], ep["pinyin"])
+                collage_img.save(os.path.join(cards_dir, "00b_collage.png"), "PNG")
+                has_collage = True
+                print("  00b_collage.png")
+        except Exception as e:
+            print(f"  [collage skip] {e}")
+
     meta = {
         "episode": ep_num, "id": ep_id,
         "word": word, "pinyin": ep["pinyin"], "desc_en": ep["desc_en"],
@@ -949,13 +1154,44 @@ def generate_episode(ep_num: int, ep: dict) -> None:
 
     html_path = os.path.join(ep_dir, "index.html")
     with open(html_path, "w", encoding="utf-8") as f:
-        f.write(generate_html(ep_num, ep))
+        f.write(generate_html(ep_num, ep, has_collage=has_collage))
     print(f"  → {html_path}")
 
     script_html_path = os.path.join(ep_dir, "script.html")
     with open(script_html_path, "w", encoding="utf-8") as f:
-        f.write(generate_script_html(ep_num, ep))
+        f.write(generate_script_html(ep_num, ep, has_collage=has_collage))
     print(f"  → {script_html_path}\n")
+
+
+def generate_collage_card(ep_num: int, ep: dict, selected: list[int]) -> None:
+    """Generate collage card from selected ref image numbers (1-based).
+
+    Example:
+        generate_collage_card(1, EPISODES[0], selected=[2, 5, 7, 9])
+    """
+    slug  = ep.get("slug", ep["word"])
+    ep_id = f"ep{ep_num:04d}_{slug}"
+    ep_dir = os.path.join(OUT_DIR, ep_id)
+    ref_dir = os.path.join(ep_dir, "ref")
+
+    # resolve selected numbers to actual files
+    all_ref = sorted(f for f in os.listdir(ref_dir) if not f.startswith("."))
+    paths: list[str] = []
+    for n in selected[:4]:
+        idx = n - 1
+        if 0 <= idx < len(all_ref):
+            paths.append(os.path.join(ref_dir, all_ref[idx]))
+
+    if len(paths) < 2:
+        print("  [오류] ref/ 에서 최소 2장 이상 찾을 수 없습니다.")
+        return
+
+    img = make_collage(paths, ep["word"], ep["pinyin"])
+
+    cards_dir = os.path.join(ep_dir, "cards")
+    out_path  = os.path.join(cards_dir, "00b_collage.png")
+    img.save(out_path, "PNG")
+    print(f"  → {out_path}")
 
 
 def main() -> None:
