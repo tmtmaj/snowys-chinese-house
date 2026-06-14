@@ -201,7 +201,7 @@ Agent({
   prompt: "Review the Chinese idiom episode content for 小雪의중문屋 YouTube channel.
   
   Read these files:
-  - scripts/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}.md
+  - contents/idiom/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}.md
   - /tmp/sections_{slug}.json
   
   Check and fix ALL of the following:
@@ -221,12 +221,12 @@ Agent({
     python3 .claude/skills/chinese-idiom-youtube/scripts/generate_html.py \\
       --idiom '{IDIOM}' --pinyin '{PINYIN}' --episode {NN} \\
       --sections /tmp/sections_{slug}.json \\
-      --output scripts/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}.html
+      --output contents/idiom/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}.html
   And regenerate the .docx:
     python3 .claude/skills/chinese-idiom-youtube/scripts/generate_script.py \\
       --idiom '{IDIOM}' --pinyin '{PINYIN}' \\
       --sections /tmp/sections_{slug}.json \\
-      --output scripts/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}_script.docx
+      --output contents/idiom/{YYYYMMDD}_{slug}/{YYYYMMDD}_{slug}_script.docx
   
   Report a bullet-point summary of every change made."
 })
@@ -243,10 +243,10 @@ The working directory IS the repo root (`/home/xuefeng/snowys-chinese-house`). P
 
 ### 6-A — Direct git push (WSL / Linux — primary method)
 
-After all files are written to `scripts/{YYYYMMDD}_{slug}/`, run:
+After all files are written to `contents/idiom/{YYYYMMDD}_{slug}/`, run:
 
 ```bash
-git add scripts/{YYYYMMDD}_{slug}/
+git add contents/idiom/{YYYYMMDD}_{slug}/
 git commit -m "ep{NN}: add {IDIOM} ({PINYIN}) script"
 git push
 ```
@@ -256,7 +256,7 @@ If `git push` fails (e.g. no upstream, auth error), report the exact error and s
 
 ### 6-B — PowerShell push script (Windows fallback)
 
-Also generate `scripts/push_{YYYYMMDD}_{slug}.ps1` so the user can push from Windows if needed.
+Also generate `contents/idiom/push_{YYYYMMDD}_{slug}.ps1` so the user can push from Windows if needed.
 
 ```powershell
 # Auto-detect repo location (works across different machines)
@@ -275,7 +275,7 @@ $slug    = "{YYYYMMDD}_{slug}"
 $episode = {NN}
 $idiom   = "{IDIOM}"
 
-$destDir = "$repo\scripts\$slug"
+$destDir = "$repo\contents\idiom\$slug"
 New-Item -ItemType Directory -Force -Path $destDir | Out-Null
 $srcDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Copy-Item "$srcDir\$slug\$slug.md"            "$destDir\" -Force
@@ -284,7 +284,7 @@ Copy-Item "$srcDir\$slug\README.md"           "$destDir\" -Force
 Copy-Item "$srcDir\$slug\${slug}_script.docx" "$destDir\" -Force -ErrorAction SilentlyContinue
 
 Set-Location $repo
-git add "scripts/$slug"
+git add "contents/idiom/$slug"
 git commit -m "ep${episode}: add $idiom script"
 git push
 Write-Host "✅ ep${episode} $idiom pushed to GitHub!"
@@ -310,22 +310,22 @@ Always use `{YYYYMMDD}_{pinyin-slug}` as the base name for all files and folders
 
 GitHub repo structure:
 ```
-scripts/
+contents/idiom/
   {YYYYMMDD}_{slug}/
     {YYYYMMDD}_{slug}.md
     {YYYYMMDD}_{slug}.html
     README.md
 ```
-All outputs go in the single `scripts/{YYYYMMDD}_{slug}/` folder. No separate images folder.
+All outputs go in the single `contents/idiom/{YYYYMMDD}_{slug}/` folder. No separate images folder.
 
 Example for 过眼云烟 recorded 2026-03-31 → `20260331_guo-yan-yun-yan`
 
 ## Step 7 — Deliver to user
 
-**Always create a `README.md`** in the script folder (`scripts/{YYYYMMDD}_{slug}/README.md`) that includes:
+**Always create a `README.md`** in the script folder (`contents/idiom/{YYYYMMDD}_{slug}/README.md`) that includes:
 - Idiom, pinyin, and Korean meaning summary
 - Channel + episode metadata (channel name, episode number, recording date)
-- GitHub Pages URL: `https://tmtmaj.github.io/snowys-chinese-house/scripts/{slug}/{slug}.html`
+- GitHub Pages URL: `https://tmtmaj.github.io/snowys-chinese-house/contents/idiom/{slug}/{slug}.html`
 - File list (md, html)
 
 Present these files:
@@ -347,7 +347,7 @@ After presenting, briefly suggest:
 
 ## Episode numbering
 
-If the user doesn't specify an episode number, check the GitHub repo's `scripts/markdown/` folder naming for the last episode, then increment by 1. If unavailable, leave as 0.
+If the user doesn't specify an episode number, check the `contents/idiom/` folder for the last committed episode, then increment by 1. If unavailable, leave as 0.
 
 ---
 
