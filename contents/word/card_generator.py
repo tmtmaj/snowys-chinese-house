@@ -714,7 +714,7 @@ def generate_html(ep_num: int, ep: dict) -> str:
             note = sc.get(f"p{p_i}_s{s_i}_note", "")
             blocks.append(card_block(f"{n:02d}_p{p_i}_s{s_i}.png",
                 "第一遍", "badge-first",
-                f"**{clean}**", note))
+                f"<strong>{clean}</strong>", note))
             blocks.append(card_block(f"{n:02d}_p{p_i}_s{s_i}.png",
                 "第二遍", "badge-second",
                 f"好，我们再来一遍——{clean}"))
@@ -728,8 +728,10 @@ def generate_html(ep_num: int, ep: dict) -> str:
     blocks.append(card_block(f"{n:02d}_review_sep.png", "复习", "badge-review",
         "好，现在我们来复习一下今天学的内容。"))
     n += 1
-    blocks.append(card_block(f"{n:02d}_review_full.png", "全文复习", "badge-review",
-        sc.get("closing", f"今天我们学了{word}。大家都记住了吗？我们下次见！再见！")))
+    for p_i in range(1, len(ep["paragraphs"]) + 1):
+        blocks.append(card_block(f"{n:02d}_review_p{p_i}.png", f"复习 {p_i}", "badge-review",
+            sc.get("closing", f"今天我们学了{word}。大家都记住了吗？我们下次见！再见！") if p_i == len(ep["paragraphs"]) else ""))
+        n += 1
 
     body = "\n".join(blocks)
 
