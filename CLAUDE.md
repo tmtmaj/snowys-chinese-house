@@ -125,6 +125,12 @@ cp -r /tmp/word_cards/ep{NNNN}_{slug}/. "$DEST/"
 - `★word★`: 빨간 하이라이트 마커 (학습 단어에만 사용)
 - `∨`: 보조 v 마크 (강세/끊기 표시)
 
+### ⚠️ ref 사진 = 사용자 선택 (자동 확정 금지)
+Pixabay 자동 다운로드(`search_query`)는 **후보 제공용**일 뿐, 콜라주(00b)·썸네일에 쓸 사진은 **반드시 사용자에게 물어본다**.
+- 자동 다운로드된 ref 후보를 보여주고, **사용자가 더 좋은 사진을 직접 `ref/`에 추가**하도록 안내 (예: ep0001은 `11/12.png`를 사용자가 직접 추가).
+- 콜라주·썸네일에 쓸 ref 번호를 **사용자가 선택**하게 한 뒤 `collage_images` / 썸네일을 확정.
+- 사용자 확인 전에는 콜라주·썸네일을 "완성"으로 보지 않는다.
+
 ### GitHub Pages
 - 배포: `.github/workflows/pages.yml` (main 브랜치 push 시 자동)
 - 카드 뷰어: `https://tmtmaj.github.io/snowys-chinese-house/contents/word/ep{NNNN}_{slug}/index.html`
