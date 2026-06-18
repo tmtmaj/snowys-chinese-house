@@ -1,0 +1,164 @@
+{
+  "episode": 2,
+  "id": "ep0002_lu-cha",
+  "word": "绿茶",
+  "pinyin": "lǜ chá",
+  "desc_en": "sweet but scheming",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "绿茶是什么？",
+      "py": "Lǜ chá shì shénme?",
+      "en": "What does 绿茶 mean?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "字面意思是一种茶，但现在用来形容一种人。",
+      "py": "Zìmiàn yìsi shì yì zhǒng chá, dàn xiànzài yòng lái xíngróng yì zhǒng rén.",
+      "en": "Literally it's a kind of tea, but now it describes a kind of person."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "表面上清纯善良，其实心机很重。",
+      "py": "Biǎomiàn shàng qīngchún shànliáng, qíshí xīnjī hěn zhòng.",
+      "en": "Sweet and innocent on the surface — but actually very calculating."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "办公室新来了一个女生，叫小雅。",
+      "py": "Bàngōngshì xīn láile yí gè nǚshēng, jiào Xiǎo Yǎ.",
+      "en": "A new girl named Xiao Ya joined the office."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "她总是轻声细语，对每个男同事说：\"这个我不会，你能教我吗？\"",
+      "py": "Tā zǒngshì qīngshēng-xìyǔ, duì měi gè nán tóngshì shuō: \"Zhège wǒ bú huì, nǐ néng jiāo wǒ ma?\"",
+      "en": "She always speaks softly, telling every male coworker: \"I can't do this, can you teach me?\""
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "可是每次开会，她的方案总是最好的。",
+      "py": "Kěshì měi cì kāihuì, tā de fāng'àn zǒngshì zuì hǎo de.",
+      "en": "But every meeting, her proposal is always the best one."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "年底她对老板说：\"我什么都不懂，全靠大家帮忙～\"",
+      "py": "Niándǐ tā duì lǎobǎn shuō: \"Wǒ shénme dōu bù dǒng, quán kào dàjiā bāngmáng~\"",
+      "en": "At year-end she told the boss: \"I don't understand anything, it's all thanks to everyone~\""
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "结果升职的，是她。",
+      "py": "Jiéguǒ shēngzhí de, shì tā.",
+      "en": "The result? She's the one who got promoted."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "所以说，绿茶不是不努力——而是一边努力，一边装作什么都不会。",
+      "py": "Suǒyǐ shuō, lǜ chá bú shì bù nǔlì—— érshì yìbiān nǔlì, yìbiān zhuāngzuò shénme dōu bú huì.",
+      "en": "So, a 绿茶 isn't lazy — she works hard while pretending she can't do anything."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}

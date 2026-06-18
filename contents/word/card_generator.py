@@ -620,6 +620,141 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "绿茶",
+        "slug":    "lu-cha",
+        "pinyin":  "lǜ chá",
+        "desc_en": "sweet but scheming",
+        "search_query": "elegant woman drinking tea cafe portrait",
+        "collage_images": [1, 2],
+        "emoji":   "🍵",
+        "para_labels": [
+            "What is 绿茶?",
+            "The new coworker Xiao Ya",
+            "The year-end twist",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个很有意思的词——绿茶！\n"
+                "等等，不是你喝的那杯绿茶哦。\n"
+                "绿，就是绿色；茶，就是茶叶。\n"
+                "但是现在，绿茶常常用来形容一种人——表面清纯，其实心机很重。\n"
+                "到底是什么样的人呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚绿茶到底是什么意思。",
+            "p1_s1_note":
+                "\"A是什么\"，就是问A的意思。\n"
+                "大家先猜猜看——这里的绿茶，指的是什么？",
+            "p1_s2_note":
+                "字面意思，就是文字表面的意思。\n"
+                "形容，就是描述、表达某种样子。\n"
+                "绿茶字面上是一种茶，但现在更多用来形容人。",
+            "p1_s3_note":
+                "表面上，就是从外表看起来。\n"
+                "清纯善良，就是单纯又善良。\n"
+                "心机，指心里的算计；心机很重，就是很会算计。\n"
+                "表面清纯、其实心机重——这就是绿茶！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "我们知道了，绿茶就是表面清纯善良、其实心机很重的人。\n"
+                "那这种人到底长什么样？我们来看一个故事——主人公小雅！",
+            "p2_intro":
+                "第二段，我们来认识办公室里的新同事，小雅。",
+            "p2_s1_note":
+                "办公室，就是上班工作的地方。\n"
+                "新来了一个女生——故事开始了！",
+            "p2_s2_note":
+                "轻声细语，形容说话又轻又柔。\n"
+                "\"这个我不会，你能教我吗？\"——是不是听起来很可爱、很无辜？\n"
+                "注意这种说话方式，等一下你就明白了。",
+            "p2_s3_note":
+                "方案，就是计划、做事的办法。\n"
+                "开会的时候说自己不会，但方案却总是最好的……\n"
+                "大家有没有发现哪里不对劲？哈哈！",
+            "p2_wrap":
+                "第二段结束！\n"
+                "小雅嘴上说什么都不会，但其实样样都行。\n"
+                "那么到了年底，会发生什么呢？我们来看第三段！",
+            "p3_intro":
+                "第三段，揭晓答案的时刻到了！",
+            "p3_s1_note":
+                "年底，就是一年的最后。\n"
+                "\"我什么都不懂，全靠大家帮忙～\"\n"
+                "全靠，就是完全依靠。\n"
+                "这句话，你是不是好像在哪里听过？哈哈！",
+            "p3_s2_note":
+                "升职，就是职位升高，比如从员工变成经理。\n"
+                "说自己什么都不懂，结果升职的却是她——\n"
+                "这就是绿茶的厉害之处！",
+            "p3_s3_note":
+                "装作，就是假装。\n"
+                "所以绿茶不是不努力，而是一边努力，一边装作什么都不会。\n"
+                "聪明？还是心机？大家自己判断吧，哈哈！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "小雅一边努力，一边装无辜，最后成了最大赢家。\n"
+                "这，就是绿茶！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了绿茶这个词，还学了很多实用的表达：\n"
+                "字面意思、形容、清纯善良、心机、装作……\n"
+                "大家都记住了吗？\n"
+                "下次遇到\"表面清纯、其实心机重\"的人，你就知道怎么形容了！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "★绿茶★∨是什么？",
+                    "py": "Lǜ chá shì shénme?",
+                    "en": "What does 绿茶 mean?",
+                },
+                {
+                    "cn": "字面意思∨是一种茶，∨但现在∨用来形容一种人。",
+                    "py": "Zìmiàn yìsi shì yì zhǒng chá, dàn xiànzài yòng lái xíngróng yì zhǒng rén.",
+                    "en": "Literally it's a kind of tea, but now it describes a kind of person.",
+                },
+                {
+                    "cn": "表面上∨清纯善良，∨其实∨心机很重。",
+                    "py": "Biǎomiàn shàng qīngchún shànliáng, qíshí xīnjī hěn zhòng.",
+                    "en": "Sweet and innocent on the surface — but actually very calculating.",
+                },
+            ],
+            [
+                {
+                    "cn": "办公室∨新来了一个女生，∨叫小雅。",
+                    "py": "Bàngōngshì xīn láile yí gè nǚshēng, jiào Xiǎo Yǎ.",
+                    "en": "A new girl named Xiao Ya joined the office.",
+                },
+                {
+                    "cn": "她总是∨轻声细语，∨对每个男同事说：\"这个我不会，∨你能教我吗？\"",
+                    "py": "Tā zǒngshì qīngshēng-xìyǔ, duì měi gè nán tóngshì shuō: \"Zhège wǒ bú huì, nǐ néng jiāo wǒ ma?\"",
+                    "en": "She always speaks softly, telling every male coworker: \"I can't do this, can you teach me?\"",
+                },
+                {
+                    "cn": "可是∨每次开会，∨她的方案∨总是最好的。",
+                    "py": "Kěshì měi cì kāihuì, tā de fāng'àn zǒngshì zuì hǎo de.",
+                    "en": "But every meeting, her proposal is always the best one.",
+                },
+            ],
+            [
+                {
+                    "cn": "年底∨她对老板说：\"我什么都不懂，∨全靠大家帮忙～\"",
+                    "py": "Niándǐ tā duì lǎobǎn shuō: \"Wǒ shénme dōu bù dǒng, quán kào dàjiā bāngmáng~\"",
+                    "en": "At year-end she told the boss: \"I don't understand anything, it's all thanks to everyone~\"",
+                },
+                {
+                    "cn": "结果∨升职的，∨是她。",
+                    "py": "Jiéguǒ shēngzhí de, shì tā.",
+                    "en": "The result? She's the one who got promoted.",
+                },
+                {
+                    "cn": "所以说，∨★绿茶★不是不努力——∨而是一边努力，∨一边装作什么都不会。",
+                    "py": "Suǒyǐ shuō, lǜ chá bú shì bù nǔlì—— érshì yìbiān nǔlì, yìbiān zhuāngzuò shénme dōu bú huì.",
+                    "en": "So, a 绿茶 isn't lazy — she works hard while pretending she can't do anything.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
