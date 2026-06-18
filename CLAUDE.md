@@ -149,6 +149,27 @@ cp -r /tmp/word_cards/ep{NNNN}_{slug}/. "$DEST/"
 
 ---
 
+## YouTube Title & Description SEO
+
+에피소드 업로드용 제목/설명은 각 에피소드 `README.md`의 "🎬 YouTube 업로드" 섹션에 코드박스로 작성한다.
+아래는 2026 YouTube SEO 모범 사례 기반 규칙 (idiom·word 공통 적용).
+
+### 제목 (Title)
+- **핵심 키워드를 앞 40자 안에 front-load**: 단어/성어 + 영어 의미를 맨 앞에 (예: `网红 (wǎng hóng) = Internet Celebrity`). "Chinese Idiom/Buzzword" 같은 시리즈 브랜드보다 실제 단어·의미의 검색량이 높음.
+- **전체 길이 60~70자 권장** (모바일에서 ~60자 후 잘림).
+- **학습 결과(outcome) 명시**: `Meaning & Usage`, `Meaning, Origin & Examples` 등.
+- **시리즈 번호 + 재생목록 태그 유지** (제목 끝): `| Chinese Buzzword #N`.
+- 키워드 스터핑 금지 — 자연스럽게. 낚시 금지 (2026 알고리즘은 high CTR + low watch time 페널티).
+
+### 설명 (Description)
+- **첫 1~2문장(첫 25단어)에 핵심 키워드 + 무엇을 배우는지** 명시 (above the fold가 가중치 높음).
+- 길이 250자 이상, 영어 + 중국어 병기, 한국어 학습자 타깃 고려.
+- **타임스탬프 포함** (시청 지속률 +12%). 카드 구조(Intro/第一段/第二段/第三段/复习) 기반. 업로드 시 실제 시간으로 교체.
+- CTA(좋아요·구독) 한 줄.
+- **해시태그 12~15개**: 첫 3개가 제목 위에 노출되므로 가장 가치 있는 순서로. 정확매칭(`#网红 #wanghong`) + 카테고리(`#LearnChinese #HSK #ChineseVocabulary`) + 한국어(`#중국어 #중국어공부`).
+
+---
+
 ## General Rules
 - Python scripts use `python3` (not `python`)
 - JSON with Chinese text: always generate via `json.dump()` in Python to avoid quote-escaping issues
