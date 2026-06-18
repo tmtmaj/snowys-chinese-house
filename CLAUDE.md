@@ -131,6 +131,11 @@ Pixabay 자동 다운로드(`search_query`)는 **후보 제공용**일 뿐, 콜�
 - 콜라주·썸네일에 쓸 ref 번호를 **사용자가 선택**하게 한 뒤 `collage_images` / 썸네일을 확정.
 - 사용자 확인 전에는 콜라주·썸네일을 "완성"으로 보지 않는다.
 
+> **⚠️ 콜라주 사진을 바꾸면 Photo 카드 나레이션도 반드시 함께 수정한다.**
+> Photo 카드(00b_collage) 나레이션은 콜라주에 실제로 보이는 사진을 가리키므로,
+> 콜라주 이미지를 교체하면 `scripts.js`의 `photo` 항목(A/B/E 전부)을 새 사진 내용에 맞게 고치고,
+> A/B/E md + script.md를 재생성한다. (이미지는 파일명 동일 시 HTML 자동 반영, 나레이션은 수동 갱신 필요.)
+
 ### GitHub Pages
 - 배포: `.github/workflows/pages.yml` (main 브랜치 push 시 자동)
 - 카드 뷰어: `https://tmtmaj.github.io/snowys-chinese-house/contents/word/ep{NNNN}_{slug}/index.html`
