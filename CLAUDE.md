@@ -79,7 +79,27 @@ GitHub Pages base: `https://tmtmaj.github.io/snowys-chinese-house/`
 
 ## Word Episode Generation Workflow
 
-`contents/word/card_generator.py` 로 카드 PNG + HTML 생성.
+> **단어 하나를 받으면 아래 전체 패키지가 ep0001(网红)과 동일하게 완성되어야 한다.**
+> 각 에피소드는 **완전히 독립**이다 — 이전 에피소드와 스토리·등장인물을 이어갈 필요 없음. 매번 새 주인공·새 상황으로 자유롭게.
+
+### ✅ 완성 산출물 체크리스트 (`ep{NNNN}_{slug}/`)
+
+단어 입력 → 아래가 전부 생성/작성되어야 "완성":
+
+1. `scripts/A_friendly-sibling.md` — 친근 톤 전체 스크립트
+2. `scripts/B_comedian.md` — 개그맨 톤 전체 스크립트
+3. `scripts/E_storyteller.md` — 스토리텔러 톤 전체 스크립트
+   - (3 스타일 규칙·자연스러움 원칙은 아래 "Word Episode Script Styles" 참고)
+4. `cards/` — PNG 카드 (00_title, 00b_collage, 01~19, **blank.png** 포함)
+5. `scripts.js` — A/B/E × 전 카드 나레이션 공유 데이터 + 렌더 헬퍼 (ep0001 구조 그대로)
+6. `index.html` — 카드 뷰어, 우측 상단 A/B/E 전환 탭 (scripts.js 로드, 디폴트 A)
+7. `script.html` — 낭독 스크립트 뷰어, 동일 탭 + 카드별 복사 버튼
+8. `script.md` — 디폴트(A) 스크립트 마크다운
+9. `metadata.json` — 카드 시퀀스 + repeat 횟수
+10. `README.md` — GitHub Pages 링크 + **"🎬 YouTube 업로드" 섹션** (제목·설명 코드박스, "YouTube Title & Description SEO" 규칙 적용)
+
+> `blank.png`: 텍스트 없는 빈 배경 카드. `card_generator.base()` 호출 후 저장 (다른 카드와 픽셀 동일).
+> `scripts.js`/`index.html`/`script.html`은 ep0001을 템플릿으로 복제 후 데이터만 교체.
 
 ### 카드 생성 (WSL → Windows 경로 문제 우회)
 ```bash
