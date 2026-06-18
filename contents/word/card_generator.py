@@ -626,7 +626,7 @@ EPISODES = [
         "pinyin":  "lǜ chá",
         "desc_en": "sweet but scheming",
         "search_query": "elegant woman drinking tea cafe portrait",
-        "collage_images": [1, 2],
+        "collage_images": [11, 12],
         "emoji":   "🍵",
         "para_labels": [
             "What is 绿茶?",
