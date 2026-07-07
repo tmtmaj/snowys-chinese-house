@@ -755,6 +755,138 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "内卷",
+        "slug":    "nei-juan",
+        "pinyin":  "nèi juǎn",
+        "desc_en": "pointless rat-race competition",
+        "search_query": "office workers overtime tired stress late night computer",
+        "collage_images": [1, 11],
+        "emoji":   "🌀",
+        "para_labels": [
+            "What is 内卷?",
+            "The overtime spiral",
+            "Everyone loses",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个很流行的词——内卷！\n"
+                "内，就是内部；卷，就是卷进去、绕进去。\n"
+                "内卷，现在用来形容一种没有意义的竞争。\n"
+                "大家一起拼命努力，最后却谁也没有变得更好。\n"
+                "到底是什么意思呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚内卷到底是什么。",
+            "p1_s1_note":
+                "\"A是什么\"，就是问A的意思。\n"
+                "大家先想一想——内卷，指的是什么？",
+            "p1_s2_note":
+                "一起，就是大家同时；努力，就是很拼、很用功。\n"
+                "好处，就是好的结果、得到的利益。\n"
+                "大家一起努力，但谁也没得到好处——这就是内卷的关键！",
+            "p1_s3_note":
+                "这是一个很有名的比喻！\n"
+                "看电影的时候，前面的人站起来，你也得站起来，\n"
+                "结果大家都站着看，谁也没看得更清楚——这就是内卷！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "内卷，就是大家越来越拼，但结果谁也没变好。\n"
+                "那这种事，在生活里是怎么发生的？我们来看小明的故事！",
+            "p2_intro":
+                "第二段，我们来看看小明公司里发生的事。",
+            "p2_s1_note":
+                "本来，就是原来、一开始。\n"
+                "六点下班——多好啊！可是好景不长……",
+            "p2_s2_note":
+                "为了表现，就是为了让别人看到自己很努力。\n"
+                "故意，就是特意、有意地。\n"
+                "加班，就是下班时间还继续工作。",
+            "p2_s3_note":
+                "不敢，就是没有勇气做某事。\n"
+                "一个人加班，结果第二天所有人都不敢走了——\n"
+                "内卷，就是这样开始的。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "一个人加班，带动了全公司加班。\n"
+                "那么最后结果怎么样呢？我们来看第三段！",
+            "p3_intro":
+                "第三段，看看内卷的最后结果！",
+            "p3_s1_note":
+                "半夜，就是深夜、很晚的时候。\n"
+                "待到半夜——大家都在公司熬到半夜，是不是很夸张？",
+            "p3_s2_note":
+                "还是，表示情况没有改变。\n"
+                "一分钱，形容很少的钱。\n"
+                "累了半天，工作没变多，钱也没变多——太惨了！",
+            "p3_s3_note":
+                "越来越，表示程度不断加深。\n"
+                "所以内卷的意思就是：大家越来越累，结果还是一样。\n"
+                "听起来是不是很熟悉？哈哈！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "小明和同事们卷了半天，谁也没得到好处。\n"
+                "这，就是内卷！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了内卷这个词，还学了很多实用的表达：\n"
+                "努力、好处、故意、加班、越来越……\n"
+                "大家都记住了吗？\n"
+                "下次看到没有意义的竞争，你就可以说：这也太内卷了！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "★内卷★∨是什么？",
+                    "py": "Nèi juǎn shì shénme?",
+                    "en": "What is 内卷?",
+                },
+                {
+                    "cn": "简单来说，∨就是大家一起努力，∨但谁也没得到好处。",
+                    "py": "Jiǎndān lái shuō, jiùshì dàjiā yìqǐ nǔlì, dàn shéi yě méi dédào hǎochù.",
+                    "en": "Simply put, everyone works hard together, but no one gets any benefit.",
+                },
+                {
+                    "cn": "就像看电影，∨前面的人∨站起来，∨后面的人∨也得站起来。",
+                    "py": "Jiù xiàng kàn diànyǐng, qiánmiàn de rén zhàn qǐlái, hòumiàn de rén yě děi zhàn qǐlái.",
+                    "en": "It's like at the movies: the person in front stands up, so everyone behind has to stand up too.",
+                },
+            ],
+            [
+                {
+                    "cn": "小明的公司∨本来六点下班。",
+                    "py": "Xiǎo Míng de gōngsī běnlái liù diǎn xiàbān.",
+                    "en": "Xiao Ming's company originally finished work at six.",
+                },
+                {
+                    "cn": "有一天，∨一个同事∨为了表现，∨故意加班到八点。",
+                    "py": "Yǒu yìtiān, yí gè tóngshì wèile biǎoxiàn, gùyì jiābān dào bā diǎn.",
+                    "en": "One day, a coworker, to show off, deliberately worked overtime until eight.",
+                },
+                {
+                    "cn": "结果第二天，∨所有人∨都不敢走了。",
+                    "py": "Jiéguǒ dì-èr tiān, suǒyǒu rén dōu bù gǎn zǒu le.",
+                    "en": "As a result, the next day, no one dared to leave.",
+                },
+            ],
+            [
+                {
+                    "cn": "一个星期后，∨大家都在公司∨待到半夜。",
+                    "py": "Yí gè xīngqī hòu, dàjiā dōu zài gōngsī dāi dào bànyè.",
+                    "en": "A week later, everyone stayed at the office until midnight.",
+                },
+                {
+                    "cn": "可是工作∨还是那些工作，∨谁也没多赚一分钱。",
+                    "py": "Kěshì gōngzuò háishi nàxiē gōngzuò, shéi yě méi duō zhuàn yì fēn qián.",
+                    "en": "But the work was still the same work — no one earned a single cent more.",
+                },
+                {
+                    "cn": "所以说，∨★内卷★就是——∨大家越来越累，∨结果还是一样。",
+                    "py": "Suǒyǐ shuō, nèi juǎn jiùshì—— dàjiā yuè lái yuè lèi, jiéguǒ háishi yíyàng.",
+                    "en": "So, 内卷 means: everyone gets more and more tired, but the result stays the same.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 

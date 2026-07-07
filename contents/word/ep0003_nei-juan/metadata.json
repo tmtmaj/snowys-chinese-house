@@ -1,0 +1,164 @@
+{
+  "episode": 3,
+  "id": "ep0003_nei-juan",
+  "word": "内卷",
+  "pinyin": "nèi juǎn",
+  "desc_en": "pointless rat-race competition",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "内卷是什么？",
+      "py": "Nèi juǎn shì shénme?",
+      "en": "What is 内卷?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "简单来说，就是大家一起努力，但谁也没得到好处。",
+      "py": "Jiǎndān lái shuō, jiùshì dàjiā yìqǐ nǔlì, dàn shéi yě méi dédào hǎochù.",
+      "en": "Simply put, everyone works hard together, but no one gets any benefit."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "就像看电影，前面的人站起来，后面的人也得站起来。",
+      "py": "Jiù xiàng kàn diànyǐng, qiánmiàn de rén zhàn qǐlái, hòumiàn de rén yě děi zhàn qǐlái.",
+      "en": "It's like at the movies: the person in front stands up, so everyone behind has to stand up too."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "小明的公司本来六点下班。",
+      "py": "Xiǎo Míng de gōngsī běnlái liù diǎn xiàbān.",
+      "en": "Xiao Ming's company originally finished work at six."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "有一天，一个同事为了表现，故意加班到八点。",
+      "py": "Yǒu yìtiān, yí gè tóngshì wèile biǎoxiàn, gùyì jiābān dào bā diǎn.",
+      "en": "One day, a coworker, to show off, deliberately worked overtime until eight."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "结果第二天，所有人都不敢走了。",
+      "py": "Jiéguǒ dì-èr tiān, suǒyǒu rén dōu bù gǎn zǒu le.",
+      "en": "As a result, the next day, no one dared to leave."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "一个星期后，大家都在公司待到半夜。",
+      "py": "Yí gè xīngqī hòu, dàjiā dōu zài gōngsī dāi dào bànyè.",
+      "en": "A week later, everyone stayed at the office until midnight."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "可是工作还是那些工作，谁也没多赚一分钱。",
+      "py": "Kěshì gōngzuò háishi nàxiē gōngzuò, shéi yě méi duō zhuàn yì fēn qián.",
+      "en": "But the work was still the same work — no one earned a single cent more."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "所以说，内卷就是——大家越来越累，结果还是一样。",
+      "py": "Suǒyǐ shuō, nèi juǎn jiùshì—— dàjiā yuè lái yuè lèi, jiéguǒ háishi yíyàng.",
+      "en": "So, 内卷 means: everyone gets more and more tired, but the result stays the same."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}
