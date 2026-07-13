@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ep29 · 惟妙惟肖 · 小雪的中文屋</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #f5f7fa; color: #222; }
+
+  header {
+    background: linear-gradient(135deg, #1a5c9a, #2e86c1);
+    color: white; padding: 28px 40px;
+  }
+  header h1 { font-size: 2.4rem; letter-spacing: 4px; }
+  header .pinyin { font-size: 1.1rem; opacity: .8; margin-top: 4px; font-style: italic; }
+  header .meta { font-size: .85rem; opacity: .6; margin-top: 6px; }
+
+  main { max-width: 860px; margin: 32px auto; padding: 0 20px 60px; }
+
+  section { background: white; border-radius: 10px; padding: 24px 28px;
+             margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  h2 { font-size: 1.05rem; color: #1a5c9a; border-left: 4px solid #2e86c1;
+        padding-left: 10px; margin-bottom: 16px; }
+  h3.char-label { font-size: 1rem; color: #e67e22; margin: 16px 0 8px; }
+  .ex-label { font-size: .9rem; font-weight: bold; color: #e67e22; margin: 14px 0 6px; }
+
+  .sentence { margin-bottom: 14px; }
+  .line { display: flex; align-items: baseline; gap: 10px; padding: 5px 0;
+           border-bottom: 1px solid #f0f0f0; }
+  .line:last-child { border-bottom: none; }
+
+  .label { font-size: .72rem; font-weight: 700; width: 34px; flex-shrink: 0;
+            padding: 2px 5px; border-radius: 4px; text-align: center; }
+  .cn .label { background: #dbeafe; color: #1e40af; }
+  .py .label { background: #ede9fe; color: #5b21b6; }
+  .en .label { background: #dcfce7; color: #166534; }
+
+  .text { flex: 1; font-size: .95rem; line-height: 1.5; }
+  .cn .text { font-size: 1.05rem; }
+  .py .text { font-style: italic; color: #555; font-size: .9rem; }
+  .en .text { color: #444; font-size: .9rem; }
+
+  .copy-btn {
+    flex-shrink: 0; font-size: .7rem; padding: 2px 8px;
+    border: 1px solid #ddd; border-radius: 4px; background: #fafafa;
+    cursor: pointer; color: #666; transition: all .15s;
+  }
+  .copy-btn:hover { background: #2e86c1; color: white; border-color: #2e86c1; }
+  .copy-btn.copied { background: #22c55e; color: white; border-color: #22c55e; }
+
+  .quiz-item { border-left: 3px solid #2e86c1; padding: 10px 14px; margin-bottom: 14px; background: #f8faff; border-radius: 0 6px 6px 0; }
+  .quiz-q { font-size: 1.05rem; margin-bottom: 4px; }
+  .quiz-num { font-weight: 700; color: #2e86c1; margin-right: 6px; }
+  .quiz-a { font-size: 1rem; color: #166534; font-weight: 600; margin-top: 6px; }
+  .quiz-hint { font-size: .85rem; color: #888; font-style: italic; margin: 2px 0; }
+
+  .clip-marker {
+    background: #fff7ed; border: 1px dashed #f97316;
+    border-radius: 6px; padding: 8px 14px;
+    color: #c2410c; font-size: .9rem; margin: 10px 0;
+  }
+
+  footer { text-align: center; font-size: .8rem; color: #aaa; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>惟妙惟肖</h1>
+  <div class="pinyin">wéi miào wéi xiào</div>
+  <div class="meta">ep29 · 小雪的中文屋 · Snowy's Chinese House</div>
+</header>
+<main>
+
+  <section>
+    <h2>① 开场白</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家好，欢迎来到小雪的中文屋。我是小雪，Snowy。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā hǎo, huānyíng lái dào xiǎo xuě de zhōngwén wū. wǒ shì Xiǎo Xuě, Snowy.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Hello everyone, welcome to Snowy&#x27;s Chinese House. I&#x27;m Xiao Xue, Snowy.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">大家有没有见过这样的模仿？一个人学明星说话、走路，简直一模一样，让你忍不住笑出来。</span>
+            <button class="copy-btn" onclick="copyText(this, '大家有没有见过这样的模仿？一个人学明星说话、走路，简直一模一样，让你忍不住笑出来。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàjiā yǒu méiyǒu jiànguò zhèyàng de mófǎng? yí gè rén xué míngxīng shuōhuà, zǒulù, jiǎnzhí yìmúyíyàng, ràng nǐ rěnbuzhù xiào chūlái.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàjiā yǒu méiyǒu jiànguò zhèyàng de mófǎng? yí gè rén xué míngxīng shuōhuà, zǒulù, jiǎnzhí yìmúyíyàng, ràng nǐ rěnbuzhù xiào chūlái.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Have you ever seen an impression like this? Someone imitates a celebrity&#x27;s voice and walk so perfectly you can&#x27;t help but laugh.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Have you ever seen an impression like this? Someone imitates a celebrity&#x27;s voice and walk so perfectly you can&#x27;t help but laugh.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">或者一幅画，画里的葡萄逼真得连小鸟都想飞过来啄一口。</span>
+            <button class="copy-btn" onclick="copyText(this, '或者一幅画，画里的葡萄逼真得连小鸟都想飞过来啄一口。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">huòzhě yì fú huà, huà lǐ de pútáo bīzhēn de lián xiǎo niǎo dōu xiǎng fēi guòlái zhuó yìkǒu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'huòzhě yì fú huà, huà lǐ de pútáo bīzhēn de lián xiǎo niǎo dōu xiǎng fēi guòlái zhuó yìkǒu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Or a painting where the grapes look so real that even birds want to fly over and peck at them.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Or a painting where the grapes look so real that even birds want to fly over and peck at them.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">今天我们要学的成语，就是用来形容这种“太像了、太逼真了”的感觉——惟妙惟肖。</span>
+            <button class="copy-btn" onclick="copyText(this, '今天我们要学的成语，就是用来形容这种“太像了、太逼真了”的感觉——惟妙惟肖。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">jīntiān wǒmen yào xué de chéngyǔ, jiùshì yòng lái xíngróng zhè zhǒng “tài xiàng le, tài bīzhēn le” de gǎnjué —— wéi miào wéi xiào.</span>
+            <button class="copy-btn" onclick="copyText(this, 'jīntiān wǒmen yào xué de chéngyǔ, jiùshì yòng lái xíngróng zhè zhǒng “tài xiàng le, tài bīzhēn le” de gǎnjué —— wéi miào wéi xiào.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The idiom we&#x27;re learning today describes exactly that feeling of being so alike, so lifelike — 惟妙惟肖.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The idiom we&#x27;re learning today describes exactly that feeling of being so alike, so lifelike — 惟妙惟肖.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那么今天就教大家一个成语。我们还是先看一段影视片段。</span>
+            <button class="copy-btn" onclick="copyText(this, '那么今天就教大家一个成语。我们还是先看一段影视片段。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nàme jīntiān jiù jiāo dàjiā yīgè chéngyǔ. wǒmen háishi xiān kàn yīduàn yǐngshì piànduàn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.</span>
+            <button class="copy-btn" onclick="copyText(this, 'So today let&#x27;s learn a Chinese idiom. Let&#x27;s first watch a short drama clip.')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段】</div>
+  </section>
+  <section>
+    <h2>② 成语引出</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">看完了片段，大家猜到今天的成语了吗？对，就是——惟妙惟肖。惟妙惟肖。惟妙惟肖。</span>
+            <button class="copy-btn" onclick="copyText(this, '看完了片段，大家猜到今天的成语了吗？对，就是——惟妙惟肖。惟妙惟肖。惟妙惟肖。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——</span>
+            <button class="copy-btn" onclick="copyText(this, 'kàn wán le piànduàn, dàjiā cāi dào jīntiān de chéngyǔ le ma? duì, jiù shì——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 惟妙惟肖.</span>
+            <button class="copy-btn" onclick="copyText(this, 'After watching, did everyone guess today&#x27;s idiom? That&#x27;s right — 惟妙惟肖.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">我们还是先来分析一下每一个字的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '我们还是先来分析一下每一个字的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wǒmen háishi xiān lái fēnxī yīxià měi yīgè zì de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Let&#x27;s start by analysing the meaning of each character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Let&#x27;s start by analysing the meaning of each character.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>③ 字义分析</h2>
+    <h3 class="char-label">【惟 · wéi】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">惟这个字，本来的意思是“只、单单”，比如惟一，现在也常写作唯一。</span>
+            <button class="copy-btn" onclick="copyText(this, '惟这个字，本来的意思是“只、单单”，比如惟一，现在也常写作唯一。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wéi zhège zì, běnlái de yìsi shì “zhǐ, dāndān”, bǐrú wéiyī, xiànzài yě cháng xiě zuò wéiyī.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wéi zhège zì, běnlái de yìsi shì “zhǐ, dāndān”, bǐrú wéiyī, xiànzài yě cháng xiě zuò wéiyī.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The character 惟 originally means &#x27;only, solely&#x27; — as in 惟一 (the only one), now often written 唯一.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The character 惟 originally means &#x27;only, solely&#x27; — as in 惟一 (the only one), now often written 唯一.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">但在这个成语里，惟是一个语气词，起强调作用，可以理解成“非常、特别”。</span>
+            <button class="copy-btn" onclick="copyText(this, '但在这个成语里，惟是一个语气词，起强调作用，可以理解成“非常、特别”。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">dàn zài zhège chéngyǔ lǐ, wéi shì yí gè yǔqì cí, qǐ qiángdiào zuòyòng, kěyǐ lǐjiě chéng “fēicháng, tèbié”.</span>
+            <button class="copy-btn" onclick="copyText(this, 'dàn zài zhège chéngyǔ lǐ, wéi shì yí gè yǔqì cí, qǐ qiángdiào zuòyòng, kěyǐ lǐjiě chéng “fēicháng, tèbié”.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">But in this idiom, 惟 is an intensifying particle meaning something like &#x27;very, especially&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'But in this idiom, 惟 is an intensifying particle meaning something like &#x27;very, especially&#x27;.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【妙 · miào】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">妙，就是美好、精巧、高明。</span>
+            <button class="copy-btn" onclick="copyText(this, '妙，就是美好、精巧、高明。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">miào, jiùshì měihǎo, jīngqiǎo, gāomíng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'miào, jiùshì měihǎo, jīngqiǎo, gāomíng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">妙 means wonderful, exquisite, clever.</span>
+            <button class="copy-btn" onclick="copyText(this, '妙 means wonderful, exquisite, clever.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如巧妙、绝妙、妙极了，都是在夸一件事做得又聪明又漂亮。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如巧妙、绝妙、妙极了，都是在夸一件事做得又聪明又漂亮。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú qiǎomiào, juémiào, miào jí le, dōu shì zài kuā yí jiàn shì zuò de yòu cōngmíng yòu piàoliang.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú qiǎomiào, juémiào, miào jí le, dōu shì zài kuā yí jiàn shì zuò de yòu cōngmíng yòu piàoliang.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Words like 巧妙 (ingenious), 绝妙 (superb), 妙极了 (marvelous) all praise something done cleverly and beautifully.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Words like 巧妙 (ingenious), 绝妙 (superb), 妙极了 (marvelous) all praise something done cleverly and beautifully.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【惟 · wéi】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">又出现了一个惟！没错，和前面那个一样，还是“非常”的意思。</span>
+            <button class="copy-btn" onclick="copyText(this, '又出现了一个惟！没错，和前面那个一样，还是“非常”的意思。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yòu chūxiàn le yí gè wéi! méicuò, hé qiánmiàn nàge yíyàng, háishì “fēicháng” de yìsi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yòu chūxiàn le yí gè wéi! méicuò, hé qiánmiàn nàge yíyàng, háishì “fēicháng” de yìsi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Another 惟 appears! Yes — same as before, it again means &#x27;very&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Another 惟 appears! Yes — same as before, it again means &#x27;very&#x27;.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">惟妙惟肖用了两个惟，读起来工整又有节奏，这也是成语常见的对称结构。</span>
+            <button class="copy-btn" onclick="copyText(this, '惟妙惟肖用了两个惟，读起来工整又有节奏，这也是成语常见的对称结构。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wéi miào wéi xiào yòng le liǎng gè wéi, dú qǐlái gōngzhěng yòu yǒu jiézòu, zhè yěshì chéngyǔ chángjiàn de duìchèn jiégòu.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wéi miào wéi xiào yòng le liǎng gè wéi, dú qǐlái gōngzhěng yòu yǒu jiézòu, zhè yěshì chéngyǔ chángjiàn de duìchèn jiégòu.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">惟妙惟肖 uses two 惟, giving it a neat, rhythmic symmetry — a common pattern in idioms.</span>
+            <button class="copy-btn" onclick="copyText(this, '惟妙惟肖 uses two 惟, giving it a neat, rhythmic symmetry — a common pattern in idioms.')">복사</button>
+          </div>
+        </div><h3 class="char-label">【肖 · xiào】</h3>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">肖，意思是相似、像。</span>
+            <button class="copy-btn" onclick="copyText(this, '肖，意思是相似、像。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xiào, yìsi shì xiāngsì, xiàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'xiào, yìsi shì xiāngsì, xiàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">肖 means to resemble, to be alike.</span>
+            <button class="copy-btn" onclick="copyText(this, '肖 means to resemble, to be alike.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">比如肖像，就是画得很像本人的画；不肖，就是不像长辈那样好。</span>
+            <button class="copy-btn" onclick="copyText(this, '比如肖像，就是画得很像本人的画；不肖，就是不像长辈那样好。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǐrú xiàoxiàng, jiùshì huà de hěn xiàng běnrén de huà; búxiào, jiùshì bú xiàng zhǎngbèi nàyàng hǎo.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǐrú xiàoxiàng, jiùshì huà de hěn xiàng běnrén de huà; búxiào, jiùshì bú xiàng zhǎngbèi nàyàng hǎo.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">For example 肖像 is a portrait that closely resembles the person; 不肖 means &#x27;not resembling one&#x27;s elders in virtue&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'For example 肖像 is a portrait that closely resembles the person; 不肖 means &#x27;not resembling one&#x27;s elders in virtue&#x27;.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">注意，肖单独用时念 xiào，不要念成“小”哦。</span>
+            <button class="copy-btn" onclick="copyText(this, '注意，肖单独用时念 xiào，不要念成“小”哦。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhùyì, xiào dāndú yòng shí niàn xiào, búyào niàn chéng “xiǎo” o.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhùyì, xiào dāndú yòng shí niàn xiào, búyào niàn chéng “xiǎo” o.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Note: on its own 肖 is pronounced xiào, not &#x27;xiǎo&#x27;.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Note: on its own 肖 is pronounced xiào, not &#x27;xiǎo&#x27;.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>④ 成语整体含义</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">把四个字合起来，惟妙惟肖的意思就是：又非常精妙，又非常相似。</span>
+            <button class="copy-btn" onclick="copyText(this, '把四个字合起来，惟妙惟肖的意思就是：又非常精妙，又非常相似。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">bǎ sì gè zì hé qǐlái, wéi miào wéi xiào de yìsi jiùshì: yòu fēicháng jīngmiào, yòu fēicháng xiāngsì.</span>
+            <button class="copy-btn" onclick="copyText(this, 'bǎ sì gè zì hé qǐlái, wéi miào wéi xiào de yìsi jiùshì: yòu fēicháng jīngmiào, yòu fēicháng xiāngsì.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Put together, 惟妙惟肖 means both extremely exquisite and extremely alike.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Put together, 惟妙惟肖 means both extremely exquisite and extremely alike.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">它用来形容描写、模仿或者表演得极其逼真，就像真的一样。</span>
+            <button class="copy-btn" onclick="copyText(this, '它用来形容描写、模仿或者表演得极其逼真，就像真的一样。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā yòng lái xíngróng miáoxiě, mófǎng huòzhě biǎoyǎn de jíqí bīzhēn, jiù xiàng zhēn de yíyàng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā yòng lái xíngróng miáoxiě, mófǎng huòzhě biǎoyǎn de jíqí bīzhēn, jiù xiàng zhēn de yíyàng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">It describes depiction, imitation, or performance so lifelike it seems real.</span>
+            <button class="copy-btn" onclick="copyText(this, 'It describes depiction, imitation, or performance so lifelike it seems real.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">画画、雕塑、模仿秀，只要像到让人惊叹，都可以说惟妙惟肖。</span>
+            <button class="copy-btn" onclick="copyText(this, '画画、雕塑、模仿秀，只要像到让人惊叹，都可以说惟妙惟肖。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">huàhuà, diāosù, mófǎng xiù, zhǐyào xiàng dào ràng rén jīngtàn, dōu kěyǐ shuō wéi miào wéi xiào.</span>
+            <button class="copy-btn" onclick="copyText(this, 'huàhuà, diāosù, mófǎng xiù, zhǐyào xiàng dào ràng rén jīngtàn, dōu kěyǐ shuō wéi miào wéi xiào.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">A painting, a sculpture, an impression — anything so lifelike it amazes you can be called 惟妙惟肖.</span>
+            <button class="copy-btn" onclick="copyText(this, 'A painting, a sculpture, an impression — anything so lifelike it amazes you can be called 惟妙惟肖.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">和它意思很近的成语，有“栩栩如生”。</span>
+            <button class="copy-btn" onclick="copyText(this, '和它意思很近的成语，有“栩栩如生”。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hé tā yìsi hěn jìn de chéngyǔ, yǒu “xǔxǔrúshēng”.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hé tā yìsi hěn jìn de chéngyǔ, yǒu “xǔxǔrúshēng”.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">A close synonym is 栩栩如生 (lifelike, as if alive).</span>
+            <button class="copy-btn" onclick="copyText(this, 'A close synonym is 栩栩如生 (lifelike, as if alive).')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">不过有区别：栩栩如生偏向形容艺术形象好像活了；惟妙惟肖更强调“模仿、描写得像”。</span>
+            <button class="copy-btn" onclick="copyText(this, '不过有区别：栩栩如生偏向形容艺术形象好像活了；惟妙惟肖更强调“模仿、描写得像”。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">búguò yǒu qūbié: xǔxǔrúshēng piānxiàng xíngróng yìshù xíngxiàng hǎoxiàng huó le; wéi miào wéi xiào gèng qiángdiào “mófǎng, miáoxiě de xiàng”.</span>
+            <button class="copy-btn" onclick="copyText(this, 'búguò yǒu qūbié: xǔxǔrúshēng piānxiàng xíngróng yìshù xíngxiàng hǎoxiàng huó le; wéi miào wéi xiào gèng qiángdiào “mófǎng, miáoxiě de xiàng”.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">But there&#x27;s a difference: 栩栩如生 leans toward an artistic image seeming alive; 惟妙惟肖 stresses that an imitation or depiction closely resembles the original.</span>
+            <button class="copy-btn" onclick="copyText(this, 'But there&#x27;s a difference: 栩栩如生 leans toward an artistic image seeming alive; 惟妙惟肖 stresses that an imitation or depiction closely resembles the original.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">反义词是“画虎类犬”——想画老虎，结果画成了狗，形容模仿得很失败。</span>
+            <button class="copy-btn" onclick="copyText(this, '反义词是“画虎类犬”——想画老虎，结果画成了狗，形容模仿得很失败。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">fǎnyìcí shì “huà hǔ lèi quǎn” —— xiǎng huà lǎohǔ, jiéguǒ huà chéng le gǒu, xíngróng mófǎng de hěn shībài.</span>
+            <button class="copy-btn" onclick="copyText(this, 'fǎnyìcí shì “huà hǔ lèi quǎn” —— xiǎng huà lǎohǔ, jiéguǒ huà chéng le gǒu, xíngróng mófǎng de hěn shībài.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The antonym is 画虎类犬 — trying to draw a tiger but ending up with a dog: a failed imitation.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The antonym is 画虎类犬 — trying to draw a tiger but ending up with a dog: a failed imitation.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑤ 成语来源 — 宋·岳珂 · 《英光堂帖赞》</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">惟妙惟肖这个成语，出自宋代文人岳珂的《英光堂帖赞》。</span>
+            <button class="copy-btn" onclick="copyText(this, '惟妙惟肖这个成语，出自宋代文人岳珂的《英光堂帖赞》。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wéi miào wéi xiào zhège chéngyǔ, chūzì Sòng dài wénrén Yuè Kē de 《Yīngguāng Táng Tiě Zàn》.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wéi miào wéi xiào zhège chéngyǔ, chūzì Sòng dài wénrén Yuè Kē de 《Yīngguāng Táng Tiě Zàn》.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The idiom 惟妙惟肖 comes from 《英光堂帖赞》 by Yue Ke, a scholar of the Song dynasty.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The idiom 惟妙惟肖 comes from 《英光堂帖赞》 by Yue Ke, a scholar of the Song dynasty.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">岳珂是南宋的文学家和史学家，也是名将岳飞的孙子。《英光堂帖赞》是他为古代书法名帖写的赞语。</span>
+            <button class="copy-btn" onclick="copyText(this, '岳珂是南宋的文学家和史学家，也是名将岳飞的孙子。《英光堂帖赞》是他为古代书法名帖写的赞语。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">yuè Kē shì Nán Sòng de wénxuéjiā hé shǐxuéjiā, yěshì míngjiàng Yuè Fēi de sūnzi. 《Yīngguāng Táng Tiě Zàn》 shì tā wèi gǔdài shūfǎ míngtiě xiě de zànyǔ.</span>
+            <button class="copy-btn" onclick="copyText(this, 'yuè Kē shì Nán Sòng de wénxuéjiā hé shǐxuéjiā, yěshì míngjiàng Yuè Fēi de sūnzi. 《Yīngguāng Táng Tiě Zàn》 shì tā wèi gǔdài shūfǎ míngtiě xiě de zànyǔ.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Yue Ke was a writer and historian of the Southern Song, and a grandson of the famous general Yue Fei. 《英光堂帖赞》 is his appreciation written for classical works of calligraphy.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Yue Ke was a writer and historian of the Southern Song, and a grandson of the famous general Yue Fei. 《英光堂帖赞》 is his appreciation written for classical works of calligraphy.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">帖赞，就是欣赏、评价书法作品时写下的赞美文字。岳珂在文中比较了两位书法家的风格。</span>
+            <button class="copy-btn" onclick="copyText(this, '帖赞，就是欣赏、评价书法作品时写下的赞美文字。岳珂在文中比较了两位书法家的风格。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tiě zàn, jiùshì xīnshǎng, píngjià shūfǎ zuòpǐn shí xiě xià de zànměi wénzì. Yuè Kē zài wén zhōng bǐjiào le liǎng wèi shūfǎjiā de fēnggé.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tiě zàn, jiùshì xīnshǎng, píngjià shūfǎ zuòpǐn shí xiě xià de zànměi wénzì. Yuè Kē zài wén zhōng bǐjiào le liǎng wèi shūfǎjiā de fēnggé.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">A 帖赞 is praise written when appreciating calligraphy. In it, Yue Ke compares the styles of two calligraphers.</span>
+            <button class="copy-btn" onclick="copyText(this, 'A 帖赞 is praise written when appreciating calligraphy. In it, Yue Ke compares the styles of two calligraphers.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">他这样写道：</span>
+            <button class="copy-btn" onclick="copyText(this, '他这样写道：')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā zhèyàng xiě dào:</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā zhèyàng xiě dào:')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">He wrote:</span>
+            <button class="copy-btn" onclick="copyText(this, 'He wrote:')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">马牛其风，神合志通；彼妍我峭，惟妙惟肖。</span>
+            <button class="copy-btn" onclick="copyText(this, '马牛其风，神合志通；彼妍我峭，惟妙惟肖。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">mǎ niú qí fēng, shén hé zhì tōng; bǐ yán wǒ qiào, wéi miào wéi xiào.</span>
+            <button class="copy-btn" onclick="copyText(this, 'mǎ niú qí fēng, shén hé zhì tōng; bǐ yán wǒ qiào, wéi miào wéi xiào.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">As unlike as horse and ox, yet their spirit and intent are one; his brush graceful, mine bold — each captured marvelously and true to itself.</span>
+            <button class="copy-btn" onclick="copyText(this, 'As unlike as horse and ox, yet their spirit and intent are one; his brush graceful, mine bold — each captured marvelously and true to itself.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">在这里，惟妙惟肖是说两种不同的书法风格，都被表现得精妙又逼真，各自都像极了本来的样子。</span>
+            <button class="copy-btn" onclick="copyText(this, '在这里，惟妙惟肖是说两种不同的书法风格，都被表现得精妙又逼真，各自都像极了本来的样子。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zài zhèlǐ, wéi miào wéi xiào shì shuō liǎng zhǒng bùtóng de shūfǎ fēnggé, dōu bèi biǎoxiàn de jīngmiào yòu bīzhēn, gèzì dōu xiàng jí le běnlái de yàngzi.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zài zhèlǐ, wéi miào wéi xiào shì shuō liǎng zhǒng bùtóng de shūfǎ fēnggé, dōu bèi biǎoxiàn de jīngmiào yòu bīzhēn, gèzì dōu xiàng jí le běnlái de yàngzi.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Here, 惟妙惟肖 says that two different calligraphy styles were each rendered exquisitely and faithfully, each perfectly true to its own character.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Here, 惟妙惟肖 says that two different calligraphy styles were each rendered exquisitely and faithfully, each perfectly true to its own character.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">后来，这个成语就被用来形容一切描写、模仿、表演得非常逼真的情况，成了今天的常用词。</span>
+            <button class="copy-btn" onclick="copyText(this, '后来，这个成语就被用来形容一切描写、模仿、表演得非常逼真的情况，成了今天的常用词。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hòulái, zhège chéngyǔ jiù bèi yòng lái xíngróng yíqiè miáoxiě, mófǎng, biǎoyǎn de fēicháng bīzhēn de qíngkuàng, chéng le jīntiān de chángyòng cí.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hòulái, zhège chéngyǔ jiù bèi yòng lái xíngróng yíqiè miáoxiě, mófǎng, biǎoyǎn de fēicháng bīzhēn de qíngkuàng, chéng le jīntiān de chángyòng cí.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Later, the idiom came to describe anything depicted, imitated, or performed with great lifelikeness, becoming the common word we use today.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Later, the idiom came to describe anything depicted, imitated, or performed with great lifelikeness, becoming the common word we use today.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥ 例句与片段回顾</h2>
+    <p class="ex-label">例句 1</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">这位画家画的猫惟妙惟肖，连胡须都好像会动。</span>
+            <button class="copy-btn" onclick="copyText(this, '这位画家画的猫惟妙惟肖，连胡须都好像会动。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">zhè wèi huàjiā huà de māo wéi miào wéi xiào, lián húxū dōu hǎoxiàng huì dòng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'zhè wèi huàjiā huà de māo wéi miào wéi xiào, lián húxū dōu hǎoxiàng huì dòng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">The cat this painter drew is so lifelike that even its whiskers seem to move.</span>
+            <button class="copy-btn" onclick="copyText(this, 'The cat this painter drew is so lifelike that even its whiskers seem to move.')">복사</button>
+          </div>
+        </div><p class="ex-label">例句 2</p>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">他模仿老师说话的样子惟妙惟肖，全班都笑翻了。</span>
+            <button class="copy-btn" onclick="copyText(this, '他模仿老师说话的样子惟妙惟肖，全班都笑翻了。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā mófǎng lǎoshī shuōhuà de yàngzi wéi miào wéi xiào, quánbān dōu xiào fān le.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā mófǎng lǎoshī shuōhuà de yàngzi wéi miào wéi xiào, quánbān dōu xiào fān le.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">His impression of the teacher&#x27;s way of talking was so spot-on that the whole class burst out laughing.</span>
+            <button class="copy-btn" onclick="copyText(this, 'His impression of the teacher&#x27;s way of talking was so spot-on that the whole class burst out laughing.')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">那我们回头再来看一下开头的影视片段——</span>
+            <button class="copy-btn" onclick="copyText(this, '那我们回头再来看一下开头的影视片段——')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——</span>
+            <button class="copy-btn" onclick="copyText(this, 'nà wǒmen huítóu zài lái kàn yīxià kāitóu de yǐngshì piànduàn——')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Now let&#x27;s go back and look at the opening drama clip again——</span>
+            <button class="copy-btn" onclick="copyText(this, 'Now let&#x27;s go back and look at the opening drama clip again——')">복사</button>
+          </div>
+        </div><div class="clip-marker">📽️ 【影视片段回放】</div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">你发现了吗？惟妙惟肖常常用来夸奖，说明模仿或描写得非常成功。</span>
+            <button class="copy-btn" onclick="copyText(this, '你发现了吗？惟妙惟肖常常用来夸奖，说明模仿或描写得非常成功。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">nǐ fāxiàn le ma? wéi miào wéi xiào chángcháng yòng lái kuājiǎng, shuōmíng mófǎng huò miáoxiě de fēicháng chénggōng.</span>
+            <button class="copy-btn" onclick="copyText(this, 'nǐ fāxiàn le ma? wéi miào wéi xiào chángcháng yòng lái kuājiǎng, shuōmíng mófǎng huò miáoxiě de fēicháng chénggōng.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Did you notice? 惟妙惟肖 is usually a compliment, showing an imitation or depiction is remarkably successful.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Did you notice? 惟妙惟肖 is usually a compliment, showing an imitation or depiction is remarkably successful.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑥-B 填空练习</h2>
+    <div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q1.</span> 他学小狗叫，学得________，弟弟还以为家里真的有狗。</p><p class="quiz-hint">He imitated a puppy&#x27;s bark so ________ that his little brother thought there was a real dog.</p><p class="quiz-a">✅ 他学小狗叫，学得惟妙惟肖，弟弟还以为家里真的有狗。</p><p class="quiz-hint">He imitated a puppy&#x27;s bark so vividly that his little brother thought there was a real dog at home.</p></div><div class="quiz-item"><p class="quiz-q"><span class="quiz-num">Q2.</span> 这座蜡像做得________，简直和真人一模一样。</p><p class="quiz-hint">This wax figure is made so ________ that it looks exactly like a real person.</p><p class="quiz-a">✅ 这座蜡像做得惟妙惟肖，简直和真人一模一样。</p><p class="quiz-hint">This wax figure is so lifelike that it looks exactly like a real person.</p></div>
+  </section>
+  <section>
+    <h2>⑦ 使用注意</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">惟妙惟肖是褒义词，一般用来称赞模仿、描写、表演得逼真。</span>
+            <button class="copy-btn" onclick="copyText(this, '惟妙惟肖是褒义词，一般用来称赞模仿、描写、表演得逼真。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">wéi miào wéi xiào shì bāoyìcí, yìbān yòng lái chēngzàn mófǎng, miáoxiě, biǎoyǎn de bīzhēn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'wéi miào wéi xiào shì bāoyìcí, yìbān yòng lái chēngzàn mófǎng, miáoxiě, biǎoyǎn de bīzhēn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">惟妙惟肖 is a positive term, used to praise lifelike imitation, depiction, or performance.</span>
+            <button class="copy-btn" onclick="copyText(this, '惟妙惟肖 is a positive term, used to praise lifelike imitation, depiction, or performance.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">它形容的是“模仿得像”，所以主语通常是模仿、画、表演这类行为，不用来直接形容真实的人或风景本身。</span>
+            <button class="copy-btn" onclick="copyText(this, '它形容的是“模仿得像”，所以主语通常是模仿、画、表演这类行为，不用来直接形容真实的人或风景本身。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">tā xíngróng de shì “mófǎng de xiàng”, suǒyǐ zhǔyǔ tōngcháng shì mófǎng, huà, biǎoyǎn zhè lèi xíngwéi, bú yòng lái zhíjiē xíngróng zhēnshí de rén huò fēngjǐng běnshēn.</span>
+            <button class="copy-btn" onclick="copyText(this, 'tā xíngróng de shì “mófǎng de xiàng”, suǒyǐ zhǔyǔ tōngcháng shì mófǎng, huà, biǎoyǎn zhè lèi xíngwéi, bú yòng lái zhíjiē xíngróng zhēnshí de rén huò fēngjǐng běnshēn.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">It describes resemblance through imitation, so its subject is usually an act of imitating, painting, or performing — not a real person or real scenery itself.</span>
+            <button class="copy-btn" onclick="copyText(this, 'It describes resemblance through imitation, so its subject is usually an act of imitating, painting, or performing — not a real person or real scenery itself.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">和栩栩如生相比：栩栩如生更常形容艺术作品像活的，惟妙惟肖更强调“像原来的对象”。</span>
+            <button class="copy-btn" onclick="copyText(this, '和栩栩如生相比：栩栩如生更常形容艺术作品像活的，惟妙惟肖更强调“像原来的对象”。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hé xǔxǔrúshēng xiāngbǐ: xǔxǔrúshēng gèng cháng xíngróng yìshù zuòpǐn xiàng huó de, wéi miào wéi xiào gèng qiángdiào “xiàng yuánlái de duìxiàng”.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hé xǔxǔrúshēng xiāngbǐ: xǔxǔrúshēng gèng cháng xíngróng yìshù zuòpǐn xiàng huó de, wéi miào wéi xiào gèng qiángdiào “xiàng yuánlái de duìxiàng”.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Compared with 栩栩如生 (which more often describes art seeming alive), 惟妙惟肖 stresses resemblance to the original subject.</span>
+            <button class="copy-btn" onclick="copyText(this, 'Compared with 栩栩如生 (which more often describes art seeming alive), 惟妙惟肖 stresses resemblance to the original subject.')">복사</button>
+          </div>
+        </div>
+  </section>
+  <section>
+    <h2>⑧ 结尾</h2>
+    
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">下次你看到特别逼真的模仿、画作或者表演，就可以说一句：太惟妙惟肖了！</span>
+            <button class="copy-btn" onclick="copyText(this, '下次你看到特别逼真的模仿、画作或者表演，就可以说一句：太惟妙惟肖了！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">xiàcì nǐ kàndào tèbié bīzhēn de mófǎng, huàzuò huòzhě biǎoyǎn, jiù kěyǐ shuō yíjù: tài wéi miào wéi xiào le!</span>
+            <button class="copy-btn" onclick="copyText(this, 'xiàcì nǐ kàndào tèbié bīzhēn de mófǎng, huàzuò huòzhě biǎoyǎn, jiù kěyǐ shuō yíjù: tài wéi miào wéi xiào le!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">Next time you see a really lifelike imitation, painting, or performance, you can say: 太惟妙惟肖了! — So lifelike!</span>
+            <button class="copy-btn" onclick="copyText(this, 'Next time you see a really lifelike imitation, painting, or performance, you can say: 太惟妙惟肖了! — So lifelike!')">복사</button>
+          </div>
+        </div>
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">好了，今天就到这里。希望你学到了一点新的中文。</span>
+            <button class="copy-btn" onclick="copyText(this, '好了，今天就到这里。希望你学到了一点新的中文。')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.</span>
+            <button class="copy-btn" onclick="copyText(this, 'hǎo le, jīntiān jiù dào zhèlǐ. xīwàng nǐ xué dào le yīdiǎn xīn de zhōngwén.')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">That&#x27;s all for today. I hope you learned something new in Chinese.</span>
+            <button class="copy-btn" onclick="copyText(this, 'That&#x27;s all for today. I hope you learned something new in Chinese.')">복사</button>
+          </div>
+        </div>
+
+        <div class="sentence">
+          <div class="line cn">
+            <span class="label">中文</span>
+            <span class="text">如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！</span>
+            <button class="copy-btn" onclick="copyText(this, '如果你喜欢我的内容，欢迎点赞加关注小雪的中文屋。我们下次再见！')">복사</button>
+          </div>
+          <div class="line py">
+            <span class="label">拼音</span>
+            <span class="text">rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!</span>
+            <button class="copy-btn" onclick="copyText(this, 'rúguǒ nǐ xǐhuān wǒ de nèiróng, huānyíng diǎnzàn jiā guānzhù xiǎo xuě de zhōngwén wū. wǒmen xià cì zàijiàn!')">복사</button>
+          </div>
+          <div class="line en">
+            <span class="label">영어</span>
+            <span class="text">If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!</span>
+            <button class="copy-btn" onclick="copyText(this, 'If you enjoy my content, please like and subscribe to Snowy&#x27;s Chinese House. See you next time!')">복사</button>
+          </div>
+        </div>
+  </section>
+</main>
+<footer>✦ 小雪的中文屋 · Snowy's Chinese House ✦</footer>
+
+<script>
+function copyText(btn, text) {
+  // unescape HTML entities
+  const ta = document.createElement('textarea');
+  ta.innerHTML = text;
+  const decoded = ta.value;
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
