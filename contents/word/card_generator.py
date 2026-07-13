@@ -887,6 +887,141 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "躺平",
+        "slug":    "tang-ping",
+        "pinyin":  "tǎng píng",
+        "desc_en": "opting out of the rat race",
+        "search_query": "young man relaxing lying on sofa grass hammock peaceful rest",
+        "collage_images": [11, 12],
+        "emoji":   "🛋️",
+        "para_labels": [
+            "What is 躺平?",
+            "Xiao Wang gives up the grind",
+            "Happier than ever",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个超级火的词——躺平！\n"
+                "躺，就是躺下来；平，就是平平的。\n"
+                "合起来，躺平，字面意思就是平平地躺着。\n"
+                "但现在，躺平用来形容一种生活态度——不拼了，不卷了，怎么舒服怎么来。\n"
+                "到底是怎么回事呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚躺平到底是什么意思。",
+            "p1_s1_note":
+                "想不想，就是把\"想\"说成\"想不想\"，用来问你\"要不要\"。\n"
+                "比如：你想不想去？你吃不吃？很常用哦。\n"
+                "那么——你想不想躺平呢？",
+            "p1_s2_note":
+                "字面意思，就是文字表面的意思。\n"
+                "躺下来，平平地躺着——是不是很好懂？\n"
+                "但躺平的真正意思，可不只是躺着哦。",
+            "p1_s3_note":
+                "不努力、不竞争，就是不再拼命、不跟别人比。\n"
+                "怎么舒服怎么来，意思是：怎么舒服就怎么做。\n"
+                "这就是躺平的态度——放轻松，别为难自己。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "躺平，就是不再拼命竞争，选择轻松的生活。\n"
+                "那什么样的人会躺平呢？我们来看小王的故事！",
+            "p2_intro":
+                "第二段，我们来看看小王为什么决定躺平。",
+            "p2_s1_note":
+                "工作狂，就是特别拼、特别爱工作的人。\n"
+                "加班到最晚，就是每天走得比谁都晚。\n"
+                "以前的小王，就是这样一个人。",
+            "p2_s2_note":
+                "突然，就是一下子、没有预兆。\n"
+                "拼了三年，工资还是老样子——\n"
+                "老样子，就是没有变化。是不是有点扎心？",
+            "p2_s3_note":
+                "于是，就是所以、因此。\n"
+                "不卷了！我要躺平！\n"
+                "小王下定决心，不再跟别人比了。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "小王拼了三年，发现努力没有回报，于是决定躺平。\n"
+                "那躺平以后，他过得怎么样呢？我们来看第三段！",
+            "p3_intro":
+                "第三段，看看躺平之后的小王！",
+            "p3_s1_note":
+                "准时，就是不早不晚、刚好那个时间。\n"
+                "养花、遛狗、睡大觉——\n"
+                "睡大觉，就是睡得又久又香。多舒服啊！",
+            "p3_s2_note":
+                "后悔，就是做了以后觉得不该做。\n"
+                "同事担心他后悔，可小王却说——\n"
+                "我从来没这么快乐过。是不是很治愈？",
+            "p3_s3_note":
+                "懒，就是不想动、不想做事。\n"
+                "但躺平不是懒！\n"
+                "而是不再为了别人的标准，把自己累坏。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "小王躺平以后，反而找到了快乐。\n"
+                "这，就是躺平！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了躺平这个词，还学了很多实用的表达：\n"
+                "工作狂、老样子、准时、后悔、睡大觉……\n"
+                "大家都记住了吗？\n"
+                "累的时候，别忘了：偶尔躺一下，也没关系。\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你想不想∨★躺平★？",
+                    "py": "Nǐ xiǎng bu xiǎng tǎng píng?",
+                    "en": "Do you feel like lying flat (躺平)?",
+                },
+                {
+                    "cn": "别急着回答，∨先看看字面意思：∨躺下来，平平地躺着。",
+                    "py": "Bié jí zhe huídá, xiān kànkan zìmiàn yìsi: tǎng xiàlái, píngpíng de tǎng zhe.",
+                    "en": "Don't rush to answer — first look at the literal meaning: lie down, lie flat.",
+                },
+                {
+                    "cn": "但现在，∨躺平是指——∨不努力，不竞争，∨怎么舒服怎么来。",
+                    "py": "Dàn xiànzài, tǎng píng shì zhǐ—— bù nǔlì, bù jìngzhēng, zěnme shūfu zěnme lái.",
+                    "en": "But now, 躺平 means: no striving, no competing — just do whatever's most comfortable.",
+                },
+            ],
+            [
+                {
+                    "cn": "小王∨以前是个工作狂，∨每天加班到最晚。",
+                    "py": "Xiǎo Wáng yǐqián shì gè gōngzuòkuáng, měitiān jiābān dào zuì wǎn.",
+                    "en": "Xiao Wang used to be a workaholic, working overtime the latest every day.",
+                },
+                {
+                    "cn": "有一天，∨他突然发现——∨拼了三年，∨工资还是老样子。",
+                    "py": "Yǒu yìtiān, tā tūrán fāxiàn—— pīn le sān nián, gōngzī háishì lǎo yàngzi.",
+                    "en": "One day he suddenly realized — after grinding for three years, his salary was still the same.",
+                },
+                {
+                    "cn": "于是他决定：∨不卷了，∨我要躺平！",
+                    "py": "Yúshì tā juédìng: bù juǎn le, wǒ yào tǎng píng!",
+                    "en": "So he decided: no more rat race — I'm going to lie flat!",
+                },
+            ],
+            [
+                {
+                    "cn": "现在的小王，∨六点准时下班，∨回家养花、遛狗、睡大觉。",
+                    "py": "Xiànzài de Xiǎo Wáng, liù diǎn zhǔnshí xiàbān, huí jiā yǎng huā, liù gǒu, shuì dà jiào.",
+                    "en": "Now Xiao Wang clocks out at six sharp, goes home to grow flowers, walk the dog, and sleep in.",
+                },
+                {
+                    "cn": "同事问他∨后不后悔，∨他笑着说：∨我从来没这么快乐过。",
+                    "py": "Tóngshì wèn tā hòu bu hòuhuǐ, tā xiào zhe shuō: wǒ cónglái méi zhème kuàilè guò.",
+                    "en": "When a coworker asked if he regretted it, he smiled: I've never been this happy.",
+                },
+                {
+                    "cn": "所以说，∨★躺平★不是懒，∨而是——∨不再为了别人的标准，∨累坏自己。",
+                    "py": "Suǒyǐ shuō, tǎng píng bú shì lǎn, érshì—— bú zài wèile biéren de biāozhǔn, lèi huài zìjǐ.",
+                    "en": "So, 躺平 isn't laziness — it's refusing to wear yourself out for someone else's standards.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 

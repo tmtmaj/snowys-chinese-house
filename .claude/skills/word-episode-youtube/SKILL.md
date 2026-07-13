@@ -168,3 +168,9 @@ Playlist: `Chinese Buzzwords｜流行词学习系列`.
   ep0001-template tabbed versions (Step 8).
 - Chinese paths break WSL writes — build in `/tmp`, copy to repo.
 - Collage/thumbnail are NOT done until the user picks the photos.
+- **Editing a paragraph sentence after cards exist**: the same sentence is baked
+  into MULTIPLE cards. Regenerate ALL of them, not just the single sentence card:
+  the sentence card (`0N_pX_sY.png`), the paragraph-full card (`05/10/15_pX_full.png`),
+  AND the review card (`17/18/19_review_pX.png`). Also patch `metadata.json`
+  (it embeds cn/py/en per sentence card). Then update `scripts.js` (s/s2/review) +
+  regenerate md. Missing the full/review cards leaves stale text on screen.
