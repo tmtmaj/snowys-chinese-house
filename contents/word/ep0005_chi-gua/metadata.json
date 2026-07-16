@@ -1,0 +1,164 @@
+{
+  "episode": 5,
+  "id": "ep0005_chi-gua",
+  "word": "吃瓜",
+  "pinyin": "chī guā",
+  "desc_en": "watching the drama unfold",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "最近，你吃瓜了吗？",
+      "py": "Zuìjìn, nǐ chī guā le ma?",
+      "en": "Have you \"eaten melon\" lately?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "别误会，这里的瓜，不是真的西瓜。",
+      "py": "Bié wùhuì, zhèlǐ de guā, bú shì zhēn de xīguā.",
+      "en": "Don't get me wrong — the melon here isn't a real watermelon."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "吃瓜，是指在旁边看热闹，看别人的八卦。",
+      "py": "Chī guā, shì zhǐ zài pángbiān kàn rènao, kàn biéren de bāguà.",
+      "en": "吃瓜 means watching the excitement from the sidelines — following other people's gossip."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "小美是公司里的\"吃瓜\"高手。",
+      "py": "Xiǎo Měi shì gōngsī lǐ de \"chī guā\" gāoshǒu.",
+      "en": "Xiao Mei is the office's \"melon-eating\" master."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "谁和谁吵架了，谁又谈恋爱了，她全都知道。",
+      "py": "Shéi hé shéi chǎojià le, shéi yòu tán liàn'ài le, tā quándōu zhīdào.",
+      "en": "Who fought with whom, who started dating — she knows it all."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "每天午休，她就搬个小板凳，准备\"吃瓜\"。",
+      "py": "Měitiān wǔxiū, tā jiù bān gè xiǎo bǎndèng, zhǔnbèi \"chī guā\".",
+      "en": "Every lunch break, she pulls up a little stool, ready to \"eat melon\"."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "有一天，同事们围在一起吃瓜，聊得特别开心。",
+      "py": "Yǒu yìtiān, tóngshìmen wéi zài yìqǐ chī guā, liáo de tèbié kāixīn.",
+      "en": "One day, coworkers gathered around to eat melon, chatting away happily."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "小美凑过去一听——原来大家聊的八卦，主角是她自己！",
+      "py": "Xiǎo Měi còu guòqù yì tīng—— yuánlái dàjiā liáo de bāguà, zhǔjué shì tā zìjǐ!",
+      "en": "Xiao Mei leaned in to listen — turns out the gossip everyone was sharing was about her!"
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "所以说，吃瓜一时爽，但有时候，你也会变成别人的瓜。",
+      "py": "Suǒyǐ shuō, chī guā yìshí shuǎng, dàn yǒu shíhou, nǐ yě huì biànchéng biéren de guā.",
+      "en": "So, eating melon feels great for a moment — but sometimes, you become someone else's melon too."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}

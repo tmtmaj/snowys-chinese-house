@@ -1022,6 +1022,141 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "吃瓜",
+        "slug":    "chi-gua",
+        "pinyin":  "chī guā",
+        "desc_en": "watching the drama unfold",
+        "search_query": "watermelon slice summer eating fresh",
+        "collage_images": [2, 11],
+        "emoji":   "🍉",
+        "para_labels": [
+            "What is 吃瓜?",
+            "Xiao Mei the gossip master",
+            "The tables turn",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个特别有意思的词——吃瓜！\n"
+                "吃，就是吃东西；瓜，就是西瓜的瓜。\n"
+                "但是吃瓜合在一起，意思可不是真的吃西瓜哦。\n"
+                "现在，吃瓜用来形容——在旁边看热闹、看别人的八卦。\n"
+                "到底是怎么回事呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚吃瓜到底是什么意思。",
+            "p1_s1_note":
+                "最近你吃瓜了吗？就是问你——最近有没有看什么热闹、什么八卦？\n"
+                "了吗，是一个很常用的问句结尾，表示\"有没有做\"。\n"
+                "比如：你吃饭了吗？你睡了吗？",
+            "p1_s2_note":
+                "误会，就是理解错了。\n"
+                "别误会——别理解错了！\n"
+                "这里的瓜，不是真的西瓜，是一个比喻哦。",
+            "p1_s3_note":
+                "看热闹，就是在旁边看有意思的事。\n"
+                "八卦，就是别人的私事、小道消息。\n"
+                "在旁边看别人的八卦，这就是吃瓜！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "吃瓜，就是在旁边看热闹、看别人的八卦。\n"
+                "那什么样的人最爱吃瓜呢？我们来看小美的故事！",
+            "p2_intro":
+                "第二段，我们来认识一位吃瓜高手——小美。",
+            "p2_s1_note":
+                "高手，就是特别厉害、特别在行的人。\n"
+                "吃瓜高手，就是最会看热闹的人。\n"
+                "小美，就是公司里的吃瓜第一名！",
+            "p2_s2_note":
+                "吵架，就是两个人争吵、闹矛盾。\n"
+                "谈恋爱，就是两个人在一起、相爱。\n"
+                "公司里的这些事，小美全都知道——真是消息灵通！",
+            "p2_s3_note":
+                "午休，就是中午休息的时间。\n"
+                "板凳，就是小小的凳子。\n"
+                "搬个小板凳准备吃瓜——这个画面，是不是特别生动？哈哈！",
+            "p2_wrap":
+                "第二段结束！\n"
+                "小美是公司里的吃瓜高手，什么八卦都逃不过她。\n"
+                "可是有一天，发生了一件意想不到的事……我们来看第三段！",
+            "p3_intro":
+                "第三段，剧情大反转！",
+            "p3_s1_note":
+                "围在一起，就是大家聚在一块儿。\n"
+                "同事们围在一起吃瓜，聊得特别开心——\n"
+                "看起来，今天的瓜一定很大！",
+            "p3_s2_note":
+                "凑过去，就是靠近、走过去。\n"
+                "原来，表示发现了真相。\n"
+                "主角是她自己——大家聊的八卦，主角竟然就是小美！哈哈，太尴尬了！",
+            "p3_s3_note":
+                "一时爽，就是那一下子很舒服、很痛快。\n"
+                "变成别人的瓜，就是变成别人议论的对象。\n"
+                "所以吃瓜的时候，也要小心——说不定哪天，你也会变成别人的瓜！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "爱吃瓜的小美，最后自己变成了那个大瓜。\n"
+                "这，就是吃瓜！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了吃瓜这个词，还学了很多实用的表达：\n"
+                "看热闹、八卦、高手、吵架、谈恋爱……\n"
+                "大家都记住了吗？\n"
+                "下次和朋友聊天，看到有热闹，你就可以说：走，吃瓜去！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "最近，∨你★吃瓜★了吗？",
+                    "py": "Zuìjìn, nǐ chī guā le ma?",
+                    "en": "Have you \"eaten melon\" lately?",
+                },
+                {
+                    "cn": "别误会，∨这里的瓜，∨不是真的西瓜。",
+                    "py": "Bié wùhuì, zhèlǐ de guā, bú shì zhēn de xīguā.",
+                    "en": "Don't get me wrong — the melon here isn't a real watermelon.",
+                },
+                {
+                    "cn": "★吃瓜★，∨是指在旁边看热闹，∨看别人的八卦。",
+                    "py": "Chī guā, shì zhǐ zài pángbiān kàn rènao, kàn biéren de bāguà.",
+                    "en": "吃瓜 means watching the excitement from the sidelines — following other people's gossip.",
+                },
+            ],
+            [
+                {
+                    "cn": "小美∨是公司里的\"★吃瓜★\"高手。",
+                    "py": "Xiǎo Měi shì gōngsī lǐ de \"chī guā\" gāoshǒu.",
+                    "en": "Xiao Mei is the office's \"melon-eating\" master.",
+                },
+                {
+                    "cn": "谁和谁吵架了，∨谁又谈恋爱了，∨她全都知道。",
+                    "py": "Shéi hé shéi chǎojià le, shéi yòu tán liàn'ài le, tā quándōu zhīdào.",
+                    "en": "Who fought with whom, who started dating — she knows it all.",
+                },
+                {
+                    "cn": "每天午休，∨她就搬个小板凳，∨准备\"★吃瓜★\"。",
+                    "py": "Měitiān wǔxiū, tā jiù bān gè xiǎo bǎndèng, zhǔnbèi \"chī guā\".",
+                    "en": "Every lunch break, she pulls up a little stool, ready to \"eat melon\".",
+                },
+            ],
+            [
+                {
+                    "cn": "有一天，∨同事们围在一起吃瓜，∨聊得特别开心。",
+                    "py": "Yǒu yìtiān, tóngshìmen wéi zài yìqǐ chī guā, liáo de tèbié kāixīn.",
+                    "en": "One day, coworkers gathered around to eat melon, chatting away happily.",
+                },
+                {
+                    "cn": "小美凑过去一听——∨原来大家聊的八卦，∨主角是她自己！",
+                    "py": "Xiǎo Měi còu guòqù yì tīng—— yuánlái dàjiā liáo de bāguà, zhǔjué shì tā zìjǐ!",
+                    "en": "Xiao Mei leaned in to listen — turns out the gossip everyone was sharing was about her!",
+                },
+                {
+                    "cn": "所以说，∨★吃瓜★一时爽，∨但有时候，∨你也会变成别人的瓜。",
+                    "py": "Suǒyǐ shuō, chī guā yìshí shuǎng, dàn yǒu shíhou, nǐ yě huì biànchéng biéren de guā.",
+                    "en": "So, eating melon feels great for a moment — but sometimes, you become someone else's melon too.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
