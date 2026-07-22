@@ -1157,6 +1157,141 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "画饼",
+        "slug":    "hua-bing",
+        "pinyin":  "huà bǐng",
+        "desc_en": "making empty promises",
+        "search_query": "pancake flatbread plate food fresh",
+        "collage_images": [12, 11],
+        "emoji":   "🫓",
+        "para_labels": [
+            "What is 画饼?",
+            "Xiao Li's boss the 画饼 master",
+            "The cake stays a cake",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个特别实用的词——画饼！\n"
+                "画，就是画画的画；饼，就是大饼的饼。\n"
+                "但是画饼合在一起，意思可不是真的画一张饼哦。\n"
+                "现在，画饼用来形容——用好听的承诺给你希望，却不兑现。\n"
+                "到底是怎么回事呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚画饼到底是什么意思。",
+            "p1_s1_note":
+                "老板，就是公司里的老大、你的上司。\n"
+                "给你画饼，就是给你一个美好的承诺。\n"
+                "有没有，是问句，问你\"是不是发生了\"。比如：你有没有吃饭？",
+            "p1_s2_note":
+                "误会，就是理解错了。\n"
+                "别误会——别理解错了！\n"
+                "这个饼是画出来的，看得到，吃不到。",
+            "p1_s3_note":
+                "承诺，就是答应你的话。\n"
+                "美好的承诺，就是很好听、很吸引人的话。\n"
+                "让你充满希望——听了以后，你觉得未来一片光明！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "画饼，就是用好听的承诺，让你充满希望。\n"
+                "那什么样的人最爱画饼呢？我们来看小李的老板！",
+            "p2_intro":
+                "第二段，我们来认识一位画饼大师——小李的老板。",
+            "p2_s1_note":
+                "大师，就是特别厉害、特别在行的人。\n"
+                "画饼大师，就是最会画饼的人。\n"
+                "小李的老板，画起饼来，谁都比不过！",
+            "p2_s2_note":
+                "升职，就是职位往上升；加薪，就是工资增加。\n"
+                "买房，就是买房子——这可是打工人最大的梦想。\n"
+                "升职加薪、明年买房——这张饼，画得又大又香！",
+            "p2_s3_note":
+                "两眼放光，就是眼睛一下子亮了，特别激动。\n"
+                "恨不得，就是非常想、迫不及待。\n"
+                "恨不得天天住在公司——小李被这张饼，喂得干劲十足！",
+            "p2_wrap":
+                "第二段结束！\n"
+                "小李听了老板的承诺，充满了希望。\n"
+                "可是一年以后，会怎么样呢？我们来看第三段！",
+            "p3_intro":
+                "第三段，剧情大反转！",
+            "p3_s1_note":
+                "拼命，就是特别努力、不要命地干。\n"
+                "加班，就是下班后还继续工作。\n"
+                "天天加班干了一整年，小李盼的就是年底那一天！",
+            "p3_s2_note":
+                "拍拍肩，是一个亲切、又想安抚你的动作。\n"
+                "\"今年公司不容易\"——这是画饼时最常见的借口。\n"
+                "\"明年一定\"——去年也是这么说的呀！",
+            "p3_s3_note":
+                "终于明白，就是最后才想通。\n"
+                "画得再大，也吃不到嘴里——\n"
+                "饼画得越大，越好看，可就是一口都吃不着。这，就是画饼！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "老板画的饼，小李等了一年又一年，始终没吃到。\n"
+                "这，就是画饼！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了画饼这个词，还学了很多实用的表达：\n"
+                "承诺、升职、加薪、干劲……\n"
+                "大家都记住了吗？\n"
+                "下次老板又给你画饼，你心里就知道：哦，又是一张饼！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你的老板，∨最近有没有给你★画饼★？",
+                    "py": "Nǐ de lǎobǎn, zuìjìn yǒu méiyǒu gěi nǐ huà bǐng?",
+                    "en": "Has your boss been \"drawing you a cake\" lately?",
+                },
+                {
+                    "cn": "别误会，∨这个饼，∨不能吃。",
+                    "py": "Bié wùhuì, zhège bǐng, bù néng chī.",
+                    "en": "Don't get me wrong — this cake, you can't eat.",
+                },
+                {
+                    "cn": "★画饼★，∨是指用美好的承诺，∨让你充满希望。",
+                    "py": "Huà bǐng, shì zhǐ yòng měihǎo de chéngnuò, ràng nǐ chōngmǎn xīwàng.",
+                    "en": "画饼 means using beautiful promises to fill you with hope.",
+                },
+            ],
+            [
+                {
+                    "cn": "小李刚进公司时，∨老板就是个\"★画饼★\"大师。",
+                    "py": "Xiǎo Lǐ gāng jìn gōngsī shí, lǎobǎn jiùshì ge \"huà bǐng\" dàshī.",
+                    "en": "When Xiao Li first joined, his boss was already a \"cake-drawing\" master.",
+                },
+                {
+                    "cn": "\"好好干，∨年底升职加薪，∨明年还带你买房！\"",
+                    "py": "\"Hǎohǎo gàn, niándǐ shēngzhí jiāxīn, míngnián hái dài nǐ mǎi fáng!\"",
+                    "en": "\"Work hard — year-end promotion and a raise, and next year I'll help you buy a house!\"",
+                },
+                {
+                    "cn": "小李听得两眼放光，∨恨不得天天住在公司。",
+                    "py": "Xiǎo Lǐ tīng de liǎng yǎn fàngguāng, hènbudé tiāntiān zhù zài gōngsī.",
+                    "en": "Xiao Li's eyes lit up — he could hardly wait to live at the office every day.",
+                },
+            ],
+            [
+                {
+                    "cn": "他拼命干了一整年，∨天天加班，∨终于盼到了年底。",
+                    "py": "Tā pīnmìng gànle yì zhěng nián, tiāntiān jiābān, zhōngyú pàn dàole niándǐ.",
+                    "en": "He worked his hardest for a whole year, staying late every day, and finally the year-end he'd longed for arrived.",
+                },
+                {
+                    "cn": "老板拍拍他的肩：∨\"今年公司不容易，∨明年一定给你升！\"",
+                    "py": "Lǎobǎn pāipai tā de jiān: \"Jīnnián gōngsī bù róngyì, míngnián yídìng gěi nǐ shēng!\"",
+                    "en": "The boss patted his shoulder: \"This year was tough for the company — next year I'll definitely promote you!\"",
+                },
+                {
+                    "cn": "小李终于明白：∨那张\"★饼★\"画得再大，∨也永远吃不到嘴里。",
+                    "py": "Xiǎo Lǐ zhōngyú míngbái: nà zhāng \"bǐng\" huà de zài dà, yě yǒngyuǎn chī bu dào zuǐlǐ.",
+                    "en": "Xiao Li finally understood: no matter how big that \"cake\" is drawn, you'll never get to eat it.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 

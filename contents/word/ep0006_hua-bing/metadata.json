@@ -1,0 +1,164 @@
+{
+  "episode": 6,
+  "id": "ep0006_hua-bing",
+  "word": "画饼",
+  "pinyin": "huà bǐng",
+  "desc_en": "making empty promises",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "你的老板，最近有没有给你画饼？",
+      "py": "Nǐ de lǎobǎn, zuìjìn yǒu méiyǒu gěi nǐ huà bǐng?",
+      "en": "Has your boss been \"drawing you a cake\" lately?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "别误会，这个饼，不能吃。",
+      "py": "Bié wùhuì, zhège bǐng, bù néng chī.",
+      "en": "Don't get me wrong — this cake, you can't eat."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "画饼，是指用美好的承诺，让你充满希望。",
+      "py": "Huà bǐng, shì zhǐ yòng měihǎo de chéngnuò, ràng nǐ chōngmǎn xīwàng.",
+      "en": "画饼 means using beautiful promises to fill you with hope."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "小李刚进公司时，老板就是个\"画饼\"大师。",
+      "py": "Xiǎo Lǐ gāng jìn gōngsī shí, lǎobǎn jiùshì ge \"huà bǐng\" dàshī.",
+      "en": "When Xiao Li first joined, his boss was already a \"cake-drawing\" master."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "\"好好干，年底升职加薪，明年还带你买房！\"",
+      "py": "\"Hǎohǎo gàn, niándǐ shēngzhí jiāxīn, míngnián hái dài nǐ mǎi fáng!\"",
+      "en": "\"Work hard — year-end promotion and a raise, and next year I'll help you buy a house!\""
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "小李听得两眼放光，恨不得天天住在公司。",
+      "py": "Xiǎo Lǐ tīng de liǎng yǎn fàngguāng, hènbudé tiāntiān zhù zài gōngsī.",
+      "en": "Xiao Li's eyes lit up — he could hardly wait to live at the office every day."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "他拼命干了一整年，天天加班，终于盼到了年底。",
+      "py": "Tā pīnmìng gànle yì zhěng nián, tiāntiān jiābān, zhōngyú pàn dàole niándǐ.",
+      "en": "He worked his hardest for a whole year, staying late every day, and finally the year-end he'd longed for arrived."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "老板拍拍他的肩：\"今年公司不容易，明年一定给你升！\"",
+      "py": "Lǎobǎn pāipai tā de jiān: \"Jīnnián gōngsī bù róngyì, míngnián yídìng gěi nǐ shēng!\"",
+      "en": "The boss patted his shoulder: \"This year was tough for the company — next year I'll definitely promote you!\""
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "小李终于明白：那张\"饼\"画得再大，也永远吃不到嘴里。",
+      "py": "Xiǎo Lǐ zhōngyú míngbái: nà zhāng \"bǐng\" huà de zài dà, yě yǒngyuǎn chī bu dào zuǐlǐ.",
+      "en": "Xiao Li finally understood: no matter how big that \"cake\" is drawn, you'll never get to eat it."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}
