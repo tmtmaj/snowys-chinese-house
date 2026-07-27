@@ -1292,6 +1292,141 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "破防",
+        "slug":    "po-fang",
+        "pinyin":  "pò fáng",
+        "desc_en": "emotionally overwhelmed",
+        "search_query": "man crying emotional tears portrait",
+        "collage_images": [11, 12],
+        "emoji":   "😭",
+        "para_labels": [
+            "What is 破防?",
+            "Xiao Gang the tough guy",
+            "One sentence breaks him",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个很有感觉的词——破防！\n"
+                "破，就是打破的破；防，就是防御的防。\n"
+                "破防合在一起，本来是游戏里的词，意思是攻破了防御。\n"
+                "现在，破防用来形容——心理防线被击穿，情绪一下子绷不住了。\n"
+                "到底是怎么回事呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚破防到底是什么意思。",
+            "p1_s1_note":
+                "有没有过，就是问你以前有没有发生过。\n"
+                "突然，就是一下子、没有准备。\n"
+                "突然破防——情绪一下子就上来了，你有过这种时候吗？",
+            "p1_s2_note":
+                "原来，表示这个词最早的来历。\n"
+                "游戏里，攻破对方的防御，就叫破防。\n"
+                "所以破防这个词，最早是从游戏里来的。",
+            "p1_s3_note":
+                "心理防线，就是我们心里那道\"我很坚强\"的墙。\n"
+                "击穿，就是一下子打穿。\n"
+                "绷不住，就是忍不住了——这就是破防！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "破防，就是心理防线被击穿，情绪绷不住了。\n"
+                "那什么样的人最容易破防呢？我们来看小刚的故事！",
+            "p2_intro":
+                "第二段，我们来认识一个\"从不流泪\"的人——小刚。",
+            "p2_s1_note":
+                "一米八，就是身高一米八，很高。\n"
+                "大个子，就是个子很高的人。\n"
+                "从来不流泪——小刚看起来，是个特别坚强的人。",
+            "p2_s2_note":
+                "坚强，就是很勇敢、不容易被打倒。\n"
+                "他常说：什么都不能让我破防。\n"
+                "意思是——没有什么能让他掉眼泪。",
+            "p2_s3_note":
+                "直到，表示情况要发生变化了。\n"
+                "有一天，他接到了妈妈的电话。\n"
+                "接电话，就是拿起电话，和别人通话。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "小刚这么坚强，说什么都不能让他破防。\n"
+                "可是这个电话，会发生什么呢？我们来看第三段！",
+            "p3_intro":
+                "第三段，剧情大反转！",
+            "p3_s1_note":
+                "只说了一句，就是简简单单一句话。\n"
+                "天冷了，记得加衣服——这是妈妈最常说的话。\n"
+                "加衣服，就是多穿一点，别冻着。",
+            "p3_s2_note":
+                "就这么简单的一句话，普普通通，一点都不特别。\n"
+                "可小刚，突然就破防了。\n"
+                "眼泪，一下子就忍不住了。",
+            "p3_s3_note":
+                "原来，表示他终于明白了。\n"
+                "最坚强的人，也会被最普通的爱击穿。\n"
+                "轻轻击穿——不用大事，一句关心，就够了。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "再坚强的小刚，也被妈妈一句话轻轻打动了。\n"
+                "这，就是破防！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了破防这个词，还学了很多实用的表达：\n"
+                "坚强、防线、情绪、加衣服……\n"
+                "大家都记住了吗？\n"
+                "下次看到特别感动的画面，你就可以说：我破防了！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你有没有过，∨突然★破防★的时候？",
+                    "py": "Nǐ yǒu méiyǒu guò, tūrán pò fáng de shíhou?",
+                    "en": "Have you ever suddenly \"broken down\"?",
+                },
+                {
+                    "cn": "★破防★，∨原来是游戏里的词，∨意思是攻破了防御。",
+                    "py": "Pò fáng, yuánlái shì yóuxì lǐ de cí, yìsi shì gōngpòle fángyù.",
+                    "en": "破防 was originally a gaming word — it means breaking through someone's defenses.",
+                },
+                {
+                    "cn": "现在，∨★破防★是指心理防线被击穿，∨情绪绷不住了。",
+                    "py": "Xiànzài, pò fáng shì zhǐ xīnlǐ fángxiàn bèi jīchuān, qíngxù bēng bù zhù le.",
+                    "en": "Now, 破防 means your emotional defenses are pierced, and your feelings can't hold back.",
+                },
+            ],
+            [
+                {
+                    "cn": "小刚∨是个一米八的大个子，∨从来不流泪。",
+                    "py": "Xiǎo Gāng shì ge yì mǐ bā de dà gèzi, cónglái bù liúlèi.",
+                    "en": "Xiao Gang is a 1.8-meter-tall big guy who never cries.",
+                },
+                {
+                    "cn": "他常说：∨\"我这么坚强，∨什么都不能让我★破防★。\"",
+                    "py": "Tā cháng shuō: \"Wǒ zhème jiānqiáng, shénme dōu bùnéng ràng wǒ pò fáng.\"",
+                    "en": "He often says: \"I'm so tough, nothing can make me break down.\"",
+                },
+                {
+                    "cn": "直到有一天，∨他接到了妈妈的电话。",
+                    "py": "Zhídào yǒu yìtiān, tā jiēdàole māma de diànhuà.",
+                    "en": "Until one day, he got a phone call from his mom.",
+                },
+            ],
+            [
+                {
+                    "cn": "妈妈只说了一句：∨\"天冷了，∨记得加衣服。\"",
+                    "py": "Māma zhǐ shuōle yí jù: \"Tiān lěng le, jìde jiā yīfu.\"",
+                    "en": "His mom said just one thing: \"It's getting cold — remember to wear more.\"",
+                },
+                {
+                    "cn": "就这么简单的一句话，∨小刚突然就★破防★了。",
+                    "py": "Jiù zhème jiǎndān de yí jù huà, Xiǎo Gāng tūrán jiù pò fáng le.",
+                    "en": "Just this one simple sentence, and Xiao Gang suddenly broke down.",
+                },
+                {
+                    "cn": "原来，∨最坚强的人，∨也会被最普通的爱∨轻轻击穿。",
+                    "py": "Yuánlái, zuì jiānqiáng de rén, yě huì bèi zuì pǔtōng de ài qīngqīng jīchuān.",
+                    "en": "It turns out, even the toughest person can be gently pierced by the most ordinary love.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 

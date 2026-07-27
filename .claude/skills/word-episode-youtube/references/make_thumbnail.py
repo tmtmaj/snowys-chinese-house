@@ -18,7 +18,7 @@ from PIL import Image, ImageDraw
 
 TW, TH = 1280, 720
 SEAM = 700          # photo panel starts at x=700
-GAP = 6
+GAP = 0             # no gap between stacked photos
 
 
 def cover(path, w, h):

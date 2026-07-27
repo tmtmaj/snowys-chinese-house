@@ -1,0 +1,164 @@
+{
+  "episode": 7,
+  "id": "ep0007_po-fang",
+  "word": "破防",
+  "pinyin": "pò fáng",
+  "desc_en": "emotionally overwhelmed",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "你有没有过，突然破防的时候？",
+      "py": "Nǐ yǒu méiyǒu guò, tūrán pò fáng de shíhou?",
+      "en": "Have you ever suddenly \"broken down\"?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "破防，原来是游戏里的词，意思是攻破了防御。",
+      "py": "Pò fáng, yuánlái shì yóuxì lǐ de cí, yìsi shì gōngpòle fángyù.",
+      "en": "破防 was originally a gaming word — it means breaking through someone's defenses."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "现在，破防是指心理防线被击穿，情绪绷不住了。",
+      "py": "Xiànzài, pò fáng shì zhǐ xīnlǐ fángxiàn bèi jīchuān, qíngxù bēng bù zhù le.",
+      "en": "Now, 破防 means your emotional defenses are pierced, and your feelings can't hold back."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "小刚是个一米八的大个子，从来不流泪。",
+      "py": "Xiǎo Gāng shì ge yì mǐ bā de dà gèzi, cónglái bù liúlèi.",
+      "en": "Xiao Gang is a 1.8-meter-tall big guy who never cries."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "他常说：\"我这么坚强，什么都不能让我破防。\"",
+      "py": "Tā cháng shuō: \"Wǒ zhème jiānqiáng, shénme dōu bùnéng ràng wǒ pò fáng.\"",
+      "en": "He often says: \"I'm so tough, nothing can make me break down.\""
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "直到有一天，他接到了妈妈的电话。",
+      "py": "Zhídào yǒu yìtiān, tā jiēdàole māma de diànhuà.",
+      "en": "Until one day, he got a phone call from his mom."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "妈妈只说了一句：\"天冷了，记得加衣服。\"",
+      "py": "Māma zhǐ shuōle yí jù: \"Tiān lěng le, jìde jiā yīfu.\"",
+      "en": "His mom said just one thing: \"It's getting cold — remember to wear more.\""
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "就这么简单的一句话，小刚突然就破防了。",
+      "py": "Jiù zhème jiǎndān de yí jù huà, Xiǎo Gāng tūrán jiù pò fáng le.",
+      "en": "Just this one simple sentence, and Xiao Gang suddenly broke down."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "原来，最坚强的人，也会被最普通的爱轻轻击穿。",
+      "py": "Yuánlái, zuì jiānqiáng de rén, yě huì bèi zuì pǔtōng de ài qīngqīng jīchuān.",
+      "en": "It turns out, even the toughest person can be gently pierced by the most ordinary love."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}
