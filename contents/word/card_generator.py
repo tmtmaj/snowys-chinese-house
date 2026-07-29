@@ -1427,6 +1427,141 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "显眼包",
+        "slug":    "xian-yan-bao",
+        "pinyin":  "xiǎn yǎn bāo",
+        "desc_en": "the attention-grabber",
+        "search_query": "colorful balloons party celebration crowd",
+        "collage_images": [11, 12],
+        "emoji":   "🤩",
+        "para_labels": [
+            "What is 显眼包?",
+            "Xiao Pang the standout",
+            "Not showing off — spreading joy",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个特别可爱的词——显眼包！\n"
+                "显眼，就是特别引人注意；包，是对某种人的可爱叫法。\n"
+                "显眼包合在一起，可不是一个真的包哦。\n"
+                "现在，显眼包用来形容——走到哪都要成为焦点的人。\n"
+                "到底是怎么回事呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚显眼包到底是什么意思。",
+            "p1_s1_note":
+                "不管在哪，就是无论在什么地方。\n"
+                "学校、公司、朋友聚会……总有那么一个。\n"
+                "想一想，你身边最爱表现的那个人，是谁呢？",
+            "p1_s2_note":
+                "显眼，就是特别引人注意、一眼就能看到。\n"
+                "包，本来是包裹的包，这里是对某种人的可爱叫法。\n"
+                "比如：淘气包、开心包——都是这么来的。",
+            "p1_s3_note":
+                "焦点，就是大家目光集中的地方。\n"
+                "走到哪都要成为焦点——就是特别爱表现。\n"
+                "这样的人，就是显眼包！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "显眼包，就是走到哪都要成为焦点的人。\n"
+                "那谁是显眼包高手呢？我们来看小胖的故事！",
+            "p2_intro":
+                "第二段，我们来认识我朋友里的头号显眼包——小胖。",
+            "p2_s1_note":
+                "头号，就是第一名、最厉害的那个。\n"
+                "在我们这群朋友里，小胖最爱抢镜。\n"
+                "走到哪，他都是最热闹、最引人注意的那一个！",
+            "p2_s2_note":
+                "安安静静，就是很安静、不出声。\n"
+                "比耶，就是拍照时手比出一个V。\n"
+                "别人安静拍照，他偏要跳起来——这画面，太显眼了！",
+            "p2_s3_note":
+                "聚会，就是大家聚在一起玩。\n"
+                "逗得全场哈哈大笑，就是把所有人都逗笑了。\n"
+                "有小胖在，气氛永远不会冷——真是个开心果！",
+            "p2_wrap":
+                "第二段结束！\n"
+                "小胖走到哪，哪里就最热闹、最显眼。\n"
+                "可是，这样的显眼包，大家喜欢吗？我们来看第三段！",
+            "p3_intro":
+                "第三段，剧情大反转！",
+            "p3_s1_note":
+                "有人说，就是有一些人觉得。\n"
+                "出风头，就是爱表现、爱抢镜。\n"
+                "确实，有人觉得显眼包太爱出风头了。",
+            "p3_s2_note":
+                "气氛尴尬，就是场面很冷、大家都不说话。\n"
+                "盼着，就是很期待、很希望。\n"
+                "一到这种时候，大家反而都盼着小胖出现！",
+            "p3_s3_note":
+                "出风头，就是爱表现、爱抢镜。\n"
+                "原来，表示大家终于明白了。\n"
+                "显眼包不是为了自己出风头，是想让大家开心——这就是他的可爱！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "原来小胖的显眼，是想让大家开心。\n"
+                "这，就是显眼包！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了显眼包这个词，还学了很多实用的表达：\n"
+                "显眼、焦点、出风头、气氛……\n"
+                "大家都记住了吗？\n"
+                "下次看到那个最活跃、最爱表现的朋友，你就可以说：你真是个显眼包！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "不管在哪，∨总有一个★显眼包★。",
+                    "py": "Bùguǎn zài nǎ, zǒng yǒu yí ge xiǎn yǎn bāo.",
+                    "en": "No matter where you are, there's always an \"attention-grabber\".",
+                },
+                {
+                    "cn": "显眼，∨就是特别引人注意；∨包，∨是对某种人的可爱叫法。",
+                    "py": "Xiǎn yǎn, jiùshì tèbié yǐn rén zhùyì; bāo, shì duì mǒu zhǒng rén de kě'ài jiàofǎ.",
+                    "en": "显眼 means very eye-catching; 包 is a cute way to name a type of person.",
+                },
+                {
+                    "cn": "★显眼包★，∨就是那个走到哪，∨都要成为焦点的人。",
+                    "py": "Xiǎn yǎn bāo, jiùshì nà ge zǒu dào nǎ, dōu yào chéngwéi jiāodiǎn de rén.",
+                    "en": "A 显眼包 is the one who becomes the center of attention wherever they go.",
+                },
+            ],
+            [
+                {
+                    "cn": "我们这群朋友里，∨小胖就是头号★显眼包★。",
+                    "py": "Wǒmen zhè qún péngyou lǐ, Xiǎo Pàng jiùshì tóuhào xiǎn yǎn bāo.",
+                    "en": "In our group of friends, Xiao Pang is the number-one attention-grabber.",
+                },
+                {
+                    "cn": "别人拍照都安安静静，∨他偏要跳起来比耶。",
+                    "py": "Biéren pāizhào dōu ān'ānjìngjìng, tā piān yào tiào qǐlái bǐ yē.",
+                    "en": "Others pose quietly for photos, but he insists on jumping up flashing a \"V\".",
+                },
+                {
+                    "cn": "聚会上，∨他一个人∨就能逗得全场哈哈大笑。",
+                    "py": "Jùhuì shàng, tā yí ge rén jiù néng dòude quánchǎng hāhā dàxiào.",
+                    "en": "At a gathering, he alone can get the whole room laughing out loud.",
+                },
+            ],
+            [
+                {
+                    "cn": "有人说，∨★显眼包★太爱出风头了。",
+                    "py": "Yǒu rén shuō, xiǎn yǎn bāo tài ài chū fēngtóu le.",
+                    "en": "Some say the 显眼包 loves the spotlight too much.",
+                },
+                {
+                    "cn": "可是每次气氛尴尬，∨大家都盼着小胖出现。",
+                    "py": "Kěshì měi cì qìfēn gāngà, dàjiā dōu pànzhe Xiǎo Pàng chūxiàn.",
+                    "en": "But whenever the mood gets awkward, everyone hopes Xiao Pang will show up.",
+                },
+                {
+                    "cn": "原来，∨★显眼包★不是爱出风头，∨是想让大家开心。",
+                    "py": "Yuánlái, xiǎn yǎn bāo bú shì ài chū fēngtóu, shì xiǎng ràng dàjiā kāixīn.",
+                    "en": "It turns out, the 显眼包 doesn't crave the spotlight — they just want to make everyone happy.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
