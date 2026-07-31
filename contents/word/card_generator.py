@@ -1562,6 +1562,141 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "撒狗粮",
+        "slug":    "sa-gou-liang",
+        "pinyin":  "sā gǒu liáng",
+        "desc_en": "couples flaunting their love",
+        "search_query": "happy couple in love romantic",
+        "collage_images": [11, 2],
+        "emoji":   "🐶",
+        "para_labels": [
+            "What is 撒狗粮?",
+            "A-Ming the single dog",
+            "The tables turn",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个特别有意思的词——撒狗粮！\n"
+                "撒，就是撒东西的撒；狗粮，就是狗吃的粮食。\n"
+                "但撒狗粮合在一起，可不是真的喂狗哦。\n"
+                "现在，撒狗粮用来形容——情侣当众秀恩爱，让单身的人很\"受伤\"。\n"
+                "到底是怎么回事呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚撒狗粮到底是什么意思。",
+            "p1_s1_note":
+                "被，表示被别人怎么样了。\n"
+                "你被撒狗粮了吗？就是问你——有没有被别人秀恩爱\"喂\"到？\n"
+                "是不是很形象？我们接着看。",
+            "p1_s2_note":
+                "喂狗，就是给狗喂东西吃。\n"
+                "当众，就是在大家面前；秀恩爱，就是故意表现两个人多相爱。\n"
+                "情侣在大家面前秀恩爱，这就是撒狗粮！",
+            "p1_s3_note":
+                "单身，就是没有男朋友或女朋友。\n"
+                "单身的人，常被开玩笑叫做\"单身狗\"。\n"
+                "狗要吃狗粮，所以秀恩爱，就成了\"撒狗粮\"啦！哈哈！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "撒狗粮，就是情侣当众秀恩爱。\n"
+                "那谁最爱撒狗粮，谁又是那只可怜的单身狗呢？我们来看阿明的故事！",
+            "p2_intro":
+                "第二段，我们来认识火锅局上唯一的单身狗——阿明。",
+            "p2_s1_note":
+                "火锅局，就是一群朋友一起吃火锅的聚会。\n"
+                "唯一，就是只有这么一个。\n"
+                "一桌人就他一个单身，阿明这单身狗，当得太不容易了！",
+            "p2_s2_note":
+                "旁边，就是坐在他身边。\n"
+                "那对情侣，就是那一对男女朋友。\n"
+                "你喂我一口，我喂你一口——就在阿明眼前，甜到发齁！",
+            "p2_s3_note":
+                "夹起一片肉，就是用筷子夹起一片肉。\n"
+                "默默，就是不出声、静静地。\n"
+                "别人互相喂，阿明只能喂自己——这画面，太惨了！哈哈！",
+            "p2_wrap":
+                "第二段结束！\n"
+                "一顿火锅，阿明被喂了满满一肚子狗粮。\n"
+                "可是，故事会一直这样吗？我们来看第三段！",
+            "p3_intro":
+                "第三段，剧情大反转！",
+            "p3_s1_note":
+                "可是，表示情况要变了。\n"
+                "带了个女孩来，就是带了女朋友一起来。\n"
+                "这只单身狗阿明，终于脱单啦！",
+            "p3_s2_note":
+                "夹菜，就是给别人夹菜；盛汤，就是给别人盛汤。\n"
+                "疯狂，就是特别夸张、停不下来。\n"
+                "昨天还嫌弃别人，今天自己撒得比谁都欢！",
+            "p3_s3_note":
+                "嫌弃，就是看不上、觉得受不了。\n"
+                "撒起来最狠，就是秀恩爱秀得最厉害。\n"
+                "原来，最嫌弃狗粮的人，撒起来最狠——真是太真实了！哈哈！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "曾经的单身狗阿明，现在成了撒狗粮高手。\n"
+                "这，就是撒狗粮！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了撒狗粮这个词，还学了很多实用的表达：\n"
+                "单身狗、秀恩爱、火锅局、脱单……\n"
+                "大家都记住了吗？\n"
+                "下次看到情侣秀恩爱，你就可以说：哎呀，又被撒狗粮了！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你被★撒狗粮★了吗？",
+                    "py": "Nǐ bèi sā gǒu liáng le ma?",
+                    "en": "Have you been \"fed dog food\" lately?",
+                },
+                {
+                    "cn": "★撒狗粮★，∨不是真的喂狗，∨是情侣当众秀恩爱。",
+                    "py": "Sā gǒu liáng, bú shì zhēn de wèi gǒu, shì qínglǚ dāngzhòng xiù ēn'ài.",
+                    "en": "撒狗粮 isn't really feeding dogs — it's couples flaunting their love in public.",
+                },
+                {
+                    "cn": "因为单身的人，∨常被叫做\"单身狗\"呀！",
+                    "py": "Yīnwèi dānshēn de rén, cháng bèi jiàozuò \"dānshēn gǒu\" ya!",
+                    "en": "Because single people are often jokingly called \"single dogs\"!",
+                },
+            ],
+            [
+                {
+                    "cn": "阿明，∨是我们火锅局上唯一的\"单身狗\"。",
+                    "py": "Ā Míng, shì wǒmen huǒguō jú shàng wéiyī de \"dānshēn gǒu\".",
+                    "en": "A-Ming is the only \"single dog\" at our hotpot night.",
+                },
+                {
+                    "cn": "旁边那对情侣，∨你喂我一口，∨我喂你一口。",
+                    "py": "Pángbiān nà duì qínglǚ, nǐ wèi wǒ yì kǒu, wǒ wèi nǐ yì kǒu.",
+                    "en": "The couple beside him — you feed me a bite, I feed you a bite.",
+                },
+                {
+                    "cn": "阿明夹起一片肉，∨只能默默喂给自己。",
+                    "py": "Ā Míng jiā qǐ yí piàn ròu, zhǐ néng mòmò wèi gěi zìjǐ.",
+                    "en": "A-Ming picks up a slice of meat, and can only quietly feed himself.",
+                },
+            ],
+            [
+                {
+                    "cn": "可是这次火锅局，∨阿明带了个女孩来。",
+                    "py": "Kěshì zhè cì huǒguō jú, Ā Míng dàile ge nǚhái lái.",
+                    "en": "But at this hotpot night, A-Ming brought a girl along.",
+                },
+                {
+                    "cn": "只见他忙着夹菜、盛汤，∨疯狂★撒狗粮★。",
+                    "py": "Zhǐ jiàn tā mángzhe jiā cài, chéng tāng, fēngkuáng sā gǒu liáng.",
+                    "en": "There he was, busily picking food and ladling soup — madly scattering dog food.",
+                },
+                {
+                    "cn": "原来，∨最嫌弃狗粮的人，∨撒起来最狠。",
+                    "py": "Yuánlái, zuì xiánqì gǒu liáng de rén, sā qǐlái zuì hěn.",
+                    "en": "Turns out, the one who complained most about dog food scatters it the hardest.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
