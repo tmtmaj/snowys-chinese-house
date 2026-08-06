@@ -1,0 +1,164 @@
+{
+  "episode": 10,
+  "id": "ep0010_zhi-shang-shui",
+  "word": "智商税",
+  "pinyin": "zhì shāng shuì",
+  "desc_en": "IQ tax - money wasted being gullible",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "你交过智商税吗？",
+      "py": "Nǐ jiāoguo zhì shāng shuì ma?",
+      "en": "Have you ever paid the \"IQ tax\"?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "智商税，不是真的税，是你多花的冤枉钱。",
+      "py": "Zhì shāng shuì, bú shì zhēn de shuì, shì nǐ duō huā de yuānwang qián.",
+      "en": "智商税 isn't a real tax — it's the extra money you wasted."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "东西不值那个价，你还是买了，这就是给智商交税。",
+      "py": "Dōngxi bù zhí nàge jià, nǐ háishi mǎi le, zhè jiù shì gěi zhìshāng jiāo shuì.",
+      "en": "The thing isn't worth the price, but you bought it anyway — that's paying tax on your own IQ."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "小美买了一个\"睡眠神器\"，花了两千块。",
+      "py": "Xiǎo Měi mǎi le yí ge \"shuìmián shénqì\", huā le liǎng qiān kuài.",
+      "en": "Xiao Mei bought a \"magic sleep gadget\" for two thousand yuan."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "广告说，戴上它，三分钟就能睡着。",
+      "py": "Guǎnggào shuō, dài shàng tā, sān fēnzhōng jiù néng shuìzháo.",
+      "en": "The ad said: put it on and you'll fall asleep in three minutes."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "结果她戴上以后，越戴越精神。",
+      "py": "Jiéguǒ tā dài shàng yǐhòu, yuè dài yuè jīngshen.",
+      "en": "But after she put it on, the longer she wore it the wider awake she got."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "小美很生气，决定把它挂到网上卖掉。",
+      "py": "Xiǎo Měi hěn shēngqì, juédìng bǎ tā guà dào wǎngshàng mài diào.",
+      "en": "Xiao Mei was furious and decided to list it online and sell it off."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "没想到，真的有人花两千块买走了。",
+      "py": "Méi xiǎngdào, zhēn de yǒu rén huā liǎng qiān kuài mǎi zǒu le.",
+      "en": "To her surprise, someone really did pay two thousand and take it away."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "小美笑了：原来智商税，是可以转手的。",
+      "py": "Xiǎo Měi xiào le: yuánlái zhì shāng shuì, shì kěyǐ zhuǎnshǒu de.",
+      "en": "Xiao Mei smiled: turns out the IQ tax can be passed on to someone else."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}

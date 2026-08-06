@@ -188,7 +188,27 @@ def wrap_segs(segs: list[Segment], max_w: int) -> list[list[Segment]]:
 
     if line:
         lines.append(line)
-    return lines
+    return _fix_orphan_punct(lines)
+
+# 禁则处理: a line must never begin with closing punctuation — pull it up to the
+# previous line (hangs past max_w by at most one glyph, absorbed by MARGIN).
+_CLOSING = set("。，、！？：；）》」』】〉…”’%")
+
+def _fix_orphan_punct(lines: list[list[Segment]]) -> list[list[Segment]]:
+    for i in range(1, len(lines)):
+        while lines[i] and lines[i - 1]:
+            text, f, color, y_shift, stroke = lines[i][0]
+            j = 0
+            while j < len(text) and text[j] in _CLOSING:
+                j += 1
+            if j == 0:
+                break
+            lines[i - 1].append((text[:j], f, color, y_shift, stroke))
+            if text[j:]:
+                lines[i][0] = (text[j:], f, color, y_shift, stroke)
+                break
+            lines[i].pop(0)
+    return [ln for ln in lines if ln]
 
 def draw_seg_line(draw: ImageDraw.ImageDraw, segs: list[Segment], x: int, y: int) -> None:
     cx = x
@@ -1693,6 +1713,141 @@ EPISODES = [
                     "cn": "原来，∨最嫌弃狗粮的人，∨撒起来最狠。",
                     "py": "Yuánlái, zuì xiánqì gǒu liáng de rén, sā qǐlái zuì hěn.",
                     "en": "Turns out, the one who complained most about dog food scatters it the hardest.",
+                },
+            ],
+        ],
+    },
+    {
+        "word":    "智商税",
+        "slug":    "zhi-shang-shui",
+        "pinyin":  "zhì shāng shuì",
+        "desc_en": "IQ tax - money wasted being gullible",
+        "search_query": "online shopping",
+        "collage_images": [1, 15],
+        "emoji":   "🧾",
+        "para_labels": [
+            "What is 智商税?",
+            "Xiao Mei's 2000-yuan gadget",
+            "The tax gets passed on",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个特别有意思的词——智商税！\n"
+                "智商，就是一个人聪明的程度；税，就是交给国家的钱。\n"
+                "但智商税合在一起，可不是真的要交税哦。\n"
+                "现在，智商税用来形容——因为不懂、太容易相信，多花的那笔冤枉钱。\n"
+                "到底是怎么回事呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚智商税到底是什么意思。",
+            "p1_s1_note":
+                "交，就是交钱、交作业的交。\n"
+                "你交过智商税吗？就是问你——有没有花过让自己后悔的钱？\n"
+                "是不是有点扎心？我们接着看。",
+            "p1_s2_note":
+                "真的税，是交给国家的，比如买东西的时候要交的税。\n"
+                "冤枉钱，就是本来不用花、白白花掉的钱。\n"
+                "多花的那一部分，就是智商税！",
+            "p1_s3_note":
+                "值，就是值得、配得上这个价钱。\n"
+                "还是，表示心里知道，但最后仍然这么做了。\n"
+                "东西不值，你还是买了——这不就等于给自己的智商交税吗？哈哈！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "智商税，就是因为太容易相信，多花的那笔冤枉钱。\n"
+                "那什么样的东西最爱收智商税呢？我们来看小美的故事！",
+            "p2_intro":
+                "第二段，我们来认识买了\"睡眠神器\"的小美。",
+            "p2_s1_note":
+                "神器，就是特别厉害、好像什么都能解决的东西。\n"
+                "两千块，就是两千块钱，一点都不便宜吧？\n"
+                "一个睡觉用的小东西，要两千块——听起来就不太对劲！",
+            "p2_s2_note":
+                "广告，就是商家用来宣传的话。\n"
+                "戴上，就是把东西戴在身上。\n"
+                "三分钟就能睡着？这话说得也太满了吧！",
+            "p2_s3_note":
+                "结果，表示事情和原来想的不一样。\n"
+                "越……越……，表示一个变化带来另一个变化。\n"
+                "越戴越精神——花两千块，买了个提神的东西，哈哈！",
+            "p2_wrap":
+                "第二段结束！\n"
+                "两千块的睡眠神器，让小美越戴越睡不着。\n"
+                "这笔智商税，交得太惨了。可是，故事还没完！我们来看第三段！",
+            "p3_intro":
+                "第三段，剧情大反转！",
+            "p3_s1_note":
+                "生气，就是不高兴、心里有火。\n"
+                "挂到网上，就是放到网上去卖。\n"
+                "把它挂到网上——这是把字句，表示把某个东西怎么样了，很常用哦！",
+            "p3_s2_note":
+                "没想到，表示结果完全出乎意料。\n"
+                "买走了，就是买下来带走了。\n"
+                "两千块买的东西，两千块又卖出去了——小美这一波不亏！",
+            "p3_s3_note":
+                "原来，表示突然明白了一件事。\n"
+                "转手，就是转给别人、再卖出去。\n"
+                "智商税不会消失，它只会换一个人来交——太真实了！哈哈！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "小美交的智商税，最后被别人接走了。\n"
+                "这，就是智商税！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了智商税这个词，还学了很多实用的表达：\n"
+                "冤枉钱、神器、越……越……、没想到、转手……\n"
+                "大家都记住了吗？\n"
+                "下次看到贵得离谱的东西，你就可以说：这不就是智商税吗！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你交过★智商税★吗？",
+                    "py": "Nǐ jiāoguo zhì shāng shuì ma?",
+                    "en": "Have you ever paid the \"IQ tax\"?",
+                },
+                {
+                    "cn": "★智商税★，∨不是真的税，∨是你多花的冤枉钱。",
+                    "py": "Zhì shāng shuì, bú shì zhēn de shuì, shì nǐ duō huā de yuānwang qián.",
+                    "en": "智商税 isn't a real tax — it's the extra money you wasted.",
+                },
+                {
+                    "cn": "东西不值那个价，∨你还是买了，∨这就是给智商交税。",
+                    "py": "Dōngxi bù zhí nàge jià, nǐ háishi mǎi le, zhè jiù shì gěi zhìshāng jiāo shuì.",
+                    "en": "The thing isn't worth the price, but you bought it anyway — that's paying tax on your own IQ.",
+                },
+            ],
+            [
+                {
+                    "cn": "小美买了一个\"睡眠神器\"，∨花了两千块。",
+                    "py": "Xiǎo Měi mǎi le yí ge \"shuìmián shénqì\", huā le liǎng qiān kuài.",
+                    "en": "Xiao Mei bought a \"magic sleep gadget\" for two thousand yuan.",
+                },
+                {
+                    "cn": "广告说，∨戴上它，∨三分钟就能睡着。",
+                    "py": "Guǎnggào shuō, dài shàng tā, sān fēnzhōng jiù néng shuìzháo.",
+                    "en": "The ad said: put it on and you'll fall asleep in three minutes.",
+                },
+                {
+                    "cn": "结果她戴上以后，∨越戴越精神。",
+                    "py": "Jiéguǒ tā dài shàng yǐhòu, yuè dài yuè jīngshen.",
+                    "en": "But after she put it on, the longer she wore it the wider awake she got.",
+                },
+            ],
+            [
+                {
+                    "cn": "小美很生气，∨决定把它挂到网上卖掉。",
+                    "py": "Xiǎo Měi hěn shēngqì, juédìng bǎ tā guà dào wǎngshàng mài diào.",
+                    "en": "Xiao Mei was furious and decided to list it online and sell it off.",
+                },
+                {
+                    "cn": "没想到，∨真的有人花两千块买走了。",
+                    "py": "Méi xiǎngdào, zhēn de yǒu rén huā liǎng qiān kuài mǎi zǒu le.",
+                    "en": "To her surprise, someone really did pay two thousand and take it away.",
+                },
+                {
+                    "cn": "小美笑了：∨原来★智商税★，∨是可以转手的。",
+                    "py": "Xiǎo Měi xiào le: yuánlái zhì shāng shuì, shì kěyǐ zhuǎnshǒu de.",
+                    "en": "Xiao Mei smiled: turns out the IQ tax can be passed on to someone else.",
                 },
             ],
         ],
