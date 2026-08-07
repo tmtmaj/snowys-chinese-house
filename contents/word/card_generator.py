@@ -1852,6 +1852,148 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "避雷",
+        "slug":    "bi-lei",
+        "pinyin":  "bì léi",
+        "desc_en": "steer clear - a warning to others",
+        "search_query": "restaurant food",
+        "collage_images": [15, 11],
+        "emoji":   "⚡",
+        "para_labels": [
+            "What is 避雷?",
+            "Xiao Wang's bad dinner",
+            "The warning backfires",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个网上超常见的词——避雷！\n"
+                "避，就是躲开；雷，本来是打雷的那个雷。\n"
+                "可是在网上，\"雷\"说的是那些花了钱又后悔的东西。\n"
+                "所以避雷，就是提醒大家：这个别买，这家别去！\n"
+                "我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚避雷到底是什么意思。",
+            "p1_s1_note":
+                "听说过，就是听别人说起过。\n"
+                "你听说过避雷吗？在点评、小红书上，天天都能看到这两个字。\n"
+                "我们接着看，它到底是什么意思。",
+            "p1_s2_note":
+                "我们先说\"踩雷\"。踩，就是一脚踩下去；踩雷，就是踩到了雷。\n"
+                "买到难吃的东西、去了很糟的店，我们就说：我踩雷了。\n"
+                "比如：这家店我踩雷了；这个别买，我踩过雷。\n"
+                "那避雷呢？避，就是躲开。\n"
+                "自己踩过，所以提醒别人别踩——这就是避雷。\n"
+                "踩雷是自己中招，避雷是提醒别人。",
+            "p1_s3_note":
+                "雷，就是让人后悔的东西——难吃的店、难看的剧、没用的东西。\n"
+                "花了钱，又特别后悔——这就是雷。\n"
+                "所以\"避雷\"这两个字，是真心话，也是好心。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "避雷，就是提醒别人别踩雷。\n"
+                "那到底什么样的东西算雷呢？我们来看小王的故事！",
+            "p2_intro":
+                "第二段，我们来认识一个刚刚踩过雷的人——小王。",
+            "p2_s1_note":
+                "餐厅，就是吃饭的地方。\n"
+                "照片拍得特别好看——注意这个\"得\"，用来说做得怎么样。\n"
+                "拍得好看、说得好听、跑得快……都是这个用法。",
+            "p2_s2_note":
+                "一……就……，表示前面的事一发生，后面马上跟着发生。\n"
+                "菜一上来，他就后悔了——中间几乎没有时间。\n"
+                "这个句型特别常用！",
+            "p2_s3_note":
+                "默默，就是不出声、静静地。\n"
+                "写下两个字——哪两个字？避雷。\n"
+                "这两个字，是他今天最真诚的评价。哈哈！",
+            "p2_wrap":
+                "第二段结束！\n"
+                "小王踩了雷，于是写下\"避雷\"两个字。\n"
+                "可是接下来发生的事，完全出乎他的意料！我们来看第三段！",
+            "p3_intro":
+                "第三段，剧情大反转！",
+            "p3_s1_note":
+                "帖，就是网上发的帖子。\n"
+                "一夜之间，就是一个晚上的时间，形容变化特别快。\n"
+                "火了，就是突然变得特别受欢迎。\n"
+                "避雷帖火了——这可不是小王想要的结果。",
+            "p3_s2_note":
+                "吓跑，就是被吓得跑掉、不敢来了。\n"
+                "不但……反而……，表示结果和你以为的正好相反。\n"
+                "比如：他不但不生气，反而笑了。\n"
+                "好奇，就是很想知道。\n"
+                "到底有多难吃——大家想知道的不是好不好吃，是有多难吃！",
+            "p3_s3_note":
+                "天天，就是每天；排队，就是排成一队等着。\n"
+                "老板还想谢谢小王——为什么呢？\n"
+                "因为这条避雷帖，等于给他做了一次免费广告。\n"
+                "本来是劝退，结果成了宣传——太真实了！哈哈！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "小王的避雷帖，最后帮那家店招来了客人。\n"
+                "这，就是避雷！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了避雷这个词，还学了很多实用的表达：\n"
+                "踩雷、拍得好看、一……就……、火了、排队……\n"
+                "大家都记住了吗？\n"
+                "下次看到不靠谱的东西，你就可以说一句：避雷！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你听说过★避雷★吗？",
+                    "py": "Nǐ tīngshuōguo bì léi ma?",
+                    "en": "Have you heard of 避雷?",
+                },
+                {
+                    "cn": "★避雷★，∨不是躲开打雷，∨是提醒别人别踩雷。",
+                    "py": "Bì léi, bú shì duǒkāi dǎléi, shì tíxǐng biéren bié cǎi léi.",
+                    "en": "避雷 isn't about dodging lightning — it's warning others not to get burned.",
+                },
+                {
+                    "cn": "雷，∨就是那些花了钱、∨又特别后悔的东西。",
+                    "py": "Léi, jiù shì nàxiē huā le qián, yòu tèbié hòuhuǐ de dōngxi.",
+                    "en": "A 雷 is something you paid for and deeply regretted.",
+                },
+            ],
+            [
+                {
+                    "cn": "小王看到一家餐厅，∨照片拍得特别好看。",
+                    "py": "Xiǎo Wáng kàndào yì jiā cāntīng, zhàopiàn pāi de tèbié hǎokàn.",
+                    "en": "Xiao Wang found a restaurant whose photos looked amazing.",
+                },
+                {
+                    "cn": "可是菜一上来，∨他就后悔了。",
+                    "py": "Kěshì cài yí shànglái, tā jiù hòuhuǐ le.",
+                    "en": "But the moment the food arrived, he regretted it.",
+                },
+                {
+                    "cn": "他默默拿出手机，∨写下两个字：★避雷★。",
+                    "py": "Tā mòmò ná chū shǒujī, xiě xià liǎng ge zì: bì léi.",
+                    "en": "He quietly took out his phone and wrote two words: steer clear.",
+                },
+            ],
+            [
+                {
+                    "cn": "没想到，∨那条★避雷★帖，∨一夜之间火了。",
+                    "py": "Méi xiǎngdào, nà tiáo bì léi tiě, yíyè zhījiān huǒ le.",
+                    "en": "Unexpectedly, that warning post went viral overnight.",
+                },
+                {
+                    "cn": "大家不但没被吓跑，∨反而更好奇了：∨到底有多难吃？",
+                    "py": "Dàjiā búdàn méi bèi xiàpǎo, fǎn'ér gèng hàoqí le: dàodǐ yǒu duō nán chī?",
+                    "en": "Instead of being scared off, everyone got even more curious — exactly how bad is it?",
+                },
+                {
+                    "cn": "现在那家店天天排队，∨老板还想谢谢小王。",
+                    "py": "Xiànzài nà jiā diàn tiāntiān páiduì, lǎobǎn hái xiǎng xièxie Xiǎo Wáng.",
+                    "en": "Now that place has a line every day — and the owner wants to thank Xiao Wang.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
