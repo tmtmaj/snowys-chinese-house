@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP0012 《恋爱脑》</title>
+<style>
+  :root {
+    --bg: #f0e4cc; --bg2: #e8d8b8; --ink: #2a1a0a;
+    --mid: #6e4a26; --accent: #be501e; --card-shadow: rgba(0,0,0,.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Noto Serif SC', serif;
+         max-width: 960px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid var(--accent); margin-bottom: 32px; }
+  header .word { font-size: 3.5rem; font-weight: 700; color: var(--accent); letter-spacing: .05em; }
+  header .pinyin { font-size: 1.4rem; color: var(--mid); margin-top: 8px; }
+  header .desc { font-size: 1rem; color: var(--mid); margin-top: 6px; opacity: .8; }
+  .section-title { font-size: 1.6rem; color: var(--accent); margin: 40px 0 16px;
+                    padding-bottom: 6px; border-bottom: 1px solid #c8a878; }
+  .card-block { display: flex; gap: 20px; background: var(--bg2); border-radius: 12px;
+                 padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 8px var(--card-shadow); }
+  .card-img-wrap { position: relative; flex-shrink: 0; width: 280px; }
+  .card-img-wrap img { width: 100%; border-radius: 8px; display: block; }
+  .badge { position: absolute; top: 8px; left: 8px; font-size: .72rem; font-weight: 700;
+            padding: 3px 10px; border-radius: 20px; color: #fff; }
+  .badge-open   { background: #5a7a3a; }
+  .badge-sec    { background: #4a6090; }
+  .badge-first  { background: var(--accent); }
+  .badge-second { background: #7a5030; }
+  .badge-full   { background: #4a6090; }
+  .badge-review { background: #3a6060; }
+  .narration { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 8px;
+               font-size: 1.25rem; line-height: 1.9; font-weight: 700; }
+  .note { margin-top: 12px; padding: 10px 14px; background: rgba(0,0,0,.06);
+           border-left: 3px solid var(--accent); border-radius: 4px;
+           font-size: 1.05rem; color: var(--mid); font-weight: 600; }
+  /* style switch tabs (top-right, sticky) */
+  .tabs { position: fixed; top: 14px; right: 14px; z-index: 50; display: flex; gap: 6px;
+          background: rgba(240,228,204,.92); padding: 6px; border-radius: 24px;
+          box-shadow: 0 2px 10px var(--card-shadow); backdrop-filter: blur(4px); }
+  .tab { font-family: inherit; font-size: .85rem; font-weight: 700; cursor: pointer;
+         border: 1px solid var(--accent); background: transparent; color: var(--accent);
+         padding: 6px 14px; border-radius: 20px; transition: all .15s; }
+  .tab.active { background: var(--accent); color: #fff; }
+  @media (max-width: 600px) {
+    .card-block { flex-direction: column; }
+    .card-img-wrap { width: 100%; }
+    .tabs { top: 8px; right: 8px; padding: 4px; gap: 4px; }
+    .tab { font-size: .75rem; padding: 5px 10px; }
+  }
+</style>
+</head>
+<body>
+<nav class="tabs" id="tabs"></nav>
+<header>
+  <div class="word">恋爱脑</div>
+  <div class="pinyin">liàn ài nǎo</div>
+  <div class="desc">love brain - romance over everything</div>
+</header>
+
+<div id="cards"></div>
+
+<script src="scripts.js"></script>
+<script>
+let curStyle = 'A';
+
+function render() {
+  const root = document.getElementById('cards');
+  let html = '';
+  for (const c of CARDS) {
+    if (c.section) html += '<h2 class="section-title">' + c.section + '</h2>';
+    html += '<div class="card-block">'
+          +   '<div class="card-img-wrap">'
+          +     '<img src="cards/' + c.img + '" alt="' + c.img + '">'
+          +     '<span class="badge ' + c.cls + '">' + c.badge + '</span>'
+          +   '</div>'
+          +   '<div class="narration">' + narrHtml(c.id, curStyle) + '</div>'
+          + '</div>';
+  }
+  root.innerHTML = html;
+}
+
+function buildTabs() {
+  const nav = document.getElementById('tabs');
+  nav.innerHTML = STYLES.map(s =>
+    '<button class="tab' + (s.id === curStyle ? ' active' : '') + '" data-s="' + s.id + '">' + s.label + '</button>'
+  ).join('');
+  nav.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      curStyle = btn.dataset.s;
+      nav.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.s === curStyle));
+      render();
+    });
+  });
+}
+
+buildTabs();
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+{
+  "episode": 12,
+  "id": "ep0012_lian-ai-nao",
+  "word": "恋爱脑",
+  "pinyin": "liàn ài nǎo",
+  "desc_en": "love brain - romance over everything",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "你身边有恋爱脑吗？",
+      "py": "Nǐ shēnbiān yǒu liàn ài nǎo ma?",
+      "en": "Is there a \"love brain\" in your life?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "恋爱脑，就是一谈恋爱，脑子里就只剩下对方。",
+      "py": "Liàn ài nǎo, jiù shì yì tán liàn'ài, nǎozi lǐ jiù zhǐ shèngxià duìfāng.",
+      "en": "恋爱脑 means the moment you fall in love, there's nothing left in your head but them."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "朋友、工作、自己，全都排在后面。",
+      "py": "Péngyou, gōngzuò, zìjǐ, quán dōu pái zài hòumiàn.",
+      "en": "Friends, work, yourself — all pushed to the back of the line."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "我的闺蜜小林，是个标准的恋爱脑。",
+      "py": "Wǒ de guīmì Xiǎo Lín, shì ge biāozhǔn de liàn ài nǎo.",
+      "en": "My best friend Xiao Lin is a textbook 恋爱脑."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "昨天她和男朋友吵架，哭着说一定要分手。",
+      "py": "Zuótiān tā hé nán péngyou chǎojià, kūzhe shuō yídìng yào fēnshǒu.",
+      "en": "Yesterday she fought with her boyfriend and said through tears that she'd definitely break up."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "我劝了她三个小时，嘴都说干了。",
+      "py": "Wǒ quàn le tā sān ge xiǎoshí, zuǐ dōu shuō gān le.",
+      "en": "I talked her through it for three hours, until my mouth went dry."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "我正说到一半，男朋友的电话来了。",
+      "py": "Wǒ zhèng shuō dào yíbàn, nán péngyou de diànhuà lái le.",
+      "en": "I was only halfway through when the boyfriend's call came in."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "她接起电话，声音一下子就变甜了。",
+      "py": "Tā jiē qǐ diànhuà, shēngyīn yíxiàzi jiù biàn tián le.",
+      "en": "She picked up, and her voice turned sweet in an instant."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "三分钟后她说：我们和好了，你别生气啊。",
+      "py": "Sān fēnzhōng hòu tā shuō: wǒmen héhǎo le, nǐ bié shēngqì a.",
+      "en": "Three minutes later she said: we made up — don't be mad, okay?"
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}

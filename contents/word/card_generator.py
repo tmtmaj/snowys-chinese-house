@@ -1994,6 +1994,149 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "恋爱脑",
+        "slug":    "lian-ai-nao",
+        "pinyin":  "liàn ài nǎo",
+        "desc_en": "love brain - romance over everything",
+        "search_query": "couple in love",
+        "collage_images": [15, 16],
+        "emoji":   "💘",
+        "para_labels": [
+            "What is 恋爱脑?",
+            "Three hours of talking her down",
+            "One phone call",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个又好笑、又有点心疼的词——恋爱脑！\n"
+                "恋爱，就是谈恋爱；脑，就是脑子。\n"
+                "恋爱脑，就是一谈恋爱，脑子里就只剩下对方。\n"
+                "朋友约你，你说没空；朋友劝你，你也听不进去。\n"
+                "到底有多夸张呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚恋爱脑到底是什么意思。",
+            "p1_s1_note":
+                "身边，就是你周围、你认识的人里面。\n"
+                "你身边有恋爱脑吗？想一想你的朋友。\n"
+                "……要是想不出来，那可能就是你自己哦。哈哈！",
+            "p1_s2_note":
+                "一……就……，表示前面的事一发生，后面马上跟着发生。\n"
+                "一谈恋爱，脑子里就只剩下对方。\n"
+                "剩下，就是别的都没有了，只留下这一个。\n"
+                "对方，就是另外那个人，这里指男朋友或者女朋友。",
+            "p1_s3_note":
+                "排在后面，就是位置往后放，变得不重要了。\n"
+                "朋友、工作、自己，全都排在后面——\n"
+                "最重要的那个位置，只留给一个人。\n"
+                "这就是恋爱脑。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "恋爱脑，就是脑子里只剩下对方。\n"
+                "那到底能夸张到什么程度呢？\n"
+                "我给大家讲一个我闺蜜的故事——",
+            "p2_intro":
+                "第二段，我们来认识我的闺蜜——小林。",
+            "p2_s1_note":
+                "闺蜜，就是关系特别好的女性朋友，什么话都能说的那种。\n"
+                "标准的，就是特别典型、一点都不夸张。\n"
+                "标准的恋爱脑——这个评价，可不是随便给的。",
+            "p2_s2_note":
+                "吵架，就是两个人闹得很不愉快，大声地争。\n"
+                "哭着说——注意这个\"着\"，表示一边哭，一边说。\n"
+                "笑着回答、跑着过来，都是这个用法。\n"
+                "一定要分手——听起来特别坚决，对吧？",
+            "p2_s3_note":
+                "劝，就是希望别人别这么做、听自己的话。\n"
+                "劝了她三个小时——\"了三个小时\"放在后面，表示做了多长时间。\n"
+                "嘴都说干了，就是话说得太多，嘴巴都干了。\n"
+                "这是中文里特别形象的说法。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "闺蜜哭着要分手，我劝了整整三个小时。\n"
+                "眼看就要劝好了……我们来看第三段！",
+            "p3_intro":
+                "第三段。接下来发生的一件小事，让我那三个小时，全白说了。",
+            "p3_s1_note":
+                "正，表示动作正在进行。\n"
+                "说到一半，就是话才说了一半，还没说完。\n"
+                "我正说到一半——最关键的时候，电话来了。\n"
+                "大家猜猜，接下来会发生什么？",
+            "p3_s2_note":
+                "接起电话，就是拿起电话开始通话。\n"
+                "一下子，表示变化非常快，就在一瞬间。\n"
+                "声音一下子就变甜了——刚才还在哭，现在声音甜得不行。\n"
+                "恋爱脑的变脸速度，就是这么快。",
+            "p3_s3_note":
+                "和好，就是吵架以后又变回好情侣。\n"
+                "你别生气啊——注意，这句话是对我说的。\n"
+                "我劝了三个小时，她和好只用了三分钟。\n"
+                "最后还要反过来哄我——这就是恋爱脑！哈哈！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "三个小时的劝，输给了三分钟的电话。\n"
+                "这，就是恋爱脑！好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了恋爱脑这个词，还学了很多实用的表达：\n"
+                "闺蜜、吵架、哭着说、劝、一下子、和好……\n"
+                "大家都记住了吗？\n"
+                "下次闺蜜哭着说要分手，你就知道了——先别急着劝。哈哈！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你身边有★恋爱脑★吗？",
+                    "py": "Nǐ shēnbiān yǒu liàn ài nǎo ma?",
+                    "en": "Is there a \"love brain\" in your life?",
+                },
+                {
+                    "cn": "★恋爱脑★，∨就是一谈恋爱，∨脑子里就只剩下对方。",
+                    "py": "Liàn ài nǎo, jiù shì yì tán liàn'ài, nǎozi lǐ jiù zhǐ shèngxià duìfāng.",
+                    "en": "恋爱脑 means the moment you fall in love, there's nothing left in your head but them.",
+                },
+                {
+                    "cn": "朋友、工作、自己，∨全都排在后面。",
+                    "py": "Péngyou, gōngzuò, zìjǐ, quán dōu pái zài hòumiàn.",
+                    "en": "Friends, work, yourself — all pushed to the back of the line.",
+                },
+            ],
+            [
+                {
+                    "cn": "我的闺蜜小林，∨是个标准的★恋爱脑★。",
+                    "py": "Wǒ de guīmì Xiǎo Lín, shì ge biāozhǔn de liàn ài nǎo.",
+                    "en": "My best friend Xiao Lin is a textbook 恋爱脑.",
+                },
+                {
+                    "cn": "昨天她和男朋友吵架，∨哭着说一定要分手。",
+                    "py": "Zuótiān tā hé nán péngyou chǎojià, kūzhe shuō yídìng yào fēnshǒu.",
+                    "en": "Yesterday she fought with her boyfriend and said through tears that she'd definitely break up.",
+                },
+                {
+                    "cn": "我劝了她三个小时，∨嘴都说干了。",
+                    "py": "Wǒ quàn le tā sān ge xiǎoshí, zuǐ dōu shuō gān le.",
+                    "en": "I talked her through it for three hours, until my mouth went dry.",
+                },
+            ],
+            [
+                {
+                    "cn": "我正说到一半，∨男朋友的电话来了。",
+                    "py": "Wǒ zhèng shuō dào yíbàn, nán péngyou de diànhuà lái le.",
+                    "en": "I was only halfway through when the boyfriend's call came in.",
+                },
+                {
+                    "cn": "她接起电话，∨声音一下子就变甜了。",
+                    "py": "Tā jiē qǐ diànhuà, shēngyīn yíxiàzi jiù biàn tián le.",
+                    "en": "She picked up, and her voice turned sweet in an instant.",
+                },
+                {
+                    "cn": "三分钟后她说：∨我们和好了，∨你别生气啊。",
+                    "py": "Sān fēnzhōng hòu tā shuō: wǒmen héhǎo le, nǐ bié shēngqì a.",
+                    "en": "Three minutes later she said: we made up — don't be mad, okay?",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
