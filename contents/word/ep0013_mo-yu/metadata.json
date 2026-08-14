@@ -1,0 +1,164 @@
+{
+  "episode": 13,
+  "id": "ep0013_mo-yu",
+  "word": "摸鱼",
+  "pinyin": "mō yú",
+  "desc_en": "slacking off at work",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "你今天摸鱼了吗？",
+      "py": "Nǐ jīntiān mō yú le ma?",
+      "en": "Did you slack off at work today?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "摸鱼，不是真的去摸鱼，是上班的时候偷懒。",
+      "py": "Mō yú, bú shì zhēn de qù mō yú, shì shàngbān de shíhou tōulǎn.",
+      "en": "摸鱼 isn't really catching fish — it's goofing off on company time."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "看起来在忙，其实一个字都没写。",
+      "py": "Kàn qǐlái zài máng, qíshí yí ge zì dōu méi xiě.",
+      "en": "Looks busy, but actually hasn't written a single word."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "我同事小张，是公司里公认的摸鱼高手。",
+      "py": "Wǒ tóngshì Xiǎo Zhāng, shì gōngsī lǐ gōngrèn de mō yú gāoshǒu.",
+      "en": "My coworker Xiao Zhang is the office's undisputed slacking-off champion."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "他的电脑上永远开着两个窗口：一个表格，一个电视剧。",
+      "py": "Tā de diànnǎo shàng yǒngyuǎn kāizhe liǎng ge chuāngkǒu: yí ge biǎogé, yí ge diànshìjù.",
+      "en": "Two windows are always open on his computer: one spreadsheet, one TV drama."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "老板一过来，他不用看就能切回表格。",
+      "py": "Lǎobǎn yí guòlái, tā bú yòng kàn jiù néng qiē huí biǎogé.",
+      "en": "The second the boss walks over, he can flip back to the spreadsheet without even looking."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "昨天下午，他正看得入迷，老板悄悄站到了他身后。",
+      "py": "Zuótiān xiàwǔ, tā zhèng kàn de rùmí, lǎobǎn qiāoqiāo zhàn dào le tā shēnhòu.",
+      "en": "Yesterday afternoon, he was completely absorbed — and the boss quietly came up behind him."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "小张吓得手都抖了，半天没切换成功。",
+      "py": "Xiǎo Zhāng xià de shǒu dōu dǒu le, bàntiān méi qiēhuàn chénggōng.",
+      "en": "Xiao Zhang's hands shook so badly that he couldn't manage to switch for ages."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "老板笑着说：这集我早看过了，结局挺好的。",
+      "py": "Lǎobǎn xiàozhe shuō: zhè jí wǒ zǎo kànguo le, jiéjú tǐng hǎo de.",
+      "en": "The boss said with a smile: I watched this episode ages ago — the ending's pretty good."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}

@@ -2137,6 +2137,156 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "摸鱼",
+        "slug":    "mo-yu",
+        "pinyin":  "mō yú",
+        "desc_en": "slacking off at work",
+        "search_query": "office desk computer",
+        "collage_images": [3, 7],
+        "emoji":   "🐟",
+        "para_labels": [
+            "What is 摸鱼?",
+            "Xiao Zhang, the master",
+            "The boss has seen it too",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个上班族最爱的词——摸鱼！\n"
+                "摸，就是用手去摸；鱼，就是水里的鱼。\n"
+                "可是摸鱼合在一起，跟钓鱼、抓鱼一点关系都没有。\n"
+                "它说的是——上班的时候偷懒，看起来在忙，其实在玩。\n"
+                "你今天摸鱼了吗？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚摸鱼到底是什么意思。",
+            "p1_s1_note":
+                "摸鱼，在这里是一个动词，可以直接说：我今天摸鱼了。\n"
+                "你今天摸鱼了吗？——这是上班族之间的暗号。哈哈！\n"
+                "我们接着看，它到底是什么意思。",
+            "p1_s2_note":
+                "上班的时候，就是在工作的时间里。\n"
+                "偷懒，就是该做的事不好好做，躲起来休息。\n"
+                "所以摸鱼，不是真的去水里摸鱼，是在上班时间偷懒。",
+            "p1_s3_note":
+                "看起来，就是从外面看，好像是这样。\n"
+                "其实，用来说出真实的情况。\n"
+                "看起来……其实……，这两个词经常一起用，特别好用。\n"
+                "一个字都没写——\"一……都没……\"表示完全没有、一点也没有。\n"
+                "比如：一句话都没说、一口都没吃。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "摸鱼，就是上班的时候偷懒。\n"
+                "那摸鱼的最高境界是什么样的呢？我们来看小张的故事！",
+            "p2_intro":
+                "第二段，我们来认识公司里的摸鱼高手——小张。",
+            "p2_s1_note":
+                "同事，就是在同一个公司上班的人。\n"
+                "公认的，就是大家都同意、都这么认为。\n"
+                "高手，就是某件事做得特别厉害的人。\n"
+                "公认的摸鱼高手——这个称号，全公司都服气。哈哈！",
+            "p2_s2_note":
+                "永远，就是一直、从来都是这样。\n"
+                "开着，表示窗口一直是打开的状态。\n"
+                "窗口，就是电脑上打开的那个页面。\n"
+                "一个表格，一个电视剧——一个给老板看，一个给自己看。\n"
+                "这就是摸鱼的基本配置！",
+            "p2_s3_note":
+                "一过来，就是刚一走过来。\n"
+                "不用看，就是连看都不用看。\n"
+                "切回，就是换回到原来那一个。\n"
+                "不用看就能切回表格——这已经不是技术了，这是本能。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "一个表格，一个电视剧，老板一来就切换。\n"
+                "小张的摸鱼技术，堪称完美。\n"
+                "可是昨天，他失手了。我们来看第三段！",
+            "p3_intro":
+                "第三段。小张的摸鱼生涯，昨天遇到了最大的一次考验。",
+            "p3_s1_note":
+                "正，表示动作正在进行。\n"
+                "看得入迷，就是看得太投入，别的都忘了。\n"
+                "注意这个\"得\"，用来说做到什么程度。\n"
+                "悄悄，就是不出声、不让别人发现。\n"
+                "一个看得入迷，一个悄悄靠近——危险！",
+            "p3_s2_note":
+                "吓得手都抖了——吓得，表示被吓到了什么程度。\n"
+                "手都抖了，就是手一直在发抖。\n"
+                "半天，在这里不是十二个小时，是\"很长时间\"的意思。\n"
+                "半天没切换成功——越紧张，越切不回去。哈哈！",
+            "p3_s3_note":
+                "笑着说——注意这个\"着\"，表示一边笑，一边说。\n"
+                "这集，就是电视剧的这一集。\n"
+                "早看过了，就是很久以前就已经看过了。\n"
+                "\"过\"表示以前有过这个经历：我看过、我去过、我吃过。\n"
+                "老板早就看过了——那老板是什么时候看的呢？哈哈！",
+            "p3_wrap":
+                "第三段结束！\n"
+                "小张以为自己被抓了，\n"
+                "结果发现——老板早就看过那部剧了。\n"
+                "原来公司里最大的摸鱼高手，是老板！\n"
+                "好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了摸鱼这个词，还学了很多实用的表达：\n"
+                "偷懒、看起来……其实……、一……都没……、公认的、半天、早看过了……\n"
+                "大家都记住了吗？\n"
+                "不过要提醒一句：摸鱼可以，别被老板抓到哦。\n"
+                "……当然，如果老板也在摸鱼，那就没事了。哈哈！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你今天★摸鱼★了吗？",
+                    "py": "Nǐ jīntiān mō yú le ma?",
+                    "en": "Did you slack off at work today?",
+                },
+                {
+                    "cn": "★摸鱼★，∨不是真的去摸鱼，∨是上班的时候偷懒。",
+                    "py": "Mō yú, bú shì zhēn de qù mō yú, shì shàngbān de shíhou tōulǎn.",
+                    "en": "摸鱼 isn't really catching fish — it's goofing off on company time.",
+                },
+                {
+                    "cn": "看起来在忙，∨其实一个字都没写。",
+                    "py": "Kàn qǐlái zài máng, qíshí yí ge zì dōu méi xiě.",
+                    "en": "Looks busy, but actually hasn't written a single word.",
+                },
+            ],
+            [
+                {
+                    "cn": "我同事小张，∨是公司里公认的★摸鱼★高手。",
+                    "py": "Wǒ tóngshì Xiǎo Zhāng, shì gōngsī lǐ gōngrèn de mō yú gāoshǒu.",
+                    "en": "My coworker Xiao Zhang is the office's undisputed slacking-off champion.",
+                },
+                {
+                    "cn": "他的电脑上永远开着两个窗口：∨一个表格，∨一个电视剧。",
+                    "py": "Tā de diànnǎo shàng yǒngyuǎn kāizhe liǎng ge chuāngkǒu: yí ge biǎogé, yí ge diànshìjù.",
+                    "en": "Two windows are always open on his computer: one spreadsheet, one TV drama.",
+                },
+                {
+                    "cn": "老板一过来，∨他不用看就能切回表格。",
+                    "py": "Lǎobǎn yí guòlái, tā bú yòng kàn jiù néng qiē huí biǎogé.",
+                    "en": "The second the boss walks over, he can flip back to the spreadsheet without even looking.",
+                },
+            ],
+            [
+                {
+                    "cn": "昨天下午，∨他正看得入迷，∨老板悄悄站到了他身后。",
+                    "py": "Zuótiān xiàwǔ, tā zhèng kàn de rùmí, lǎobǎn qiāoqiāo zhàn dào le tā shēnhòu.",
+                    "en": "Yesterday afternoon, he was completely absorbed — and the boss quietly came up behind him.",
+                },
+                {
+                    "cn": "小张吓得手都抖了，∨半天没切换成功。",
+                    "py": "Xiǎo Zhāng xià de shǒu dōu dǒu le, bàntiān méi qiēhuàn chénggōng.",
+                    "en": "Xiao Zhang's hands shook so badly that he couldn't manage to switch for ages.",
+                },
+                {
+                    "cn": "老板笑着说：∨这集我早看过了，∨结局挺好的。",
+                    "py": "Lǎobǎn xiàozhe shuō: zhè jí wǒ zǎo kànguo le, jiéjú tǐng hǎo de.",
+                    "en": "The boss said with a smile: I watched this episode ages ago — the ending's pretty good.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
