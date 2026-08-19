@@ -2287,6 +2287,167 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "特种兵",
+        "slug":    "te-zhong-bing",
+        "pinyin":  "tè zhǒng bīng",
+        "desc_en": "extreme budget travel",
+        "search_query": "train station backpack travel",
+        "collage_images": [5, 17],
+        "emoji":   "🎒",
+        "para_labels": [
+            "What is 特种兵?",
+            "Two days, eight sights",
+            "The next ticket is booked",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个特别有意思的词——特种兵！\n"
+                "特种兵，本来是军队里最能吃苦的那种兵。\n"
+                "可是现在，很多年轻人也把自己叫特种兵。\n"
+                "他们没有去当兵，他们是去——旅游。\n"
+                "两天，八个景点，睡在火车上。\n"
+                "这到底是怎么回事？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚特种兵到底是什么样的旅游。",
+            "p1_s1_note":
+                "听说过，就是以前听别人说起过。\n"
+                "\"过\"表示有过这个经历：我听说过、我去过、我吃过。\n"
+                "旅游，就是去别的地方玩。\n"
+                "特种兵旅游——听起来很累，对不对？\n"
+                "我们接着看，它到底是什么意思。",
+            "p1_s2_note":
+                "本来，就是原来、一开始的意思。\n"
+                "军人，就是当兵的人。\n"
+                "用来，就是拿这个词去说某件事。\n"
+                "方式，就是做一件事的方法。\n"
+                "所以特种兵现在有两个意思：一个是军人，一个是旅游的方式。",
+            "p1_s3_note":
+                "这句话最好记，因为它有三个\"最\"：\n"
+                "花最少的钱、用最短的时间、看最多的地方。\n"
+                "花钱、用时间、看地方——三个动词，都要记住。\n"
+                "少、短、多，三个字正好说清楚了特种兵旅游。\n"
+                "钱最少，时间最短，地方最多。人呢？最累。哈哈！",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "特种兵旅游，就是用最少的钱和时间，看最多的地方。\n"
+                "那真正的特种兵，一天能走多少路呢？\n"
+                "我表妹就是一个，我们来看第二段！",
+            "p2_intro":
+                "第二段，我给大家介绍一下我表妹——一位真正的特种兵。",
+            "p2_s1_note":
+                "表妹，就是比自己小的女性亲戚，姑姑或者舅舅家的女儿。\n"
+                "上个月，就是这个月前面的那个月。\n"
+                "西安，是中国的一座古城，有兵马俑，有很多好吃的。\n"
+                "来了一场——\"场\"在这里是量词，一场旅行、一场电影、一场雨。\n"
+                "来了一场特种兵旅行——听这个说法就知道，不轻松。",
+            "p2_s2_note":
+                "夜车，就是晚上开的火车。\n"
+                "坐夜车去，坐夜车回——为什么呢？因为在车上睡觉，不用花住宿的钱。\n"
+                "连酒店都没订——\"连……都……\"表示强调，连最基本的都没有。\n"
+                "比如：连饭都没吃、连名字都没问。\n"
+                "订，就是提前定下来。她连酒店都没订，火车就是她的床。",
+            "p2_s3_note":
+                "景点，就是好玩、值得看的地方。\n"
+                "两天走了八个景点——平均一天四个，早上一个，晚上还有一个。\n"
+                "步数，就是走了多少步。微信可以自动数。\n"
+                "三万八，就是三万八千步，差不多二十五公里。\n"
+                "两天走二十五公里——这个称号，她当之无愧。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "坐夜车，不订酒店，两天八个景点，微信步数三万八。\n"
+                "这就是特种兵的实力。\n"
+                "那回来以后呢？我们来看第三段！",
+            "p3_intro":
+                "第三段。西安的两天结束了，表妹回来了——不过，是拖着箱子回来的。",
+            "p3_s1_note":
+                "回来那天早上，就是从西安回到家的那个早上。\n"
+                "拖着箱子——\"着\"表示动作一直在进行，一边拖，一边走。\n"
+                "直接，就是中间不停、不休息。\n"
+                "眼睛都睁不开——睁不开，就是想睁开也睁不开。\n"
+                "别人旅游回来休息，她旅游回来上课。这就是特种兵。",
+            "p3_s2_note":
+                "好不好玩，是\"好玩吗\"的另一种问法，用正反两个字来问。\n"
+                "比如：好不好吃、去不去、忙不忙。\n"
+                "想了半天，就是想了很久。半天在这里不是十二个小时，是\"很长时间\"。\n"
+                "挺……的，就是很、比较的意思，说话时特别常用。\n"
+                "去了两天，最后记住的是照片——这就是特种兵旅游的代价。哈哈！",
+            "p3_s3_note":
+                "可是，用来说和前面不一样的情况。\n"
+                "又，表示同样的事再来一次。\n"
+                "买好了——\"好\"放在动词后面，表示这件事已经做完了。\n"
+                "比如：写好了、做好了、准备好了。\n"
+                "成都，也是一座很好玩的城市，有火锅，有熊猫。\n"
+                "累成那样，票已经买好了——特种兵，是不会退役的。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "眼睛都睁不开，问她好不好玩，她只记得照片好看。\n"
+                "可是下个周末的票，她已经买好了。\n"
+                "这就是特种兵——身体很累，心里很爽。\n"
+                "好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了特种兵这个词，还学了很多实用的表达：\n"
+                "本来、用来、一场、连……都……、拖着、想了半天、挺……的、买好了……\n"
+                "大家都记住了吗？\n"
+                "最后问大家一个问题：\n"
+                "你是喜欢特种兵旅游，还是喜欢躺在酒店里睡到中午？\n"
+                "在评论区告诉我吧！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你听说过★特种兵★旅游吗？",
+                    "py": "Nǐ tīngshuōguo tè zhǒng bīng lǚyóu ma?",
+                    "en": "Have you heard of \"special forces\" travel?",
+                },
+                {
+                    "cn": "★特种兵★本来是军人，∨现在也用来说一种旅游方式。",
+                    "py": "Tè zhǒng bīng běnlái shì jūnrén, xiànzài yě yòng lái shuō yì zhǒng lǚyóu fāngshì.",
+                    "en": "特种兵 originally means a special-forces soldier; now it also describes a way of traveling.",
+                },
+                {
+                    "cn": "花最少的钱，∨用最短的时间，∨看最多的地方。",
+                    "py": "Huā zuì shǎo de qián, yòng zuì duǎn de shíjiān, kàn zuì duō de dìfang.",
+                    "en": "Spend the least money, take the least time, and see the most places.",
+                },
+            ],
+            [
+                {
+                    "cn": "我表妹上个月去西安，∨来了一场★特种兵★旅行。",
+                    "py": "Wǒ biǎomèi shàng ge yuè qù Xī'ān, lái le yì chǎng tè zhǒng bīng lǚxíng.",
+                    "en": "Last month my cousin went to Xi'an and pulled off a full special-forces trip.",
+                },
+                {
+                    "cn": "她坐夜车去，∨坐夜车回，∨连酒店都没订。",
+                    "py": "Tā zuò yèchē qù, zuò yèchē huí, lián jiǔdiàn dōu méi dìng.",
+                    "en": "She took the night train there and the night train back — she didn't even book a hotel.",
+                },
+                {
+                    "cn": "两天走了八个景点，∨微信步数三万八。",
+                    "py": "Liǎng tiān zǒu le bā ge jǐngdiǎn, wēixìn bùshù sān wàn bā.",
+                    "en": "Eight sights in two days — thirty-eight thousand steps on WeChat.",
+                },
+            ],
+            [
+                {
+                    "cn": "回来那天早上，∨她拖着箱子直接去上课，∨眼睛都睁不开。",
+                    "py": "Huílái nà tiān zǎoshang, tā tuōzhe xiāngzi zhíjiē qù shàngkè, yǎnjing dōu zhēng bù kāi.",
+                    "en": "The morning she got back she dragged her suitcase straight to class, barely able to keep her eyes open.",
+                },
+                {
+                    "cn": "我问她西安好不好玩，∨她想了半天说：∨照片挺好看的。",
+                    "py": "Wǒ wèn tā Xī'ān hǎo bu hǎo wán, tā xiǎng le bàntiān shuō: zhàopiàn tǐng hǎokàn de.",
+                    "en": "I asked if Xi'an was fun; she thought for a long while and said: the photos turned out nice.",
+                },
+                {
+                    "cn": "可是这个周末，∨她又买好了去成都的票。",
+                    "py": "Kěshì zhège zhōumò, tā yòu mǎi hǎo le qù Chéngdū de piào.",
+                    "en": "But for this weekend, she's already bought her ticket to Chengdu.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 

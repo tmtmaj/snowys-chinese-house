@@ -1,0 +1,164 @@
+{
+  "episode": 14,
+  "id": "ep0014_te-zhong-bing",
+  "word": "特种兵",
+  "pinyin": "tè zhǒng bīng",
+  "desc_en": "extreme budget travel",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "你听说过特种兵旅游吗？",
+      "py": "Nǐ tīngshuōguo tè zhǒng bīng lǚyóu ma?",
+      "en": "Have you heard of \"special forces\" travel?"
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "特种兵本来是军人，现在也用来说一种旅游方式。",
+      "py": "Tè zhǒng bīng běnlái shì jūnrén, xiànzài yě yòng lái shuō yì zhǒng lǚyóu fāngshì.",
+      "en": "特种兵 originally means a special-forces soldier; now it also describes a way of traveling."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "花最少的钱，用最短的时间，看最多的地方。",
+      "py": "Huā zuì shǎo de qián, yòng zuì duǎn de shíjiān, kàn zuì duō de dìfang.",
+      "en": "Spend the least money, take the least time, and see the most places."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "我表妹上个月去西安，来了一场特种兵旅行。",
+      "py": "Wǒ biǎomèi shàng ge yuè qù Xī'ān, lái le yì chǎng tè zhǒng bīng lǚxíng.",
+      "en": "Last month my cousin went to Xi'an and pulled off a full special-forces trip."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "她坐夜车去，坐夜车回，连酒店都没订。",
+      "py": "Tā zuò yèchē qù, zuò yèchē huí, lián jiǔdiàn dōu méi dìng.",
+      "en": "She took the night train there and the night train back — she didn't even book a hotel."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "两天走了八个景点，微信步数三万八。",
+      "py": "Liǎng tiān zǒu le bā ge jǐngdiǎn, wēixìn bùshù sān wàn bā.",
+      "en": "Eight sights in two days — thirty-eight thousand steps on WeChat."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "回来那天早上，她拖着箱子直接去上课，眼睛都睁不开。",
+      "py": "Huílái nà tiān zǎoshang, tā tuōzhe xiāngzi zhíjiē qù shàngkè, yǎnjing dōu zhēng bù kāi.",
+      "en": "The morning she got back she dragged her suitcase straight to class, barely able to keep her eyes open."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "我问她西安好不好玩，她想了半天说：照片挺好看的。",
+      "py": "Wǒ wèn tā Xī'ān hǎo bu hǎo wán, tā xiǎng le bàntiān shuō: zhàopiàn tǐng hǎokàn de.",
+      "en": "I asked if Xi'an was fun; she thought for a long while and said: the photos turned out nice."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "可是这个周末，她又买好了去成都的票。",
+      "py": "Kěshì zhège zhōumò, tā yòu mǎi hǎo le qù Chéngdū de piào.",
+      "en": "But for this weekend, she's already bought her ticket to Chengdu."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}
