@@ -2448,6 +2448,170 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "搭子",
+        "slug":    "da-zi",
+        "pinyin":  "dā zi",
+        "desc_en": "an activity-only buddy",
+        "search_query": "two friends eating noodles restaurant",
+        "collage_images": [18, 11],
+        "emoji":   "🍜",
+        "para_labels": [
+            "What is 搭子?",
+            "Three years of lunches",
+            "Neither of us liked it",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个现在特别流行的词——搭子！\n"
+                "搭，是搭配的搭；子，是轻声。\n"
+                "搭子不是好朋友，也不是同事，\n"
+                "他是只跟你一起做一件事的那个人。\n"
+                "一起吃饭，是饭搭子；一起旅游，是旅游搭子。\n"
+                "你有搭子吗？我们一起来看看吧！",
+            "p1_intro":
+                "好，我们先来看第一段，搞清楚搭子到底是什么样的关系。",
+            "p1_s1_note":
+                "饭搭子，就是一起吃饭的那个人。\n"
+                "你有饭搭子吗？——这句话现在办公室里天天有人说。\n"
+                "注意，搭子的\"子\"要读轻声：dā zi。\n"
+                "我们接着看，它到底是什么意思。",
+            "p1_s2_note":
+                "只，表示除了这个，没有别的。\n"
+                "一件事，就是一样事情。\n"
+                "在一件事上一起——只在这一件事上有关系。\n"
+                "所以搭子，比同事近一点，比朋友远一点。\n"
+                "刚刚好的那个距离，就是搭子。",
+            "p1_s3_note":
+                "这一句最好用，因为搭子可以自己造词：\n"
+                "名词加上搭子，就是一起做那件事的人。\n"
+                "饭搭子、旅游搭子、健身搭子、\n"
+                "咖啡搭子、上班搭子、看电影搭子……\n"
+                "你想到什么，就可以加什么。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "搭子，就是只在一件事上一起的朋友。\n"
+                "那这样的关系，能维持多久呢？\n"
+                "我有一个饭搭子，我们一起吃了三年。我们来看第二段！",
+            "p2_intro":
+                "第二段，我来说说我的饭搭子——同事小李。",
+            "p2_s1_note":
+                "同事，就是在同一个公司上班的人。\n"
+                "做了三年的饭搭子——\"做了三年\"表示这件事持续了三年。\n"
+                "动词加上时间，就是做了多长时间：\n"
+                "学了三年、住了三年、等了三年。\n"
+                "三年的饭搭子——听起来很久，对吧？我们接着看。",
+            "p2_s2_note":
+                "每天十二点，就是每天中午十二点。\n"
+                "敲敲我的桌子——\"敲敲\"是动词重叠，表示动作很轻、很短。\n"
+                "看看、听听、试试，都是这样。\n"
+                "下楼，就是从楼上下去。\n"
+                "不用说话，敲两下桌子，两个人就出发了。",
+            "p2_s3_note":
+                "吃完饭，\"完\"表示这个动作结束了：吃完、看完、写完。\n"
+                "各回各的工位——\"各……各的……\"表示每个人回自己的地方。\n"
+                "比如：各回各家、各做各的事。\n"
+                "工位，就是办公室里自己的座位。\n"
+                "从来不，表示一次也没有过。\n"
+                "一起吃了三年，可是连微信都没加。这就是搭子。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "三年，每天十二点，一起下楼吃饭，\n"
+                "吃完各回各的工位，微信也没加。\n"
+                "这样的关系听起来有点冷，是不是？\n"
+                "可是最后那一顿饭，我才明白过来。我们来看第三段！",
+            "p3_intro":
+                "第三段。上个月，小李要换工作了，我们去吃了最后一顿。",
+            "p3_s1_note":
+                "换工作，就是从这个公司去另一个公司。\n"
+                "要……了，表示这件事马上就要发生了。\n"
+                "比如：要下雨了、要毕业了、要走了。\n"
+                "最后一次，就是以后不会再有的那一次。\n"
+                "面馆，就是卖面条的小饭馆。三年，我们一直去那一家。",
+            "p3_s2_note":
+                "放下筷子，就是把筷子放在桌子上。\n"
+                "放下——\"下\"表示动作的结果，东西离开了手。\n"
+                "其实，用来说出真实的情况。\n"
+                "一直，表示从以前到现在都是这样。\n"
+                "一般，在这里不是\"普通\"，是\"不怎么样\"的意思。\n"
+                "觉得一般，就是觉得不太好吃。三年了，他今天才说。",
+            "p3_s3_note":
+                "愣了一下，就是突然停住，不知道该说什么。\n"
+                "我也是，就是我跟你一样。\n"
+                "重点来了——以为！\n"
+                "\"以为\"表示你原来这么想，可是想错了。\n"
+                "我以为是你喜欢——其实你不喜欢。\n"
+                "注意：想对了用\"觉得\"，想错了才用\"以为\"。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "三年，两个人在同一家面馆，\n"
+                "吃着一碗谁都不喜欢的面。\n"
+                "为什么呢？因为都以为是对方喜欢。\n"
+                "搭子这个词听起来很淡，可是有时候，比朋友还暖。\n"
+                "好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了搭子这个词，还学了很多实用的表达：\n"
+                "做了三年、敲敲、各回各的、从来不、放下、一般、以为……\n"
+                "大家都记住了吗？\n"
+                "最后问大家一个问题：\n"
+                "你有搭子吗？是饭搭子，还是旅游搭子？\n"
+                "在评论区告诉我吧！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "你有饭★搭子★吗？",
+                    "py": "Nǐ yǒu fàn dāzi ma?",
+                    "en": "Do you have a lunch buddy?",
+                },
+                {
+                    "cn": "★搭子★，∨就是只在一件事上一起的朋友。",
+                    "py": "Dāzi, jiù shì zhǐ zài yí jiàn shì shàng yìqǐ de péngyou.",
+                    "en": "A 搭子 is a friend you share exactly one activity with.",
+                },
+                {
+                    "cn": "吃饭有饭★搭子★，∨旅游有旅游搭子，∨健身有健身搭子。",
+                    "py": "Chīfàn yǒu fàn dāzi, lǚyóu yǒu lǚyóu dāzi, jiànshēn yǒu jiànshēn dāzi.",
+                    "en": "Meals have meal buddies, trips have travel buddies, the gym has gym buddies.",
+                },
+            ],
+            [
+                {
+                    "cn": "我和同事小李，∨做了三年的饭★搭子★。",
+                    "py": "Wǒ hé tóngshì Xiǎo Lǐ, zuò le sān nián de fàn dāzi.",
+                    "en": "My coworker Xiao Li and I were lunch buddies for three years.",
+                },
+                {
+                    "cn": "每天十二点，∨他敲敲我的桌子，∨我们就下楼。",
+                    "py": "Měi tiān shí'èr diǎn, tā qiāoqiao wǒ de zhuōzi, wǒmen jiù xiàlóu.",
+                    "en": "Every day at twelve he'd tap my desk, and down we'd go.",
+                },
+                {
+                    "cn": "吃完饭各回各的工位，∨从来不加微信。",
+                    "py": "Chī wán fàn gè huí gè de gōngwèi, cónglái bù jiā wēixìn.",
+                    "en": "After eating we each went back to our own desk — we never added each other on WeChat.",
+                },
+            ],
+            [
+                {
+                    "cn": "上个月他要换工作了，∨我们最后一次去那家面馆。",
+                    "py": "Shàng ge yuè tā yào huàn gōngzuò le, wǒmen zuìhòu yí cì qù nà jiā miànguǎn.",
+                    "en": "Last month he was changing jobs, so we went to that noodle shop one last time.",
+                },
+                {
+                    "cn": "他放下筷子说：∨其实这家的面，∨我一直觉得一般。",
+                    "py": "Tā fàngxià kuàizi shuō: qíshí zhè jiā de miàn, wǒ yìzhí juéde yìbān.",
+                    "en": "He put down his chopsticks: honestly, I've never thought the noodles here were any good.",
+                },
+                {
+                    "cn": "我愣了一下：∨我也是，∨我以为是你喜欢。",
+                    "py": "Wǒ lèng le yíxià: wǒ yě shì, wǒ yǐwéi shì nǐ xǐhuan.",
+                    "en": "I froze: me neither — I thought you were the one who liked it.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
