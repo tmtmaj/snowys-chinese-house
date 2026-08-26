@@ -1,0 +1,164 @@
+{
+  "episode": 16,
+  "id": "ep0016_fan-che",
+  "word": "翻车",
+  "pinyin": "fān chē",
+  "desc_en": "crash and burn",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "网上常说：他这次翻车了。",
+      "py": "Wǎngshàng cháng shuō: tā zhè cì fān chē le.",
+      "en": "Online you hear it all the time: he really crashed this time."
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "翻车，就是当着大家的面，说的和做的对不上了。",
+      "py": "Fān chē, jiù shì dāngzhe dàjiā de miàn, shuō de hé zuò de duì bu shàng le.",
+      "en": "翻车 is when, in front of everyone, what you said and what you did stop matching up."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "越是把话说满，越容易翻车。",
+      "py": "Yuè shì bǎ huà shuō mǎn, yuè róngyì fān chē.",
+      "en": "The bigger the promise you make, the easier it is to crash."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "我关注的一个主播，那天在直播间卖护肤品。",
+      "py": "Wǒ guānzhù de yí ge zhǔbō, nà tiān zài zhíbōjiān mài hùfūpǐn.",
+      "en": "A streamer I follow was selling skincare in her livestream that day."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "她说这瓶不到一百块，敏感肌用也绝对没问题。",
+      "py": "Tā shuō zhè píng bú dào yìbǎi kuài, mǐngǎnjī yòng yě juéduì méi wèntí.",
+      "en": "She said it's under a hundred kuai and absolutely safe even for sensitive skin."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "夸得天花乱坠，三分钟就卖了十万瓶。",
+      "py": "Kuā de tiānhuā luànzhuì, sān fēnzhōng jiù mài le shí wàn píng.",
+      "en": "She hyped it to the skies — a hundred thousand bottles sold in three minutes."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "没过几天，评论区全是一句话：用完过敏了。",
+      "py": "Méi guò jǐ tiān, pínglùnqū quán shì yí jù huà: yòng wán guòmǐn le.",
+      "en": "A few days later the comments were all the same line: I broke out after using it."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "退货的人越来越多，避雷的帖子也越来越多。",
+      "py": "Tuìhuò de rén yuè lái yuè duō, bìléi de tiězi yě yuè lái yuè duō.",
+      "en": "More and more people returned it, and more and more \"steer clear\" posts went up."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "她后来删了那场回放，也再没说过绝对两个字。",
+      "py": "Tā hòulái shān le nà chǎng huífàng, yě zài méi shuō guo juéduì liǎng ge zì.",
+      "en": "She later deleted the replay — and never said the word \"absolutely\" again."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}
