@@ -2791,6 +2791,170 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "上头",
+        "slug":    "shang-tou",
+        "pinyin":  "shàng tóu",
+        "desc_en": "hooked, can't stop",
+        "search_query": "watching tv night sofa remote",
+        "collage_images": [22, 21],
+        "emoji":   "🌀",
+        "para_labels": [
+            "From alcohol to a song",
+            "\"Two episodes and I'm out\"",
+            "Season two dropped",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个年轻人天天在说的词——上头！\n"
+                "上，是上去；头，就是头。\n"
+                "这个词最早跟酒有关系。\n"
+                "酒喝下去，那股劲儿慢慢往上走，走到头上——人就晕了。\n"
+                "可是现在，不喝酒的人也天天在说上头。\n"
+                "为什么呢？我们一起来看看吧！",
+            "p1_intro":
+                "好，第一段。我们从酒开始，一步一步搞清楚上头是怎么来的。",
+            "p1_s1_note":
+                "\"完\"我们学过，表示动作结束了。\n"
+                "这里的重点是\"发\"——后面加上形容词，表示身体出现这种感觉：\n"
+                "发烫、发晕、发抖、发麻。\n"
+                "这就是上头最早的意思，完全是身体上的。\n"
+                "这种感觉，不是你想控制就能控制的。",
+            "p1_s2_note":
+                "让你上头——\"让\"表示某样东西使你怎么样：\n"
+                "让我很开心、让人想哭、让你上头。\n"
+                "首，是歌的量词：一首歌、两首歌。\n"
+                "酒是从身体上来，歌是从耳朵里来，可是结果一样。\n"
+                "所以这个词，就从酒杯里走了出来。",
+            "p1_s3_note":
+                "喜欢到停不下来——\"到\"用来说喜欢到了什么程度。\n"
+                "停不下来、听不进去，都是可能补语。\n"
+                "停得下来，是能停；停不下来，是想停也停不了。\n"
+                "听得进去，是话能进耳朵；听不进去，是进不去。\n"
+                "还有：说不出来、买不起、看不完。\n"
+                "这两个词，正好是上头的两面。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "上头，本来是酒上头，现在是心里上头。\n"
+                "喜欢到停不下来，什么道理都听不进去。\n"
+                "那上头的人到底是什么样子？\n"
+                "我家里就有一个。我们来看第二段！",
+            "p2_intro":
+                "第二段。上个月，我做了一件让全家都后悔的事——我给我妈推荐了一部剧。",
+            "p2_s1_note":
+                "推荐，就是把好东西介绍给别人。\n"
+                "部，是剧和电影的量词：一部剧、一部电影。\n"
+                "集，是一集一集的那个量词：第一集、四十集。\n"
+                "大家记住这句话：看两集就睡。",
+            "p2_s2_note":
+                "半夜，就是深夜，十二点以后。\n"
+                "\"着\"我们学过，表示一直是这个状态。\n"
+                "这里前面加了个\"还\"：到现在都没变。\n"
+                "灯还亮着、门还开着、他还站着。\n"
+                "这句话没提看剧，可是门缝里那条光，全说明白了。",
+            "p2_s3_note":
+                "通红，就是很红很红，熬夜熬出来的。\n"
+                "开口就问——\"开口\"是刚一开始说话，\"就\"表示马上：\n"
+                "开口就问、开口就笑、开口就要钱。\n"
+                "季，是一部剧的一整季：第一季、第二季。\n"
+                "她说的第一句不是早上好，是\"第二季呢\"。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "说好看两集就睡，结果那盏灯一晚上没关，\n"
+                "第二天开口第一句就是要第二季。\n"
+                "可是这还只是开始。\n"
+                "后面两天她做的事，才叫真的上头。我们来看第三段！",
+            "p3_intro":
+                "第三段。接下来的两天，我妈基本没有从房间里出来过。",
+            "p3_s1_note":
+                "\"一……都没……\"我们在摸鱼那集学过，表示完全没有。\n"
+                "跳过，就是快进、直接略过不看。\n"
+                "端，就是两只手托着东西走。\n"
+                "一个平时最讲究\"吃饭要坐好\"的人，\n"
+                "这两天把碗端进了卧室。",
+            "p3_s2_note":
+                "广场舞，是很多中国阿姨每天晚上跳的舞，\n"
+                "音乐一响，小区里就聚起来了。\n"
+                "\"连……都……\"我们学过，表示连最基本的都不做了。\n"
+                "跳了十年，下雨去，降温去，感冒也去。\n"
+                "这三天，音乐照样响，位置空着。",
+            "p3_s3_note":
+                "再也不……了，表示以后不会再这样了：\n"
+                "我再也不吃了、他再也不来了。\n"
+                "还是，表示嘴上说不做，最后还是做了。\n"
+                "点开，就是用手指点一下打开。\n"
+                "第二季上线是早上六点，我七点起床，她已经看完两集了。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "两天四十集，饭端进房间，广场舞停了三天，\n"
+                "说好再也不看，第二季一出又是第一个点开。\n"
+                "这就是上头——\n"
+                "不是你决定要不要，是它决定什么时候放过你。\n"
+                "好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了上头这个词。\n"
+                "从喝酒上头，到一首歌上头，\n"
+                "还学了：发烫、停不下来、听不进去、开口就、再也不……了。\n"
+                "大家都记住了吗？\n"
+                "最后问大家一个问题：\n"
+                "最近有什么让你上头的歌，或者剧吗？\n"
+                "在评论区告诉我吧！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "喝完酒脸发烫，∨头发晕，∨这就叫★上头★。",
+                    "py": "Hē wán jiǔ liǎn fā tàng, tóu fā yūn, zhè jiù jiào shàngtóu.",
+                    "en": "Your face burns and your head spins after drinking — that's 上头.",
+                },
+                {
+                    "cn": "现在不用喝酒，∨一首歌也能让你★上头★。",
+                    "py": "Xiànzài bú yòng hē jiǔ, yì shǒu gē yě néng ràng nǐ shàngtóu.",
+                    "en": "These days you don't need a drink — one song can do it to you.",
+                },
+                {
+                    "cn": "★上头★，∨就是喜欢到停不下来，∨什么道理都听不进去。",
+                    "py": "Shàngtóu, jiù shì xǐhuan dào tíng bu xiàlái, shénme dàolǐ dōu tīng bu jìnqù.",
+                    "en": "上头 is liking something so much you can't stop — and no reasoning gets through.",
+                },
+            ],
+            [
+                {
+                    "cn": "上个月我给我妈推荐了一部剧，∨她说看两集就睡。",
+                    "py": "Shàng ge yuè wǒ gěi wǒ mā tuījiàn le yí bù jù, tā shuō kàn liǎng jí jiù shuì.",
+                    "en": "Last month I recommended a drama to my mom; she said two episodes and she'd be asleep.",
+                },
+                {
+                    "cn": "那天半夜我起来喝水，∨她房间的灯还亮着。",
+                    "py": "Nà tiān bànyè wǒ qǐlái hē shuǐ, tā fángjiān de dēng hái liàngzhe.",
+                    "en": "I got up for water in the middle of the night — the light in her room was still on.",
+                },
+                {
+                    "cn": "第二天早上她眼睛通红，∨开口就问：∨第二季呢？",
+                    "py": "Dì-èr tiān zǎoshang tā yǎnjing tōnghóng, kāikǒu jiù wèn: dì-èr jì ne?",
+                    "en": "Next morning, eyes bright red, the first thing out of her mouth was: where's season two?",
+                },
+            ],
+            [
+                {
+                    "cn": "两天四十集，∨她一集都没跳过，∨饭端到房间里吃。",
+                    "py": "Liǎng tiān sìshí jí, tā yì jí dōu méi tiào guo, fàn duān dào fángjiān lǐ chī.",
+                    "en": "Forty episodes in two days, not one skipped, meals carried into her room.",
+                },
+                {
+                    "cn": "连每天的广场舞，∨她都停了三天。",
+                    "py": "Lián měi tiān de guǎngchǎngwǔ, tā dōu tíng le sān tiān.",
+                    "en": "She even gave up her nightly square dancing for three days.",
+                },
+                {
+                    "cn": "她说再也不看了，∨可第二季一出，∨她还是第一个点开。",
+                    "py": "Tā shuō zài yě bú kàn le, kě dì-èr jì yì chū, tā háishi dì-yī ge diǎn kāi.",
+                    "en": "She swore she was done — then season two dropped and she was the first to hit play.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
