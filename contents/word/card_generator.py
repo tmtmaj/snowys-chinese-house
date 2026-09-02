@@ -2955,6 +2955,180 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "社死",
+        "slug":    "she-si",
+        "pinyin":  "shè sǐ",
+        "desc_en": "public humiliation, wish you were dead",
+        "search_query": "meeting screen projector office presentation",
+        "collage_images": [21, 22],
+        "emoji":   "🫣",
+        "para_labels": [
+            "The two words that die",
+            "PPT never came up",
+            "The boss laughed",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个网上最有画面感的词——社死！\n"
+                "你在开会的时候按错了按钮，\n"
+                "朋友圈发的话被老板看见了，\n"
+                "电梯里叫错了对方的名字——\n"
+                "那一秒，你只想让整个世界当作没看见。\n"
+                "中国的年轻人给这一秒起了个名字：社死。\n"
+                "到底怎么算社死？我们一起来看看吧！",
+            "photo":
+                "大家看看这两张照片——\n"
+                "左边，一瓶已经蔫了的花，阳光斜进来，能看见空气里的灰。\n"
+                "右边，一群人。人群中间，有一个人用两只手把脸挡住。\n"
+                "左边是慢慢地“死”，右边是一秒钟“死”。\n"
+                "今天要学的这个词——把这两种“死”，放在了一起。",
+            "p1_intro":
+                "好，第一段。我们先搞清楚社死到底是什么意思。",
+            "p1_s1_note":
+                "社死是“社会性死亡”的省略说法。\n"
+                "中国的年轻人特别爱把长词说短：\n"
+                "社会性死亡 → 社死\n"
+                "北京大学 → 北大\n"
+                "高级考试 → 高考\n"
+                "省下来的两个字，往往就是最狠的两个字。",
+            "p1_s2_note":
+                "人没有真的死——字面上没有死。\n"
+                "死的是“脸”这个字。\n"
+                "中文里，“脸”不只是脸，是你在别人面前的样子。\n"
+                "所以才有“丢脸”“要面子”“挂不住”这些说法。\n"
+                "社死这一秒，你身上没受伤，\n"
+                "可是那张脸，碎了。",
+            "p1_s3_note":
+                "越……越……我们在智商税那集学过。\n"
+                "这里的“装作”是重点——明明有事，还假装没事。\n"
+                "越装作没事，脸上的表情越奇怪；\n"
+                "越装作淡定，动作越夸张。\n"
+                "社死最狠的一点：你越想让它过去，它越不让你过去。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "社死，就是当着大家的面，那张脸碎了。\n"
+                "那真正的社死现场是什么样？\n"
+                "我上个月，就在办公室经历了一次。我们来看第二段！",
+            "p2_intro":
+                "第二段。上个月，我们公司开了一场季度会，我要上台做汇报。",
+            "p2_s1_note":
+                "季度，就是一年的四分之一，三个月为一季。\n"
+                "季度会，就是每三个月开一次的会。\n"
+                "投屏，就是把自己电脑上的画面，投到大屏幕上让大家看。\n"
+                "做汇报，就是站在前面，向大家说明工作情况。\n"
+                "投屏、做汇报——这两件事一起，那天风险很高。",
+            "p2_s2_note":
+                "“一……”表示只要一动作，后面马上就会怎么样：\n"
+                "一开门就冷、一坐下就想睡。\n"
+                "“没上去”就是本来该上到屏幕上，结果没上去。\n"
+                "“倒是”用来说和你想要的相反的情况：\n"
+                "我想吃苹果，倒是拿了个梨。\n"
+                "聊天窗口——聊天用的那个电脑窗口。",
+            "p2_s3_note":
+                "正好，表示时间或者事情刚好在这一点上：\n"
+                "我正好在门口、正好是那一句话。\n"
+                "“看不下去”我们在上头那集学过——可能补语，\n"
+                "意思是心里受不了，实在看不进去了。\n"
+                "说明这段吐槽，藏在聊天里已经很久了。\n"
+                "今天，被大屏幕拿了出来。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "PPT没出来，聊天窗口出来了；\n"
+                "上面正好是我最不想让老板看见的那句话。\n"
+                "接下来会议室里发生了什么？我们来看第三段。",
+            "p3_intro":
+                "第三段。二十多个人都在看着我。有的看屏幕，有的看我，还有的假装在看别处。",
+            "p3_s1_note":
+                "一下子，表示突然、马上就这样了。\n"
+                "红到脖子——“到”表示程度，从脸一路红到脖子上。\n"
+                "“怎么……都……”表示不管怎么做，结果都一样：\n"
+                "怎么按都关不掉、怎么说都不听、怎么找都找不到。\n"
+                "关不掉，也是可能补语——想关也关不上。\n"
+                "越紧张，越按不对键。",
+            "p3_s2_note":
+                "安静得能听见风扇的声音——注意这个“得”，\n"
+                "用来说“安静”到了什么程度。\n"
+                "中文里常用这种夸张的说法形容极端安静：\n"
+                "安静得能听见针掉在地上、安静得心跳都清楚。\n"
+                "“小张也不敢看我”——一个“也”字，\n"
+                "把身边最亲的人也拖进了这场社死。",
+            "p3_s3_note":
+                "反而我们在避雷那集学过——跟你想的相反。\n"
+                "本来大家等着看李总生气，结果他先笑了。\n"
+                "一模一样，就是完全一样，一点差别都没有。\n"
+                "“十年前我也干过一模一样的事”——\n"
+                "原来在职场里活到当老板的人，\n"
+                "每一个都是从社死里爬出来的。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "以为自己完了，结果被老板救了。\n"
+                "那天以后，我在公司多了一个外号——投屏同学。\n"
+                "社死的人不会真的死，只会变成一个故事。\n"
+                "好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了社死这个词。\n"
+                "重点学：省略说法、装作、倒是、正好、一模一样。\n"
+                "大家都记住了吗？\n"
+                "最后问大家一个问题：\n"
+                "你有没有社死过？在什么时候？\n"
+                "在评论区告诉我吧！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "★社死★，∨全称叫社会性死亡。",
+                    "py": "Shèsǐ, quánchēng jiào shèhuìxìng sǐwáng.",
+                    "en": "社死 is short for \"social death\".",
+                },
+                {
+                    "cn": "人没有真的死，∨死的是你在别人面前的那张脸。",
+                    "py": "Rén méiyǒu zhēn de sǐ, sǐ de shì nǐ zài biéren miànqián de nà zhāng liǎn.",
+                    "en": "The person didn't actually die — what dies is the face you show to other people.",
+                },
+                {
+                    "cn": "越想装作没事，∨越容易被人发现。",
+                    "py": "Yuè xiǎng zhuāng zuò méi shì, yuè róngyì bèi rén fāxiàn.",
+                    "en": "The harder you try to act normal, the easier it is to get caught.",
+                },
+            ],
+            [
+                {
+                    "cn": "上个月公司开季度会，∨二十多人，∨我要投屏做汇报。",
+                    "py": "Shàng ge yuè gōngsī kāi jìdù huì, èrshí duō rén, wǒ yào tóupíng zuò huìbào.",
+                    "en": "Last month my company had a quarterly meeting, twenty-plus people, and I was about to share my screen and present.",
+                },
+                {
+                    "cn": "我一切屏，∨PPT没上去，∨倒是跟小张的聊天窗口出来了。",
+                    "py": "Wǒ yì qiē píng, PPT méi shàng qù, dào shì gēn Xiǎo Zhāng de liáotiān chuāngkǒu chūlái le.",
+                    "en": "The moment I switched screens, the slides didn't come up — instead my chat with Xiao Zhang did.",
+                },
+                {
+                    "cn": "上面正好是那句话：∨李总这个方案，∨我真的看不下去。",
+                    "py": "Shàngmiàn zhènghǎo shì nà jù huà: Lǐ zǒng zhège fāng'àn, wǒ zhēn de kàn bu xiàqù.",
+                    "en": "And right there was that line: \"Boss Li's proposal — I really can't stand looking at it.\"",
+                },
+            ],
+            [
+                {
+                    "cn": "我脸一下子红到了脖子，∨鼠标怎么按都关不掉那个窗口。",
+                    "py": "Wǒ liǎn yíxiàzi hóng dào le bózi, shǔbiāo zěnme àn dōu guān bu diào nàge chuāngkǒu.",
+                    "en": "My face went red all the way down to my neck; no matter how I clicked, that window wouldn't close.",
+                },
+                {
+                    "cn": "会议室安静得能听见风扇的声音，∨小张也不敢看我。",
+                    "py": "Huìyìshì ānjìng de néng tīngjiàn fēngshàn de shēngyīn, Xiǎo Zhāng yě bù gǎn kàn wǒ.",
+                    "en": "The meeting room went so quiet you could hear the fan; even Xiao Zhang didn't dare look at me.",
+                },
+                {
+                    "cn": "李总没生气，∨反而笑着说：∨十年前我也干过一模一样的事。",
+                    "py": "Lǐ zǒng méi shēngqì, fǎn'ér xiàozhe shuō: shí nián qián wǒ yě gàn guo yìmúyíyàng de shì.",
+                    "en": "Boss Li didn't get angry — instead he laughed: \"Ten years ago I did the exact same thing.\"",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 
@@ -2979,6 +3153,12 @@ def generate_script(ep_num: int, ep: dict) -> str:
     lines.append(sc.get("opening",
         f"大家好！今天我们来学一个词——{word}！"))
     lines.append("\n---\n")
+
+    if sc.get("photo"):
+        lines.append("## 📷 Photo\n")
+        lines.append("📌 `00b_collage.png`\n")
+        lines.append(sc["photo"])
+        lines.append("\n\n---\n")
 
     n = 1
     for p_i, para in enumerate(ep["paragraphs"], 1):
@@ -3039,10 +3219,11 @@ def generate_html(ep_num: int, ep: dict, has_collage: bool = False) -> str:
 </div>"""
 
     blocks = []
-    if has_collage:
-        blocks.append(card_block("00b_collage.png", "Preview", "badge-open", ""))
     blocks.append(card_block("00_title.png", "Opening", "badge-open",
         sc.get("opening", f"大家好！今天我们来学一个词——{word}！")))
+    if has_collage:
+        blocks.append(card_block("00b_collage.png", "Photo", "badge-open",
+            sc.get("photo", "")))
 
     n = 1
     for p_i, para in enumerate(ep["paragraphs"], 1):
@@ -3147,10 +3328,11 @@ def generate_script_html(ep_num: int, ep: dict, has_collage: bool = False) -> st
 </div>"""
 
     blocks = []
-    if has_collage:
-        blocks.append(block("Preview", "b-open", "00b_collage.png", ""))
     blocks.append(block("Opening", "b-open", "00_title.png",
         sc.get("opening", f"大家好！今天我们来学一个词——{word}！")))
+    if has_collage:
+        blocks.append(block("Photo", "b-open", "00b_collage.png",
+            sc.get("photo", "")))
 
     n = 1
     for p_i, para in enumerate(ep["paragraphs"], 1):
