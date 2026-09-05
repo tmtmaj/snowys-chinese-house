@@ -3129,6 +3129,177 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "炒鱿鱼",
+        "slug":    "chao-you-yu",
+        "pinyin":  "chǎo yóu yú",
+        "desc_en": "get fired / fire someone",
+        "search_query": "stir fry squid wok chinese food",
+        "collage_images": [22, 21],
+        "emoji":   "🦑",
+        "para_labels": [
+            "Why a squid dish means being fired",
+            "Three weeks of being late",
+            "The boss opened a drawer",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个上班族最怕听到的词——炒鱿鱼！\n"
+                "炒，是炒菜的炒；鱿鱼，就是海里那个鱿鱼。\n"
+                "你没听错，这个词，说的就是那道菜。\n"
+                "可是同事对你小声说这三个字的时候，\n"
+                "他不是在告诉你今天中午吃什么。\n"
+                "一道菜，怎么会让人心里一紧？我们一起来看看吧！",
+            "photo":
+                "大家看看这两张照片——\n"
+                "左边，一锅刚炒好的鱿鱼，冒着热气，一片一片全都卷成了小圈。\n"
+                "右边，办公室里，一位老板正指着一个低着头的年轻人。\n"
+                "一个是热闹的厨房，一个是安静的办公室。\n"
+                "今天要学的这个词，把这两张照片连在了一起。",
+            "p1_intro":
+                "好，第一段。我们先看看为什么一道菜，会变成一句让人心里一紧的话。",
+            "p1_s1_note":
+                "本来我们在特种兵那集学过，就是原来、一开始。\n"
+                "一道菜——道是菜的量词：一道菜、两道菜。\n"
+                "炒鱿鱼，是中国南方一道很常见的家常菜。\n"
+                "所以你别怕——听见“炒鱿鱼”三个字，\n"
+                "先看看是餐厅还是办公室。",
+            "p1_s2_note":
+                "下锅，就是把东西放进锅里。\n"
+                "样子和形状，都是说东西看起来什么样。\n"
+                "铺盖，就是被子和床单。\n"
+                "鱿鱼一炒会卷起来，铺盖也可以被卷起来——\n"
+                "两样东西卷起来以后，长得真的很像。",
+            "p1_s3_note":
+                "而，用来接上前面：样子像不是重点，重点是下一步。\n"
+                "以前的工人自己带铺盖上班，\n"
+                "被赶走时就得把铺盖卷起来抱着走。\n"
+                "中文里管这一整套动作叫卷铺盖走人。\n"
+                "炒鱿鱼这道菜的名字，就是从这里被借过来的。\n"
+                "所以现在被炒了，就是被开除的意思。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "鱿鱼一卷，铺盖一卷，人就走了。\n"
+                "那真正被叫进办公室的时候，是什么感觉？\n"
+                "我表姐上个月刚经历过。我们来看第二段！",
+            "p2_intro":
+                "第二段。我表姐最近做了新妈妈，早上出门总是慢半拍。",
+            "p2_s1_note":
+                "表姐，就是比自己大的女性亲戚。\n"
+                "工作出了点小事——工作上出了点小问题。\n"
+                "连续，就是一次接着一次，中间没停：\n"
+                "连续迟到、连续下雨、连续三年。\n"
+                "三个星期，就是二十一天。\n"
+                "对上班族来说，这个数字有点危险了。",
+            "p2_s2_note":
+                "老板一个电话——就是老板打了一个电话。\n"
+                "叫进办公室，就是让她走进办公室。\n"
+                "早上老板亲自打电话叫人进办公室——\n"
+                "这个组合，办公室里的人都懂。\n"
+                "没有人会觉得只是随便聊聊。",
+            "p2_s3_note":
+                "推门之前，就是在开门以前。\n"
+                "心想，就是在心里想，没有说出来。\n"
+                "这下完了——一句心里话，四个字，特别有画面。\n"
+                "怎么跟妈妈说——她想的不是自己，是回家怎么开口。\n"
+                "中国人被叫进办公室，最怕的往往不是工作，是父母的表情。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "她还没进门，心里已经把台词想好了。\n"
+                "可是门推开以后，她看见的是另一个画面。我们来看第三段！",
+            "p3_intro":
+                "第三段。她做了三个深呼吸，才把门推开。",
+            "p3_s1_note":
+                "走进办公室，就是走进去。\n"
+                "笑着——着我们学过，表示动作一直在进行：\n"
+                "笑着说、看着我、开着灯。\n"
+                "抽屉，就是桌子里可以拉出来的那个盒子。\n"
+                "红包，就是里面装钱的红色小包。\n"
+                "老板笑着，还从抽屉里拿红包——\n"
+                "剧情从这一秒，开始拐弯了。",
+            "p3_s2_note":
+                "原来我们在破防那集学过——本来不知道，现在才明白。\n"
+                "不是被炒——她想错了。\n"
+                "提前，就是把时间往前挪：\n"
+                "提前一天、提前一个星期、提前发。\n"
+                "年终奖，就是每年年底公司给的一笔钱。\n"
+                "对打工人来说，这四个字比“我爱你”还好听。",
+            "p3_s3_note":
+                "一下子我们在社死那集学过——突然、马上就这样了。\n"
+                "松了口气，就是原来一直很紧张，现在一下子放松了。\n"
+                "松了一口气、松了口气，两种说法都可以。\n"
+                "那我下周开始——她马上给自己定了新目标。\n"
+                "一定不迟到——重点是“一定”，表示决心。\n"
+                "从这一秒起，她再也不敢按掉那个闹钟了。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "以为要卷铺盖，结果拿到了红包。\n"
+                "被炒鱿鱼这四个字，那天没有变成她的故事。\n"
+                "可是走出门的时候，她的手心，全是汗。\n"
+                "好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了炒鱿鱼这个词。\n"
+                "重点学：卷铺盖走人、开除、连续、心想、松了口气。\n"
+                "大家都记住了吗？\n"
+                "最后问大家一个问题：\n"
+                "你被“叫进办公室”过吗？是什么样的感觉？\n"
+                "在评论区告诉我吧！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "★炒鱿鱼★，∨本来是一道菜。",
+                    "py": "Chǎo yóu yú, běnlái shì yí dào cài.",
+                    "en": "炒鱿鱼 was originally a dish.",
+                },
+                {
+                    "cn": "鱿鱼一下锅就卷起来的样子，∨很像铺盖卷起来的形状。",
+                    "py": "Yóu yú yí xià guō jiù juǎn qǐlái de yàngzi, hěn xiàng pūgai juǎn qǐlái de xíngzhuàng.",
+                    "en": "The way squid curls up the moment it hits the pan looks a lot like the shape of rolled-up bedding.",
+                },
+                {
+                    "cn": "而铺盖一卷，∨人就要走了——∨所以被★炒鱿鱼★，∨就成了被开除的意思。",
+                    "py": "Ér pūgai yì juǎn, rén jiù yào zǒu le — suǒyǐ bèi chǎo yóu yú, jiù chéng le bèi kāichú de yìsi.",
+                    "en": "And once the bedding gets rolled up, that person is about to leave — so getting 炒鱿鱼 came to mean getting fired.",
+                },
+            ],
+            [
+                {
+                    "cn": "我表姐最近工作出了点小事，∨连续迟到了三个星期。",
+                    "py": "Wǒ biǎojiě zuìjìn gōngzuò chū le diǎn xiǎo shì, liánxù chídào le sān ge xīngqī.",
+                    "en": "My cousin has been having some trouble at work — three weeks late in a row.",
+                },
+                {
+                    "cn": "那天早上老板一个电话，∨把她叫进了办公室。",
+                    "py": "Nà tiān zǎoshang lǎobǎn yí ge diànhuà, bǎ tā jiào jìn le bàngōngshì.",
+                    "en": "That morning the boss called and got her into his office.",
+                },
+                {
+                    "cn": "她推门之前心想：∨这下完了，∨怎么跟妈妈说被★炒鱿鱼★。",
+                    "py": "Tā tuī mén zhīqián xīnxiǎng: zhè xià wán le, zěnme gēn māma shuō bèi chǎo yóu yú.",
+                    "en": "Before pushing the door, she thought: I'm done — how do I tell Mom I got fired?",
+                },
+            ],
+            [
+                {
+                    "cn": "她走进办公室，∨看见老板笑着从抽屉里拿出一个红包。",
+                    "py": "Tā zǒu jìn bàngōngshì, kànjiàn lǎobǎn xiàozhe cóng chōuti lǐ ná chū yí ge hóngbāo.",
+                    "en": "She walked in and saw the boss smiling, pulling a red envelope out of a drawer.",
+                },
+                {
+                    "cn": "原来今天不是被炒，∨是提前发年终奖。",
+                    "py": "Yuánlái jīntiān bú shì bèi chǎo, shì tíqián fā niánzhōng jiǎng.",
+                    "en": "Turns out today wasn't a firing — it was the year-end bonus, handed out early.",
+                },
+                {
+                    "cn": "她一下子松了口气，∨说：∨那我下周开始，∨一定不迟到。",
+                    "py": "Tā yíxiàzi sōng le kǒu qì, shuō: nà wǒ xià zhōu kāishǐ, yídìng bù chídào.",
+                    "en": "She let out a huge breath and said: alright, from next week I promise I won't be late.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 

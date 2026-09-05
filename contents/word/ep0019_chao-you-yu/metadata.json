@@ -1,0 +1,164 @@
+{
+  "episode": 19,
+  "id": "ep0019_chao-you-yu",
+  "word": "炒鱿鱼",
+  "pinyin": "chǎo yóu yú",
+  "desc_en": "get fired / fire someone",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "炒鱿鱼，本来是一道菜。",
+      "py": "Chǎo yóu yú, běnlái shì yí dào cài.",
+      "en": "炒鱿鱼 was originally a dish."
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "鱿鱼一下锅就卷起来的样子，很像铺盖卷起来的形状。",
+      "py": "Yóu yú yí xià guō jiù juǎn qǐlái de yàngzi, hěn xiàng pūgai juǎn qǐlái de xíngzhuàng.",
+      "en": "The way squid curls up the moment it hits the pan looks a lot like the shape of rolled-up bedding."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "而铺盖一卷，人就要走了——所以被炒鱿鱼，就成了被开除的意思。",
+      "py": "Ér pūgai yì juǎn, rén jiù yào zǒu le — suǒyǐ bèi chǎo yóu yú, jiù chéng le bèi kāichú de yìsi.",
+      "en": "And once the bedding gets rolled up, that person is about to leave — so getting 炒鱿鱼 came to mean getting fired."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "我表姐最近工作出了点小事，连续迟到了三个星期。",
+      "py": "Wǒ biǎojiě zuìjìn gōngzuò chū le diǎn xiǎo shì, liánxù chídào le sān ge xīngqī.",
+      "en": "My cousin has been having some trouble at work — three weeks late in a row."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "那天早上老板一个电话，把她叫进了办公室。",
+      "py": "Nà tiān zǎoshang lǎobǎn yí ge diànhuà, bǎ tā jiào jìn le bàngōngshì.",
+      "en": "That morning the boss called and got her into his office."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "她推门之前心想：这下完了，怎么跟妈妈说被炒鱿鱼。",
+      "py": "Tā tuī mén zhīqián xīnxiǎng: zhè xià wán le, zěnme gēn māma shuō bèi chǎo yóu yú.",
+      "en": "Before pushing the door, she thought: I'm done — how do I tell Mom I got fired?"
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "她走进办公室，看见老板笑着从抽屉里拿出一个红包。",
+      "py": "Tā zǒu jìn bàngōngshì, kànjiàn lǎobǎn xiàozhe cóng chōuti lǐ ná chū yí ge hóngbāo.",
+      "en": "She walked in and saw the boss smiling, pulling a red envelope out of a drawer."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "原来今天不是被炒，是提前发年终奖。",
+      "py": "Yuánlái jīntiān bú shì bèi chǎo, shì tíqián fā niánzhōng jiǎng.",
+      "en": "Turns out today wasn't a firing — it was the year-end bonus, handed out early."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "她一下子松了口气，说：那我下周开始，一定不迟到。",
+      "py": "Tā yíxiàzi sōng le kǒu qì, shuō: nà wǒ xià zhōu kāishǐ, yídìng bù chídào.",
+      "en": "She let out a huge breath and said: alright, from next week I promise I won't be late."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}
