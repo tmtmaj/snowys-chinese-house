@@ -3300,6 +3300,177 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "塌房",
+        "slug":    "ta-fang",
+        "pinyin":  "tā fáng",
+        "desc_en": "when a fan's idol falls",
+        "search_query": "concert crowd stage lights fan",
+        "collage_images": [9, 1],
+        "emoji":   "🏚️",
+        "para_labels": [
+            "A house made of feelings",
+            "The morning it collapsed",
+            "The posters came down",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个粉丝最怕听到的词——塌房！\n"
+                "塌，是塌下来的塌；房，就是房子的房。\n"
+                "本来说的是房子塌了——真的塌下来。\n"
+                "可是网上说“我塌房了”，往往连一块砖都没动。\n"
+                "人没动、屋子没动，那房子怎么塌的？\n"
+                "我们一起来看看吧！",
+            "photo":
+                "大家看看这两张照片——\n"
+                "左边，一群粉丝在演唱会上，手里举着手机，一片一片小小的灯。\n"
+                "每一盏灯，都是他们心里的一块砖。\n"
+                "右边，一栋老房子塌了，砖头和木头散了一地。\n"
+                "一个是慢慢盖起来的，一个是一秒钟塌下来的。\n"
+                "今天要学的这个词，说的就是那一秒。",
+            "p1_intro":
+                "好，第一段。我们先看看，一栋看不见的房子，是怎么盖起来的，又是怎么塌的。",
+            "p1_s1_note":
+                "塌，就是从上往下垮下来。\n"
+                "房，就是房子。\n"
+                "塌房两个字合起来，本来就是房子塌了这么直白。\n"
+                "以前一说塌房，说的都是新闻里的地震、老房子那种。\n"
+                "可是最近几年，情况变了。",
+            "p1_s2_note":
+                "粉丝，就是很喜欢某个明星的人。\n"
+                "喜欢一个人，日子久了，心里就会给他留一个位置。\n"
+                "海报、周边、每天刷微博——\n"
+                "这些一点一点堆起来，就像一座房子。\n"
+                "房子越大，塌的时候声音也越响。",
+            "p1_s3_note":
+                "出事，就是发生了不好的事。\n"
+                "一……就……我们在上头那集学过——前面刚发生，后面马上跟着来。\n"
+                "明星那一头出事的一秒，粉丝这一头就地震。\n"
+                "所以塌房不是明星塌，是粉丝的心先塌了。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "塌房，说的是粉丝心里那座房子塌了。\n"
+                "那真正塌下来的时候，是什么感觉？\n"
+                "我表姐五年前，给一个明星盖过一座房子。我们来看第二段！",
+            "p2_intro":
+                "第二段。我表姐追星追了五年，直到那个星期天早上。",
+            "p2_s1_note":
+                "追一个明星，就是长期喜欢他、支持他、看他的所有节目。\n"
+                "中文里也叫追星。\n"
+                "整整我们在社死那集学过——不多不少，正好这么长。\n"
+                "五年，就是六十个月。\n"
+                "一段感情坚持五年不容易，何况对象是屏幕里的人。",
+            "p2_s2_note":
+                "被窝，就是床上的被子里。\n"
+                "还在被窝里，就是还没起床。\n"
+                "一……就……我们上一集刚复习过。\n"
+                "响个不停，就是一直响，中间没停。\n"
+                "这里的“个”不是量词，是把动词拉成口语的说法：\n"
+                "说个不停、笑个没完、聊个没完没了。",
+            "p2_s3_note":
+                "热搜，就是网上大家一起搜的那些话题。\n"
+                "热搜第一，就是搜的人最多的那一条。\n"
+                "出轨，就是有对象的人跟别人在一起。\n"
+                "对粉丝来说，喜欢的人上了热搜本来是好事——\n"
+                "可是后面跟着出轨两个字，那就是最坏的两个字。\n"
+                "这一秒，就是塌房的开始。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "一觉醒来，热搜第一，两个字。\n"
+                "她没哭，也没说话。\n"
+                "接下来她做了什么？我们来看第三段。",
+            "p3_intro":
+                "第三段。她起了床，走到墙前面，抬起了手。",
+            "p3_s1_note":
+                "一句话没说，就是全程沉默。\n"
+                "海报，就是墙上贴的那种明星大照片。\n"
+                "一张一张——重复一张，表示慢慢地、有节奏地。\n"
+                "一个一个、一天一天，都是这种用法。\n"
+                "揭下来，就是从墙上撕下来。\n"
+                "她没生气，也没哭，只是很安静地在拆自己盖的那座房子。",
+            "p3_s2_note":
+                "周边，就是明星的相关商品：钥匙扣、玩偶、写真。\n"
+                "三千多块——多我们学过，比这个数还多一点。\n"
+                "一件也没——一……也没……表示完全没有。\n"
+                "舍得，就是愿意给出去、扔掉；\n"
+                "舍不得，就是心疼、放不下。\n"
+                "房子塌了，可里面那些东西，她一件都舍不得扔。",
+            "p3_s3_note":
+                "她说的这句话，是这个故事的重点。\n"
+                "房子塌了——外面的事都过去了。\n"
+                "可是那五年——她自己度过的五年时间。\n"
+                "是真的——不管现在真相是什么，那段开心是真实存在过的。\n"
+                "塌房这两个字有点残忍，\n"
+                "可是能这样说话的人，房子塌了也不会真的输。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "海报下了墙，可周边留在了抽屉里。\n"
+                "她把喜欢过的证据留了下来，\n"
+                "不是留给他，是留给那个五年前的自己。\n"
+                "好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了塌房这个词。\n"
+                "重点学：粉丝、追星、热搜、周边、舍不得。\n"
+                "大家都记住了吗？\n"
+                "最后问大家一个问题：\n"
+                "你有没有过“房子”塌了的那种感觉？\n"
+                "在评论区告诉我吧！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "★塌房★，∨本来是房子塌了。",
+                    "py": "Tā fáng, běnlái shì fángzi tā le.",
+                    "en": "塌房 originally just meant a house collapsed.",
+                },
+                {
+                    "cn": "粉丝喜欢一个明星，∨心里就像给他盖了一座房子。",
+                    "py": "Fěnsī xǐhuan yí ge míngxīng, xīnlǐ jiù xiàng gěi tā gài le yí zuò fángzi.",
+                    "en": "When a fan loves a star, it's like they've built a whole house for that person inside their heart.",
+                },
+                {
+                    "cn": "明星一出事，∨那座房子就塌了——∨这就是★塌房★。",
+                    "py": "Míngxīng yì chū shì, nà zuò fángzi jiù tā le — zhè jiù shì tā fáng.",
+                    "en": "The moment something bad happens to the star, that house collapses — and that is 塌房.",
+                },
+            ],
+            [
+                {
+                    "cn": "我表姐追一个明星，∨追了整整五年。",
+                    "py": "Wǒ biǎojiě zhuī yí ge míngxīng, zhuī le zhěngzhěng wǔ nián.",
+                    "en": "My cousin followed a star — five straight years of it.",
+                },
+                {
+                    "cn": "那天早上她还在被窝里，∨手机就响个不停。",
+                    "py": "Nà tiān zǎoshang tā hái zài bèiwō lǐ, shǒujī jiù xiǎng ge bù tíng.",
+                    "en": "That morning she was still under the covers when her phone wouldn't stop buzzing.",
+                },
+                {
+                    "cn": "打开一看，∨热搜第一是他的名字，∨后面跟着两个字：出轨。",
+                    "py": "Dǎkāi yí kàn, rèsōu dì-yī shì tā de míngzi, hòumian gēnzhe liǎng ge zì: chū guǐ.",
+                    "en": "She opened it: number one on the trending list was his name, followed by two words — cheating.",
+                },
+            ],
+            [
+                {
+                    "cn": "她一句话没说，∨把墙上的海报一张一张揭了下来。",
+                    "py": "Tā yí jù huà méi shuō, bǎ qiáng shàng de hǎibào yì zhāng yì zhāng jiē le xiàlái.",
+                    "en": "Without a word, she peeled the posters off the wall one by one.",
+                },
+                {
+                    "cn": "抽屉里三千多块的周边，∨一件也没舍得扔。",
+                    "py": "Chōuti lǐ sān qiān duō kuài de zhōubiān, yí jiàn yě méi shěde rēng.",
+                    "en": "The three-thousand-plus yuan of merch in the drawer — she couldn't bring herself to throw a single piece out.",
+                },
+                {
+                    "cn": "她说：∨房子塌了，∨可那五年的开心，∨是真的。",
+                    "py": "Tā shuō: fángzi tā le, kě nà wǔ nián de kāixīn, shì zhēn de.",
+                    "en": "She said: the house has collapsed, but those five years of happiness — they were real.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 

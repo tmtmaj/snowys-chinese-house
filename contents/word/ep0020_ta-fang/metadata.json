@@ -1,0 +1,164 @@
+{
+  "episode": 20,
+  "id": "ep0020_ta-fang",
+  "word": "塌房",
+  "pinyin": "tā fáng",
+  "desc_en": "when a fan's idol falls",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "塌房，本来是房子塌了。",
+      "py": "Tā fáng, běnlái shì fángzi tā le.",
+      "en": "塌房 originally just meant a house collapsed."
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "粉丝喜欢一个明星，心里就像给他盖了一座房子。",
+      "py": "Fěnsī xǐhuan yí ge míngxīng, xīnlǐ jiù xiàng gěi tā gài le yí zuò fángzi.",
+      "en": "When a fan loves a star, it's like they've built a whole house for that person inside their heart."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "明星一出事，那座房子就塌了——这就是塌房。",
+      "py": "Míngxīng yì chū shì, nà zuò fángzi jiù tā le — zhè jiù shì tā fáng.",
+      "en": "The moment something bad happens to the star, that house collapses — and that is 塌房."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "我表姐追一个明星，追了整整五年。",
+      "py": "Wǒ biǎojiě zhuī yí ge míngxīng, zhuī le zhěngzhěng wǔ nián.",
+      "en": "My cousin followed a star — five straight years of it."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "那天早上她还在被窝里，手机就响个不停。",
+      "py": "Nà tiān zǎoshang tā hái zài bèiwō lǐ, shǒujī jiù xiǎng ge bù tíng.",
+      "en": "That morning she was still under the covers when her phone wouldn't stop buzzing."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "打开一看，热搜第一是他的名字，后面跟着两个字：出轨。",
+      "py": "Dǎkāi yí kàn, rèsōu dì-yī shì tā de míngzi, hòumian gēnzhe liǎng ge zì: chū guǐ.",
+      "en": "She opened it: number one on the trending list was his name, followed by two words — cheating."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "她一句话没说，把墙上的海报一张一张揭了下来。",
+      "py": "Tā yí jù huà méi shuō, bǎ qiáng shàng de hǎibào yì zhāng yì zhāng jiē le xiàlái.",
+      "en": "Without a word, she peeled the posters off the wall one by one."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "抽屉里三千多块的周边，一件也没舍得扔。",
+      "py": "Chōuti lǐ sān qiān duō kuài de zhōubiān, yí jiàn yě méi shěde rēng.",
+      "en": "The three-thousand-plus yuan of merch in the drawer — she couldn't bring herself to throw a single piece out."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "她说：房子塌了，可那五年的开心，是真的。",
+      "py": "Tā shuō: fángzi tā le, kě nà wǔ nián de kāixīn, shì zhēn de.",
+      "en": "She said: the house has collapsed, but those five years of happiness — they were real."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}
