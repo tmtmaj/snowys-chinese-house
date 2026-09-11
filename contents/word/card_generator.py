@@ -3471,6 +3471,178 @@ EPISODES = [
             ],
         ],
     },
+    {
+        "word":    "上岸",
+        "slug":    "shang-an",
+        "pinyin":  "shàng àn",
+        "desc_en": "made it — passed the exam",
+        "search_query": "person swimmer shore water",
+        "collage_images": [21, 11],
+        "emoji":   "🏖️",
+        "para_labels": [
+            "Two words for one shore",
+            "Two years in the library",
+            "Eight in the morning",
+        ],
+        "script": {
+            "opening":
+                "大家好！今天我们来学一个考试族最想听到的词——上岸！\n"
+                "上，是上去的上；岸，就是水边的岸。\n"
+                "本来说的是从水里走到岸上——真的走上去。\n"
+                "可是现在同学之间问“上岸了吗”，\n"
+                "他们不是要一起去游泳。\n"
+                "一个人不下水，怎么就上岸了？我们一起来看看吧！",
+            "photo":
+                "大家看看这两张照片——\n"
+                "左边，一条小船停在了岸边——刚从水里上来。\n"
+                "太阳暖暖的，像走了很久才见到的颜色。\n"
+                "右边，一个女孩戴着方帽子，手里举着毕业证。\n"
+                "她笑的样子，就是刚上岸的样子。\n"
+                "一张是真的岸，一张是心里的岸——\n"
+                "今天要学的这个词，两个都装得下。",
+            "p1_intro":
+                "好，第一段。我们先看看，一个不下水的人，为什么也在等着上岸。",
+            "p1_s1_note":
+                "上，就是从下往上。\n"
+                "岸，就是水边的地方——河边、江边、海边。\n"
+                "上岸，本来就是从水里走到岸上，这么直白。\n"
+                "以前一说上岸，说的都是游泳的人、坐船的人。\n"
+                "可是最近几年，这个词的用户，多了考试的人。",
+            "p1_s2_note":
+                "考试的人——正在准备考试的人。\n"
+                "在水里——不是真的在水里，是一种感觉。\n"
+                "一天到晚看书、做题、睡不好，\n"
+                "就像一个人在水里游，游得又累又冷。\n"
+                "上岸，就是他们心里最亮的那两个字。",
+            "p1_s3_note":
+                "所以，就是前面说了原因，后面说结果。\n"
+                "现在被问——现在有人问你。\n"
+                "如果有人这样问你，\n"
+                "他一定不是在跟你商量周末去哪儿游泳。\n"
+                "可能是问你：书读完了没、考试考过了没。",
+            "p1_wrap":
+                "好，第一段结束！\n"
+                "上岸，说的是终于走出了那片水。\n"
+                "那真正上岸的一秒，是什么感觉？\n"
+                "我表弟前天刚经历过。我们来看第二段！",
+            "p2_intro":
+                "第二段。我表弟考研考了两年，那两年里，全家都在等他一句话。",
+            "p2_s1_note":
+                "表弟，就是比自己小的男性亲戚。\n"
+                "考研，就是考研究生的入学考试。\n"
+                "考了两年——动词加时间，我们学过好几次。\n"
+                "差，就是不够、少了。上，就是考上了。\n"
+                "差三分没上，就是差一点点没考上。\n"
+                "这三分，一个人可以想三百六十五天。",
+            "p2_s2_note":
+                "还是一个人——继续一个人，没有换。\n"
+                "图书馆，就是可以借书、看书的地方。\n"
+                "坐到闭馆——一直坐到图书馆关门。\n"
+                "放不下，就是心里一直想着，忘不了。\n"
+                "那三分不是分数，是他一年的心事。",
+            "p2_s3_note":
+                "不敢，就是没有胆子做。\n"
+                "怕，就是害怕。\n"
+                "一提就哭——一……就……我们学过。\n"
+                "只要有人提起考试的事，他就会哭。\n"
+                "所以那一年，家里的话题小心地绕开了他。",
+            "p2_wrap":
+                "第二段结束！\n"
+                "一年三百六十五天坐到闭馆，\n"
+                "心里一直放不下那三分。\n"
+                "终于到了出分的那天早上。我们来看第三段！",
+            "p3_intro":
+                "第三段。昨天早上，他一个人坐在电脑前面，等着那个页面刷新。",
+            "p3_s1_note":
+                "昨天早上——过去那一天的早上。\n"
+                "八点整，就是八点整整，一分不差。\n"
+                "整我们在社死那集学过。\n"
+                "打开网页——就是打开电脑上的那个页面。\n"
+                "手在抖——手一直在抖，控制不住。\n"
+                "两年的努力，就压在这一秒。",
+            "p3_s2_note":
+                "刷新——页面重新加载。\n"
+                "录取，就是被学校收下、正式接收了。\n"
+                "录取这两个字，是他两年来最想看见的字。\n"
+                "他没喊也没哭——很多年轻人上岸的那一秒都是这样。\n"
+                "安静，是因为已经等太久了。",
+            "p3_s3_note":
+                "只是——除了这一件事，别的都没做。\n"
+                "给妈妈打电话——给谁做什么，我们学过。\n"
+                "他没有说自己考上了，也没有说自己成功了。\n"
+                "他说的是上岸——只有这两个字，才装得下两年的分量。\n"
+                "这个词有画面：孩子从水里走上来，妈妈在岸边等着。",
+            "p3_wrap":
+                "第三段结束！\n"
+                "两年的等待、两年的心事、两年的不敢开口。\n"
+                "最后压成了三个字：我上岸了。\n"
+                "上岸这个词，有点冷，有点热——\n"
+                "冷的是那两年，热的是这一秒。\n"
+                "好，我们来复习一下今天学的内容吧！",
+            "closing":
+                "好，今天我们学了上岸这个词。\n"
+                "重点学：考研、差三分、闭馆、不敢、录取。\n"
+                "大家都记住了吗？\n"
+                "最后问大家一个问题：\n"
+                "你有没有过在水里游了很久、\n"
+                "终于走上岸的那一秒？\n"
+                "在评论区告诉我吧！\n"
+                "如果觉得有帮助，请点赞订阅，我们下次见！再见！",
+        },
+        "paragraphs": [
+            [
+                {
+                    "cn": "★上岸★，∨本来是从水里走到岸上。",
+                    "py": "Shàng àn, běnlái shì cóng shuǐ lǐ zǒu dào àn shàng.",
+                    "en": "上岸 originally just meant walking out of the water onto shore.",
+                },
+                {
+                    "cn": "考试的人常常觉得自己在水里，∨心里只想着★上岸★。",
+                    "py": "Kǎoshì de rén chángcháng juéde zìjǐ zài shuǐ lǐ, xīnlǐ zhǐ xiǎngzhe shàng àn.",
+                    "en": "People preparing for exams often feel like they're stuck in water, thinking only about making it ashore.",
+                },
+                {
+                    "cn": "所以现在被问“★上岸★了吗”，∨说的都是考试。",
+                    "py": "Suǒyǐ xiànzài bèi wèn “shàng àn le ma”, shuō de dōu shì kǎoshì.",
+                    "en": "So when someone asks you \"上岸了吗\" now, they're asking about your exam result.",
+                },
+            ],
+            [
+                {
+                    "cn": "我表弟考研考了两年，∨第一次差三分没上。",
+                    "py": "Wǒ biǎodì kǎo yán kǎo le liǎng nián, dì-yī cì chà sān fēn méi shàng.",
+                    "en": "My cousin studied for the grad-school exam for two years — the first attempt fell three points short.",
+                },
+                {
+                    "cn": "第二年他还是一个人，∨在图书馆坐到闭馆，∨心里放不下那三分。",
+                    "py": "Dì-èr nián tā háishi yí ge rén, zài túshūguǎn zuò dào bìguǎn, xīnlǐ fàng bu xià nà sān fēn.",
+                    "en": "The second year, still alone, sitting in the library until it closed — those three points still stuck in his mind.",
+                },
+                {
+                    "cn": "家里人都不敢问他，∨怕他一提就哭。",
+                    "py": "Jiā lǐ rén dōu bù gǎn wèn tā, pà tā yì tí jiù kū.",
+                    "en": "No one at home dared to ask — afraid that one word about it would set him crying.",
+                },
+            ],
+            [
+                {
+                    "cn": "昨天早上八点整，∨他打开了网页，∨手在抖。",
+                    "py": "Zuótiān zǎoshang bā diǎn zhěng, tā dǎkāi le wǎngyè, shǒu zài dǒu.",
+                    "en": "Eight sharp yesterday morning, he opened the results page — his hands were shaking.",
+                },
+                {
+                    "cn": "页面刷新出来，∨录取两个字，∨他没喊也没哭。",
+                    "py": "Yèmiàn shuāxīn chūlái, lùqǔ liǎng ge zì, tā méi hǎn yě méi kū.",
+                    "en": "The page refreshed — two words: admitted. He didn't shout, didn't cry.",
+                },
+                {
+                    "cn": "只是给妈妈打了个电话：∨妈，∨我★上岸★了。",
+                    "py": "Zhǐshì gěi māma dǎ le ge diànhuà: mā, wǒ shàng àn le.",
+                    "en": "He just called his mother: Mom, I made it to shore.",
+                },
+            ],
+        ],
+    },
     # 다음 에피소드는 여기에 추가
 ]
 

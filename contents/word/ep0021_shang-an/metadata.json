@@ -1,0 +1,164 @@
+{
+  "episode": 21,
+  "id": "ep0021_shang-an",
+  "word": "上岸",
+  "pinyin": "shàng àn",
+  "desc_en": "made it — passed the exam",
+  "total_cards": 20,
+  "sequence": [
+    {
+      "file": "cards/00_title.png",
+      "type": "title",
+      "repeat": 1
+    },
+    {
+      "file": "cards/01_p1_sep.png",
+      "type": "section",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/02_p1_s1.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "上岸，本来是从水里走到岸上。",
+      "py": "Shàng àn, běnlái shì cóng shuǐ lǐ zǒu dào àn shàng.",
+      "en": "上岸 originally just meant walking out of the water onto shore."
+    },
+    {
+      "file": "cards/03_p1_s2.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "考试的人常常觉得自己在水里，心里只想着上岸。",
+      "py": "Kǎoshì de rén chángcháng juéde zìjǐ zài shuǐ lǐ, xīnlǐ zhǐ xiǎngzhe shàng àn.",
+      "en": "People preparing for exams often feel like they're stuck in water, thinking only about making it ashore."
+    },
+    {
+      "file": "cards/04_p1_s3.png",
+      "type": "sentence",
+      "para": 1,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "所以现在被问“上岸了吗”，说的都是考试。",
+      "py": "Suǒyǐ xiànzài bèi wèn “shàng àn le ma”, shuō de dōu shì kǎoshì.",
+      "en": "So when someone asks you \"上岸了吗\" now, they're asking about your exam result."
+    },
+    {
+      "file": "cards/05_p1_full.png",
+      "type": "paragraph_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/06_p2_sep.png",
+      "type": "section",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/07_p2_s1.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "我表弟考研考了两年，第一次差三分没上。",
+      "py": "Wǒ biǎodì kǎo yán kǎo le liǎng nián, dì-yī cì chà sān fēn méi shàng.",
+      "en": "My cousin studied for the grad-school exam for two years — the first attempt fell three points short."
+    },
+    {
+      "file": "cards/08_p2_s2.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "第二年他还是一个人，在图书馆坐到闭馆，心里放不下那三分。",
+      "py": "Dì-èr nián tā háishi yí ge rén, zài túshūguǎn zuò dào bìguǎn, xīnlǐ fàng bu xià nà sān fēn.",
+      "en": "The second year, still alone, sitting in the library until it closed — those three points still stuck in his mind."
+    },
+    {
+      "file": "cards/09_p2_s3.png",
+      "type": "sentence",
+      "para": 2,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "家里人都不敢问他，怕他一提就哭。",
+      "py": "Jiā lǐ rén dōu bù gǎn wèn tā, pà tā yì tí jiù kū.",
+      "en": "No one at home dared to ask — afraid that one word about it would set him crying."
+    },
+    {
+      "file": "cards/10_p2_full.png",
+      "type": "paragraph_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/11_p3_sep.png",
+      "type": "section",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/12_p3_s1.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 1,
+      "repeat": 2,
+      "cn": "昨天早上八点整，他打开了网页，手在抖。",
+      "py": "Zuótiān zǎoshang bā diǎn zhěng, tā dǎkāi le wǎngyè, shǒu zài dǒu.",
+      "en": "Eight sharp yesterday morning, he opened the results page — his hands were shaking."
+    },
+    {
+      "file": "cards/13_p3_s2.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 2,
+      "repeat": 2,
+      "cn": "页面刷新出来，录取两个字，他没喊也没哭。",
+      "py": "Yèmiàn shuāxīn chūlái, lùqǔ liǎng ge zì, tā méi hǎn yě méi kū.",
+      "en": "The page refreshed — two words: admitted. He didn't shout, didn't cry."
+    },
+    {
+      "file": "cards/14_p3_s3.png",
+      "type": "sentence",
+      "para": 3,
+      "sent": 3,
+      "repeat": 2,
+      "cn": "只是给妈妈打了个电话：妈，我上岸了。",
+      "py": "Zhǐshì gěi māma dǎ le ge diànhuà: mā, wǒ shàng àn le.",
+      "en": "He just called his mother: Mom, I made it to shore."
+    },
+    {
+      "file": "cards/15_p3_full.png",
+      "type": "paragraph_full",
+      "para": 3,
+      "repeat": 1
+    },
+    {
+      "file": "cards/16_review_sep.png",
+      "type": "review_sep",
+      "repeat": 1
+    },
+    {
+      "file": "cards/17_review_p1.png",
+      "type": "review_full",
+      "para": 1,
+      "repeat": 1
+    },
+    {
+      "file": "cards/18_review_p2.png",
+      "type": "review_full",
+      "para": 2,
+      "repeat": 1
+    },
+    {
+      "file": "cards/19_review_p3.png",
+      "type": "review_full",
+      "para": 3,
+      "repeat": 1
+    }
+  ]
+}
